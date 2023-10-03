@@ -1,0 +1,34 @@
+{
+    "name": "big-colored-banner",
+    "title": "Big Banner with Background Color",
+    "active": true,
+    "description": "Big Banner with Background Color",
+    "category": "common igb banner",
+    "icon": "",
+    "keywords": [],
+    "post_types": [],
+    "mode": "auto",
+    "align": "full",
+    "align_text": "",
+    "align_content": "",
+    "render_template": "acf_blocks\/big-banner\/index.php",
+    "render_callback": "",
+    "enqueue_style": "",
+    "enqueue_script": "",
+    "enqueue_assets": "",
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "align_text": true,
+        "align_content": false,
+        "full_height": false,
+        "mode": true,
+        "multiple": true,
+        "example": [],
+        "jsx": false
+    },
+    "acfe_autosync": [
+        "json"
+    ],
+    "modified": 1693487784
+}

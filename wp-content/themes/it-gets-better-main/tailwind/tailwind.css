@@ -1,0 +1,433 @@
+@import "./custom/file-header.css";
+/**
+ * The line above injects the WordPress file header. It needs to be first,
+ * before this comment.
+ */
+
+/**
+ * This injects custom `@font-face` rules.
+ */
+@import "./custom/fonts.css";
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins, then adds custom base styles.
+ */
+@import "tailwindcss/base";
+@import "./custom/base.css";
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins, then adds custom component classes.
+ *
+ * The `@import-glob` line imports all CSS files from the `components`
+ * directory (except for `components.css`, which is imported on the following
+ * line). This is meant to simplify the process of integrating styles from
+ * JavaScript components or WordPress plugins.
+ */
+@import "tailwindcss/components";
+@import-glob "./custom/components/**/!(components).css";
+@import "./custom/components/components.css";
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins, then adds custom utility classes.
+ */
+@import "tailwindcss/utilities";
+@import "./custom/utilities.css";
+
+/**
+ * Kenn's hopefully temporary addon CSS file.
+ */
+@import "./custom/bolted-on.css";
+
+/**
+Block styles **/
+.is-style-igb-heading-pink {
+    @apply text-igb-pink dark:text-igb-white;
+   }
+
+   .is-style-igb-heading-orange {
+    @apply text-igb-orange dark:text-igb-orange;
+   }
+
+   .is-style-igb-heading-black {
+    @apply text-black dark:text-igb-orange;
+   }
+   .is-style-igb-heading-black-white {
+    @apply text-black dark:text-igb-white;
+   }
+   .is-style-igb-paragraph-white {
+    @apply text-white dark:text-white;
+   }
+   .is-style-igb-paragraph-black-white {
+    @apply text-igb-black dark:text-white;
+   }
+   .is-style-igb-heading-purple-orange {
+    @apply text-igb-purple dark:text-igb-orange;
+   }
+   .is-style-igb-heading-white-orange {
+    @apply text-white dark:text-igb-orange;
+   }
+
+/** breadcrumbs **/
+.breadcrumbs {
+    @apply px-[10px] md:px-[40px];
+}
+
+.banner-inner {
+    @apply px-[10px] md:px-[40px] py-10 max-w-5xl;
+}
+.playlist-results-wrapper {
+    @apply px-[10px] md:px-[40px] w-full mx-auto;
+}
+/* 
+.entry-content > p,
+.entry-content > blockquote {
+    @apply px-4;
+} */
+
+.entry-content ul,
+.entry-content ol {
+  @apply dark:text-white text-igb-black;
+}
+/* .page #topNav .menu-top-menu-container {
+    @apply absolute top-0 right-0 w-full;
+} */
+/* container class */
+#menu1 .primary-menu {}
+/* container class first unordered list */
+#menu1 .primary-menu ul {
+	@apply list-none inline;
+}
+/* unordered list within an unordered list */
+#menu1 .primary-menu ul ul {}
+/* each navigation item */
+#menu1 .primary-menu li {
+	@apply text-igb-blue;
+}
+
+#colophon p a:hover {
+    @apply text-igb-orange;
+}
+.svg-social > img {
+    @apply text-igb-orange;
+}
+
+#menu-footer-bottom {
+    @apply flex font-semibold justify-center gap-2;
+}
+
+#menu-footer-bottom > li + li::before {
+    @screen lg {
+        @apply font-normal inline-flex relative;
+        content: "|";
+        width: 10px;
+    }
+}
+.wp-element-button, .wp-block-button__link,.default-button {
+    @apply text-white bg-igb-blue px-5 py-2 rounded-sm no-underline font-bold text-sm md:text-base capitalize;
+}
+.is-style-outline {
+    @apply dark:bg-transparent;
+}
+/* each navigation item anchor */
+#menu1 .primary-menu li a {}
+/* unordered list if there is drop down items */
+#menu1 .primary-menu li ul {}
+/* each drop down navigation item */
+#menu1 .primary-menu li li {}
+/* each drap down navigation item anchor */
+#menu1 .primary-menu li li a {}
+
+/* Class for Current Page */
+#menu1 .current_page_item {}
+/* Class for Current Category */
+#menu1 .current-cat {}
+/* Class for any other current Menu Item */
+#menu1 .current-menu-item {}
+/* Class for a Category */
+#menu1 .menu-item-type-taxonomy {}
+/* Class for Post types */
+#menu1 .menu-item-type-post_type {}
+/* Class for any custom links */
+#menu1 .menu-item-type-custom {}
+/* Class for the home Link */
+#menu1 .menu-item-home {}
+
+/** clip-path styles **/
+
+.clip-left {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.parallelogram {
+    transform: skew(-20deg);
+    font-weight:600;
+}
+.skew-fix{
+    transform: skew(20deg);
+}
+
+/* block styles **/
+/** Featured Program section / Featured Blog Inner **/
+/* .programSection {
+    @apply bg-white dark:bg-black relative flex flex-col lg:flex-row h-full py-10 md:mb-20;
+} */
+
+.px-default {
+    @apply px-[10px] md:px-[40px];
+}
+
+.program-left-inner,
+.program-right-inner {
+    @apply relative flex max-w-[600px] flex-col place-items-start justify-center px-20 pl-5 pr-5 md:pr-20 py-10 lg:p-20;
+}
+.program-right-inner {
+    @apply place-items-end justify-end  pl-10 pr-5 lg:pr-20 md:pl-20 text-right;
+}
+/* .featured-blog-inner {
+    @apply pl-5 pr-5 md:pl-20 py-10 lg:p-20 lg:pl-40 max-w-full md:max-w-[60vw];
+} */
+.program-heading-large {
+    @apply text-white;
+}
+
+/** featued program slider **/
+
+.slick-slide img {
+    @apply w-full rounded object-cover h-[300px];
+}
+/* .featured-program-slider {
+    @apply mt-10 mb-[150px] lg:mb-10;
+} */
+
+
+.wp-block-igb-theme-featured-program-slider h4 {
+    @apply text-igb-orange;
+}
+.wp-block-igb-theme-featured-program-slider h2 {
+    @apply text-igb-pink text-4xl lg:text-7xl max-w-[70vw] md:max-w-xl mb-3;
+}
+.wp-block-igb-theme-featured-program-slider p {
+    @apply text-white leading-normal mb-3 md:mb-6 md:leading-9;
+}
+.slide-group {
+    /* @apply max-w-xl; */
+    @apply max-w-[48rem];
+}
+/** term of the day block **/
+#featuredVideo {
+    @apply w-full md:w-[755px] h-[250px] md:h-[425px];
+}
+
+#termVideo {
+    @apply w-full md:w-[500px] h-auto md:h-[450px] lg:w-[700px];
+}
+/** featured playlist with angled images **/
+.featured-playlist-section-outter {
+    @apply py-12 relative flex flex-col-reverse md:flex-row alignfull w-full;
+}
+.featured-playlist-wrapper {
+    @apply flex flex-col-reverse md:flex-row alignfull w-full bg-igb-gray dark:bg-igb-darkmode-lightgray;
+}
+.featured-playlist-section {
+    @apply w-full md:w-1/2 flex flex-col justify-center px-[10px] md:px-[40px] py-6;
+}
+.featured-playlist-section-inner {
+    @apply  py-12 max-w-sm md:max-w-lg md:flex-row justify-center;
+}
+/** featured playlist block svg effect / banner block svg effect **/
+.featured-playlist-image-section,
+.banner-block-svg-section{
+    @apply  w-full md:w-1/2 flex flex-row justify-end relative;
+	-webkit-clip-path: url(#image_mask_double_slash);
+	clip-path: url(#image_mask_double_slash);
+}
+.angled-img-left,
+.angled-img-right {
+    @apply w-auto h-[275px] md:h-[400px] lg:h-[500px] relative;
+}
+.angled-img-left {
+    @apply right-0 md:left-[150px] lg:left-[200px] xl:left-[100px] top-5;
+}
+.angled-img-right {
+    @apply bottom-5 md:right-0;
+}
+
+/** featured video section **/
+.featured-video {
+    @apply py-4 md:py-10;
+}
+
+.featured-video-terms-slider {
+    @apply absolute bottom-[10px] hidden lg:flex flex-row justify-start gap-2 ml-2;
+}
+/** popular term grid **/
+.popular-terms-row {
+    @apply col-auto mx-auto grid max-w-[400px] lg:max-w-[600px] grid-flow-col gap-x-3 overflow-hidden whitespace-nowrap;
+}
+.popular-term-button {
+    @apply relative -mx-1 mt-1 flex h-auto flex-grow justify-center rounded-sm px-4 py-2 font-semibold lowercase skew-x-[-30deg];
+}
+.popular-term-button:first-child {
+    @apply -ml-[12px] flex-shrink;
+    /* clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%); */
+  }
+  .popular-term-button:last-child {
+    @apply -mr-[12px] flex-shrink;
+    /* clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%); */
+  }
+  .popular-term-button span {
+    @apply inline-flex skew-x-[30deg];
+  }
+
+  .popular-terms-wrapper {
+    @apply min-w-[320px] max-w-[600px] lg:w-[600px];
+  }
+
+  /** more featured video section **/
+
+  /* .more-featured-videos {
+    @apply px-[10px] md:px-[40px];
+  }
+  .more-featured-videos .show-more-slider {
+    @apply -mx-[10px] md:-mx-[40px];
+  } */
+  /** banner blocks **/
+  .wp-block-igb-theme-banner-block-svg-right,
+  .wp-block-igb-theme-banner-block-svg-left,
+  .wp-block-igb-theme-banner-block-image-right,
+  .wp-block-igb-theme-banner-block-image-left {
+    @apply max-w-none;
+  }
+
+  .banner-wrapper {
+    @apply w-full flex flex-col md:flex-row justify-center p-6;
+  }
+  .banner-block-image-section,
+  .banner-block-svg-section,
+  .banner-text-section {
+    @apply w-full md:w-1/2 flex flex-col justify-center p-6 h-auto;
+  }
+  .svg-background,.foreground-background {
+    @apply h-full w-full;
+  }
+  .foreground-background {
+    @apply z-10;
+  }
+     /** custom style for default cover block **/
+     .wp-block-cover h1:not(.has-text-color),
+     .is-style-igb-heading-purple {
+        @apply text-igb-purple dark:text-igb-pink;
+    }
+    .wp-block-cover p:not(.has-text-color) {
+       @apply text-black dark:text-igb-white;
+   }
+
+
+   /** single post css **/
+   #postTags li.tag:first-child a {
+    @apply bg-igb-pink;
+   }
+   #postTags li.tag:nth-child(2) a {
+    @apply bg-igb-orange;
+   }
+   #postTags li.tag:last-child a {
+    @apply bg-igb-purple;
+   }
+   .attachment-post-thumbnail {
+    @apply mx-auto;
+   }
+
+   /** media text block **/
+   /* .wp-block-media-text .wp-block-media-text__content {
+    @apply mt-0 sm:mt-[200px] xl:mt-0;
+   }     */
+
+   /** latest blog posts **/
+   .latest-post-image {
+    @apply w-[330px] h-[220px] object-cover;
+   }
+
+   /** search results **/
+   .search-results-wrapper {
+    @apply grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-4 max-w-[1400px] px-10 mt-[200px] mx-auto;
+   }
+
+   .search-item-container {
+    @apply relative flex flex-col h-fit;
+   }
+
+   .search-item {
+    @apply w-full max-w-none md:max-w-[500px] h-[250px] bg-cover bg-no-repeat bg-center;
+   }
+   .search-title {
+    @apply text-lg;
+   }
+   /** post tags search **/
+   .post-tags-list {
+    @apply relative top-[85%] left-[20px] flex flex-row justify-start gap-2;
+   }
+   .post-tag-small {
+    @apply px-6 py-2 md:px-6 text-sm text-white;
+   }
+   /** glossary page **/
+
+   .glossary-featured-video {
+    background-image: url('../theme/icons/dividers/bg-featured-glossary-divider.svg');
+    @apply bg-contain bg-center bg-no-repeat w-full h-full py-[150px] px-[40px] mx-auto relative;
+
+   }
+
+   .glossary-row {
+    @apply flex justify-start md:justify-between  w-full py-4 flex-col md:flex-row;
+   }
+   .glossary-row .term-title {
+    @apply text-left mr-0 md:mr-4 w-full;
+   }
+   .glossary-row .term-definition {
+    @apply w-full text-left mx-0 md:mx-4 mb-5;
+   }
+   .glossary-row .term-link {
+    @apply flex flex-col justify-start md:justify-center items-start md:items-center mb-5 w-full;
+   }
+
+   .embed-video iframe{
+        @apply w-[600px] h-[450px];
+   }
+
+   .video-youtube-container {
+    @apply w-full md:w-full h-[400px] md:h-[700px] px-4;
+   }
+   .video-youtube-container iframe {
+    @apply w-full h-[400px] md:h-[700px];
+   }
+   .tag-term-div {
+    @apply w-full h-full pt-[100px] px-4;
+   }
+
+   /* archive template featured image class */
+   .archive-featured-image {
+    @apply h-[250px] object-cover;
+   }
+
+   /** media queries **/
+@media screen and (max-width: 1023px) {
+    #menu-footer-bottom,
+    #footer-menu {
+        @apply flex-col justify-center items-center;
+    }
+    #menu-footer-bottom > .sep-after::after {
+        @apply hidden;
+    }
+
+}
+@media screen and (max-width:768px){
+    /* .search-form{
+        clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    } */
+    .eduLeft,.eduRight,.featured-blog-inner {
+        clip-path:none;
+    }
+
+}

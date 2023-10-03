@@ -1,0 +1,50 @@
+.safe-exit-button {
+  @apply absolute right-0 z-20 flex items-center;
+
+  a {
+    @apply bg-igb-pink text-white w-[135px] h-[30px] flex items-center justify-center pl-4;
+    mask-image: url(../theme/icons/buttons/safe-exit.svg);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+  }
+
+  span {
+    @apply flex items-center text-[12px] leading-[1] font-bold;
+  }
+
+  svg {
+    @apply ml-2;
+  }
+}
+
+.nav-fixed-top .safe-exit-button {
+  @apply fixed top-[80px];
+}
+
+@screen md {
+  .nav-fixed-top .safe-exit-button {
+    @apply fixed top-[90px];
+  }
+
+  .safe-exit-button {
+    @apply top-[135px];
+
+    a {
+      @apply w-[175px] h-[48px];
+    }
+
+    span {
+      @apply text-[16px];
+    }
+  }
+}
+
+@screen lg {
+  .safe-exit-button {
+    @apply top-[170px];
+  }
+
+  .nav-fixed-top .safe-exit-button {
+    @apply top-[140px];
+  }
+}

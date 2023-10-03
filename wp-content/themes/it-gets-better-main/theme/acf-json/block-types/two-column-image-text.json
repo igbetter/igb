@@ -1,0 +1,34 @@
+{
+    "name": "two-column-image-text",
+    "title": "Two Column Block - Image(L) \/ Text(R)",
+    "active": true,
+    "description": "Two Column Block\r\n\r\nLeft Side - IMAGE \r\nRight Side -TEXT",
+    "category": "common igb two-column image-and-text",
+    "icon": "",
+    "keywords": [],
+    "post_types": [],
+    "mode": "auto",
+    "align": "full",
+    "align_text": "",
+    "align_content": "",
+    "render_template": "acf_blocks\/two-columns-image-and-text\/index.php",
+    "render_callback": "",
+    "enqueue_style": "",
+    "enqueue_script": "",
+    "enqueue_assets": "",
+    "supports": {
+        "anchor": true,
+        "align": false,
+        "align_text": false,
+        "align_content": false,
+        "full_height": false,
+        "mode": true,
+        "multiple": true,
+        "example": [],
+        "jsx": true
+    },
+    "acfe_autosync": [
+        "json"
+    ],
+    "modified": 1693572263
+}

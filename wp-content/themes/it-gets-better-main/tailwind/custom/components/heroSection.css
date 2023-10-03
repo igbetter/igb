@@ -1,0 +1,131 @@
+.home.hero-section,
+.home .hero-section {
+  @apply relative mb-12;
+
+  .wp-block-media-text__content {
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    background-color: #FFE8EB;
+    @apply absolute top-0 left-0 w-full h-full dark:bg-transparent;
+  }
+
+  p {
+    @apply font-bold;
+  }
+
+  figure {
+    z-index: 1;
+  }
+}
+
+.hero-section {
+  .wp-block-media-text__content {
+    @apply mb-0 p-[10px];
+  }
+
+  h4 {
+    @apply text-igb-black dark:text-white uppercase;
+  }
+
+  h1 {
+    @apply leading-[1.25] font-extrabold mb-2;
+    font-size: clamp(2rem, 3vw, 4rem);
+  }
+
+  p {
+    @apply leading-[1.5] text-igb-black dark:text-white mb-2;
+    font-size: clamp(0.75rem, 1vw, 1.125rem);
+  }
+}
+
+.home.hero-section {
+  p {
+    font-size: clamp(1rem, 2vw, 1.75rem);
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .hero-section.wp-block-media-text.is-stacked-on-mobile {
+    grid-template-columns: 100%!important;
+
+    .wp-block-media-text__content {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .wp-block-media-text__media {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+}
+
+
+
+@screen md {
+ .hero-section {
+    .wp-block-media-text__content {
+      @apply pt-[170px] pb-[10px] pr-0 pl-[40px];
+    }
+  }  
+
+  .hero-section:not(.home) {
+    .wp-block-media-text__content {
+      @apply h-full flex flex-col justify-center pr-0;
+    }
+  }
+  
+  .home.hero-section,
+  .home .hero-section {
+    img {
+      @apply absolute right-0 w-[80%] max-w-[70vh];
+    }
+
+    .wp-block-media-text__content {
+      @apply pt-[25.5rem] max-w-[42.5rem] ;
+      z-index: 3;
+    }
+
+    &.has-media-on-the-right {
+      grid-template-columns: 1fr 35%;
+    }
+
+    &.wp-block-media-text .wp-block-media-text__media {
+      align-self: unset;
+    }
+  }
+}
+
+
+@screen xl {
+  .hero-section, 
+  .wp-block-media-text.has-media-on-the-right {
+    h1 {
+      @apply  leading-[1.1] mb-4;
+      /* text-[4rem] */
+    }
+
+    p {
+      /* @apply text-[18px] leading-[1.5]; */
+      @apply leading-[1.5];
+    }
+  }
+
+  .home.hero-section,
+  .home .hero-section {
+    img {
+      @apply max-w-[80vh];
+    }
+
+    &.has-media-on-the-right {
+      grid-template-columns: 1fr 65%;
+    }
+    .wp-block-media-text__content {
+      @apply pt-[25.5rem] max-w-[46.875rem];
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "page-hero-image",
+    "title": "Page Hero Image",
+    "active": true,
+    "description": "",
+    "category": "common hero header",
+    "icon": "",
+    "keywords": [],
+    "post_types": [
+        "page"
+    ],
+    "mode": "auto",
+    "align": "full",
+    "align_text": "",
+    "align_content": "top",
+    "render_template": "acf_blocks\/page-hero-image\/index.php",
+    "render_callback": "",
+    "enqueue_style": "",
+    "enqueue_script": "",
+    "enqueue_assets": "",
+    "supports": {
+        "anchor": false,
+        "align": true,
+        "align_text": true,
+        "align_content": true,
+        "full_height": true,
+        "mode": true,
+        "multiple": false,
+        "example": [],
+        "jsx": false
+    },
+    "acfe_autosync": [
+        "json"
+    ],
+    "modified": 1695744593
+}

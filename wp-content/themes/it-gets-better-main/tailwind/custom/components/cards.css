@@ -1,0 +1,141 @@
+.cards {
+  .thumbnail-and-indicator {
+    @apply relative mb-3;
+  
+    .thumbnail {
+      @apply w-full pt-[56.22%] bg-cover bg-no-repeat bg-center;
+      border-radius: 3px;
+
+      &::before {
+        @apply absolute top-0 left-0 h-full w-full;
+        content: '';
+        background: linear-gradient(237.02deg, rgba(0, 0, 0, 0.3) 2.44%, rgba(0, 0, 0, 0) 45.51%);
+      }
+    }
+  
+    .indicator {
+      @apply absolute top-[10px] right-[10px] h-[58px] w-[58px];
+      background-size: cover;
+      background-repeat: no-repeat;  
+    }
+
+    .associated-post-tag-wrapper {
+      @apply absolute bottom-[1rem] left-[10px];
+
+      .associated-post-tag {
+        @apply px-4 h-[26px] leading-[26px];
+        height: 26px;
+        line-height: 26px;
+
+        &::before, &::after {
+          width: 21px;
+        }
+      }
+
+      .associated-post-tag + .associated-post-tag {
+        @apply hidden;
+      }
+      .associated-post-tag span {
+        font-size: 14px;
+        line-height: 26px;
+      }
+
+      .associated-post-tag-more-link {
+        height: 26px;
+        width: 55px;
+      }
+
+      .associated-post-tag-more-link span {
+        font-size: 2.5rem;
+      }
+    }
+  
+    + a {
+      @apply font-bold text-[18px] leading-[1] ;
+    }
+  }
+
+  &.card-video {
+    .indicator {
+      background-image: url('../theme/icons/indicators/video.svg');
+    }
+  }
+
+  &.card-article {
+    .indicator {
+      background-image: url('../theme/icons/indicators/blog.svg');
+    }
+  }
+}
+
+.glossary-card {
+  padding-top: 91.48%;
+  background-color: #F2F2F2;
+  @apply relative dark:bg-igb-darkmode-lightgray;
+
+  .border-color {
+    @apply absolute bottom-0 left-0 w-full h-[15px];
+  }
+
+  .content  {
+    @apply absolute px-12 w-full;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+  h3 {
+    @apply text-[2.25rem] text-igb-purple leading-[2.75rem] mb-8 dark:text-igb-pink;
+    text-wrap: balance;
+  }
+
+  h3 span {
+    @apply text-igb-blue;
+  }
+
+  p {
+    @apply text-igb-black dark:text-igb-white overflow-hidden max-w-full mb-8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.explore-glossary-term-section {
+  @apply py-10 grid grid-cols-1 gap-4;
+}
+
+.explore-glossary-term-blocks {
+  @apply flex flex-col w-full py-10 justify-between;
+
+  h3 {
+    @apply text-left text-igb-purple dark:text-igb-white font-bold text-3xl mb-4;
+
+    font-size: clamp(1.25rem, 1vw + 1rem, 2.25rem);
+  }
+
+  .wp-element-button {
+    @apply max-w-[250px];
+  }
+}
+
+@screen md {
+  .explore-glossary-term-section {
+    @apply grid-cols-2;
+  }
+
+  .explore-glossary-term-blocks {
+    @apply min-h-[400px];
+  }
+}
+
+@screen 2xl {
+  .cards .thumbnail-and-indicator {
+    .associated-post-tag-wrapper {
+      .associated-post-tag + .associated-post-tag {
+        @apply inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ * This section contains Kenn's additions. They're just to meet deadlines and while I tried
+ * pretty hard to come in at the last minute and figure out all that's here - and Tailwind -
+ * it came down to just Git R Done.
+ */
+.hero-section .has-x-large-font-size {
+	font-size: 50px !important;
+	line-height: 55px !important;
+}
+
+
+/** media queries **/
+@media screen and (max-width: 1024px) {
+	.hero-section .has-x-large-font-size {
+		font-size: 40px !important;
+		line-height: 45px !important;
+	}
+}
+@media screen and (max-width:768px){
+	.hero-section .has-x-large-font-size {
+		font-size: 30px !important;
+		line-height: 35px !important;
+	}
+}

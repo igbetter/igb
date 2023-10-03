@@ -1,0 +1,290 @@
+<?php
+  $postTypeParam = isset($_GET['postType']) ? $_GET['postType'] : null;
+  $order =  isset($_GET['sortBy']) && $_GET['sortBy'] === 'title' ? 'asc' : 'desc';
+  $orderBy = isset($_GET['sortBy']) ? $_GET['sortBy'] : 'date';
+  $postType = isset($postTypeParam) ? $postTypeParam === 'blog' ? 'post' : $postTypeParam : array('video', 'post');
+  $termCategoryParam = isset($_GET['termCategory']) ? json_decode(str_replace('\"', '"', $_GET['termCategory']), true) : array();
+  $termGroupParam = isset($_GET['termGroup']) ? $_GET['termGroup'] : null;
+  $term = isset($_GET['term']) ? $_GET['term'] : null;
+
+  $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+  $countQuery =  array('post_type' => $postType, 'orderby' => $orderBy, 'order' => $order, 'status' => 'published'); 
+
+  $queryArgs = array(
+    'post_type' => $postType,
+    'orderby'   => $orderBy,
+    'order' => $order,
+    'status'    => 'published',
+    'posts_per_page' => 18,
+    'paged' => $paged,
+  );
+
+  if($term) {
+    $queryArgs = array_merge(
+      $queryArgs, array('s' => $term)
+    );
+
+    $countQuery = array_merge(
+      $countQuery, array('s' => $term)
+    );
+  }
+  
+  if(count($termCategoryParam) > 0) {
+    $metaQueryArray = array("relation" => "OR");
+
+    foreach($termCategoryParam as $term) {
+      $metaQueryArray = array_merge(
+        $metaQueryArray, array(
+          array(
+            'key' => 'associated_glossary_terms',
+            'value' => $term,
+            'compare' => 'LIKE'
+          )
+        )
+      );
+    }
+
+    $queryArgs = array_merge(
+      $queryArgs, array(
+        'meta_query' => array($metaQueryArray)
+      )
+    );
+
+    $countQuery = array_merge(
+      $countQuery, array(
+        'meta_query' => array($metaQueryArray)
+      )
+    );
+  }
+
+  $countResult = new WP_Query($countQuery);
+  $totalCount = $countResult->found_posts;
+  wp_reset_postdata();
+
+  $results = new WP_Query($queryArgs);
+
+  $geTerm = 'gender-expression';
+  $giTerm = 'gender-identity';
+  $soTerm = 'sexual-orientation';
+
+  $geQuery = it_gets_better_query_glossary_by_term_category_slug('gender-expression');
+  $giQuery = it_gets_better_query_glossary_by_term_category_slug('gender-identity');
+  $soQuery = it_gets_better_query_glossary_by_term_category_slug('sexual-orientation');
+  $geResult = get_posts($geQuery);
+  $giResult = get_posts($giQuery);
+  $soResult = get_posts($soQuery);
+?>
+
+<section class="browse-content-section alignfull mt-7">
+  <div class="px-default">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div class="lg:col-span-1 hidden lg:block">
+        <div class="sticky-sidebar">   
+          <p class="results-count">
+            <?php echo $totalCount; ?>
+            <?php echo ($postTypeParam === "blog") ? "Blog" : ''; ?>  
+            <?php echo ($postTypeParam === "video") ? "Video" : ''; ?>
+            Results
+          </p>
+          <div class="filters">
+            <div class="filter-group">
+              <label class="checkbox video" htmlFor="video">
+                <input type="checkbox" value="video" name="browsePageContentType" id="video" <?php echo $postTypeParam === 'video' ? 'checked' : ''?>  />
+                <span class="checkbox-check"></span>
+                <svg width="58" height="65" viewBox="0 0 58 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.9996 32.2681L23.2496 47.1314L23.2496 17.4048L41.9996 32.2681Z" fill="#5E3A73"/>
+                </svg>
+                <span class="checkbox-border"></span>
+                Video
+              </label>
+            </div>
+            <hr />
+            <div class="filter-group mb-12">
+              <label class="checkbox blog" htmlFor="blog">
+                <input type="checkbox" value="blog" name="browsePageContentType" id="blog" <?php echo $postTypeParam === 'blog' ? 'checked' : ''?> />
+                <span class="checkbox-check"></span>
+                <svg width="41" height="45" viewBox="0 0 41 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M34.0874 6.88776L32.0057 10.3673L25.1763 5.67612L27.2582 2.19655C27.6894 1.47658 28.5787 1.26174 29.2412 1.71656L33.6666 4.75672C34.3294 5.21176 34.5181 6.16801 34.0874 6.88776ZM8.6472 33.8356L7.04696 44.0299L15.0242 38.2166C14.2664 37.0938 13.326 36.1433 12.2202 35.3839C11.1142 34.6242 9.91571 34.1048 8.6472 33.8356ZM9.47256 31.9226C10.8113 32.2614 12.0802 32.8375 13.2588 33.6473C14.4376 34.4569 15.4558 35.4521 16.3018 36.614L30.9667 12.1034L24.1372 7.41191L9.47256 31.9226Z" fill="#F2566E"/>
+                </svg>
+                <span class="checkbox-border"></span>
+                Blog
+              </label>
+              <div class="selector">
+                <select name="browsePageSortBlog" id="" value="<?php echo $orderBy; ?>">
+                  <option value="" hidden>SORT BY</option>
+                  <option value="date" <?php echo $orderBy === "date" ? 'selected': ''; ?>>Date</option>
+                  <option value="title" <?php echo $orderBy === "title" ? 'selected': ''; ?>>Title</option>
+                </select>
+                <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.1993 9.31514C9.81058 9.69571 9.18893 9.69571 8.8002 9.31514L1.29185 1.96458C0.651562 1.33775 1.09537 0.25 1.9914 0.25L17.0081 0.250002C17.9041 0.250002 18.348 1.33775 17.7077 1.96458L10.1993 9.31514Z" fill="#F2566E"/>
+                </svg>
+              </div>
+            </div>
+            <div class="filter-group">
+              <p>Filters</p>
+              <?php if($geResult): ?>
+                <?php 
+                  $geIds = array();
+                  foreach($geResult as $item) {
+                    array_push($geIds, $item->ID);
+                  }
+                ?>
+                <ul class="terms">
+                  <li>
+                    <div class="heading" data-trigger="parent-term-filter" data-categories="<?php echo join(",", $geIds); ?>">
+                      Gender Expression
+                      <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.1993 9.31514C9.81058 9.69571 9.18893 9.69571 8.8002 9.31514L1.29185 1.96458C0.651562 1.33775 1.09537 0.25 1.9914 0.25L17.0081 0.250002C17.9041 0.250002 18.348 1.33775 17.7077 1.96458L10.1993 9.31514Z" fill="#F2566E"/>
+                      </svg>
+                    </div>
+                  
+                    <div class="submenu" <?php echo count(array_intersect($termCategoryParam, $geIds)) > 0  ? 'style="height:auto;"' : ''; ?>>
+                      <ul>
+                        <?php foreach($geResult as $item): ?>
+                          <li>
+                            <label class="checkbox" htmlFor="<?php //echo $slug; ?>">
+                              <input 
+                                type="checkbox"
+                                value="<?php echo $item->ID; ?>"
+                                name="browsePageTermCategory"
+                                id="<?php echo $item->post_name; ?>"
+                                data-color="<?php echo get_field('border_color', $item->ID); ?>"
+                                data-term-group="<?php echo $geTerm; ?>"
+                                <?php echo in_array($item->ID, $termCategoryParam) ? "checked" : ""; ?>
+                              />
+                              <span class="checkbox-check"></span>
+                              <?php echo get_the_title($item->ID); ?>
+                              <span class="checkbox-border"></span>
+                            </label>
+                          </li>
+                        <?php endforeach; ?>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              <?php endif; ?>
+              <?php if($giResult): ?>
+                <?php 
+                  $giIds = array();
+                  foreach($giResult as $item) {
+                    array_push($giIds, $item->ID);
+                  }
+                ?>
+                <ul class="terms">
+                  <li>
+                    <div class="heading" data-trigger="parent-term-filter" data-categories="<?php echo join(",", $giIds); ?>">
+                      Gender Identity
+                      <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.1993 9.31514C9.81058 9.69571 9.18893 9.69571 8.8002 9.31514L1.29185 1.96458C0.651562 1.33775 1.09537 0.25 1.9914 0.25L17.0081 0.250002C17.9041 0.250002 18.348 1.33775 17.7077 1.96458L10.1993 9.31514Z" fill="#F2566E"/>
+                      </svg>
+                    </div>
+                    <div class="submenu" <?php echo count(array_intersect($termCategoryParam, $giIds)) > 0 ? 'style="height:auto;"' : ''; ?>>
+                      <ul>
+                        <?php foreach($giResult as $item): ?>
+                          <li>
+                            <label class="checkbox" htmlFor="<?php echo $slug; ?>">
+                              <input
+                                type="checkbox"
+                                value="<?php echo $item->ID; ?>"
+                                name="browsePageTermCategory"
+                                id="<?php echo $item->post_name; ?>"
+                                data-color="<?php echo get_field('border_color', $item->ID); ?>"
+                                data-term-group="<?php echo $giTerm; ?>"
+                                <?php echo in_array($item->ID, $termCategoryParam) ? "checked" : ""; ?>
+                              />
+                              <span class="checkbox-check"></span>
+                              <?php echo get_the_title($item->ID); ?>
+                              <span class="checkbox-border"></span>
+                            </label>
+                          </li>
+                        <?php endforeach; ?>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              <?php endif; ?>
+              <?php if($soResult): ?>
+                <?php 
+                  $osIds = array();
+                  foreach($soResult as $item) {
+                    array_push($osIds, $item->ID);
+                  }
+                ?>
+                <ul class="terms">
+                  <li>
+                    <div class="heading" data-trigger="parent-term-filter" data-categories="<?php echo join(",", $osIds); ?>">
+                      Sexual Orientation
+                      <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.1993 9.31514C9.81058 9.69571 9.18893 9.69571 8.8002 9.31514L1.29185 1.96458C0.651562 1.33775 1.09537 0.25 1.9914 0.25L17.0081 0.250002C17.9041 0.250002 18.348 1.33775 17.7077 1.96458L10.1993 9.31514Z" fill="#F2566E"/>
+                      </svg>
+                    </div>
+                    <div class="submenu" <?php echo count(array_intersect($termCategoryParam, $osIds)) > 0 ? 'style="height:auto;"' : ''; ?>>
+                      <ul>
+                        <?php foreach($soResult as $item): ?>
+                          <li>
+                            <label class="checkbox" htmlFor="<?php echo $slug; ?>">
+                              <input
+                                type="checkbox"
+                                value="<?php echo $item->ID; ?>"
+                                name="browsePageTermCategory"
+                                id="<?php echo $item->post_name; ?>"
+                                data-color="<?php echo get_field('border_color', $item->ID); ?>"
+                                data-term-group="<?php echo $soTerm; ?>"
+                                <?php echo in_array($item->ID, $termCategoryParam) ? "checked" : ""; ?>
+                              />
+                              <span class="checkbox-check"></span>
+                              <?php echo get_the_title($item->ID); ?>
+                              <span class="checkbox-border"></span>
+                            </label>
+                          </li>
+                        <?php endforeach; ?>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              <?php endif; ?>
+              <button data-trigger="resetFilters">Reset All Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-3 col-span-1">
+        <?php if($results->have_posts()): ?>
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2 md:gap-8 lg:gap-8">
+          <?php 
+            $count = 0;
+            while($results->have_posts()){
+              $results->the_post();
+              if($count === 6 && $term === null) {
+                get_template_part('template-parts/browseContent/section', 'featuredContent');
+              }
+
+              if($count === 6 && $postTypeParam === null && $term === null) {
+                get_template_part('template-parts/browseContent/section', 'curatedPlaylist');
+              }
+
+              get_template_part('template-parts/content/cards/browse', 'card');
+              $count++;
+            }
+            wp_reset_postdata();
+          ?>
+        </div>
+        <hr />
+        <?php else: ?>
+          <h2 class="py-4">No Results Found.</h2>
+        <?php endif; ?>
+        <?php
+          if($postTypeParam === null) {
+            get_template_part('template-parts/browseContent/section', 'exploreTheTerms');
+          }
+        ?>
+      </div>
+    </div>
+    <?php
+      if($term !== null) {
+        get_template_part('template-parts/browseContent/section', 'youMightAlsoLike'); 
+      }
+    ?>
+  </div>
+</section>

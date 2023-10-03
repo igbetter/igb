@@ -1,0 +1,34 @@
+{
+    "name": "playlist-slider-block",
+    "title": "Playlist Slider Block",
+    "active": true,
+    "description": "",
+    "category": "common playlist slider",
+    "icon": "",
+    "keywords": [],
+    "post_types": [],
+    "mode": "auto",
+    "align": "",
+    "align_text": "",
+    "align_content": "",
+    "render_template": "acf_blocks\/playlist-slider-block\/index.php",
+    "render_callback": "",
+    "enqueue_style": "",
+    "enqueue_script": "",
+    "enqueue_assets": "",
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "align_text": false,
+        "align_content": false,
+        "full_height": false,
+        "mode": true,
+        "multiple": true,
+        "example": [],
+        "jsx": false
+    },
+    "acfe_autosync": [
+        "json"
+    ],
+    "modified": 1693576296
+}

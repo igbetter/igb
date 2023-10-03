@@ -1,0 +1,126 @@
+.browse-playlist {
+  @apply overflow-x-hidden;
+
+  .slick-track {
+    @apply !mx-[unset];
+  }
+}
+
+.archive-cards {
+  @apply grid grid-cols-1 gap-4 py-8;
+}
+
+.meet-the-team-section {
+  .wp-block-coblocks-column {
+    .wp-block-group {
+      @apply px-0;
+    }
+
+    em {
+      @apply block;
+    }
+  }
+}
+
+.get-help-additional-resources {
+  @apply dark:!bg-igb-darkmode-gray;
+
+  h4.has-foreground-color {
+    @apply dark:!text-igb-pink;
+  }
+
+  .wp-container-27 {
+    @apply !grid grid-cols-1 gap-4;
+
+    .wp-block-spacer {
+      @apply hidden;
+    }
+  }
+}
+
+
+.get-help-contacts {
+  @apply !grid grid-cols-1 gap-4;
+  .wp-block-column {
+    @apply dark:!bg-igb-darkmode-gray py-8;
+  }
+
+  h4.has-foreground-color {
+    @apply dark:!text-igb-pink;
+  }
+}
+
+.dark .get-help-contacts .wp-block-column img {
+  filter: revert !important;
+}
+
+.type-glossary {
+  .glossary-term {
+    @apply text-igb-purple dark:text-igb-white font-bold text-6xl;
+
+    font-size: clamp(1.75rem, 3vw + 1rem, 3.75rem);
+  }
+
+  p {
+    @apply dark:text-igb-white;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  .glossary-heading {
+    @apply flex flex-col-reverse justify-between h-auto w-full items-center bg-igb-gray dark:bg-igb-black;
+  }
+
+  .thumbnail-container {
+    @apply w-full;
+
+    .thumbnail {
+      @apply bg-cover bg-igb-gray dark:bg-igb-darkmode-gray bg-center bg-no-repeat w-full pt-[56.22%];
+    }
+  }
+}
+
+@screen md {
+  .get-help-contacts {
+    @apply grid-cols-2;
+  }
+  .archive-cards {
+    @apply grid-cols-2;
+  }
+}
+
+@screen lg {
+  .get-help-additional-resources {
+    .wp-container-27 {
+      @apply grid-cols-2;
+    }
+  }
+
+  .type-glossary {
+    .glossary-heading {
+      @apply flex-row;
+    }
+
+    .thumbnail-container {
+      @apply w-1/2;
+    }
+  }
+}
+
+@screen xl {
+  .archive-cards {
+    @apply grid-cols-4;
+  }
+
+  .get-help-contacts {
+    @apply grid-cols-4 h-full;
+  }
+
+  .get-help-additional-resources {
+    .wp-container-27 {
+      @apply grid-cols-4;
+    }
+  }
+}

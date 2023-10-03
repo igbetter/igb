@@ -1,0 +1,18 @@
+.entry-content {
+  @apply pt-[200px] px-[10px];
+
+
+  &:has(.wp-block-group) {
+    @apply px-0;
+  }
+
+  &:has(.hero-section) {
+    @apply pt-0;
+  }
+}
+
+@screen md {
+  .entry-content {
+    @apply px-[40px];
+  }
+}

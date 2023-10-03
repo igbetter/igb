@@ -1,0 +1,1 @@
+<div class="wp-block-igb-theme-svg-divider svg-divider igb-horizontal-blue alignfull"></div>

@@ -1,0 +1,21 @@
+.woocommerce img,
+.woocommerce-page img {
+  &.mega-nav-dark-logo {
+    height: unset;
+    max-width: unset;
+  }
+}
+
+body.woocommerce-shop {
+  #topNavMenu {
+    @apply w-full;
+  }
+}
+
+.type-page .woocommerce {
+  padding: 40px 0;
+}
+
+.woocommerce-cart-form {
+	padding: 40px 0px;
+}

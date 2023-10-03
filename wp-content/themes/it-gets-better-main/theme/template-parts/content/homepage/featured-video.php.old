@@ -1,0 +1,67 @@
+<!-- Note: Temporary template file only. It will be removed once we utilized the custom blocks. -->
+<?php
+  $featured_video = get_posts(
+    array(
+      'post_type' => 'video',
+      'orderby' => 'date',
+      'status' => 'published',
+      'posts_per_page' => 1,
+      'meta_query'  => array(
+        array(
+          'key' => 'featured_video',
+          'value' => true
+        )
+      )
+    )
+  );
+
+  $video_title = "";
+  $video_permalink = "";
+  $video_file_link = "";
+  $featured_description = "";
+  $post_tags = array();
+
+  if ($featured_video):
+    foreach ( $featured_video as $video ) : 
+      $video_title = $video->post_title;
+      $video_permalink = get_the_permalink($video->ID);
+      $video_file_link = get_field('youtube_link', $video->ID);
+      $featured_description = get_field('featured_description', $video->ID);
+      $post_tags = get_field('associated_glossary_terms', $video->ID);
+    endforeach;
+
+    $featuredVideoTags = '<a class="associated-post-tag" style="background-color: %s" href="%s"><span>%s</span></a>';  
+    $count = 0;
+?>
+  <section class="featured-video-wrapper-section">
+    <h2 class="section-header">Featured Video</h2>
+    <div class="featured-video-wrapper">
+      <?php echo $video_file_link; ?>
+      <?php if(!empty($post_tags)): ?>
+        <div class="associated-post-tag-wrapper">
+          <?php 
+            foreach( $post_tags as $post_tag ) :
+              $count++;
+              $button_color = get_field('border_color', $post_tag->ID) !== '' ? get_field('border_color', $post_tag->ID) : "#45acce";
+              $term_text = get_field('button_text',$post_tag->ID);
+              $permalink = get_the_permalink($post_tag->ID);
+   
+              echo sprintf($featuredVideoTags, $button_color, $permalink, $term_text);
+              if($count == 3) break;
+            endforeach;
+          ?>
+          <a href="<?php echo $video_permalink?>" class="associated-post-tag-more-link">
+            <span>&hellip;</span>
+          </a>
+        </div>
+      <?php endif; ?>
+    </div>
+    <?php if($video_title): ?>
+      <h3><?php echo $video_title; ?></h3>
+    <?php endif; ?>
+    <?php if($featured_description): ?>
+      <p><?php echo $featured_description; ?></p>  
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
+  </section>
+<?php endif; ?>
