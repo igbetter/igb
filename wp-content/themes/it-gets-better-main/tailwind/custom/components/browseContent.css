@@ -20,23 +20,26 @@ hr {
     border-bottom: var(--border-filter);
   }
 
- 
-/* 
-  button {
-    @apply border-none bg-transparent font-bold text-[18px] leading-[1] text-igb-blue underline uppercase;
-  } */
+  button.reset {
+    @apply border-none bg-transparent font-bold text-[18px] leading-[1] text-igb-blue underline;
+  }
 
   .action-btn-container {
     @apply flex justify-between items-center;
 
     button {
-      width: calc(50% - 1rem);
+      width: calc(60% - 0.5rem);
+      text-transform: uppercase;
+    }
+
+    .reset {
+      width: calc(40% - 0.5rem);
     }
   }
 }
 
 .main-filters {
-  @apply bg-igb-white flex flex-row items-center py-8 mb-8 dark:bg-igb-darkmode-gray;
+  @apply bg-igb-white flex flex-row items-center py-8 mb-8 dark:bg-igb-darkmode-gray hidden;
 
   ul {
     @apply flex flex-row items-center;
@@ -251,7 +254,7 @@ hr {
     }
   
     .slick-list {
-      @apply !overflow-visible;
+      @apply !overflow-hidden;
     }
   }
 }
@@ -325,10 +328,24 @@ hr {
   .browse-content-section {
     .featured-content-section {
       width: calc(75vw - 41px);
+
+      .slick-list {
+        @apply !overflow-visible;
+      }
     }
 
     .curated-playlist-section {
       width: calc(75vw - 41px);
+    }
+  }
+
+  .main-filters {
+    @apply flex;
+
+    .sort-button {
+      text-wrap: nowrap;
+      height: 46px !important;
+      line-height: 30px !important;
     }
   }
 }
