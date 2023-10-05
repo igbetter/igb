@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_651df960a7223",
+    "title": "Site Options",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Site Options",
+    "menu_slug": "site-options",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "dashicons-admin-generic",
+    "menu_title": "Site Options",
+    "position": 80,
+    "redirect": 1,
+    "description": "Site options and settings",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1696463352
+}

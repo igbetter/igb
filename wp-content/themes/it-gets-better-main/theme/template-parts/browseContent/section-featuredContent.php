@@ -69,7 +69,7 @@
 
   if ($results->have_posts()) :
 ?>
-  <div class="md:col-span-2 lg:col-span-3">
+  <div class="md:col-span-2 lg:col-span-2 xl:col-span-3">
     <div class="featured-content-section alignfull flex flex-col">
       <div class="more-featured-videos-section overflow-hidden">
         <h2 class="section-header">

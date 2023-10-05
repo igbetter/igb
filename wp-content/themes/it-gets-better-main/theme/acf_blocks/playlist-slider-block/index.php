@@ -20,7 +20,7 @@
         'hide_empty' => false,
         'meta_query' => array(
           array(
-            'key' => 'show_as_curated', 
+            'key' => 'show_as_curated',
             'value' => true
           )
         )
@@ -51,8 +51,8 @@
     <?php echo $sectionHeader; ?>
   </h2>
   <div class="curated-playlist-slider px-default my-4">
-    <?php 
-      if($results): 
+    <?php
+      if($results):
         $count = 0;
         foreach ($results as $term):
           $image = esc_url(get_field('curated_featured_image', $term)['url']);
@@ -63,7 +63,7 @@
 
           echo sprintf($slideTemplate, $link, $image,  $color,  $name);
           $count++;
-        endforeach; 
+        endforeach;
       endif;
     ?>
   </div>
