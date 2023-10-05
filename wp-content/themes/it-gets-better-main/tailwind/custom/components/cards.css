@@ -86,8 +86,9 @@
   }
 
   h3 {
-    @apply text-[2.25rem] text-igb-purple leading-[2.75rem] mb-8 dark:text-igb-pink;
+    @apply text-igb-purple leading-[2.75rem] mb-8 dark:text-igb-pink;
     text-wrap: balance;
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
   }
 
   h3 span {

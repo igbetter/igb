@@ -379,18 +379,7 @@ Block styles **/
 
    }
 
-   .glossary-row {
-    @apply flex justify-start md:justify-between  w-full py-4 flex-col md:flex-row;
-   }
-   .glossary-row .term-title {
-    @apply text-left mr-0 md:mr-4 w-full;
-   }
-   .glossary-row .term-definition {
-    @apply w-full text-left mx-0 md:mx-4 mb-5;
-   }
-   .glossary-row .term-link {
-    @apply flex flex-col justify-start md:justify-center items-start md:items-center mb-5 w-full;
-   }
+
 
    .embed-video iframe{
         @apply w-[600px] h-[450px];

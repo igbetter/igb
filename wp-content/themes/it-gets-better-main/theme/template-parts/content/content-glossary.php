@@ -36,6 +36,9 @@
       get_template_part( 'template-parts/content/content', 'relatedBlogs');
       get_template_part( 'template-parts/content/content', 'relatedVideos');
     ?>
+    <div class="px-default">
+      <?php the_content(); ?>
+    </div>
     <div class="px-default pt-6">
       <div class="flex justify-between items-center mb-6">
         <h2 class="section-header !mb-0">

@@ -437,6 +437,15 @@ jQuery(document).ready(function($){
     window.location = newPath;
   });
 
+  $('.sort-button').on('click', function(e) {
+    var sort = $('.main-filters select[name="sortResults"]').val();
+    var params = new URLSearchParams(window.location.search)    
+    
+    params.set('sort', sort);
+    
+    redirectToQuery(params.toString());
+  });
+
   function heroSectionMods() {
     var $hero = $(".entry-content.prose > .wp-block-media-text.has-media-on-the-right:first-child, .page.type-page  > .wp-block-media-text.has-media-on-the-right:first-child");
     $hero.addClass('hero-section').removeClass('featured-playlist');
@@ -536,15 +545,13 @@ jQuery(document).ready(function($){
     $('html, body').removeAttr('style');
   })
 
-  // $('[data-role="popover"]').popover({
-  //   container: 'body'
-  // });
+  $('a[data-popover="true"]').webuiPopover({ 
+    content: function(){
+      var $this = $(this); 
+      var content = $this.attr('data-contentElement');
+      var html = $(content).html();
 
-  $('a[data-popover="true"]').webuiPopover({ content: function(){
-    var $this = $(this); 
-    var content = $this.attr('data-contentElement');
-    var html = $(content).html();
-
-    return html;
-  } });
+      return html;
+    } 
+  });
 });

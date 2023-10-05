@@ -111,7 +111,7 @@
   }
 
   .slick-list {
-    @apply !overflow-visible;
+    @apply !overflow-hidden;
   }
 } 
 
@@ -669,6 +669,11 @@ body.home {
   .programSection {
     .eduLeft, .eduRight {
       @apply w-[440px];
+    }
+  }
+  .featured-content-slider {
+    .slick-list {
+      @apply !overflow-visible;
     }
   }
 }

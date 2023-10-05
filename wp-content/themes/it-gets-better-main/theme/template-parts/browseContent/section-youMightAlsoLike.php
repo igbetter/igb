@@ -40,12 +40,13 @@
           )
         )
       );
-	foreach($glossaryQuery as $result) {
-		$tags = get_the_tags( $result->ID );
-		foreach( $tags as $tag ) {
-			array_push($relatedTags, $tag->term_id);
-		}
-	}
+
+    	foreach($glossaryQuery as $result) {
+    		$tags = get_the_tags( $result->ID );
+    		foreach( $tags as $tag ) {
+    			array_push($relatedTags, $tag->term_id);
+    		}
+    	}
 
 
       if($relatedTags) $resultsQuery = array_merge($commonResultsQuery, array('tag__in' => $relatedTags));
@@ -56,12 +57,12 @@
 
     <?php  if($results->have_posts()): ?>
       <div class="alignfull flex flex-col py-6">
-        <div class="hidden md:flex flex-row justify-between items-center mb-4">
-          <h3 class="text-igb-purple dark:text-white mb-0">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="section-header mb-0">
             <?php echo $section['header']; ?>
-          </h3>
-          <a href="<?php echo get_term_link($section['term'], $taxCategory); ?>" class="wp-block-button__link wp-element-button">
-            More <?php echo $section['header']; ?>-Related Content
+          </h2>
+          <a href="<?php echo get_term_link($section['term'], $taxCategory); ?>" class="ml-auto hidden md:block wp-block-button__link wp-element-button">
+          More <?php echo $section['header']; ?>-Related Content
           </a>
         </div>
         <div class="featured-content-slider">

@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_64f0ad7d1c05e",
-            "label": "Subheading",
-            "name": "subheading",
+            "label": "Heading",
+            "name": "heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -25,8 +25,8 @@
         },
         {
             "key": "field_64f0ac9b1c05d",
-            "label": "Heading",
-            "name": "heading",
+            "label": "Decription",
+            "name": "description",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",

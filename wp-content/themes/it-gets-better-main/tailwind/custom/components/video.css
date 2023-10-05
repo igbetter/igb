@@ -5,7 +5,8 @@ body:not(.home) {
   article.glossary,
   article.product,
   article.all-playlists,
-  article.eduguide {
+  article.eduguide.
+  #template-archive-glossary {
     @apply overflow-x-hidden pt-[170px] pb-[35px];
   }
 }
@@ -58,7 +59,8 @@ body:not(.home) {
     article.glossary,
     article.product,
     article.all-playlists,
-    article.eduguide {
+    article.eduguide,
+    #template-archive-glossary{
       @apply overflow-x-hidden pb-[80px];
     }
   }
