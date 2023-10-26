@@ -18,7 +18,7 @@ get_header();
 		<main id="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="entry-content prose">
-					<h1>testing deployment</h1>
+					<h1>testing deployment test2</h1>
 					<?php get_template_part('template-parts/content/homepage/hero-section'); ?>
 					<div class="featured-video alignfull flex flex-col xl:flex-row gap-8 px-default">
 						<div class="featured-video-part">
