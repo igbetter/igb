@@ -1,0 +1,92 @@
+/*
+ * mixins, functions, animations, etc.
+ */
+
+
+ /*
+ * Implementation of themes
+ */
+ @mixin themify($themes) {
+ 	@each $theme, $map in $themes {
+ 		.theme-#{$theme} & {
+ 			$theme-map: ( ) !global;
+
+			@each $key, $submap in $map {
+				$value: map-get( map-get($themes, $theme), '#{$key}' );
+				$theme-map: map-merge( $theme-map, ($key: $value) ) !global;
+			}
+
+			@content;
+			$theme-map: null !global;
+		}
+	}
+ }
+
+ @function themed($key) {
+	@return map-get($theme-map, $key);
+ }
+
+
+
+///////////////////////////////////////////////////////////////////  Responsive mixins
+// using breakpoint, but helping readability
+
+@mixin phone-only {
+	@media (max-width: #{$breakpoint-small}) {
+		@content;
+	}
+}
+
+@mixin tablet-only {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-large}) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$breakpoint-large}) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@media (min-width: #{$breakpoint-x-large}) {
+		@content;
+	}
+}
+
+@mixin tablet-down {
+	@media (max-width: #{$breakpoint-medium}) {
+		@content;
+	}
+}
+
+@mixin tablet-up {
+	@media (min-width: #{$breakpoint-medium}) {
+		@content;
+	}
+}
+
+@mixin phone-up {
+	@media (min-width: #{$breakpoint-small}) {
+		@content;
+	}
+}
+
+@mixin phone-landscape {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) and (orientation: landscape) {
+		@content;
+	}
+}

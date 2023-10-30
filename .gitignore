@@ -92,7 +92,7 @@ Thumbs.db
 
 
 # and of course, track the theme
-!wp-content/themes/it-gets-better-main
+!wp-content/themes/it-gets-better
 
 # but ignore the existing git submodules
-wp-content/themes/it-gets-better-main/.git*
+wp-content/themes/it-gets-better/.git*

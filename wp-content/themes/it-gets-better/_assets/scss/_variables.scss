@@ -1,0 +1,64 @@
+/*
+ *
+ *	Variabiles
+ *
+ */
+
+
+// Define colors
+
+$purple: #5e3a7e;
+
+$pink: #f2566e;
+
+$blue: #45acce;
+
+$white: #ffffff;
+
+$black: #000000;
+$dark: #292929;
+
+$yellow: #fbad41;
+
+
+// Define measurements
+$basefont_size: 16px;
+$max_width: 1200px;
+
+// Define fonts
+$poppins: "Poppins", sans-serif;
+
+// Define animation speeds
+$transition_speed: 250ms;
+
+// Define breakpoints
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-x-large: 1800px;
+
+
+/*
+ * Theme definitions
+ */
+
+$themes: (
+	light: (
+		backgroundColor: $white,
+		textColor: $dark,
+		buttonTextColor: #408bbd,
+		buttonTextTransform: none,
+		buttonTextHoverColor: #61b0e7,
+		buttonColor: #fff,
+		buttonBorder: 2px solid #408bbd,
+	),
+	dark: (
+		backgroundColor: $dark,
+		textColor: $white,
+		buttonTextColor: #aaa,
+		buttonTextTransform: uppercase,
+		buttonTextHoverColor: #ddd,
+		buttonColor: #333,
+		buttonBorder: 1px solid #333,
+	),
+);

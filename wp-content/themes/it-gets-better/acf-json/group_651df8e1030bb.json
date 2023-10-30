@@ -1,0 +1,312 @@
+{
+    "key": "group_651df8e1030bb",
+    "title": "Site Options",
+    "fields": [
+        {
+            "key": "field_651df8e154418",
+            "label": "Basic Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "placement": "top",
+            "endpoint": 1,
+            "no_preference": 0
+        },
+        {
+            "key": "field_653c3dc48a44c",
+            "label": "Site Logo",
+            "name": "site_logo",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "message": "Logo File",
+            "default_value": 0,
+            "ui_on_text": "Advanced",
+            "ui_off_text": "Simple",
+            "ui": 1,
+            "style": ""
+        },
+        {
+            "key": "field_653c3e298a44d",
+            "label": "Logo SVG code",
+            "name": "logo_svg_code",
+            "aria-label": "",
+            "type": "acfe_code_editor",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653c3dc48a44c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "default_value": "",
+            "placeholder": "",
+            "mode": "text\/html",
+            "lines": 1,
+            "indent_unit": 4,
+            "maxlength": "",
+            "rows": 12,
+            "max_rows": "",
+            "return_format": []
+        },
+        {
+            "key": "field_653c3eab8a44e",
+            "label": "Logo image file",
+            "name": "logo_image_file",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653c3dc48a44c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "uploader": "wp",
+            "return_format": "url",
+            "library": "all",
+            "upload_folder": "template",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_653c3feedfec6",
+            "label": "Default excerpt length",
+            "name": "default_excerpt_length",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "default_value": 40,
+            "min": "",
+            "max": "",
+            "placeholder": 40,
+            "step": "",
+            "prepend": "",
+            "append": "words"
+        },
+        {
+            "key": "field_653c419c208b6",
+            "label": "Safe Exit link",
+            "name": "safe_exit_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "default_value": "https:\/\/google.com",
+            "placeholder": ""
+        },
+        {
+            "key": "field_653c44c9208b7",
+            "label": "Site footer text",
+            "name": "site_footer_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "The text <code>[year]<\/code> will be replaced with the current year.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "default_value": "IT GETS BETTER and IT GETS BETTER PROJECT are registered US trademarks. It Gets Better Project is a registered 501(c)3 organization, and all contributions are tax-deductible to the extent allowed by law.\r\nCopyright Ⓒ 2010 - [year] It Gets Better Project. All rights reserved.",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_653c45a36f330",
+            "label": "Social Links",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0
+        },
+        {
+            "key": "field_653c45cc6f331",
+            "label": "IGB Social Media Links",
+            "name": "igb_social_media_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "acfe_repeater_stylised_button": 1,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_653c46ba6f332",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_653c45cc6f331"
+                },
+                {
+                    "key": "field_653c46e06f333",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 1,
+                    "choices": {
+                        "facebook": "Facebook",
+                        "instagram": "Instagram (EN)",
+                        "instagram_es": "Instagram (ES)",
+                        "linkedin": "LinkedIn",
+                        "tiktok": "TikTok",
+                        "tumblr": "Tumblr",
+                        "twitch": "Twitch",
+                        "twitter": "X",
+                        "youtube": "YouTube",
+                        "other": "[Other]"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "max": "",
+                    "allow_custom": 1,
+                    "search_placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "placeholder": "",
+                    "min": "",
+                    "parent_repeater": "field_653c45cc6f331"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1698449502
+}

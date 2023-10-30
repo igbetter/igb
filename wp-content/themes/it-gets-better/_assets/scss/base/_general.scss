@@ -1,0 +1,16 @@
+/*
+* general styles
+*/
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: $white;
+	color: $dark;
+	font-family: $poppins;
+}
