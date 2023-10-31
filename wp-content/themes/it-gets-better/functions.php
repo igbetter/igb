@@ -97,45 +97,70 @@ function igb_add_editor_styles() {
 	add_editor_style( trailingslashit( get_template_directory_uri() ) . '_assets/css/editor-styles.css' );
 }
 
+add_action('wp_body_open', 'igb_add_dark_mode_checker', 5);
+
+function igb_add_dark_mode_checker() { ?>
+<script>
+	(function() {
+
+		const darkMode = localStorage.darkMode === 'true';
+		if (darkMode) {
+			document.querySelector('body').classList.remove('theme-light');
+			document.querySelector('body').classList.add('theme-dark');
+
+
+			// activate the toggle
+			document.addEventListener('DOMContentLoaded', () => {
+				const $toggles = document.querySelectorAll('.dark-toggle input[type="checkbox"]');
+				$toggles.forEach(($t) => {
+					$t.checked = true;
+				});
+			});
+		}
+	})();
+
+</script>
+<?php }
+
 
 /**
  * Sidebars/widgets.
  */
-require get_template_directory() . '/inc/sidebars.php';
+require get_template_directory() . '/_assets/functions/sidebars.php';
 /**
  * Enqueue (scripts/styles)
  */
-require get_template_directory() . '/inc/enqueue.php';
+require get_template_directory() . '/_assets/functions/enqueue.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/_assets/functions/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/_assets/functions/template-functions.php';
 
 /**
  * Functions which relate to theme related enhancements.
  */
-require get_template_directory() . '/inc/theme-helpers.php';
+require get_template_directory() . '/_assets/functions/theme-helpers.php';
 
 /**
  * Functions for natigation
  */
-require get_template_directory() . '/inc/nav.php';
+require get_template_directory() . '/_assets/functions/nav.php';
 
 /**
  * Functions for customizer
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/_assets/functions/customizer.php';
 
-//require get_template_directory() . '/inc/wordpress-custom-navwalker.php';
+//require get_template_directory() . '/_assets/functions/wordpress-custom-navwalker.php';
 
 
 /**
  * Functions for acf blocks
  */
-require get_template_directory() . '/inc/acf.php';
+require get_template_directory() . '/_assets/functions/acf.php';
