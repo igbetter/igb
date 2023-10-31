@@ -102,8 +102,20 @@ add_action('wp_body_open', 'igb_add_dark_mode_checker', 5);
 function igb_add_dark_mode_checker() { ?>
 <script>
 	(function() {
+		// check the user's default dark mode / light mode settings,
+		// but ONLY if the local storage "darkMode" is NOT already set
+		if( localStorage.getItem("darkMode") === null ) {
+			let mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
+			let isDarkMode = mediaQueryObj.matches;
 
+			if ( isDarkMode ) {
+				localStorage.setItem("darkMode", "true");
+			}
+		}
+	})();
+	(function() {
 		const darkMode = localStorage.darkMode === 'true';
+
 		if (darkMode) {
 			document.querySelector('body').classList.remove('theme-light');
 			document.querySelector('body').classList.add('theme-dark');
