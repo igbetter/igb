@@ -31,14 +31,23 @@
 body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  color: #292929;
   font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
 }
 body.preload * {
   transition: none !important;
   animation-duration: 0s !important;
   -webkit-animation-duration: 0s !important;
+}
+body:not(.preload) {
+  transition: background-color 200ms ease-in-out;
+}
+body:not(.preload) a {
+  transition: all 250ms ease-in-out;
+}
+body:not(.preload) *[class^=logo_] {
+  transition: all 300ms ease-in-out;
 }
 body.theme-light {
   background: #ffffff;
@@ -47,6 +56,79 @@ body.theme-light {
 body.theme-dark {
   background: #292929;
   color: #ffffff;
+}
+
+a,
+a:visited {
+  font-weight: 500;
+}
+.theme-light a,
+.theme-light a:visited {
+  color: #45acce;
+  text-decoration-color: rgba(69, 172, 206, 0.5);
+}
+.theme-dark a,
+.theme-dark a:visited {
+  color: #fbad41;
+  text-decoration-color: rgba(251, 173, 65, 0.5);
+}
+.theme-light a:hover, .theme-light a:target, .theme-light a:focus,
+.theme-light a:visited:hover,
+.theme-light a:visited:target,
+.theme-light a:visited:focus {
+  color: #5e3a7e;
+  text-decoration-color: #45acce;
+}
+.theme-dark a:hover, .theme-dark a:target, .theme-dark a:focus,
+.theme-dark a:visited:hover,
+.theme-dark a:visited:target,
+.theme-dark a:visited:focus {
+  color: #fb657b;
+  text-decoration-color: #fbad41;
+}
+
+.theme-light .logo_purple {
+  fill: #5e3a7e;
+  stroke: #5e3a7e;
+  stroke-width: 0.2;
+}
+.theme-dark .logo_purple {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 0.2;
+}
+
+.theme-light .logo_blue {
+  fill: #45acce;
+  stroke: #45acce;
+  stroke-width: 0.2;
+}
+.theme-dark .logo_blue {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 0.2;
+}
+
+.theme-light .logo_pink {
+  fill: #f2566e;
+  stroke: #f2566e;
+  stroke-width: 0.2;
+}
+.theme-dark .logo_pink {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 0.2;
+}
+
+.theme-light .logo_yellow {
+  fill: #fbad41;
+  stroke: #fbad41;
+  stroke-width: 0.2;
+}
+.theme-dark .logo_yellow {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 0.2;
 }
 
 .dark-toggle__switch {

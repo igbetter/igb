@@ -10,9 +10,9 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: $white;
-	color: $dark;
 	font-family: $poppins;
+	font-weight: 200;
+	font-size: $basefont_size;
 
 	&.preload {
 		* {
@@ -22,14 +22,71 @@ body {
 		}
 	}
 
+	&:not(.preload) {
+		transition: background-color 200ms ease-in-out;
+
+		a {
+			transition: all 250ms ease-in-out;
+		}
+		*[class^="logo_"] {
+			transition: all 300ms ease-in-out;
+		}
+	}
+
 	@include init($themes) {
 		background: themed('backgroundColor');
 		color: themed('textColor');
 	}
 }
 
-// light/dark mode toggle
+a,
+a:visited {
+	font-weight: 500;
+	@include themify($themes) {
+		color: themed('linkColor');
+		text-decoration-color: rgba( themed('linkColor'), 0.5 );
+	}
 
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+		color: themed('linkHoverColor');
+		text-decoration-color: themed('linkColor');
+	}
+	}
+}
+
+.logo_purple {
+	@include themify($themes) {
+		fill: themed('logoPurpleColor');
+		stroke: themed('logoPurpleColor');
+		stroke-width: 0.2;
+	}
+}
+.logo_blue {
+	@include themify($themes) {
+		fill: themed('logoBlueColor');
+		stroke: themed('logoBlueColor');
+		stroke-width: 0.2;
+	}
+}
+.logo_pink {
+	@include themify($themes) {
+		fill: themed('logoPinkColor');
+		stroke: themed('logoPinkColor');
+		stroke-width: 0.2;
+	}
+}
+.logo_yellow {
+	@include themify($themes) {
+		fill: themed('logoYellowColor');
+		stroke: themed('logoYellowColor');
+		stroke-width: 0.2;
+	}
+}
+
+// light/dark mode toggle
 .dark-toggle__switch {
 
 	--width: 44px;

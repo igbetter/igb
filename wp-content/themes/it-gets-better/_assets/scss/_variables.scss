@@ -6,24 +6,41 @@
 
 
 // Define colors
-
 $purple: #5e3a7e;
+$purple-alt-lighter: #a662e2;
 
 $pink: #f2566e;
+$pink-alt-lighter: #fb657b;
 
 $blue: #45acce;
-
-$white: #ffffff;
-
-$black: #000000;
-$dark: #292929;
+$blue-alt-lighter: #3dcaf9;
+$blue-alt-darker: #148db5;
 
 $yellow: #fbad41;
+$yellow-alt-lighter: #ffc069;
 
+$white: #ffffff;
+$offwhite: #f1f1f1;
+
+$light-grey: #F5F3F7;
+$dark-grey: #414141;
+
+$dark: #292929;
+$black: #000000;
+
+$subtle-purple-light: #F5F3F7;
+$subtle-pink-light: #FFEDEF;
+$subtle-blue-light: #F2F8FA;
+$subtle-yellow-light: #FFF7EC;
+
+$subtle-purple-dark: #42344F;
+$subtle-pink-dark: #473134;
+$subtle-blue-dark: #303F44;
+$subtle-yellow-dark: #665741;
 
 // Define measurements
 $basefont_size: 16px;
-$max_width: 1200px;
+$max_body_text_width: 90ch;
 
 // Define fonts
 $poppins: "Poppins", sans-serif;
@@ -44,21 +61,168 @@ $breakpoint-x-large: 1800px;
 
 $themes: (
 	light: (
+		// body & core styles
 		backgroundColor: $white,
 		textColor: $dark,
-		buttonTextColor: #408bbd,
-		buttonTextTransform: none,
-		buttonTextHoverColor: #61b0e7,
-		buttonColor: #fff,
-		buttonBorder: 2px solid #408bbd,
+
+		linkColor: $blue,
+		linkHoverColor: $purple,
+
+		// logo fill
+		logoPurpleColor: $purple,
+		logoPinkColor: $pink,
+		logoBlueColor: $blue,
+		logoYellowColor: $yellow,
+
+		// primary button
+		primaryButtonBGColor: $blue,
+		primaryButtonTextColor: $white,
+		primaryButtonBGHoverColor: $pink,
+		primaryButtonTextHoverColor: $black,
+		primaryButtonBorder: 2px solid transparent,
+
+		// secondary button
+		secondaryButtonBGColor: $blue,
+		secondaryButtonTextColor: $white,
+		secondaryButtonBGHoverColor: $pink,
+		secondaryButtonTextHoverColor: $black,
+		secondaryButtonBorder: 2px solid transparent,
+
+		// forms
+		inputBGColor: $white,
+		inputBorderColor: $purple,
+		inputTextColor: $dark,
+		inputPlaceholderColor: $dark-grey,
+		labelTextColor: $dark,
+
+		// main navigation
+		mainNavBGColor: $purple,
+		mainNavLinkColor: $white,
+		mainNavLinkHoverColor: $yellow,
+
+		// utility navigation
+		utilityNavBGColor: $purple,
+		utilityNavLinkColor: $white,
+		utilityNavLinkHoverColor: $yellow,
+
+		// accent colors
+		accentPurple: $purple,
+		accentPink: $pink,
+		accentBlue: $blue,
+		accentYellow: $yellow,
+		accentGrey: $dark-grey,
+
+		// section background colors
+		subtlePurpleBG: $subtle-purple-light,
+		subtlePinkBG: $subtle-pink-light,
+		subtleBlueeBG: $subtle-blue-light,
+		subtleYellowBG: $subtle-yellow-light,
+		subtleGreyBG: $light-grey,
+
+		// program box, global
+		programBGColorGlobal: $pink,
+		programTextColorGlobal: $white,
+		programAccentColorGlobal: $purple,
+
+		// program box, EDU
+		programBGColorEDU: $blue,
+		programTextColorEDU: $white,
+		programAccentColorEDU: $purple,
+
+		// newsletter signup
+		newsletterBGColor: $purple,
+		newsletterHeaderColor: $pink,
+		newsletterTextColor: $white,
+
+		// footer
+		footerBGColor: $light-grey,
+		footerTextColor: $dark,
+		footerLinkColor: $purple,
+		footerLinkHoverColor: $blue,
+		footerSocialIconColor: $dark,
+		footerSocialIconHoverColor: $purple,
+
 	),
 	dark: (
+		// body & core styles
 		backgroundColor: $dark,
 		textColor: $white,
-		buttonTextColor: #aaa,
-		buttonTextTransform: uppercase,
-		buttonTextHoverColor: #ddd,
-		buttonColor: #333,
-		buttonBorder: 1px solid #333,
+
+		linkColor: $yellow,
+		linkHoverColor: $pink-alt-lighter,
+
+		// logo fill
+		logoPurpleColor: $white,
+		logoPinkColor: $white,
+		logoBlueColor: $white,
+		logoYellowColor: $white,
+
+		// primary button
+		primaryButtonBGColor: $blue,
+		primaryButtonTextColor: $white,
+		primaryButtonBGHoverColor: $pink,
+		primaryButtonTextHoverColor: $black,
+		primaryButtonBorder: 2px solid transparent,
+
+		// secondary button
+		secondaryButtonBGColor: $blue,
+		secondaryButtonTextColor: $white,
+		secondaryButtonBGHoverColor: $pink,
+		secondaryButtonTextHoverColor: $black,
+		secondaryButtonBorder: 2px solid transparent,
+
+		// forms
+		inputBGColor: $white,
+		inputBorderColor: $purple,
+		inputTextColor: $dark,
+		inputPlaceholderColor: $dark-grey,
+		labelTextColor: $dark,
+
+		// main navigation
+		mainNavBGColor: $purple,
+		mainNavLinkColor: $white,
+		mainNavLinkHoverColor: $yellow,
+
+		// utility navigation
+		utilityNavBGColor: $purple,
+		utilityNavLinkColor: $white,
+		utilityNavLinkHoverColor: $yellow,
+
+		// accent colors
+		accentPurple: $purple-alt-lighter,
+		accentPink: $pink,
+		accentBlue: $blue-alt-lighter,
+		accentYellow: $yellow,
+		accentGrey: $light-grey,
+
+		// section background colors
+		subtlePurpleBG: $subtle-purple-dark,
+		subtlePinkBG: $subtle-pink-dark,
+		subtleBlueeBG: $subtle-blue-dark,
+		subtleYellowBG: $subtle-yellow-dark,
+		subtleGreyBG: $dark-grey,
+
+		// program box, global
+		programBGColorGlobal: $subtle-pink-dark,
+		programTextColorGlobal: $white,
+		programAccentColorGlobal: $pink,
+
+		// program box, EDU
+		programBGColorEDU: $subtle-blue-dark,
+		programTextColorEDU: $white,
+		programAccentColorEDU: $pink,
+
+		// newsletter signup
+		newsletterBGColor: $purple,
+		newsletterHeaderColor: $pink,
+		newsletterTextColor: $white,
+
+		// footer
+		footerBGColor: $dark-grey,
+		footerTextColor: $white,
+		footerLinkColor: $yellow,
+		footerLinkHoverColor: $pink-alt-lighter,
+		footerSocialIconColor: $light-grey,
+		footerSocialIconHoverColor: $yellow,
 	),
 );
