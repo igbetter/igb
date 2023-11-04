@@ -18,6 +18,12 @@ get_header();
 		<main id="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="entry-content">
+					<div class="testSVG">
+						<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet"
+		viewBox="0 0 100 115">
+							<use xlink:href="#igb_frame_option_01"></use>
+						</svg>
+					</div>
 					<?php get_template_part('template-parts/content/homepage/hero-section'); ?>
 					<div class="featured-video alignfull flex flex-col xl:flex-row gap-8 px-default">
 						<div class="featured-video-part">

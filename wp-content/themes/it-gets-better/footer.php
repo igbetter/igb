@@ -19,5 +19,9 @@
 
 <?php wp_footer(); ?>
 
+<div class="hidden svg-decoration-inject hide-this" aria-hidden="true">
+	<?php include '_assets/svg/decoration-lines.php'; ?>
+</div>
+
 </body>
 </html>

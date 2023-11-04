@@ -1,4 +1,4 @@
-<?php 
+<?php
   $featuredVideosQuery = array(
     'post_type' => 'video',
     'orderby'   => 'date',
@@ -29,16 +29,16 @@
         <h2 class="section-header">
           <?php echo $moreFeaturedVideosHeading; ?>
         </h2>
-        <a href='<?php echo $videoArchiveLink; ?>' class='wp-block-button__link wp-element-button hidden md:block'>
+        <a href='<?php echo $videoArchiveLink; ?>' class='wp-block-button__link wp-element-button  md:block'>
           <?php echo $allVideosLabel; ?>
         </a>
       </div>
       <div class="more-featured-videos-slider">
-        <?php 
+        <?php
           while($results->have_posts()): $results->the_post();
             echo "<div>";
             get_template_part('template-parts/content/cards/browse', 'card');
-            echo "</div>"; 
+            echo "</div>";
           endwhile; wp_reset_postdata();
         ?>
       </div>
