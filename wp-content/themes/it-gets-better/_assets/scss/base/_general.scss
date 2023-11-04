@@ -1,10 +1,23 @@
 /*
 * general styles
+*
+*	1. core elements, html, body
+*	2. reusable styles, a11y, etc.
+*	2. links & buttons
+*	3. base body text & headings
+*	4. IGB logo
+*	5. SVG line things
+*	6. light/dark toggle switch
+*
 */
 
+// =============================================	1. core elements, html, body
 
 * {
 	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
 }
 
 body {
@@ -12,9 +25,11 @@ body {
 	padding: 0;
 	font-family: $poppins;
 	font-weight: 200;
-	font-size: $basefont_size;
+	font-size: $font_size_base;
 
 	&.preload {
+		// remove all animations while page is loading.
+		// .preload is removed via JS once the page loads
 		* {
 			transition: none !important;
 			animation-duration: 0s !important;
@@ -25,7 +40,8 @@ body {
 	&:not(.preload) {
 		transition: background-color 200ms ease-in-out;
 
-		a {
+		a,
+		:after  {
 			transition: all 250ms ease-in-out;
 		}
 		*[class^="logo_"] {
@@ -39,6 +55,17 @@ body {
 	}
 }
 
+// =============================================	2. reusable styles, a11y, etc.
+
+.hide-this {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	padding: 0;
+	display: none;
+}
+
+// =============================================	3. links & buttons
 a,
 a:visited {
 	font-weight: 500;
@@ -51,12 +78,111 @@ a:visited {
 	&:target,
 	&:focus {
 		@include themify($themes) {
-		color: themed('linkHoverColor');
-		text-decoration-color: themed('linkColor');
-	}
+			color: themed('linkHoverColor');
+			text-decoration-color: themed('linkColor');
+		}
 	}
 }
 
+#main {
+	.wp-element-button,
+	.wp-block-button__link,
+	.primary_button {
+		display: inline-block;
+		border-radius: 3px;
+		position: relative;
+		padding: 0.8em 2em;
+		background-color: transparent;
+		margin-left: .5em;
+
+		@include themify($themes) {
+			color: themed('primaryButtonTextColor');
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			transform: skew(-18deg);
+			-webkit-backface-visibility: hidden;
+			z-index: -1;
+			border-radius: 3px;
+
+			@include themify($themes) {
+					background-color: themed('primaryButtonBGColor');
+					border: themed('primaryButtonBorder')
+				}
+		}
+
+		&:hover,
+		&:focus {
+			@include themify($themes) {
+				color: themed('primaryButtonTextHoverColor');
+			}
+			&:after {
+				@include themify($themes) {
+					background-color: themed('primaryButtonBGHoverColor');
+
+				}
+			}
+		}
+	}
+}
+
+
+
+// =============================================	3. base body text & headings
+p {
+	max-width: $max_body_text_width;
+}
+
+h1 {
+	font-size: $font_size_xxl;
+	line-height: 1;
+	font-weight: 600;
+}
+h2 {
+	font-size: $font_size_xl;
+	line-height: 1;
+	font-weight: 700;
+}
+h3 {
+	font-size: $font_size_lg;
+	line-height: 1;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: $font_size_md;
+	line-height: 1;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+h5 {
+	font-size: $font_size_base;
+	line-height: 1;
+	font-weight: 800;
+}
+h5 {
+	font-size: $font_size_sm;
+	line-height: 1;
+	font-weight: 800;
+}
+
+// =============================================	4. IGB logo
+#IGB_MAIN_LOGO {
+	max-width: 37vw;
+	width: 230px;
+
+	svg {
+		max-width: 100%;
+		height: auto;
+	}
+}
 .logo_purple {
 	@include themify($themes) {
 		fill: themed('logoPurpleColor');
@@ -86,7 +212,50 @@ a:visited {
 	}
 }
 
-// light/dark mode toggle
+// =============================================	5. SVG line things
+
+use {
+	padding: 0;
+	width: 100%;
+	border: 2px solid #0f0;
+	display: block;
+}
+
+.feature_frame {
+	width: 50%;
+	height: auto;
+
+
+}
+
+.svg_line {
+	fill: transparent;
+	stroke-width: 3.4%;
+	stroke-linecap: square;
+	stroke-linejoin: round;
+
+	&.thin_line {
+		stroke-width: 0.3rem;
+	}
+
+	&.blue {
+		stroke: $blue;
+	}
+
+	&.pink {
+		stroke: $pink;
+	}
+
+	&.purple {
+		stroke: $purple;
+	}
+
+	&.yellow {
+		stroke: $yellow;
+	}
+}
+
+// =============================================	6. light/dark toggle switch
 .dark-toggle__switch {
 
 	--width: 44px;

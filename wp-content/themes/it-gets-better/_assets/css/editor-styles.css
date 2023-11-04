@@ -5,6 +5,13 @@
  */
 /*
  * Theme definitions
+ *
+ * usage:
+ *		[[SELECTOR]] {
+ *			@include themify($themes) {
+ *				[[PROPERTY]]]: themed('nameFromThemeDecloration');
+ *			}
+ *		}
  */
 body {
   font-family: "Poppins", Helvetica, sans-serif;

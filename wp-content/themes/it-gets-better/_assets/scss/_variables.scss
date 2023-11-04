@@ -39,11 +39,20 @@ $subtle-blue-dark: #303F44;
 $subtle-yellow-dark: #665741;
 
 // Define measurements
-$basefont_size: 16px;
 $max_body_text_width: 90ch;
+$max_wide_page_width: 1600px;
+$basefont_size: 16px;
 
 // Define fonts
 $poppins: "Poppins", sans-serif;
+
+// Define font size options
+$font_size_sm: clamp(1.28rem, 0.2vw + 1.2rem, 1.5rem);
+$font_size_base: clamp(1.6rem, 0.36vw + 1.45rem, 2rem);
+$font_size_md: clamp(2rem, 0.61vw + 1.76rem, 2.67rem);
+$font_size_lg: clamp(2.5rem, 0.96vw + 2.12rem, 3.55rem);
+$font_size_xl: clamp(3rem, 1.47vw + 2.54rem, 4.5rem);
+$font_size_xxl: clamp(4.1rem, 2.19vw + 3.03rem, 6.81rem);
 
 // Define animation speeds
 $transition_speed: 250ms;
@@ -57,6 +66,13 @@ $breakpoint-x-large: 1800px;
 
 /*
  * Theme definitions
+ *
+ * usage:
+ *		[[SELECTOR]] {
+ *			@include themify($themes) {
+ *				[[PROPERTY]]]: themed('nameFromThemeDecloration');
+ *			}
+ *		}
  */
 
 $themes: (
