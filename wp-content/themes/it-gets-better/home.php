@@ -18,13 +18,22 @@ get_header();
 		<main id="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="entry-content">
-					<div class="testSVG">
-						<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet"
-		viewBox="0 0 100 115">
-							<use xlink:href="#igb_frame_option_01"></use>
-						</svg>
-					</div>
-					<?php get_template_part('template-parts/content/homepage/hero-section'); ?>
+					<section class="section_hero image_right">
+						<div class="hero_text-container">
+							<h1>Empowering LGBTQ+ youth to define their own journey.</h1>
+							<p>Search for...</p>
+						</div>
+						<div class="hero_image-container">
+							<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 100 115">
+								<use xlink:href="#igb_frame_option_01"></use>
+							</svg>
+							<img src="<?php echo get_template_directory_uri(); ?>/_assets/images/home-hero-placeholder.png" />
+						</div>
+
+					</section>
+
+
+
 					<div class="featured-video alignfull flex flex-col xl:flex-row gap-8 px-default">
 						<div class="featured-video-part">
 							<?php get_template_part('template-parts/content/homepage/featured-video'); ?>
@@ -34,15 +43,15 @@ get_header();
 						</div>
 					</div>
 
-					<?php get_template_part('template-parts/content/homepage/more-featured-videos'); ?>
-					<?php get_template_part('template-parts/content/homepage/featured-playlist'); ?>
-					<?php get_template_part('template-parts/content/homepage/curated-playlist'); ?>
-					<?php get_template_part('template-parts/content/homepage/svg-divider-orange'); ?>
-					<?php get_template_part('template-parts/content/homepage/term-of-the-day'); ?>
-					<?php get_template_part('template-parts/content/homepage/featured-program'); ?>
-					<?php get_template_part('template-parts/content/homepage/featured-blog'); ?>
-					<?php get_template_part('template-parts/content/homepage/latest-blogs'); ?>
-					<?php get_template_part('template-parts/content/homepage/program-blocks'); ?>
+					<?php // get_template_part('template-parts/content/homepage/more-featured-videos'); ?>
+					<?php // get_template_part('template-parts/content/homepage/featured-playlist'); ?>
+					<?php // get_template_part('template-parts/content/homepage/curated-playlist'); ?>
+					<?php // get_template_part('template-parts/content/homepage/svg-divider-orange'); ?>
+					<?php // get_template_part('template-parts/content/homepage/term-of-the-day'); ?>
+					<?php // get_template_part('template-parts/content/homepage/featured-program'); ?>
+					<?php // get_template_part('template-parts/content/homepage/featured-blog'); ?>
+					<?php // get_template_part('template-parts/content/homepage/latest-blogs'); ?>
+					<?php // get_template_part('template-parts/content/homepage/program-blocks'); ?>
 				</div>
 			</article>
 		</main><!-- #main -->

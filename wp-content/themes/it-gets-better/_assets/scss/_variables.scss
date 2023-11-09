@@ -47,12 +47,13 @@ $basefont_size: 16px;
 $poppins: "Poppins", sans-serif;
 
 // Define font size options
-$font_size_sm: clamp(1.28rem, 0.2vw + 1.2rem, 1.5rem);
-$font_size_base: clamp(1.6rem, 0.36vw + 1.45rem, 2rem);
-$font_size_md: clamp(2rem, 0.61vw + 1.76rem, 2.67rem);
-$font_size_lg: clamp(2.5rem, 0.96vw + 2.12rem, 3.55rem);
-$font_size_xl: clamp(3rem, 1.47vw + 2.54rem, 4.5rem);
-$font_size_xxl: clamp(4.1rem, 2.19vw + 3.03rem, 6.81rem);
+$font-size-sm: clamp(0.91rem, 0.49vw + 0.79rem, 1.37rem);
+$font-size-base: clamp(1rem, 0.87vw + 0.78rem, 1.81rem);
+$font-size-md: clamp(1.1rem, 1.38vw + 0.76rem, 2.39rem);
+$font-size-lg: clamp(1.21rem, 2.08vw + 0.69rem, 3.16rem);
+$font-size-xl: clamp(1.33rem, 3.03vw + 0.57rem, 4.17rem);
+$font-size-xxl: clamp(1.46rem, 4.31vw + 0.39rem, 5.5rem);
+$font-size-xxxl: clamp(1.61rem, 5.5vw + 0.24rem, 6.76rem);
 
 // Define animation speeds
 $transition_speed: 250ms;
