@@ -23,6 +23,7 @@ $white: #ffffff;
 $offwhite: #f1f1f1;
 
 $light-grey: #F5F3F7;
+$medium-grey: #d6d6d6;
 $dark-grey: #414141;
 
 $dark: #292929;
@@ -40,6 +41,7 @@ $subtle-yellow-dark: #665741;
 
 // Define measurements
 $max_body_text_width: 90ch;
+$max_heading_text_width: 30ch;
 $max_wide_page_width: 1600px;
 $basefont_size: 16px;
 
@@ -52,8 +54,8 @@ $font-size-base: clamp(1rem, 0.87vw + 0.78rem, 1.81rem);
 $font-size-md: clamp(1.1rem, 1.38vw + 0.76rem, 2.39rem);
 $font-size-lg: clamp(1.21rem, 2.08vw + 0.69rem, 3.16rem);
 $font-size-xl: clamp(1.33rem, 3.03vw + 0.57rem, 4.17rem);
-$font-size-xxl: clamp(1.46rem, 4.31vw + 0.39rem, 5.5rem);
-$font-size-xxxl: clamp(1.61rem, 4.95vw + 0.29rem, 6.2rem);
+$font-size-xxl: clamp(1.4rem, 4.31vw + 0.39rem, 5rem);
+$font-size-xxxl: clamp(1.51rem, 4.95vw + 0.29rem, 6.2rem);
 
 // Define animation speeds
 $transition_speed: 250ms;
@@ -132,7 +134,7 @@ $themes: (
 		// section background colors
 		subtlePurpleBG: $subtle-purple-light,
 		subtlePinkBG: $subtle-pink-light,
-		subtleBlueeBG: $subtle-blue-light,
+		subtleBlueBG: $subtle-blue-light,
 		subtleYellowBG: $subtle-yellow-light,
 		subtleGreyBG: $light-grey,
 
@@ -210,12 +212,12 @@ $themes: (
 		accentPink: $pink,
 		accentBlue: $blue-alt-lighter,
 		accentYellow: $yellow,
-		accentGrey: $light-grey,
+		accentGrey: $medium-grey,
 
 		// section background colors
 		subtlePurpleBG: $subtle-purple-dark,
 		subtlePinkBG: $subtle-pink-dark,
-		subtleBlueeBG: $subtle-blue-dark,
+		subtleBlueBG: $subtle-blue-dark,
 		subtleYellowBG: $subtle-yellow-dark,
 		subtleGreyBG: $dark-grey,
 

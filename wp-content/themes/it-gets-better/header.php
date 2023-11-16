@@ -69,7 +69,7 @@
 					<div class="dark-toggle__switch" tabindex="0"></div>
 					<span> Dark </span>
 				</label>
-				<nav> menu maybe? </nav>
+				<nav> menu will go here </nav>
 			</div>
 
 		</div>

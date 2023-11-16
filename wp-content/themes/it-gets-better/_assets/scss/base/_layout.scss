@@ -21,3 +21,26 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.two_column {
+	display: flex;
+	//align-items: center;
+	justify-content: space-between;
+
+	> * {
+		width: 48%;
+		padding: 2rem;
+
+		* {
+			max-width: 100%;
+		}
+	}
+
+	@include tablet-down {
+		display: block;
+
+		> * {
+			width: 100%;
+		}
+	}
+}

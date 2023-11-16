@@ -76,6 +76,65 @@ body {
 	display: flex;
 }
 
+.background-IGB_Purple {
+	@include themify($themes) {
+		background: themed('accentPurple');
+	}
+}
+.background-IGB_Pink {
+	@include themify($themes) {
+		background: themed('accentPink');
+	}
+}
+.background-IGB_Blue {
+	@include themify($themes) {
+		background: themed('accentBlue');
+	}
+}
+.background-IGB_Yellow {
+	@include themify($themes) {
+		background: themed('accentYellow');
+	}
+}
+
+.background-IGB_Dark {
+	@include themify($themes) {
+		background: themed('accentGrey');
+	}
+}
+
+.background-subtle_grey {
+	@include themify($themes) {
+		background: themed('subtleGreyBG');
+	}
+}
+
+.background-subtle_purple {
+	@include themify($themes) {
+		background: themed('subtlePurpleBG');
+	}
+}
+
+.background-subtle_pink {
+	@include themify($themes) {
+		background: themed('subtlePinkBG');
+	}
+}
+
+.background-subtle_blue {
+	@include themify($themes) {
+		background: themed('subtleBlueBG');
+	}
+}
+
+.background-subtle_yellow {
+	@include themify($themes) {
+		background: themed('subtleYellowBG');
+	}
+}
+
+
+
 // =============================================	3. links & buttons
 a,
 a:visited {
@@ -153,35 +212,43 @@ p {
 
 h1 {
 	font-size: $font_size_xxxl;
-	line-height: 1;
+	line-height: 1.08;
 	font-weight: 600;
+	margin-top: 0.5em;
+	margin-bottom: 0;
 }
 h2 {
 	font-size: $font_size_xxl;
 	line-height: 1;
 	font-weight: 700;
+	margin-top: 0.5em;
 }
 h3 {
 	font-size: $font_size_xl;
 	line-height: 1;
 	font-weight: 700;
+	margin-top: 0.5em;
 }
 
 h4 {
 	font-size: $font_size_lg;
 	line-height: 1;
 	font-weight: 500;
-	text-transform: uppercase;
+	margin-top: 0.5em;
+//	text-transform: uppercase;
 }
 h5 {
 	font-size: $font_size_md;
 	line-height: 1;
-	font-weight: 800;
+	font-weight: 300;
+	margin-top: 0.5em;
 }
-h5 {
+h6 {
 	font-size: $font_size_base;
 	line-height: 1;
-	font-weight: 800;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 0.5em;
 }
 
 

@@ -5,4 +5,17 @@ body.home {
 		position: relative;
 		top: 0;
 	}
+
+	.featured_video {
+		text-align: center;
+
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			max-width: $max_heading_text_width;
+			margin: 0.5em auto 1em auto;
+		}
+	}
 }

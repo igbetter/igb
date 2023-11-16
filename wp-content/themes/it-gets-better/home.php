@@ -22,6 +22,7 @@ get_header();
 						<div class="hero_text-container">
 							<h1>Empowering LGBTQ+ youth to define their own journey.</h1>
 							<p>Search for...</p>
+							<p>(and the search box will go here)</p>
 						</div>
 						<div class="hero_image-container">
 							<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 100 115">
@@ -34,14 +35,14 @@ get_header();
 
 
 
-					<div class="featured-video alignfull flex flex-col xl:flex-row gap-8 px-default">
-						<div class="featured-video-part">
-							<?php //get_template_part('template-parts/content/homepage/featured-video'); ?>
+					<section class="featured_video_and_popular_terms two_column full_width background-subtle_grey">
+						<div class="featured_video">
+							<?php get_template_part('template-parts/content/homepage/featured-video'); ?>
 						</div>
-						<div class="popular-browse-terms-part ">
-							<?php //get_template_part('template-parts/content/homepage/popular-browse-terms'); ?>
+						<div class="popular_terms">
+							<?php get_template_part('template-parts/content/homepage/popular-browse-terms'); ?>
 						</div>
-					</div>
+					</section>
 
 					<?php // get_template_part('template-parts/content/homepage/more-featured-videos'); ?>
 					<?php // get_template_part('template-parts/content/homepage/featured-playlist'); ?>

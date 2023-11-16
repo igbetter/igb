@@ -7,32 +7,32 @@
 				{
 					"slug": "background",
 					"color": "#ffffff",
-					"name": "Background"
+					"name": "IGB_Light"
 				},
 				{
 					"slug": "foreground",
 					"color": "#404040",
-					"name": "Foreground"
+					"name": "IGB_Dark"
 				},
         {
             "slug": "igb-pink",
             "color": "#f2566b",
-            "name": "IGB Pink"
+            "name": "IGB_Pink"
         },
         {
             "slug": "igb-blue",
             "color": "#45acce",
-            "name": "IGB Blue"
+            "name": "IGB_Blue"
         },
         {
             "slug": "igb-purple",
             "color": "#512b67",
-            "name": "IGB Purple"
+            "name": "IGB_Purple"
         },
         {
-            "slug": "igb-orange",
+            "slug": "igb-yellow",
             "color": "#faad40",
-            "name": "IGB Orange"
+            "name": "IGB_Yellow"
         }
 			]
 		},

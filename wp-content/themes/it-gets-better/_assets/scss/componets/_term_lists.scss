@@ -1,0 +1,66 @@
+ul.term_list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 -1px -1px;
+	padding: 0 2.5em;
+	list-style: none;
+	flex-flow: row wrap;
+
+
+	.term {
+		flex-grow: 1;
+		text-align: center;
+
+		border: 1px solid;
+
+		@include themify($themes) {
+			border-color: themed( 'textColor' );
+		}
+
+		transform: skewX(-26deg);
+
+		&.more_terms {
+			a {
+				@include themify($themes) {
+					color: themed('textColor');
+				}
+
+				&:hover,
+				&:focus,
+				&:target {
+					@include themify($themes) {
+						color: themed('backgroundColor');
+					}
+				}
+			}
+
+		}
+	}
+
+	a {
+		display: block;
+		padding: 0.5em 1em;
+		text-decoration: none;
+		border: 2px solid transparent;
+
+		@include themify($themes) {
+			color: themed('backgroundColor');
+		}
+
+		&:hover,
+		&:focus,
+		&:target  {
+			@include themify($themes) {
+				background: rgba( themed('textColor'), 0.7 );
+				border-color: themed('backgroundColor');
+			}
+		}
+
+
+		span {
+			display: block;
+			transform: skewX( 26deg );
+		}
+	}
+}

@@ -21,14 +21,14 @@
   $featured_description = "";
 
   if ($featured_video):
-    foreach ( $featured_video as $video ) : 
+    foreach ( $featured_video as $video ) :
       $video_title = $video->post_title;
       $video_permalink = get_the_permalink($video->ID);
       $video_file_link = get_field('youtube_link', $video->ID);
       $featured_description = get_field('featured_description', $video->ID);
     endforeach;
 
-    $featuredVideoTags = '<a class="associated-post-tag" style="background-color: %s" href="%s"><span>%s</span></a>';  
+    $featuredVideoTags = '<a class="associated-post-tag" style="background-color: %s" href="%s"><span>%s</span></a>';
     $count = 0;
 ?>
   <section class="featured-video-wrapper-section">
@@ -37,10 +37,10 @@
       <?php echo $video_file_link; ?>
     </div>
     <?php if($video_title): ?>
-      <h3><?php echo $video_title; ?></h3>
+      <h4><?php echo $video_title; ?></h4>
     <?php endif; ?>
     <?php if($featured_description): ?>
-      <p><?php echo $featured_description; ?></p>  
+      <p><?php echo $featured_description; ?></p>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
   </section>
