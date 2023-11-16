@@ -6,27 +6,26 @@
 ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<symbol id="igb_frame_option_01" x="0px" y="0px" preserveAspectRatio="none"
-		viewBox="0 0 100 115">
-
+	<symbol id="igb_frame_option_01" x="0px" y="0px" preserveAspectRatio="none meet"
+		 viewBox="0 -20 100 135">
 		<path class="svg_line pink"
-			  d="m 41 0
-				 l -10.5 20
+			  d="m 50 -20
+				 L 30 20
 				 L 2 48
-				 l 8 50
+				 L 10 98
 				 L 110 115"/>
 		<path class="svg_line yellow"
-			  d="m 44 0
-				 l -12.3 25
-				 l -20 5
-				 l 4 50
+			  d="m 54 -20
+				 L 31.6 25
+				 L 11.6 30
+				 L 15.6 80
 				 L 80 104
-				 l 20 -2"/>
+				 L 115 102"/>
 		<path class="svg_line blue"
-			  d="m 47.5 0
-				 l -8.8 18
+			  d="m 57.5 -20
+				 L 38.3 18
 				 L 95 60
-				 l 10 -15"/>
+				 L 105 45"/>
 	</symbol>
 
 	<symbol  id="igb_frame_option_02" class="feature_frame" x="0px" y="0px"

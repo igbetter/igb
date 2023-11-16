@@ -36,10 +36,10 @@ get_header();
 
 					<div class="featured-video alignfull flex flex-col xl:flex-row gap-8 px-default">
 						<div class="featured-video-part">
-							<?php get_template_part('template-parts/content/homepage/featured-video'); ?>
+							<?php //get_template_part('template-parts/content/homepage/featured-video'); ?>
 						</div>
 						<div class="popular-browse-terms-part ">
-							<?php get_template_part('template-parts/content/homepage/popular-browse-terms'); ?>
+							<?php //get_template_part('template-parts/content/homepage/popular-browse-terms'); ?>
 						</div>
 					</div>
 

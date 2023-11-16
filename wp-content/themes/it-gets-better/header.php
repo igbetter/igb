@@ -62,12 +62,16 @@
 				</svg>
 			</div>
 
-			<label class="dark-toggle">
-				<span> Light </span>
-				<input type="checkbox">
-				<div class="dark-toggle__switch" tabindex="0"></div>
-				<span> Dark </span>
-			</label>
+			<div class="header_right_side">
+				<label class="dark-toggle">
+					<span> Light </span>
+					<input type="checkbox">
+					<div class="dark-toggle__switch" tabindex="0"></div>
+					<span> Dark </span>
+				</label>
+				<nav> menu maybe? </nav>
+			</div>
+
 		</div>
 
 	</header>
