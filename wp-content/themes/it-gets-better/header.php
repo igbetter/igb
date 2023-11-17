@@ -28,6 +28,7 @@
 	<header class="site_main_header">
 		<div class="flex-row">
 			<div id="IGB_MAIN_LOGO">
+				<a href="<?php echo home_url(); ?>">
 				<svg version="1.1" id="IT_GETS_BETTER--logo" xmlns="http://www.w3.org/2000/svg" class="main_IGB_logo" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.3 165.2" style="enable-background:new 0 0 352.3 165.2;" xml:space="preserve">
 					<g>
 						<rect x="0.6" y="1.5" class="logo_purple" width="17.2" height="74.2"></rect>
@@ -60,6 +61,7 @@
 						</g>
 					</g>
 				</svg>
+			</a>
 			</div>
 
 			<div class="header_right_side">
