@@ -3,7 +3,7 @@ $popularTermsQuery = array(
 	'post_type' => 'glossary',
 	'orderby' => 'rand',
 	'status' => 'published',
-	'posts_per_page' => 14,
+	'posts_per_page' => 17,
 	'meta_query'  => array(
 		array(
 			'key' => 'popular',

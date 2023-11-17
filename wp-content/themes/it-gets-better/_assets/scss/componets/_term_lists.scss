@@ -2,8 +2,10 @@ ul.term_list {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 0 -1px -1px;
-	padding: 0 2.5em;
+
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
 	list-style: none;
 	flex-flow: row wrap;
 
@@ -11,16 +13,22 @@ ul.term_list {
 	.term {
 		flex-grow: 1;
 		text-align: center;
-
+		margin: 0 -9px;
+		padding: 0 9px 0 1px;
 		border: 1px solid;
+		transform: skewX(-26deg);
 
 		@include themify($themes) {
 			border-color: themed( 'textColor' );
 		}
 
-		transform: skewX(-26deg);
+		&:last-of-type,
+		&:nth-last-of-type(2) {
+			padding-right: 0;
+		}
 
 		&.more_terms {
+			margin: 0 11px -1px 11px;
 			a {
 				@include themify($themes) {
 					color: themed('textColor');
@@ -40,7 +48,7 @@ ul.term_list {
 
 	a {
 		display: block;
-		padding: 0.5em 1em;
+		padding: 0.5em 1.75em;
 		text-decoration: none;
 		border: 2px solid transparent;
 
