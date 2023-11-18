@@ -1,0 +1,406 @@
+{
+    "key": "group_655852e13444c",
+    "title": "Block - Hero",
+    "fields": [
+        {
+            "key": "field_655852e1f1674",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "columns": "6\/12",
+            "endpoint": 0,
+            "border": [
+                "column",
+                "fields"
+            ],
+            "border_endpoint": [
+                "endpoint"
+            ]
+        },
+        {
+            "key": "field_6558537cf1675",
+            "label": "Hero heading text",
+            "name": "hero_heading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "required_message": "Hero heading text required",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65585461f1676",
+            "label": "Display Options",
+            "name": "hero_element_display_options",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "choices": {
+                "sub_heading": "Subheading text",
+                "paragraph": "Paragraph text",
+                "cta_button": "Call to action button",
+                "search": "Site search box"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "min": "",
+            "max": "",
+            "allow_custom": 0,
+            "layout": "horizontal",
+            "toggle": 1,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_655855e6f1677",
+            "label": "Subheading text",
+            "name": "hero_subheading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65585461f1676",
+                        "operator": "==contains",
+                        "value": "sub_heading"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_655856443ba05",
+            "label": "Paragraph text",
+            "name": "hero_paragraph_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65585461f1676",
+                        "operator": "==contains",
+                        "value": "paragraph"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "acfe_wysiwyg_min_height": 300,
+            "acfe_wysiwyg_max_height": "",
+            "acfe_wysiwyg_valid_elements": "p,strong,b,i,em,a,blockquote,br,hr,span,ul,ol,li",
+            "acfe_wysiwyg_custom_style": "",
+            "acfe_wysiwyg_disable_wp_style": 0,
+            "acfe_wysiwyg_autoresize": 1,
+            "acfe_wysiwyg_disable_resize": 0,
+            "acfe_wysiwyg_remove_path": 0,
+            "acfe_wysiwyg_menubar": 0,
+            "acfe_wysiwyg_transparent": 0,
+            "acfe_wysiwyg_merge_toolbar": 1,
+            "acfe_wysiwyg_custom_toolbar": 1,
+            "acfe_wysiwyg_toolbar_buttons": {
+                "acfe_wysiwyg_toolbar_1": {
+                    "row-row-1": {
+                        "acfe_wysiwyg_toolbar_row": "bold"
+                    },
+                    "row-row-2": {
+                        "acfe_wysiwyg_toolbar_row": "italic"
+                    },
+                    "row-row-3": {
+                        "acfe_wysiwyg_toolbar_row": "bullist"
+                    },
+                    "row-row-4": {
+                        "acfe_wysiwyg_toolbar_row": "numlist"
+                    },
+                    "row-row-5": {
+                        "acfe_wysiwyg_toolbar_row": "blockquote"
+                    },
+                    "row-row-9": {
+                        "acfe_wysiwyg_toolbar_row": "link"
+                    },
+                    "row-row-11": {
+                        "acfe_wysiwyg_toolbar_row": "spellchecker"
+                    }
+                },
+                "acfe_wysiwyg_toolbar_2": {
+                    "row-row-1": {
+                        "acfe_wysiwyg_toolbar_row": "hr"
+                    },
+                    "row-row-3": {
+                        "acfe_wysiwyg_toolbar_row": "pastetext"
+                    },
+                    "row-row-4": {
+                        "acfe_wysiwyg_toolbar_row": "removeformat"
+                    },
+                    "row-row-5": {
+                        "acfe_wysiwyg_toolbar_row": "charmap"
+                    },
+                    "row-row-8": {
+                        "acfe_wysiwyg_toolbar_row": "undo"
+                    },
+                    "row-row-9": {
+                        "acfe_wysiwyg_toolbar_row": "redo"
+                    }
+                },
+                "acfe_wysiwyg_toolbar_3": "",
+                "acfe_wysiwyg_toolbar_4": ""
+            },
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "acfe_wysiwyg_auto_init": 0,
+            "acfe_wysiwyg_height": 300
+        },
+        {
+            "key": "field_65585768549da",
+            "label": "CTA Button text",
+            "name": "hero_cta_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65585461f1676",
+                        "operator": "==contains",
+                        "value": "cta_button"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_655857aa549db",
+            "label": "CTA Button link",
+            "name": "cta_button_link",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65585461f1676",
+                        "operator": "==contains",
+                        "value": "cta_button"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "post_type": "",
+            "post_status": "",
+            "taxonomy": "",
+            "allow_archives": 1,
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_655858adf18ae",
+            "label": "Search Label",
+            "name": "hero_search_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65585461f1676",
+                        "operator": "==contains",
+                        "value": "search"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "Search for...",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65585b6e4ce23",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "columns": "6\/12",
+            "endpoint": 0,
+            "border": [
+                "column",
+                "fields"
+            ],
+            "border_endpoint": [
+                "endpoint"
+            ]
+        },
+        {
+            "key": "field_65585b8f4ce24",
+            "label": "Frame Option",
+            "name": "frame_option",
+            "aria-label": "",
+            "type": "acfe_image_selector",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "choices": {
+                "frame_option_01": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_01.png",
+                "frame_option_02": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_02.png",
+                "frame_option_03": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_03.png",
+                "frame_option_04": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_04.png",
+                "frame_option_05": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_05.png",
+                "frame_option_06": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_06.png"
+            },
+            "default_value": false,
+            "image_size": "thumbnail",
+            "width": "",
+            "height": "",
+            "border": 4,
+            "return_format": "value",
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "layout": "horizontal",
+            "min": ""
+        },
+        {
+            "key": "field_655869547c9ee",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "uploader": "wp",
+            "return_format": "url",
+            "library": "all",
+            "upload_folder": "hero_images",
+            "acfe_thumbnail": 1,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 1,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1700298216
+}
