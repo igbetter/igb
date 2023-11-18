@@ -421,6 +421,7 @@ body.home .featured_video h6 {
 *	1. core site header styles
 *	2. IGB logo
 *	3. light/dark toggle switch
+*	4. main nav toggle button
 *
 */
 .site_main_header {
@@ -589,6 +590,24 @@ body.theme-dark .dark-toggle__switch:after {
   z-index: 4;
   width: calc(var(--width) * 0.7);
   height: calc(var(--width) * 0.7);
+}
+
+svg#menu_toggle_button {
+  width: 50px;
+  height: 50px;
+}
+svg#menu_toggle_button .menu_line {
+  transition: all 200ms ease-in-out;
+  stroke-width: 3;
+}
+.theme-light svg#menu_toggle_button .menu_line {
+  stroke: #292929;
+}
+.theme-dark svg#menu_toggle_button .menu_line {
+  stroke: #ffffff;
+}
+svg#menu_toggle_button.menu_open .middle_line {
+  opacity: 0;
 }
 
 /**

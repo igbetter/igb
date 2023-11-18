@@ -4,6 +4,7 @@
 *	1. core site header styles
 *	2. IGB logo
 *	3. light/dark toggle switch
+*	4. main nav toggle button
 *
 */
 
@@ -187,6 +188,28 @@ label.dark-toggle {
 			z-index: 4;
 			width: calc(var(--width) * 0.7);
 			height: calc(var(--width) * 0.7);
+		}
+	}
+}
+
+svg#menu_toggle_button {
+	width: 50px;
+	height: 50px;
+
+	.menu_line {
+		transition: all 200ms ease-in-out;
+		stroke-width: 3;
+
+		@include themify($themes) {
+			stroke: themed('textColor');
+		}
+	}
+
+	&.menu_open {
+
+		.middle_line {
+			opacity: 0;
+
 		}
 	}
 }

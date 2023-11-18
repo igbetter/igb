@@ -71,7 +71,26 @@
 					<div class="dark-toggle__switch" tabindex="0"></div>
 					<span> Dark </span>
 				</label>
-				<nav> menu will go here </nav>
+				<div class="menu_toggle_container">
+					<svg id="menu_toggle_button" class="menu_closed"
+						x="0" y="0" viewBox="0 0 40 40">
+						<path class="menu_line top_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 15 10
+								l 20 0"/>
+						<path class="menu_line middle_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 10 20
+								l 25 0"/>
+						<path class="menu_line bottom_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 5 30
+								l 30 0"/>
+					</svg>
+				</div>
 			</div>
 
 		</div>
