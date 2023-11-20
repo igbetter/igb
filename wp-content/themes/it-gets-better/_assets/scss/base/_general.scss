@@ -6,7 +6,7 @@
 *	2. links & buttons
 *	3. base body text & headings
 *	4. SVG line things
-*	5. light/dark toggle switch
+*	5. SVG masks
 *
 */
 
@@ -35,6 +35,10 @@ body {
 			transition: none !important;
 			animation-duration: 0s !important;
 			-webkit-animation-duration: 0s !important;
+		}
+
+		.svg_line {
+			stroke-dashoffset: 280;
 		}
 	}
 
@@ -274,6 +278,16 @@ use {
 	stroke-width: 3.4%;
 	stroke-linecap: square;
 	stroke-linejoin: round;
+	stroke-dasharray: 250;
+
+	animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+	&:nth-of-type( 2 ) {
+		animation-delay: 100ms;
+	}
+	&:nth-of-type(3) {
+		animation-delay: 140ms;
+	}
 
 	&.thin_line {
 		stroke-width: 0.3rem;
@@ -296,3 +310,34 @@ use {
 	}
 }
 
+
+// =============================================	5. SVG masks
+
+.masked_image_container_single {
+	width: 100%;
+	transform: translatex(10%); // adjust as needed. this is a just a guess.
+
+	img,
+	video {
+		width: 100%;
+		height: auto;
+	}
+
+	-webkit-clip-path: url(#image_mask_slash);
+	clip-path: url(#image_mask_slash);
+}
+
+.masked_image_container_double {
+	width: 100%;
+	transform: translatex(20%); // adjust as needed. this is a just a guess.
+
+	img,
+	video {
+		width: 100%;
+		height: auto;
+
+	}
+
+	-webkit-clip-path: url(#image_mask_double_slash);
+	clip-path: url(#image_mask_double_slash);
+}

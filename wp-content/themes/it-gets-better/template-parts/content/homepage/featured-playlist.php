@@ -1,5 +1,5 @@
 <!-- Note: Temporary template file only. It will be removed once we utilized the custom blocks. -->
-<?php 
+<?php
     $featuredPlaylist = get_terms(
       array(
         'taxonomy' => 'playlist',
@@ -24,7 +24,27 @@
         </div>
       </div>
     </div>
-    <figure class="wp-block-media-text__media"><img decoding="async" loading="lazy" width="1024" height="880" src="<?php echo get_template_directory_uri() . '/dummy/featured-playlist.png' ?>" alt="" class="wp-image-4503 size-full" ></figure>
+    <figure class="masked_image_container_double"><img src="<?php echo get_template_directory_uri() . '/_assets/images/placeholder-image-2.png' ?>" alt="" class="wp-image-4503 size-full"></figure>
+
+	<svg height="0" width="0" class="svg-clip">
+
+	<defs>
+
+        <clipPath id="image_mask_double_slash" clipPathUnits="objectBoundingBox">
+           <!-- points are relative values, keeping the angle ~62deg -->
+
+			<polygon fill="none" points="0.265,0.1
+										.61,0.1
+										0.345,1
+										0,1"/>
+			<polygon fill="none" points="0.67,0
+										1.015,0
+										0.75,0.9
+										0.405,0.9"/>
+
+        </clipPath>
+    </defs>
+</svg>
   </div>
   <?php endforeach; ?>
 <?php endif; ?>

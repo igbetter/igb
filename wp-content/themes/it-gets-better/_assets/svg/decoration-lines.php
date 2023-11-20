@@ -32,6 +32,7 @@
 	preserveAspectRatio="none meet"
 		 viewBox="0 -20 100 135">
 		<path class="svg_line pink"
+
 				  d="m 41.5 -20
 					 l -19 35
 					 l -19 13
@@ -223,4 +224,6 @@
 					 L 400 16
 					 L 501 35"/>
 	</symbol>
+
+
 </svg>

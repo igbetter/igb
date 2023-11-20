@@ -107,3 +107,20 @@
 		@content;
 	}
 }
+
+
+
+
+@keyframes dash {
+	0% {
+		opacity: 0;
+		stroke-dashoffset: 280;
+	}
+	40% {
+		opacity: 1;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+}

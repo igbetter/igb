@@ -29,6 +29,18 @@
 /*
 * Implementation of themes
 */
+@keyframes dash {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 280;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 /*
 * general styles
 *
@@ -37,7 +49,7 @@
 *	2. links & buttons
 *	3. base body text & headings
 *	4. SVG line things
-*	5. light/dark toggle switch
+*	5. SVG masks
 *
 */
 * {
@@ -61,6 +73,9 @@ body.preload * {
   transition: none !important;
   animation-duration: 0s !important;
   -webkit-animation-duration: 0s !important;
+}
+body.preload .svg_line {
+  stroke-dashoffset: 280;
 }
 body:not(.preload) {
   transition: background-color 200ms ease-in-out;
@@ -339,6 +354,14 @@ use {
   stroke-width: 3.4%;
   stroke-linecap: square;
   stroke-linejoin: round;
+  stroke-dasharray: 250;
+  animation: dash 2.15s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.svg_line:nth-of-type(2) {
+  animation-delay: 100ms;
+}
+.svg_line:nth-of-type(3) {
+  animation-delay: 140ms;
 }
 .svg_line.thin_line {
   stroke-width: 0.3rem;
@@ -354,6 +377,30 @@ use {
 }
 .svg_line.yellow {
   stroke: #fbad41;
+}
+
+.masked_image_container_single {
+  width: 100%;
+  transform: translatex(10%);
+  -webkit-clip-path: url(#image_mask_slash);
+  clip-path: url(#image_mask_slash);
+}
+.masked_image_container_single img,
+.masked_image_container_single video {
+  width: 100%;
+  height: auto;
+}
+
+.masked_image_container_double {
+  width: 100%;
+  transform: translatex(20%);
+  -webkit-clip-path: url(#image_mask_double_slash);
+  clip-path: url(#image_mask_double_slash);
+}
+.masked_image_container_double img,
+.masked_image_container_double video {
+  width: 100%;
+  height: auto;
 }
 
 #page.sticky-container {
