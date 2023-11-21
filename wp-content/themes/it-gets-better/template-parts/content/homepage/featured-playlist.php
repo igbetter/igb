@@ -11,7 +11,7 @@
 
 <?php if($featuredPlaylist): ?>
   <?php foreach(array_slice($featuredPlaylist, 0, 1) as $item): ?>
-  <div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center featured-playlist">
+  <section class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile featured-playlist">
     <div class="wp-block-media-text__content">
       <h4>FEATURED PLAYLIST</h4>
       <h2><?php echo $item->name; ?></h2>
@@ -31,20 +31,20 @@
 	<defs>
 
         <clipPath id="image_mask_double_slash" clipPathUnits="objectBoundingBox">
-           <!-- points are relative values, keeping the angle ~62deg -->
 
-			<polygon fill="none" points="0.265,0.1
-										.61,0.1
-										0.345,1
-										0,1"/>
-			<polygon fill="none" points="0.67,0
-										1.015,0
-										0.75,0.9
-										0.405,0.9"/>
-
+			<polygon fill="none"
+			points=" 	.25,	.1
+						.65,	.1
+						.4,		1
+						0,		1 "/>
+			<polygon fill="none"
+			points=" 	.75,	0
+						1.15,	0
+						.9,	.90
+						.5,	.90 "/>
         </clipPath>
     </defs>
 </svg>
-  </div>
+  </section>
   <?php endforeach; ?>
 <?php endif; ?>

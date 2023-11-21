@@ -23,11 +23,11 @@
 
 	&.smaller {
 		@include themify($themes) {
-			background: rgba(themed('backgroundColor'), 0.6);
+			background: rgba(themed('backgroundColor'), 0.76);
 			color: themed('textColor');
 		}
 		box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
-		backdrop-filter: blur(7px);
+		backdrop-filter: blur(8px);
 	}
 
 
@@ -43,6 +43,13 @@
 		align-items: flex-end;
 		justify-content: space-between;
 
+		@include phone-only {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 50%;
+		}
+
 
 		nav {
 			margin: auto;
@@ -53,8 +60,8 @@
 
 // =============================================	2. IGB logo
 #IGB_MAIN_LOGO {
-	max-width: 26vw;
-	width: 210px;
+	max-width: 20vw;
+	width: 200px;
 	padding: 1rem 0;
 	transition: all 200ms ease-in-out;
 
@@ -192,9 +199,20 @@ label.dark-toggle {
 	}
 }
 
+
+// =============================================	4. main nav toggle button
+
 svg#menu_toggle_button {
 	width: 50px;
 	height: 50px;
+
+	@include phone-only {
+
+	//	margin-left: 20px;
+		padding: 10px;
+		border: 2px solid currentColor;
+		border-radius: 6px;
+	}
 
 	.menu_line {
 		transition: all 200ms ease-in-out;

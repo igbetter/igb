@@ -314,30 +314,28 @@ use {
 // =============================================	5. SVG masks
 
 .masked_image_container_single {
-	width: 100%;
-	transform: translatex(10%); // adjust as needed. this is a just a guess.
+	-webkit-clip-path: url(#image_mask_slash);
+	clip-path: url(#image_mask_slash);
 
 	img,
 	video {
-		width: 100%;
-		height: auto;
-	}
+		height: 100%;
+		object-fit: cover;
 
-	-webkit-clip-path: url(#image_mask_slash);
-	clip-path: url(#image_mask_slash);
+	}
 }
 
 .masked_image_container_double {
-	width: 100%;
-	transform: translatex(20%); // adjust as needed. this is a just a guess.
+	-webkit-clip-path: url(#image_mask_double_slash);
+	clip-path: url(#image_mask_double_slash);
+	margin: -2% 0;
 
 	img,
 	video {
-		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
 
 	}
 
-	-webkit-clip-path: url(#image_mask_double_slash);
-	clip-path: url(#image_mask_double_slash);
+
 }
