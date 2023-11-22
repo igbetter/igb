@@ -207,6 +207,45 @@ a:visited {
 	}
 }
 
+.safe-exit-button {
+	position: fixed;
+    top: 160px;
+	display: flex;
+    right: 0;
+    z-index: 999999999;
+	filter: drop-shadow(0 1px 1px rgba(50, 50, 0, 0.75));
+
+	@include phone-only {
+		top: 70px;
+	}
+
+	a,
+	a:visited {
+		display: inline-block;
+		clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+		padding: 0.65em 1.1em 0.45em 2.15em;
+
+		@include themify($themes) {
+			background: themed('accentButtonBGColor');
+				color: themed('accentButtonTextColor');
+		}
+
+		&:hover,
+		&:target,
+		&:focus {
+			@include themify($themes) {
+				background: themed('accentButtonBGHoverColor');
+				color: themed('accentButtonTextHoverColor');
+			}
+		}
+
+		svg {
+			margin-left: 2px;
+			padding-left: 2px;
+
+		}
+	}
+}
 
 
 // =============================================	3. base body text & headings

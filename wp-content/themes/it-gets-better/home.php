@@ -47,7 +47,7 @@ get_header();
 					<?php // get_template_part('template-parts/content/homepage/more-featured-videos'); ?>
 					<?php  get_template_part('template-parts/content/homepage/featured-playlist'); ?>
 					<?php  get_template_part('template-parts/content/homepage/curated-playlist'); ?>
-					<?php // get_template_part('template-parts/content/homepage/svg-divider-orange'); ?>
+					<?php  get_template_part('template-parts/content/homepage/svg-divider-orange'); ?>
 					<?php // get_template_part('template-parts/content/homepage/term-of-the-day'); ?>
 					<?php // get_template_part('template-parts/content/homepage/featured-program'); ?>
 					<?php // get_template_part('template-parts/content/homepage/featured-blog'); ?>

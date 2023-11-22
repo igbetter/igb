@@ -111,6 +111,18 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 			}
 		}
 
+		// Add thumbnail to the first level menu items
+        if ($depth === 0) {
+            $thumbnail = get_the_post_thumbnail( $item->object_id, 'navigation-image' );
+            if ($thumbnail) {
+                $output .= '<a' . $attributes . '>' . $thumbnail;
+            } else {
+               // $output .= '<a' . $attributes . '>';
+            }
+        } else {
+           // $output .= '<a' . $attributes . '>';
+        }
+
 		/** This filter is documented in wp-includes/post-template.php */
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
 

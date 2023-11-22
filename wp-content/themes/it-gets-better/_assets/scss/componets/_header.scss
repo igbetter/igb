@@ -23,13 +23,27 @@
 
 	&.smaller {
 		@include themify($themes) {
-			background: rgba(themed('backgroundColor'), 0.76);
+			background: rgba(themed('backgroundColor'), 0.79);
 			color: themed('textColor');
 		}
 		box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
 		backdrop-filter: blur(8px);
+		padding: 0.5rem 1.5em;
+
+		@include phone-only {
+			min-height: 67px;
+		}
+
+		.menu_is_open & {
+			background: transparent;
+			box-shadow: none;
+			color: $white;
+		}
 	}
 
+	.menu_is_open & {
+		color: $white;
+	}
 
 	.flex-row {
 		justify-content: space-between;
@@ -64,10 +78,12 @@
 	width: 200px;
 	padding: 1rem 0;
 	transition: all 200ms ease-in-out;
+	z-index: 99999;
 
 	.smaller & {
 		width: 130px;
 		max-width: 20vw;
+		margin-bottom: -0.5em;
 	}
 
 	svg {
@@ -82,6 +98,11 @@
 		stroke: themed('logoPurpleColor');
 		stroke-width: 0.2;
 	}
+
+	.menu_is_open & {
+		fill: $white;
+		stroke: $white;
+	}
 }
 
 .logo_blue {
@@ -89,6 +110,11 @@
 		fill: themed('logoBlueColor');
 		stroke: themed('logoBlueColor');
 		stroke-width: 0.2;
+	}
+
+	.menu_is_open & {
+		fill: $white;
+		stroke: $white;
 	}
 }
 
@@ -98,6 +124,11 @@
 		stroke: themed('logoPinkColor');
 		stroke-width: 0.2;
 	}
+
+	.menu_is_open & {
+		fill: $white;
+		stroke: $white;
+	}
 }
 
 .logo_yellow {
@@ -105,6 +136,11 @@
 		fill: themed('logoYellowColor');
 		stroke: themed('logoYellowColor');
 		stroke-width: 0.2;
+	}
+
+	.menu_is_open & {
+		fill: $white;
+		stroke: $white;
 	}
 }
 
@@ -202,16 +238,34 @@ label.dark-toggle {
 
 // =============================================	4. main nav toggle button
 
-svg#menu_toggle_button {
-	width: 50px;
-	height: 50px;
+#menu_toggle_button {
+	width: 55px;
+	height: 55px;
+	padding: 5px;
+	border: 2px solid transparent;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+	z-index: 9999;
+	background: transparent;
+
+	@include themify($themes) {
+		color: themed('textColor');
+	}
+
+	.menu_is_open & {
+		color: $white;
+	}
+
 
 	@include phone-only {
-
-	//	margin-left: 20px;
 		padding: 10px;
 		border: 2px solid currentColor;
-		border-radius: 6px;
+	}
+
+	&:hover,
+	&:target {
+		border: 2px solid currentColor;
 	}
 
 	.menu_line {
@@ -220,6 +274,10 @@ svg#menu_toggle_button {
 
 		@include themify($themes) {
 			stroke: themed('textColor');
+		}
+
+		.menu_is_open & {
+			stroke: $white;
 		}
 	}
 

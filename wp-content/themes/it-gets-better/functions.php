@@ -47,12 +47,12 @@ if ( ! function_exists( 'it_gets_better_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		add_image_size( 'navigation-image', 220, 180 );
+
 		register_nav_menus(
 			array(
 				'utility-nav' => __( 'Utility Navigation', 'it-gets-better'),
 				'mega-nav-main' => __( 'Main Navigation', 'it-gets-better' ),
-				'mega-nav-program-buttons' => __( 'Main Navigation: Parallelogram Buttons', 'it-gets-better' ),
-				'mega-nav-footer' => __( 'Main Navigation: Bottom', 'it-gets-better' ),
 				'footer-nav' => __( 'Footer Menu', 'it-gets-better' ),
 				'social-nav' => __( 'Social Links', 'it-gets-better' ),
 				'legal-nav' => __( 'Legal Nav (bottom)', 'it-gets-better')
