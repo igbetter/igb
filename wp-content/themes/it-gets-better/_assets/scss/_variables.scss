@@ -107,6 +107,13 @@ $themes: (
 		secondaryButtonTextHoverColor: $black,
 		secondaryButtonBorder: 2px solid transparent,
 
+		// accent button (safe exit, etc)
+		accentButtonBGColor: $pink,
+		accentButtonTextColor: $white,
+		accentButtonBGHoverColor: $purple,
+		accentButtonTextHoverColor: $white,
+		accentButtonBorder: 2px solid transparent,
+
 		// forms
 		inputBGColor: $white,
 		inputBorderColor: $purple,
@@ -117,6 +124,7 @@ $themes: (
 		// main navigation
 		mainNavBGColor: $purple,
 		mainNavLinkColor: $white,
+		mainNavItemBGColor: $purple,
 		mainNavLinkHoverColor: $yellow,
 
 		// utility navigation
@@ -190,6 +198,13 @@ $themes: (
 		secondaryButtonTextHoverColor: $black,
 		secondaryButtonBorder: 2px solid transparent,
 
+		// accent button (safe exit, etc)
+		accentButtonBGColor: $pink,
+		accentButtonTextColor: $white,
+		accentButtonBGHoverColor: $purple,
+		accentButtonTextHoverColor: $white,
+		accentButtonBorder: 2px solid transparent,
+
 		// forms
 		inputBGColor: $white,
 		inputBorderColor: $purple,
@@ -198,8 +213,9 @@ $themes: (
 		labelTextColor: $dark,
 
 		// main navigation
-		mainNavBGColor: $purple,
+		mainNavBGColor: $dark,
 		mainNavLinkColor: $white,
+		mainNavItemBGColor: $purple,
 		mainNavLinkHoverColor: $yellow,
 
 		// utility navigation
