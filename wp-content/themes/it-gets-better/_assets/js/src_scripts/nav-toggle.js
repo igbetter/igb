@@ -30,7 +30,8 @@
   };
 
 	$( '#menu_toggle_button' ).on( 'click', function(e) {
-		$(this).toggleClass( 'menu_open' );
+		$(this).toggleClass('menu_open');
+		$('body').toggleClass('menu_is_open');
 		$( 'path.top_line' ).toggleAttrVal( 'd', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
 		$( 'path.bottom_line' ).toggleAttrVal( 'd', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
 	});
