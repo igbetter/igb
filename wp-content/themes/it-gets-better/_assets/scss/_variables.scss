@@ -49,13 +49,13 @@ $basefont_size: 16px;
 $poppins: "Poppins", sans-serif;
 
 // Define font size options
-$font-size-sm: clamp(0.91rem, 0.49vw + 0.79rem, 1.37rem);
-$font-size-base: clamp(1rem, 0.87vw + 0.78rem, 1.81rem);
-$font-size-md: clamp(1.1rem, 1.38vw + 0.76rem, 2.39rem);
-$font-size-lg: clamp(1.21rem, 2.08vw + 0.69rem, 3.16rem);
-$font-size-xl: clamp(1.33rem, 3.03vw + 0.57rem, 4.17rem);
-$font-size-xxl: clamp(1.4rem, 4.31vw + 0.39rem, 5rem);
-$font-size-xxxl: clamp(1.51rem, 4.95vw + 0.29rem, 6.2rem);
+$font-size-sm: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+$font-size-base: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+$font-size-md: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+$font-size-lg: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
+$font-size-xl: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
+$font-size-xxl: clamp(1.46rem, 2.79vw + 0.07rem, 5.37rem);
+$font-size-xxxl: clamp(1.8rem, 5.35vw + -0.88rem, 9.28rem);
 
 // Define animation speeds
 $transition_speed: 250ms;
@@ -219,7 +219,7 @@ $themes: (
 		mainNavLinkHoverColor: $yellow,
 
 		// utility navigation
-		utilityNavBGColor: $purple,
+		utilityNavBGColor: $subtle-purple-dark,
 		utilityNavLinkColor: $white,
 		utilityNavLinkHoverColor: $yellow,
 
