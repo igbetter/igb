@@ -3,6 +3,88 @@
  *
 */
 
+// utility nav
+
+#site_utility_nav {
+	align-self: center;
+	flex: 1;
+	padding: 0.25em 1em 0.25em 0;
+	margin: -1.5em  3em 0 3em;
+	font-size: $font-size-sm;
+	transition: all 450ms ease-in-out;
+	transition-delay: .5s;
+
+	@include themify($themes) {
+		background-image: linear-gradient( 118deg,
+		rgba( themed('utilityNavBGColor'), 0 ) 0,
+		rgba(themed('utilityNavBGColor'), 0) 4%,
+		rgba(themed('utilityNavBGColor'), 1) 4.1%,
+		rgba(themed('utilityNavBGColor'), 1) 65%,
+		rgba(themed('utilityNavBGColor'), 0) 98%,
+		);
+	}
+
+	&.hidden {
+		opacity: 0;
+		max-width: 0;
+		overflow: hidden;
+		max-height: 0;
+		padding: 0;
+		margin: 0;
+		transition: all 150ms linear;
+		transition-delay: 0s;
+	}
+
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	li {
+		flex: 1;
+
+		a,
+		a:visited  {
+			display: block;
+			text-decoration: none;
+			text-align: center;
+
+			@include themify($themes) {
+				color: themed( 'utilityNavLinkColor' );
+				//background: rgba(themed('mainNavBGColor'), 0.55);
+			}
+
+			&:hover,
+			&:focus,
+			&:target {
+				@include themify($themes) {
+					color: themed( 'utilityNavLinkHoverColor' );
+					background: rgba(themed('mainNavBGColor'), 0.55);
+				}
+			}
+		}
+
+		&.donate-button {
+			a,
+			a:visited {
+				margin: -0.5em 0;
+				padding: 0.5em;
+				border-radius: 4px;
+
+				@include themify($themes) {
+					background: themed( 'accentButtonBGColor' );
+				}
+			}
+		}
+	}
+}
+
+// main 'mega' nav
 // overall styles, main background, transitions, etc.
 
 nav.two-column {

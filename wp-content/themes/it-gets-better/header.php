@@ -63,7 +63,17 @@
 				</svg>
 			</a>
 			</div>
-
+			<nav id="site_utility_nav" class="hidden">
+				<?php
+					$utilityNavProps =  array(
+					'theme_location' => 'utility-nav',
+					'container'      => '',
+					'menu_class'     => 'utility_nav header',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				);
+				wp_nav_menu( $utilityNavProps );
+			?>
+			</nav>
 			<div class="header_right_side">
 				<label class="dark-toggle">
 					<span> Light </span>

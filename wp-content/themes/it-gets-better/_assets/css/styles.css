@@ -779,6 +779,85 @@ body.theme-dark .dark-toggle__switch:after {
  * main nav
  *
 */
+#site_utility_nav {
+  align-self: center;
+  flex: 1;
+  padding: 0.25em 1em 0.25em 0;
+  margin: -1.5em 3em 0 3em;
+  font-size: clamp(0.91rem, 0.49vw + 0.79rem, 1.37rem);
+  transition: all 450ms ease-in-out;
+  transition-delay: 0.5s;
+}
+.theme-light #site_utility_nav {
+  background-image: linear-gradient(118deg, rgba(94, 58, 126, 0) 0, rgba(94, 58, 126, 0) 4%, #5e3a7e 4.1%, #5e3a7e 65%, rgba(94, 58, 126, 0) 98%);
+}
+.theme-dark #site_utility_nav {
+  background-image: linear-gradient(118deg, rgba(94, 58, 126, 0) 0, rgba(94, 58, 126, 0) 4%, #5e3a7e 4.1%, #5e3a7e 65%, rgba(94, 58, 126, 0) 98%);
+}
+#site_utility_nav.hidden {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  transition: all 150ms linear;
+  transition-delay: 0s;
+}
+#site_utility_nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#site_utility_nav li {
+  flex: 1;
+}
+#site_utility_nav li a,
+#site_utility_nav li a:visited {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+.theme-light #site_utility_nav li a,
+.theme-light #site_utility_nav li a:visited {
+  color: #ffffff;
+}
+.theme-dark #site_utility_nav li a,
+.theme-dark #site_utility_nav li a:visited {
+  color: #ffffff;
+}
+.theme-light #site_utility_nav li a:hover, .theme-light #site_utility_nav li a:focus, .theme-light #site_utility_nav li a:target,
+.theme-light #site_utility_nav li a:visited:hover,
+.theme-light #site_utility_nav li a:visited:focus,
+.theme-light #site_utility_nav li a:visited:target {
+  color: #fbad41;
+  background: rgba(94, 58, 126, 0.55);
+}
+.theme-dark #site_utility_nav li a:hover, .theme-dark #site_utility_nav li a:focus, .theme-dark #site_utility_nav li a:target,
+.theme-dark #site_utility_nav li a:visited:hover,
+.theme-dark #site_utility_nav li a:visited:focus,
+.theme-dark #site_utility_nav li a:visited:target {
+  color: #fbad41;
+  background: rgba(41, 41, 41, 0.55);
+}
+#site_utility_nav li.donate-button a,
+#site_utility_nav li.donate-button a:visited {
+  margin: -0.5em 0;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+.theme-light #site_utility_nav li.donate-button a,
+.theme-light #site_utility_nav li.donate-button a:visited {
+  background: #f2566e;
+}
+.theme-dark #site_utility_nav li.donate-button a,
+.theme-dark #site_utility_nav li.donate-button a:visited {
+  background: #f2566e;
+}
+
 nav.two-column {
   display: flex;
   height: 100%;
