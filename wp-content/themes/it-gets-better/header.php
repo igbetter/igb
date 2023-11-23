@@ -18,7 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('preload theme-light menu_is_open'); ?>>
+<body <?php body_class('preload theme-light'); ?>>
 
 <?php wp_body_open(); ?>
 
