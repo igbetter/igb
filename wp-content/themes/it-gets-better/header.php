@@ -120,7 +120,8 @@
 		<?php endif; ?>
 
 	</header>
-	<nav id="site_main_navigation" class="two-column row">
+	<div class="main-container">
+	<nav id="site_main_navigation">
 			<?php
 			$megaNavMainProps =  array(
 				'theme_location' => 'mega-nav-main',
@@ -134,6 +135,7 @@
 			?>
 		</nav>
 
+	</div>
 	<?php // get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
 	<div id="content">
