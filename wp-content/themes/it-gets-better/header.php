@@ -120,13 +120,14 @@
 		<?php endif; ?>
 
 	</header>
-	<nav id="site_main_navigation" class="two-column row">
+	<div class="main-container">
+		<nav id="site_main_navigation">
 			<?php
 			$megaNavMainProps =  array(
 				'theme_location' => 'mega-nav-main',
 				'container'      => 'span',
-				'menu_class'     => 'mega_menu header main-navigation',
-				'items_wrap'     => '<div class="left-column column"><ul id="%1$s" class="%2$s">%3$s</ul></div><div class="right-column column"></div>',
+				'menu_class'     => 'IGB_site_main_navigation_menu header main-navigation',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				'walker'		 => new Aria_Walker_Nav_Menu(),
 			);
 
@@ -134,6 +135,7 @@
 			?>
 		</nav>
 
+	</div>
 	<?php // get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
 	<div id="content">

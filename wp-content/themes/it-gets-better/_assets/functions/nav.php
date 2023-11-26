@@ -4,6 +4,8 @@
 */
 
 
+
+
 class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	  /**
@@ -19,7 +21,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
    */
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent <ul class=\"sub-menu\">\n\t<li class=\"back_button mobile_only\"><a href=\"#\">&laquo; Back</a></li>\n";
+    $output .= "\n$indent <ul class=\"sub-menu\">\n";
   }
 	/**
 	 * Start the element output.
@@ -112,16 +114,6 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		}
 
 		// Add thumbnail to the first level menu items
-        if ($depth === 0) {
-            $thumbnail = get_the_post_thumbnail( $item->object_id, 'navigation-image' );
-            if ($thumbnail) {
-                $output .= '<a' . $attributes . '>' . $thumbnail;
-            } else {
-               // $output .= '<a' . $attributes . '>';
-            }
-        } else {
-           // $output .= '<a' . $attributes . '>';
-        }
 
 		/** This filter is documented in wp-includes/post-template.php */
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
@@ -139,7 +131,13 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'><span>';
+		$item_output .= '<a'. $attributes .'>';
+		if ($depth === 0) {
+			// Add thumbnail to the first level menu items
+			$thumbnail = get_the_post_thumbnail( $item->object_id, 'navigation-image' );
+			$item_output .= $thumbnail;
+		}
+		$item_output .= '<span>';
 		$item_output .= $args->link_before . $title . $args->link_after;
 		$item_output .= '</span></a>';
 		if ($args->walker->has_children) {
