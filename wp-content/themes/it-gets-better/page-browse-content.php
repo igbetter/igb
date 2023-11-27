@@ -22,7 +22,7 @@ get_header();
 					get_template_part( 'template-parts/content/content', 'page' );
 				endwhile;
 			?>
-			<?php get_template_part( 'template-parts/browseContent/page', 'browseContent' ); ?>
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
 <?php

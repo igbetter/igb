@@ -103,7 +103,7 @@
 // https: //github.com/somewebmedia/hc-offcanvas-nav
 
 .hc-offcanvas-nav {
-	//z-index: -1;
+
 	line-height: 1;
 	font-weight: 300;
 	@include themify($themes) {
@@ -231,7 +231,6 @@
 
 	li:not(.custom-content) a {
 		display: flex;
-		//align-items: center;
 	}
 
 	.nav-wrapper {
@@ -335,7 +334,5 @@
 		padding: 0 2em;
 		opacity: 0.75;
 	}
-
-
 
 }
