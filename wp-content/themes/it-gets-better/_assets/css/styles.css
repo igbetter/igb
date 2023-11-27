@@ -347,7 +347,7 @@ h1 {
   font-size: clamp(1.8rem, 5.35vw - 0.88rem, 9.28rem);
   line-height: 1.08;
   font-weight: 600;
-  margin-top: 0.5em;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -385,6 +385,7 @@ h6 {
   font-weight: 600;
   text-transform: uppercase;
   margin-top: 0.5em;
+  margin-bottom: 0;
 }
 
 use {
@@ -740,6 +741,8 @@ body.theme-dark .dark-toggle__switch:after {
   transition: all 200ms ease-in-out;
   z-index: 9999;
   background: transparent;
+  position: relative;
+  top: auto !important;
 }
 .theme-light #menu_toggle_button {
   color: #292929;

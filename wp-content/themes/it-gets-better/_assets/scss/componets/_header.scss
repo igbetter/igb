@@ -242,12 +242,15 @@ label.dark-toggle {
 	width: 55px;
 	height: 55px;
 	padding: 5px;
+	//margin: 2em 0;
 	border: 2px solid transparent;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: all 200ms ease-in-out;
 	z-index: 9999;
 	background: transparent;
+	position: relative;
+	top: auto !important;
 
 	@include themify($themes) {
 		color: themed('textColor');
