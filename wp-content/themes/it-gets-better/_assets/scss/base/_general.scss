@@ -37,8 +37,9 @@ body {
 			-webkit-animation-duration: 0s !important;
 		}
 
-		.svg_line {
-			stroke-dashoffset: 280;
+		.feature_frame .svg_line {
+			stroke-dashoffset: 480;
+			opacity: 0;
 		}
 	}
 
@@ -318,16 +319,20 @@ use {
 	stroke-width: 3.4%;
 	stroke-linecap: square;
 	stroke-linejoin: round;
-	stroke-dasharray: 250;
 
-	animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+	.feature_frame & {
+		stroke-dasharray: 290;
 
-	&:nth-of-type( 2 ) {
-		animation-delay: 100ms;
+		animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+		&:nth-of-type( 2 ) {
+			animation-delay: 100ms;
+		}
+		&:nth-of-type(3) {
+			animation-delay: 140ms;
+		}
 	}
-	&:nth-of-type(3) {
-		animation-delay: 140ms;
-	}
+
 
 	&.thin_line {
 		stroke-width: 0.3rem;

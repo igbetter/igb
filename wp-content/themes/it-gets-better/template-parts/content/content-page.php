@@ -8,13 +8,11 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-content prose">
-		<?php
-			the_content();
-			wp_link_pages(
-				array('before' => '<div>' . __( 'Pages:', 'it-gets-better' ),	'after'  => '</div>')
-			);
-		?>
-	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+<main id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+		the_content();
+		wp_link_pages(
+			array('before' => '<div>' . __( 'Pages:', 'it-gets-better' ),	'after'  => '</div>')
+		);
+	?>
+</main><!-- #post-<?php the_ID(); ?> -->
