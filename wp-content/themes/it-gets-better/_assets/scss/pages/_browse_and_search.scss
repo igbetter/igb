@@ -1,0 +1,15 @@
+
+.facetwp-facet {
+	.facetwp-checkbox {
+		&.checked {
+			.facetwp-display-value {
+				font-weight: 500;
+			}
+		}
+	}
+
+	&.facetwp-facet-type {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

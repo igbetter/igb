@@ -38,17 +38,21 @@
 			border: 3px solid transparent;
 			display: block;
 			border-radius: 5px;
-			box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+
+			@include themify($themes) {
+				background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+				box-shadow: themed( 'subtleShadow' );
+			}
 
 			&:hover,
 			&:focus,
 			&:target {
-
-				box-shadow: 0 0 18px rgba( 0, 0, 0, 0.5 );
 				outline: none;
 
 				@include themify($themes) {
+					background: rgba(darken(themed('backgroundColor'), 10), 0.5);
 					border: 3px solid rgba(themed('linkColor'), 0.5);
+					box-shadow: themed('largeShadow');
 				}
 
 				img {
@@ -75,7 +79,7 @@
 			transition: all 780ms ease-in-out;
 
 			@include themify($themes) {
-				border: 1px solid rgba(themed('linkColor'), 0.35);
+				border: 1px solid rgba(themed('linkColor'), 0.25);
 				filter: themed( 'duotoneFilter' );
 			}
 

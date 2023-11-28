@@ -150,6 +150,11 @@ $themes: (
 		subtleYellowBG: $subtle-yellow-light,
 		subtleGreyBG: $light-grey,
 
+		// box shadow options
+		subtleShadow: 0 0 3px rgba(0, 0, 0, 0.2),
+		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
+		largeShadow: 0 0 18px rgba(0, 0, 0, 0.3),
+
 		// program box, global
 		programBGColorGlobal: $pink,
 		programTextColorGlobal: $white,
@@ -243,6 +248,11 @@ $themes: (
 		subtleBlueBG: $subtle-blue-dark,
 		subtleYellowBG: $subtle-yellow-dark,
 		subtleGreyBG: $dark-grey,
+
+		// box shadow options
+		subtleShadow: 0 0 3px rgba(0, 0, 0, 0.45),
+		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
+		largeShadow: 0 0 18px rgba(0, 0, 0, 0.75),
 
 		// program box, global
 		programBGColorGlobal: $subtle-pink-dark,

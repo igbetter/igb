@@ -180,14 +180,14 @@
 	.larger {
 
 		img {
-			max-height: 16vh;
+			max-height: 19vh;
 		}
 
 		a,
 		a:visited {
 			font-size: $font_size_xxl;
 			font-weight: 600;
-			padding-left: 1em;
+			padding-left: 2em;
 		}
 
 	}
@@ -195,16 +195,16 @@
 	img {
 		max-height: 11vh;
 		height: 100%;
-		width: 150px;
-		max-width: 25vw;
-		object-fit: contain;
+		min-width: 150px;
+		max-width: 35%;
+		object-fit: cover;
 		object-position: center bottom;
 		overflow: visible;
 		margin: 1px -0.5em -1px -1em;
 		align-self: flex-end;
 
 		@include tablet-up {
-			max-width: 200px;
+			max-width: 50%;
 		}
 	}
 
