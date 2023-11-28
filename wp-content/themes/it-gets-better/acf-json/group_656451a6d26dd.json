@@ -1,0 +1,65 @@
+{
+    "key": "group_656451a6d26dd",
+    "title": "Block - Featured Content",
+    "fields": [
+        {
+            "key": "field_656451a755767",
+            "label": "Type",
+            "name": "type",
+            "aria-label": "",
+            "type": "acfe_image_selector",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "choices": {
+                "video": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/featured-video.png",
+                "playlist": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/featured-playlist.png",
+                "blog": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/featured-blog.png",
+                "term": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/featured-term.png"
+            },
+            "default_value": false,
+            "image_size": "thumbnail",
+            "width": "",
+            "height": "",
+            "border": 4,
+            "return_format": "value",
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "layout": "horizontal",
+            "min": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/featured-content-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1701076044
+}
