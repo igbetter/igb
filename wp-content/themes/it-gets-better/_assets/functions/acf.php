@@ -71,9 +71,9 @@ function igb_initialize_acf_blocks() {
 
 	acf_register_block_type(array(
 		'name' 				=> 'featured-term-block',
-		'title' 			=> __('Featured Glossary Term'),
-		'description'		=> __('Feature one glossary term'),
-		'render_template'  	=> get_template_directory() . '/acf-blocks/featured-term-block/featured-term.php',
+		'title' 			=> __('Single Term w/content'),
+		'description'		=> __('Highlight a glossary term with related content'),
+		'render_template'  	=> get_template_directory() . '/acf-blocks/single-term-with-content/single-term.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-term.svg' ),
 		'category' 			=> 'igb',
 		'example'  			=> array(
