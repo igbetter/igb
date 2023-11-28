@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .icon-featured-blog-dims { width: 150px; height: 150px; }
+ .icon-featured-playlist-dims { width: 150px; height: 150px; }
+ .icon-featured-term-dims { width: 150px; height: 150px; }
+ .icon-featured-video-dims { width: 150px; height: 150px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+
+<!--
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+    https://github.com/svg-sprite/svg-sprite/blob/main/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+-->
+
+<svg width="0" height="0" style="position:absolute">
+     <symbol class="apost_type_icon ablog" viewBox="0 0 150 150" id="featured-blog" xmlns="http://www.w3.org/2000/svg"><path class="aicon_purple" d="M117.7 15.33c1.28.33 2.55.75 3.77 1.24 5.45 2.18 8.95 7.54 8.75 13.4.1 14.26 0 28.49 0 42.78 0 .27 0 .56-.09.91-3.19-.66-6.51-.26-9.47 1.13V30.76H24.99c0 .4-.07 4.67-.07 5.08v79.11c0 3.85 1.82 5.67 5.64 5.67h47.08c-.91 3.12-1.79 6.19-2.71 9.13-.19.27-.5.44-.83.45H30.39c-6.52.28-12.41-3.87-14.36-10.09-.25-.8-.45-1.62-.67-2.48v-89.7c.09-.21.17-.42.24-.63.75-4.73 3.86-8.75 8.26-10.66 1.35-.53 2.73-.97 4.14-1.31h89.69Z"/><path class="aicon_yellow" d="M106.24 74.66c0 2.59-2.1 4.69-4.69 4.69H44.04a4.69 4.69 0 0 1 0-9.38h57.51c2.59 0 4.69 2.1 4.69 4.69Z"/><path class="aicon_pink" d="M106.22 52.68c0 2.6-2.1 4.7-4.7 4.7H44.03c-2.6 0-4.7-2.1-4.7-4.7s2.1-4.7 4.7-4.7h57.49c2.6 0 4.7 2.1 4.7 4.7Z"/><path class="aicon_blue" d="M101.75 92c-4.42 3.11-8.67 6.19-13.06 9.14-.49.25-1.04.37-1.59.35l-42.75.31a5.015 5.015 0 0 1-5.05-5.01v-.17c0-2.55 2.07-4.62 4.62-4.62h57.83Z"/><path class="aicon_grey" d="m112.24 95 15.17 15.04c-.24.26-.51.56-.78.83-7.43 7.43-14.9 14.87-22.4 22.3-.57.57-1.27.99-2.03 1.24-5.29 1.61-10.6 3.16-15.93 4.68-.61.19-1.26.22-1.88.1-.51-.15-.93-.49-1.19-.96-.25-.47-.3-1.02-.15-1.52 1.65-5.78 3.33-11.52 5.04-17.21.15-.42.4-.8.72-1.1 7.73-7.79 15.46-15.53 23.19-23.24.07-.07.15-.13.25-.16Zm-11.51 35.33c-.45-2.37-.87-4.63-1.33-6.88a.991.991 0 0 0-.56-.67c-2.26-.51-4.56-.97-6.89-1.44-.84 2.87-1.57 5.65-2.48 8.36-.32.99.01 2.08.83 2.71.58.64 1.54.78 2.28.33l8.14-2.43ZM132 104.53l-14.32-14.14c2.12-2.26 4.1-4.61 6.35-6.64a4.585 4.585 0 0 1 6.03.31c2.7 2.55 5.34 5.18 7.88 7.89a4.96 4.96 0 0 1 0 6.64c-.26.31-.54.61-.83.89l-5.12 5.04Z"/></symbol>
+     <symbol class="bpost_type_icon bplaylist" viewBox="0 0 150 150" id="featured-playlist" xmlns="http://www.w3.org/2000/svg"><path class="bicon_purple" d="M130.14 126.56c0 1.18-.48 2.31-1.35 3.14-.87.83-2.04 1.3-3.26 1.3H24c-2.55 0-4.61-1.99-4.61-4.44V64.39c0-2.45 2.07-4.44 4.61-4.44h101.53c1.22 0 2.4.47 3.26 1.3a4.33 4.33 0 0 1 1.35 3.14v62.17Zm-4.61-75.49H24c-7.64 0-13.84 5.97-13.84 13.32v62.17c0 7.35 6.2 13.32 13.84 13.32h101.53c7.64 0 13.84-5.97 13.84-13.32V64.39c0-7.35-6.2-13.32-13.84-13.32Z"/><path class="bicon_yellow" d="M30.89 28.66c0-2.16 1.75-3.9 3.9-3.9h78.02c2.16 0 3.9 1.75 3.9 3.9s-1.75 3.9-3.9 3.9H34.8c-2.16 0-3.9-1.75-3.9-3.9Z"/><path class="bicon_pink" d="M15.29 41.64c0-2.16 1.75-3.9 3.9-3.9h109.23c2.16 0 3.9 1.75 3.9 3.9s-1.75 3.9-3.9 3.9H19.19c-2.16 0-3.9-1.75-3.9-3.9Z"/><path class="bicon_blue" d="M47.31 15.33c0-2.16 1.75-3.9 3.9-3.9h45.2c2.16 0 3.9 1.75 3.9 3.9s-1.75 3.9-3.9 3.9h-45.2c-2.16 0-3.9-1.75-3.9-3.9Z"/><path class="bicon_grey" d="M89.72 90.91 63.69 77.18c-3.69-1.91-8.55.52-8.55 4.34v27.28c0 4 4.85 6.43 8.54 4.34l26.03-13.73c3.7-1.74 3.7-6.61 0-8.52Z"/></symbol>
+     <symbol class="cpost_type_icon cterm" viewBox="0 0 150 150" id="featured-term" xmlns="http://www.w3.org/2000/svg"><path class="cicon_purple" d="M127.55 112.36c-17.97.3-35.33 3.93-52.1 10.57V42.3c16.61-6.8 34.13-10.57 52.1-11.02v81.09Zm-58.74 10.42c-16.76-6.49-34.13-10.12-52.1-10.57V31.42c17.97.45 35.49 4.08 52.1 11.02v80.34Zm66.21-87.02c-.22 0-.96.04-1.12.04v-7.7c0-1.81-1.51-3.32-3.32-3.32-20.23 0-40.02 3.93-58.59 11.78-18.58-7.85-38.21-11.78-58.44-11.78-1.81 0-3.32 1.51-3.32 3.32v7.7H9.11c-1.81 0-3.32 1.36-3.32 3.17L8 116.66c0 1.81 1.51 3.32 3.32 3.32 23.11 0 38.03 3.58 59.47 12.64.45.15.91.3 1.36.3s.91 0 1.36-.3c21.3-9.06 36.22-13.74 59.32-13.74 1.81 0 3.32-1.36 3.32-3.32l2.21-76.58c0-1.81-1.51-3.21-3.32-3.21Z"/><path class="cicon_pink" d="M87.98 57.54c.3 0 .6 0 .91-.15 8.61-2.57 17.37-4.38 26.27-5.29 1.81-.15 3.02-1.81 2.87-3.62-.15-1.81-1.81-3.02-3.62-2.87-9.21 1.06-18.42 2.87-27.34 5.59-1.66.45-2.72 2.27-2.27 4.08.45 1.36 1.82 2.27 3.17 2.27Z"/><path class="cicon_yellow" d="M114.56 61.47c-9.21 1.06-18.42 2.87-27.48 5.59-1.66.45-2.72 2.27-2.27 4.08.45 1.36 1.66 2.27 3.17 2.27.3 0 .6 0 .91-.15 8.61-2.57 17.37-4.38 26.27-5.29 1.81-.15 3.02-1.81 2.87-3.62-.15-1.81-1.66-3.17-3.47-2.87Z"/><path class="cicon_blue" d="M114.56 77.18c-9.21 1.06-18.42 2.87-27.48 5.59-1.66.45-2.72 2.27-2.27 4.08.45 1.36 1.66 2.27 3.17 2.27.3 0 .6 0 .91-.15 8.61-2.57 17.37-4.38 26.27-5.29 1.81-.15 3.02-1.81 2.87-3.62-.15-1.66-1.66-3.01-3.47-2.87Z"/><path class="cicon_purple" d="M114.56 93.03c-9.21 1.06-18.42 2.87-27.48 5.59-1.66.45-2.72 2.27-2.27 4.08.45 1.36 1.66 2.27 3.17 2.27.3 0 .6 0 .91-.15 8.61-2.57 17.37-4.38 26.27-5.29 1.81-.15 3.02-1.81 2.87-3.62-.15-1.81-1.66-3.01-3.47-2.87Z"/><path class="cicon_grey" d="M43.69 67.26c1.76 4.83 3.29 9.22 4.83 13.39l-3.29-.66c-1.97-.44-3.95-.87-6.36-1.32 1.76-3.94 3.29-7.46 4.83-11.41ZM27.45 95.79c2.42.87 5.26-.22 6.15-2.86.66-1.97 1.32-3.52 1.97-5.26 2.86.44 5.26 1.1 7.68 1.53 2.86.66 5.71 1.32 9.22 1.97.87 1.97 1.53 4.17 2.42 6.36.66 1.76 2.63 3.07 4.39 3.07.66 0 1.1-.22 1.76-.44 2.42-.87 3.52-3.73 2.63-6.15-5.92-14.93-8.78-23.27-15.14-41.26-.66-1.76-2.42-3.07-4.39-3.29-1.97 0-3.73 1.1-4.61 2.86-6.15 13.83-9.22 21.07-15.36 37.09-.45 2.65.87 5.28 3.29 6.38Z"/></symbol>
+     <symbol class="dpost_type_icon dvideo" viewBox="0 0 150 150" id="featured-video" xmlns="http://www.w3.org/2000/svg"><path class="dicon_yellow" d="m62.08 28.89 8.56-2.18 7.01 27.57-8.56 2.18-7.01-27.57Z"/><path class="dicon_blue" d="m87.57 20.92 8.56-2.18 7.01 27.57-8.56 2.18-7.01-27.57Z"/><path class="dicon_pink" d="m36.15 34.96 8.56-2.18 7 27.57-8.56 2.18-7-27.57Z"/><path class="dicon_purple" d="M125.85 70.37H32.19l89.95-22.88a8.219 8.219 0 0 0 5.92-9.98l-4.73-18.68a11.71 11.71 0 0 0-14.23-8.48L20.5 32.87c-3.04.77-5.65 2.73-7.23 5.43a11.685 11.685 0 0 0-1.2 8.97l7.29 26.37v52.7c0 7.32 5.94 13.25 13.25 13.25h87.95c3.6.07 7.07-1.32 9.62-3.87 2.55-2.54 3.95-6.01 3.89-9.61V78.58a8.22 8.22 0 0 0-8.22-8.22ZM19.71 41.34c.64-1.18 2.22-1.71 2.96-1.9 76.63-19.52 86.39-22.01 88.65-22.62 2.03-.55 4.01.68 4.67 4.17l4.42 19.11L25.02 65l-6.15-20.1c-.51-1.37.49-2.88.85-3.56Zm106.26 84.78c0 1.17-.46 3.3-1.29 4.13s-2.86 2.13-4.13 2.13H32.42c-1.6 0-3.3-1.3-4.13-2.13S27 127.3 27 126.12V78.21h98.96v47.91Z"/><path class="dicon_grey" d="M91.29 101.18 68.97 89.41c-3.16-1.64-7.33.45-7.33 3.73v23.4c0 3.43 4.16 5.51 7.32 3.73l22.32-11.77c3.17-1.49 3.17-5.66 0-7.31Z"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+
+        <header>
+            <h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+            <p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-html5" target="_blank" rel="noopener noreferrer">support inline SVG</a> for these techniques to work.</li>
+                <li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/svg-sprite/svg-sprite/blob/main/docs/configuration.md#defs--symbol-mode" target="_blank" rel="noopener noreferrer">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+-->
+
+            <h3>A) Inline SVG with embedded sprite</h3>
+            <ul>
+
+             <li title="featured-blog">
+                    <div class="icon-box">
+                        <svg class="icon-featured-blog-dims">
+                            <use xlink:href="#featured-blog"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-blog, </h2>
+                </li>
+             <li title="featured-playlist">
+                    <div class="icon-box">
+                        <svg class="icon-featured-playlist-dims">
+                            <use xlink:href="#featured-playlist"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-playlist, </h2>
+                </li>
+             <li title="featured-term">
+                    <div class="icon-box">
+                        <svg class="icon-featured-term-dims">
+                            <use xlink:href="#featured-term"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-term, </h2>
+                </li>
+             <li title="featured-video">
+                    <div class="icon-box">
+                        <svg class="icon-featured-video-dims">
+                            <use xlink:href="#featured-video"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-video, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <section>
+
+<!--
+B) Inline SVG with external sprite
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS.
+-->
+
+            <h3>B) Inline SVG with external sprite</h3>
+            <ul>
+
+             <li title="featured-blog">
+                    <div class="icon-box">
+                        <svg class="icon-featured-blog-dims">
+                            <use xlink:href="icons.svg#featured-blog"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-blog</h2>
+                </li>
+             <li title="featured-playlist">
+                    <div class="icon-box">
+                        <svg class="icon-featured-playlist-dims">
+                            <use xlink:href="icons.svg#featured-playlist"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-playlist</h2>
+                </li>
+             <li title="featured-term">
+                    <div class="icon-box">
+                        <svg class="icon-featured-term-dims">
+                            <use xlink:href="icons.svg#featured-term"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-term</h2>
+                </li>
+             <li title="featured-video">
+                    <div class="icon-box">
+                        <svg class="icon-featured-video-dims">
+                            <use xlink:href="icons.svg#featured-video"></use>
+                        </svg>
+                    </div>
+                    <h2>featured-video</h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Tue, 28 Nov 2023 06:11:42 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
