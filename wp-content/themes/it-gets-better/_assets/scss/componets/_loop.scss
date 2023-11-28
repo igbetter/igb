@@ -52,39 +52,14 @@
 				}
 
 				img {
-					filter: none;
+
 					@include themify($themes) {
+						filter: none;
 						border: 1px solid rgba(themed('textColor'), 0.5);
 					}
 				}
 			}
 		}
-
-		/* &:nth-of-type(5n) {
-			img {
-				filter: url('#duotone-blue_purple');
-			}
-		}
-		&:nth-of-type(5n+1) {
-			img {
-				filter: url('#duotone-pink_yellow');
-			}
-		}
-		&:nth-of-type(5n+2) {
-			img {
-				filter: url('#duotone-purple_lightpurple');
-			}
-		}
-		&:nth-of-type(5n+3) {
-			img {
-				filter: url('#duotone-blue_pink');
-			}
-		}
-		&:nth-of-type(5n+4) {
-			img {
-				filter: url('#duotone-purple_pink');
-			}
-		} */
 	}
 
 	.group_container {
@@ -98,10 +73,10 @@
 			width: 100%;
 			height: auto;
 			transition: all 780ms ease-in-out;
-			filter: url('#duotone-purple_yellow');
 
 			@include themify($themes) {
-				border: 1px solid rgba(themed('linkColor'), 0.5);
+				border: 1px solid rgba(themed('linkColor'), 0.35);
+				filter: themed( 'duotoneFilter' );
 			}
 
 		}

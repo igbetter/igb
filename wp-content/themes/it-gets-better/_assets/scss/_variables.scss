@@ -94,6 +94,9 @@ $themes: (
 		logoBlueColor: $blue,
 		logoYellowColor: $yellow,
 
+		// default image filter (duotone)
+		duotoneFilter: url('#duotone-blue_purple'),
+
 		// primary button
 		primaryButtonBGColor: $blue,
 		primaryButtonTextColor: $white,
@@ -184,6 +187,9 @@ $themes: (
 		logoPinkColor: $white,
 		logoBlueColor: $white,
 		logoYellowColor: $white,
+
+		// default image filter (duotone)
+		duotoneFilter: url('#duotone-purple_yellow'),
 
 		// primary button
 		primaryButtonBGColor: $blue,

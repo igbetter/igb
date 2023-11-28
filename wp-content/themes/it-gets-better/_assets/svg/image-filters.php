@@ -26,15 +26,15 @@
 
 	<filter id="duotone-blue_purple" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 		<feColorMatrix type="matrix"
-			values="0 .13 .7 0 0
-				.33 .2 .33 0 0
-				0 .13 .8 0 0
+			values="0.02 .03 .7 0 0
+				.13 .82 .53 0 0
+				0 .03 .58 0 .25
 				0 0 0 1 0"
 			in="SourceGraphic" result="colormatrix"/>
 		<feComponentTransfer in="colormatrix" result="componentTransfer">
-			<feFuncR type="table" tableValues="0.75 0.24"/>
-			<feFuncG type="table" tableValues="0.25 0.77"/>
-			<feFuncB type="table" tableValues="0.64 0.95"/>
+			<feFuncR type="table" tableValues="0.75 0.46"/>
+			<feFuncG type="table" tableValues="0.15 0.67"/>
+			<feFuncB type="table" tableValues="0.64 0.99"/>
 			<feFuncA type="table" tableValues="0 1"/>
 		</feComponentTransfer>
 		<feBlend mode="color" in="componentTransfer" in2="SourceGraphic" result="blend"/>
