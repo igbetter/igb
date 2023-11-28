@@ -152,14 +152,16 @@
             "max": "",
             "allow_null": 1,
             "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_enabled": "1",
                 "acfe_bidirectional_related": [
-                    "field_654e6ead7a18f"
+                    "field_654e6ead7a18f",
+                    "field_646425da248b1"
                 ]
             },
+            "bidirectional": 0,
             "multiple": 0,
-            "min": "",
-            "bidirectional_target": []
+            "bidirectional_target": [],
+            "min": ""
         },
         {
             "key": "field_64643e1948ae7",
@@ -457,5 +459,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701052957
+    "modified": 1701102254
 }

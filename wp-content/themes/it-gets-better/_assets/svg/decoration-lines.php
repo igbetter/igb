@@ -6,7 +6,7 @@
 ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<symbol id="igb_frame_option_01" x="0px" y="0px" preserveAspectRatio="none meet"
+	<symbol id="igb_frame_option_01" class="feature_frame" x="0px" y="0px" preserveAspectRatio="none meet"
 		 viewBox="0 -20 100 135">
 		<path class="svg_line pink"
 			  d="m 50 -20
