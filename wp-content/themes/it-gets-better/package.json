@@ -2,6 +2,7 @@
 	"private": true,
 	"devDependencies": {
 		"@angular-eslint/template-parser": "^15.1.0",
+		"@wanjapflueger/a11y-slider": "^2.3.3",
 		"@wordpress/prettier-config": "^2.7.0",
 		"archiver": "^5.3.1",
 		"browser-sync": "^2.29.3",
@@ -23,8 +24,7 @@
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.2",
-		"sass": "^1.68.0",
-		"smoothscroll-polyfill": "^0.4.4",
+		"sass": "^1.68.0"
 	},
 	"scripts": {
 		"development": "run-p development:**",
@@ -41,7 +41,5 @@
 		"zip": "node node_scripts/zip.js it-gets-better",
 		"bundle": "run-s production zip"
 	},
-	"prettier": "@wordpress/prettier-config",
-	"dependencies": {
-	}
+	"prettier": "@wordpress/prettier-config"
 }
