@@ -2,7 +2,6 @@
 	"private": true,
 	"devDependencies": {
 		"@angular-eslint/template-parser": "^15.1.0",
-		"@wanjapflueger/a11y-slider": "^2.3.3",
 		"@wordpress/prettier-config": "^2.7.0",
 		"archiver": "^5.3.1",
 		"browser-sync": "^2.29.3",
@@ -11,7 +10,6 @@
 		"eslint": "^8.31.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-php-markup": "^6.0.0",
-		"eslint-plugin-tailwindcss": "^3.8.0",
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-rename": "^2.0.0",
