@@ -142,6 +142,7 @@ $themes: (
 		accentBlue: $blue,
 		accentYellow: $yellow,
 		accentGrey: $dark-grey,
+		accentTextColor: $white,
 
 		// section background colors
 		subtlePurpleBG: $subtle-purple-light,
@@ -241,6 +242,7 @@ $themes: (
 		accentBlue: $blue-alt-lighter,
 		accentYellow: $yellow,
 		accentGrey: $medium-grey,
+		accentTextColor: $white,
 
 		// section background colors
 		subtlePurpleBG: $subtle-purple-dark,
@@ -254,7 +256,7 @@ $themes: (
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: 0 0 18px rgba(0, 0, 0, 0.75),
 
-		// program box, global
+		// program box, globalhttp://localhost:3000/playlist/perfectly-queer-the-it-gets-better-project-vodcast-season-1/
 		programBGColorGlobal: $subtle-pink-dark,
 		programTextColorGlobal: $white,
 		programAccentColorGlobal: $pink,
