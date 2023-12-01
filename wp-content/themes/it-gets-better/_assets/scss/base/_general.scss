@@ -87,23 +87,19 @@ body {
 		color: themed( 'accentTextColor' );
 	}
 
-	a,
-	a:visited,
-	a:focus,
-	a:target,
-	a:visited:hover,
-	a:visited:focus,
-	a:visited:target {
-		@include themify($themes) {
-			color: themed('accentTextColor');
-		}
-	}
-
 }
 
 .overlay-IGB_Purple {
 	@include themify($themes) {
 		background: rgba( themed('accentPurple'), 0.5 );
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPurple'), 0.75);
+		}
 	}
 }
 
@@ -112,23 +108,19 @@ body {
 		background: themed('accentPink');
 		color: themed('accentTextColor');
 	}
-
-	a,
-	a:visited,
-	a:focus,
-	a:target,
-	a:visited:hover,
-	a:visited:focus,
-	a:visited:target {
-		@include themify($themes) {
-			color: themed('accentTextColor');
-		}
-	}
 }
 
 .overlay-IGB_Pink {
 	@include themify($themes) {
 		background: rgba(themed('accentPink'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPink'), 0.75);
+		}
 	}
 }
 
@@ -138,22 +130,19 @@ body {
 		color: themed('accentTextColor');
 	}
 
-	a,
-	a:visited,
-	a:focus,
-	a:target,
-	a:visited:hover,
-	a:visited:focus,
-	a:visited:target {
-		@include themify($themes) {
-			color: themed('accentTextColor');
-		}
-	}
 }
 
 .overlay-IGB_Blue {
 	@include themify($themes) {
 		background: rgba(themed('accentBlue'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentBlue'), 0.75);
+		}
 	}
 }
 
@@ -163,22 +152,19 @@ body {
 		color: themed('accentTextColor');
 	}
 
-	a,
-	a:visited,
-	a:focus,
-	a:target,
-	a:visited:hover,
-	a:visited:focus,
-	a:visited:target {
-		@include themify($themes) {
-			color: themed('accentTextColor');
-		}
-	}
 }
 
 .overlay-IGB_Yellow {
 	@include themify($themes) {
 		background: rgba(themed('accentYellow'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentYellow'), 0.75);
+		}
 	}
 }
 
@@ -188,23 +174,19 @@ body {
 		color: themed('accentTextColor');
 	}
 
-	a,
-	a:visited,
-	a:hover,
-	a:focus,
-	a:target,
-	a:visited:hover,
-	a:visited:focus,
-	a:visited:target {
-		@include themify($themes) {
-			color: themed('accentTextColor');
-		}
-	}
 }
 
 .overlay-IGB_Dark {
 	@include themify($themes) {
 		background: rgba(themed('accentGrey'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentGrey'), 0.75);
+		}
 	}
 }
 
@@ -288,9 +270,9 @@ a:visited {
 			border-radius: 3px;
 
 			@include themify($themes) {
-					background-color: themed('primaryButtonBGColor');
-					border: themed('primaryButtonBorder')
-				}
+				background-color: themed('primaryButtonBGColor');
+				border: themed('primaryButtonBorder')
+			}
 		}
 
 		&:hover,
@@ -303,6 +285,25 @@ a:visited {
 					background-color: themed('primaryButtonBGHoverColor');
 
 				}
+			}
+		}
+	}
+
+	.secondary_button {
+
+		padding: 0.5em 1.5em;
+
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGColor');
+			color: themed('secondaryButtonTextColor');
+			border: themed('secondaryButtonBorder');
+		}
+
+		&:hover,
+		&:focus {
+			@include themify($themes) {
+				background-color: themed('secondaryButtonBGHoverColor');
+				color: themed('secondaryButtonTextHoverColor');
 			}
 		}
 	}

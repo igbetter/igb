@@ -22,7 +22,7 @@ $terms = get_terms($query);
 	<header class="section_header more_content_header">
 		<h3 id="more_content_heading--playlists"><?php echo $curatedPlaylistHeading; ?></h3>
 
-		<a href="<?php echo $playlistLink; ?>" class='wp-block-button__link secondary_button'>
+		<a href="<?php echo $playlistLink; ?>" class='wp-block-button__link wp-element-button secondary_button'>
 			<?php echo $allPlaylistButtonLabel; ?>
 		</a>
 	</header>
@@ -55,7 +55,7 @@ $terms = get_terms($query);
 		</ul>
 	</div>
 	<footer class="section_footer more_content_footer">
-		<a href="<?php echo $playlistLink; ?>" class='wp-block-button__link primary_button'>
+		<a href="<?php echo $playlistLink; ?>" class="wp-block-button__link wp-element-button primary_button">
 			<?php echo $allPlaylistButtonLabel; ?>
 		</a>
 	</footer>
