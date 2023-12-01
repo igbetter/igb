@@ -55,6 +55,7 @@ function svgsTask(){
 				example: true, // Build a sample page, please!
 				svg:{
 					xmlDeclaration: false,
+					namespaceClassnames: false,
 				}
 			}
 		}

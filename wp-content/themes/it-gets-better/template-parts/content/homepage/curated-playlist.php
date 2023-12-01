@@ -54,9 +54,4 @@ $terms = get_terms($query);
 			?>
 		</ul>
 	</div>
-	<footer class="section_footer more_content_footer">
-		<a href="<?php echo $playlistLink; ?>" class="wp-block-button__link wp-element-button primary_button">
-			<?php echo $allPlaylistButtonLabel; ?>
-		</a>
-	</footer>
 </section>
