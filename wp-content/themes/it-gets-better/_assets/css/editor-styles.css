@@ -114,6 +114,7 @@ body.theme-dark {
   position: absolute;
   height: 0;
   overflow: hidden;
+  opacity: 0;
 }
 
 .flex-row {
@@ -492,7 +493,6 @@ h6 {
 use {
   padding: 0;
   width: 100%;
-  border: 2px solid #0f0;
   display: block;
 }
 
