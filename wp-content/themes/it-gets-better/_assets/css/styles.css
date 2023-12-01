@@ -80,6 +80,10 @@ body.preload .feature_frame .svg_line {
   stroke-dashoffset: 480;
   opacity: 0;
 }
+body.preload nav#site_main_navigation {
+  position: fixed;
+  opacity: 0;
+}
 body:not(.preload) {
   transition: background-color 200ms ease-in-out;
 }

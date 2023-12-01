@@ -41,6 +41,11 @@ body {
 			stroke-dashoffset: 480;
 			opacity: 0;
 		}
+
+		nav#site_main_navigation {
+			position: fixed;
+			opacity: 0;
+		}
 	}
 
 	&:not(.preload) {

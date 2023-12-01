@@ -23,7 +23,6 @@
 		<feBlend mode="color" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 	</filter>
 
-
 	<filter id="duotone-blue_purple" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 		<feColorMatrix type="matrix"
 			values="0.02 .03 .7 0 0
@@ -103,6 +102,4 @@
 		</feComponentTransfer>
 		<feBlend mode="color" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 	</filter>
-
-
  </svg>
