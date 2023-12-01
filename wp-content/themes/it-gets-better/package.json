@@ -10,7 +10,6 @@
 		"eslint": "^8.31.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-php-markup": "^6.0.0",
-		"eslint-plugin-tailwindcss": "^3.8.0",
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-rename": "^2.0.0",
@@ -23,8 +22,7 @@
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.2",
-		"sass": "^1.68.0",
-		"smoothscroll-polyfill": "^0.4.4",
+		"sass": "^1.68.0"
 	},
 	"scripts": {
 		"development": "run-p development:**",
@@ -41,7 +39,5 @@
 		"zip": "node node_scripts/zip.js it-gets-better",
 		"bundle": "run-s production zip"
 	},
-	"prettier": "@wordpress/prettier-config",
-	"dependencies": {
-	}
+	"prettier": "@wordpress/prettier-config"
 }

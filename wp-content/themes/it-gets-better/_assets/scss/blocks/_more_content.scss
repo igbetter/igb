@@ -6,14 +6,21 @@
 
 
 	@include themify($themes) {
-			background: themed('subtlePurpleBG');
-		}
+		background: themed('subtlePurpleBG');
+	}
 
 	.more_content_header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		h3 + a {
+			margin-top: -2em;
+		}
 	}
 
-	
+	.more_content_footer {
+		text-align: right;
+	}
+
 }
