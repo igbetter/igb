@@ -18,7 +18,9 @@
 
 <div class="hidden svg-decoration-inject hide-this" aria-hidden="true">
 	<?php include '_assets/svg/decoration-lines.php'; ?>
+	<?php include '_assets/svg/content-type-icons.php'; ?>
 	<?php include '_assets/svg/image-filters.php'; ?>
+	<?php include '_assets/svg/output/icons.svg'; ?>
 </div>
 
 </body>
