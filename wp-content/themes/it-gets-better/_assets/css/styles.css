@@ -30,6 +30,7 @@
 /*
 * Implementation of themes
 */
+@import url("https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css");
 @keyframes dash {
   0% {
     opacity: 0;
@@ -1719,163 +1720,31 @@ ul.term_list a span {
   transform: skewX(26deg);
 }
 
-.a11y-slider-container {
-  position: relative;
-  direction: ltr;
+/**
+
+for a11y slider "splide"
+
+https://splidejs.com/
+
+*/
+.splide__track {
+  -webkit-mask: linear-gradient(to right, transparent 0%, red 5%, red 95%, transparent 100%);
+  mask: linear-gradient(to right, transparent 0%, red 5%, red 95%, transparent 100%);
 }
 
-.a11y-slider {
-  position: relative;
-  overflow: hidden;
-  -webkit-scroll-snap-type: x proximity;
-  -ms-scroll-snap-type: x proximity;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.horizontal_slider.splide__list {
+  padding: 0 5% !important;
 }
-
-.a11y-slider::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-.a11y-slider > * {
-  scroll-snap-align: start;
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-.a11y-slider-sr-only,
-.a11y-slider-status {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  text-align: center;
-  font-family: inherit;
-  font-size: 1em;
-}
-
-.a11y-slider-sr-only:focus {
-  position: static;
-  background: #000;
-  color: #fff;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  clip: auto;
-  padding: 10px;
-}
-
-.a11y-slider-hide {
-  display: none;
-}
-
-.a11y-slider-scrolling {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-  -webkit-scroll-snap-type: none;
-  -ms-scroll-snap-type: none;
-  scroll-snap-type: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  scroll-behavior: auto;
-}
-
-.horizontal_slider {
-  margin: 0;
-  padding: 0 10%;
-  list-style: none;
-  cursor: grab;
-  -webkit-mask: linear-gradient(to right, transparent 0%, red 5%, red 90%, transparent 100%);
-  mask: linear-gradient(to right, transparent 0%, red 5%, red 90%, transparent 100%);
-}
-.horizontal_slider li.slide {
-  margin: 1em 1em 2em 1em;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.horizontal_slider .slide {
   background-size: cover;
-  width: 25%;
-  max-width: 370px;
-  height: 20vw;
-  max-height: 250px;
-  flex: 0 0 auto;
 }
-.horizontal_slider li.slide a,
-.horizontal_slider li.slide a:visited {
-  flex: 1;
-  backdrop-filter: blur(2px) brightness(50%) opacity(90%);
+.horizontal_slider .slide a {
   display: flex;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  font-weight: 700;
-  padding: 1em;
+  align-items: center;
+  padding: 2em;
   text-wrap: balance;
-}
-.horizontal_slider li.slide a:hover, .horizontal_slider li.slide a:target, .horizontal_slider li.slide a:focus,
-.horizontal_slider li.slide a:visited:hover,
-.horizontal_slider li.slide a:visited:target,
-.horizontal_slider li.slide a:visited:focus {
-  backdrop-filter: blur(0) brightness(150%);
-}
-.horizontal_slider li.spacer {
-  width: 45px !important;
-}
-
-.a11y-slider-container .a11y-slider-prev {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  z-index: 99;
-  visibility: hidden;
-  display: block;
-  width: 60px;
-  height: 80px;
-  cursor: pointer;
-}
-.a11y-slider-container .a11y-slider-prev:after, .a11y-slider-container .a11y-slider-prev:before {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  left: 3px;
-  visibility: visible;
-  width: 60px;
-  height: 80px;
-}
-.a11y-slider-container .a11y-slider-prev:after {
-  width: 12px;
-  height: 12px;
-  border-bottom: 5px solid;
-  border-left: 5px solid;
-  transform: rotate(45deg);
-  bottom: 37px;
-}
-.a11y-slider-container .a11y-slider-prev:before {
-  width: 26px;
-  height: 5px;
-  bottom: 50%;
-  background: currentColor;
-}
-.a11y-slider-container .a11y-slider-next {
-  position: absolute;
-  top: 40%;
-  right: 0;
-  z-index: 99;
 }
 
 .section_hero {

@@ -18,17 +18,16 @@ $query = array(
 $terms = get_terms($query);
 ?>
 
-<section class="popular-playlist-section more_content_section more_playlists">
+<section class="popular-playlist-section more_content_section more_playlists splide" aria-labelledby="more_content_heading--playlists">
 	<header class="section_header more_content_header">
-		<h3><?php echo $curatedPlaylistHeading; ?></h3>
+		<h3 id="more_content_heading--playlists"><?php echo $curatedPlaylistHeading; ?></h3>
 
 		<a href="<?php echo $playlistLink; ?>" class='wp-block-button__link secondary_button'>
 			<?php echo $allPlaylistButtonLabel; ?>
 		</a>
 	</header>
-	<div class="popular-playlist-slider more_content_slider horizontal_fade">
-		<ul class="horizontal_slider">
-			<li class="spacer"></li>
+	<div class="popular-playlist-slider more_content_slider splide__track">
+		<ul class="horizontal_slider splide__list">
 		<?php
 			foreach ($terms as $term):
 				$imagearray = get_field ( 'header_image', 'term_' . $term->term_id );
@@ -40,7 +39,7 @@ $terms = get_terms($query);
 				$color = ( $colorarray != '' ) ?  esc_html( $colorarray['label'] ) : 'default';
 
 				printf( '
-					<li class="slide background-%s" style="background-image: url(\'%s\');">
+					<li class="slide background-%s splide__slide" style="background-image: url(\'%s\');">
 						<a href="%s" class="slide_content overlay-%s">
 							<span>%s</span>
 						</a>
