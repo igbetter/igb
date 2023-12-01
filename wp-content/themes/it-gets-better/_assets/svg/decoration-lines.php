@@ -28,7 +28,7 @@
 				 L 105 45"/>
 	</symbol>
 
-	<symbol  id="igb_frame_option_02" class="feature_frame" x="0px" y="0px"
+	<symbol id="igb_frame_option_02" class="feature_frame" x="0px" y="0px"
 	preserveAspectRatio="none meet"
 		 viewBox="0 -20 100 135">
 		<path class="svg_line pink"

@@ -1,13 +1,11 @@
 <!-- Note: Temporary template file only. It will be removed once we utilized the custom blocks. -->
 <?php
-$curatedPlaylistHeading = "Curated Playlists";
+$curatedPlaylistHeading = "Popular Playlists";
 $allPlaylistButtonLabel = 'All Playlists';
 $playlistLink = home_url('/playlists');
-
-$overlay = ['rgba(24,0,132,0.45)', 'rgba(73,183,0,0.32)', 'rgba(193,177,0,0.6)', 'rgba(193,177,0,0.6)', 'rgba(191,0,191,0.5)'];
 $query = array(
 	'taxonomy' => 'playlist',
-	'number' => 5,
+	'number' => 7,
 	'hide_empty' => false,
     'meta_query' => array(
 		array(
@@ -18,39 +16,42 @@ $query = array(
 );
 
 $terms = get_terms($query);
-
-  // $slideTemplate = '<div><a class="curated-playlist-slide" href="%s"><img src="%s" width="330" height="150" alt="%s" /><div class="overlay" style="background-image: url(%s);"></div><span>%s</span></a></div>';
-
-  $slideTemplate = '<div><a class="curated-playlist-slide" href="%s" style="background-image: url(%s);"><div class="overlay" style="background-color:%s;"></div><span>%s</span></a></div>';
 ?>
 
-<section class="curated-playlist-section alignfull flex flex-col sm:visible my-6">
-	<header class="section_header row">
-		<h3><?php echo $curatedPlaylistHeading; ?></h3>
+<section class="popular-playlist-section more_content_section more_playlists splide" aria-labelledby="more_content_heading--playlists">
+	<header class="section_header more_content_header">
+		<h3 id="more_content_heading--playlists"><?php echo $curatedPlaylistHeading; ?></h3>
 
-		<a href="<?php echo $playlistLink; ?>" class='hidden md:block wp-block-button__link wp-element-button'>
+		<a href="<?php echo $playlistLink; ?>" class='wp-block-button__link wp-element-button secondary_button'>
 			<?php echo $allPlaylistButtonLabel; ?>
 		</a>
 	</header>
-  <div class="curated-playlist-slider px-default my-4">
-    <?php
-      $count = 0;
-      foreach ($terms as $term):
-        $image = esc_url(get_field('curated_featured_image', $term)['url']);
-        $link = get_term_link($term);
-        $slug = esc_attr($term->slug);
-        $name = $term->name;
-        // $color = get_field('main_color', $term) ? get_field('main_color', $term) :  $overlay[$count];
-        $color = $overlay[$count];
+	<div class="popular-playlist-slider more_content_slider splide__track">
+		<ul class="horizontal_slider splide__list">
+		<?php
+			foreach ($terms as $term):
+				$imagearray = get_field ( 'header_image', 'term_' . $term->term_id );
+				$image = ($imagearray != '' ) ? esc_url( $imagearray['url'] ) : '';
+				$link = get_term_link($term);
+				$slug = esc_attr( $term->slug );
+				$name = esc_html( $term->name );
+				$colorarray = get_field( 'main_color', 'term_' . $term->term_id);
+				$color = ( $colorarray != '' ) ?  esc_html( $colorarray['label'] ) : 'default';
 
-        echo sprintf($slideTemplate, $link, $image,  $color,  $name);
-        $count++;
-      endforeach;
-    ?>
-  </div>
-  <div class="px-default visible md:hidden">
-    <a href="<?php echo $playlistLink; ?>" class='wp-block-button__link wp-element-button'>
-      <?php echo $allPlaylistButtonLabel; ?>
-    </a>
-  </div>
+				printf( '
+					<li class="slide background-%s splide__slide" style="background-image: url(\'%s\');">
+						<a href="%s" class="slide_content overlay-%s">
+							<span>%s</span>
+						</a>
+					</li>',
+					$color,
+					$image,
+					$link,
+					$color,
+					$name
+				);
+			endforeach;
+			?>
+		</ul>
+	</div>
 </section>

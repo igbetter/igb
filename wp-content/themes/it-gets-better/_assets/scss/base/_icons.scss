@@ -1,0 +1,33 @@
+@import "../../svg/output/sprite";
+
+
+
+path[class*="icon_purple"] {
+	@include themify($themes) {
+		fill: themed('accentPurple');
+	}
+}
+
+path[class*="icon_pink"] {
+	@include themify($themes) {
+		fill: themed('accentPink');
+	}
+}
+
+path[class*="icon_blue"] {
+	@include themify($themes) {
+		fill: themed('accentBlue');
+	}
+}
+
+path[class*="icon_yellow"] {
+	@include themify($themes) {
+		fill: themed('accentYellow');
+	}
+}
+
+path[class*="icon_grey"] {
+	@include themify($themes) {
+		fill: themed('accentGrey');
+	}
+}

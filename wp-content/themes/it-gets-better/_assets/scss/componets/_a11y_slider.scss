@@ -1,0 +1,82 @@
+/**
+
+for a11y slider "splide"
+
+https://splidejs.com/
+
+*/
+
+@import url('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css');
+
+
+.splide__track {
+	-webkit-mask: linear-gradient(to right,
+					transparent 0%,
+					red 5%,
+					red 95%,
+					transparent 100%);
+			mask: linear-gradient(to right,
+					transparent 0%,
+					red 5%,
+					red 95%,
+					transparent 100%);
+}
+
+.splide__arrow {
+	transform: translateY(0) scale(1.5);
+	@include themify($themes) {
+		background-color: themed('textColor');
+	}
+
+	svg {
+		@include themify($themes) {
+			fill: themed('backgroundColor');
+		}
+	}
+
+}
+.horizontal_slider {
+	&.splide__list {
+		padding: 0 5% !important;
+	}
+
+	.slide {
+		background-size: cover;
+
+		a,
+		a:visited {
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			padding: 1em;
+			text-wrap: balance;
+			border: 2px solid transparent;
+			font-weight: 600;
+
+			@include themify($themes) {
+				//box-shadow: themed('subtleShadow');
+			}
+
+			&:hover,
+			&:focus,
+			&:target {
+				backdrop-filter: brightness(120%) saturate(120%);
+				@include themify($themes) {
+					border: 2px solid themed('textColor');
+				}
+			}
+
+			span {
+				display: inline-block;
+				padding: 0.5em 12%;
+				clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+
+				@include themify($themes) {
+					background: rgba( themed('subtlePurpleBG'), 0.75 );
+					color: themed( 'textColor' );
+				}
+			}
+		}
+	}
+}

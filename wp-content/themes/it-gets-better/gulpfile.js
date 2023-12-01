@@ -2,7 +2,7 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const terser = require('gulp-terser');
-const concat = require( 'gulp-concat' );
+const concat = require('gulp-concat');
 const rename = require( 'gulp-rename' );
 const svgSprite = require('gulp-svg-sprite');
 const browsersync = require('browser-sync').create();
@@ -55,6 +55,7 @@ function svgsTask(){
 				example: true, // Build a sample page, please!
 				svg:{
 					xmlDeclaration: false,
+					namespaceClassnames: false,
 				}
 			}
 		}

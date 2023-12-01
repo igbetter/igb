@@ -37,8 +37,14 @@ body {
 			-webkit-animation-duration: 0s !important;
 		}
 
-		.svg_line {
-			stroke-dashoffset: 280;
+		.feature_frame .svg_line {
+			stroke-dashoffset: 480;
+			opacity: 0;
+		}
+
+		nav#site_main_navigation {
+			position: fixed;
+			opacity: 0;
 		}
 	}
 
@@ -74,6 +80,7 @@ body {
 	position: absolute;
 	height: 0;
 	overflow: hidden;
+	opacity: 0;
 }
 
 .flex-row {
@@ -83,27 +90,109 @@ body {
 .background-IGB_Purple {
 	@include themify($themes) {
 		background: themed('accentPurple');
+		color: themed( 'accentTextColor' );
+	}
+
+}
+
+.overlay-IGB_Purple {
+	@include themify($themes) {
+		background: rgba( themed('accentPurple'), 0.5 );
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPurple'), 0.75);
+		}
 	}
 }
+
 .background-IGB_Pink {
 	@include themify($themes) {
 		background: themed('accentPink');
+		color: themed('accentTextColor');
 	}
 }
+
+.overlay-IGB_Pink {
+	@include themify($themes) {
+		background: rgba(themed('accentPink'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPink'), 0.75);
+		}
+	}
+}
+
 .background-IGB_Blue {
 	@include themify($themes) {
 		background: themed('accentBlue');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Blue {
+	@include themify($themes) {
+		background: rgba(themed('accentBlue'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentBlue'), 0.75);
+		}
 	}
 }
+
 .background-IGB_Yellow {
 	@include themify($themes) {
 		background: themed('accentYellow');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Yellow {
+	@include themify($themes) {
+		background: rgba(themed('accentYellow'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentYellow'), 0.75);
+		}
 	}
 }
 
 .background-IGB_Dark {
 	@include themify($themes) {
 		background: themed('accentGrey');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Dark {
+	@include themify($themes) {
+		background: rgba(themed('accentGrey'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentGrey'), 0.75);
+		}
 	}
 }
 
@@ -187,9 +276,9 @@ a:visited {
 			border-radius: 3px;
 
 			@include themify($themes) {
-					background-color: themed('primaryButtonBGColor');
-					border: themed('primaryButtonBorder')
-				}
+				background-color: themed('primaryButtonBGColor');
+				border: themed('primaryButtonBorder')
+			}
 		}
 
 		&:hover,
@@ -202,6 +291,25 @@ a:visited {
 					background-color: themed('primaryButtonBGHoverColor');
 
 				}
+			}
+		}
+	}
+
+	.secondary_button {
+
+		padding: 0.5em 1.5em;
+
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGColor');
+			color: themed('secondaryButtonTextColor');
+			border: themed('secondaryButtonBorder');
+		}
+
+		&:hover,
+		&:focus {
+			@include themify($themes) {
+				background-color: themed('secondaryButtonBGHoverColor');
+				color: themed('secondaryButtonTextHoverColor');
 			}
 		}
 	}
@@ -227,7 +335,7 @@ a:visited {
 
 		@include themify($themes) {
 			background: themed('accentButtonBGColor');
-				color: themed('accentButtonTextColor');
+			color: themed('accentButtonTextColor');
 		}
 
 		&:hover,
@@ -302,7 +410,6 @@ h6 {
 use {
 	padding: 0;
 	width: 100%;
-	border: 2px solid #0f0;
 	display: block;
 }
 
@@ -318,16 +425,20 @@ use {
 	stroke-width: 3.4%;
 	stroke-linecap: square;
 	stroke-linejoin: round;
-	stroke-dasharray: 250;
 
-	animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+	.feature_frame & {
+		stroke-dasharray: 290;
 
-	&:nth-of-type( 2 ) {
-		animation-delay: 100ms;
+		animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+		&:nth-of-type( 2 ) {
+			animation-delay: 100ms;
+		}
+		&:nth-of-type(3) {
+			animation-delay: 140ms;
+		}
 	}
-	&:nth-of-type(3) {
-		animation-delay: 140ms;
-	}
+
 
 	&.thin_line {
 		stroke-width: 0.3rem;
@@ -376,6 +487,5 @@ use {
 		object-fit: cover;
 
 	}
-
 
 }

@@ -1,0 +1,122 @@
+/**
+ *	styles for looped content
+ *
+ */
+
+ // global
+
+ h3.item_title {
+	font-size: $font-size-md;
+	font-weight: 300;
+	display: inline-block;
+	text-wrap: balance;
+
+	a &,
+	a:visited &,
+	a,
+	a:visited  {
+		@include themify($themes) {
+			text-decoration-color: rgba(themed('linkColor'), 0.15);
+		}
+	}
+ }
+
+ // grid view
+
+ .content_grid_container {
+	width: 90%;
+	margin: 0 auto;
+
+	> article {
+		padding: 1em;
+		text-decoration: none;
+
+		a,
+		a:visited {
+			text-decoration: none;
+			border: 3px solid transparent;
+			display: block;
+			border-radius: 5px;
+
+			@include themify($themes) {
+				background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+				box-shadow: themed( 'subtleShadow' );
+			}
+
+			&:hover,
+			&:focus,
+			&:target {
+				outline: none;
+
+				@include themify($themes) {
+					background: rgba(darken(themed('backgroundColor'), 10), 0.5);
+					border: 3px solid rgba(themed('linkColor'), 0.5);
+					box-shadow: themed('largeShadow');
+				}
+
+				img {
+
+					@include themify($themes) {
+						filter: none;
+						border: 1px solid rgba(themed('textColor'), 0.5);
+					}
+				}
+			}
+		}
+	}
+
+	.group_container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border: 5px solid transparent;
+
+		&:hover {
+			span.content_type {
+				filter: none;
+				background: rgba( 255, 255, 255, 0.8);
+			}
+		}
+
+		span.content_type {
+			position: absolute;
+			display: block;
+			z-index: 99;
+			top: -60px;
+			right: -60px;
+			background: rgba( 0, 0, 0, 0.98 );
+			border-radius: 50%;
+			filter: brightness(500%) saturate(0%) opacity(0.7);
+			padding: 60px 60px 15px 15px;
+			transition: all 100ms ease-in-out;
+
+
+			svg,
+			use {
+				width: 50px;
+				height: 50px;
+			//	transform: translateX(-10px) translateY(10px);
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			transition: all 780ms ease-in-out;
+
+			@include themify($themes) {
+				border: 1px solid rgba(themed('linkColor'), 0.25);
+				filter: themed( 'duotoneFilter' );
+			}
+		}
+
+		h3 {
+			align-self: flex-start;
+			flex: none;
+			display: inline-block;
+			padding: 1.5em;
+			margin: 0;
+		}
+	}
+}

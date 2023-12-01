@@ -1,0 +1,26 @@
+
+
+.more_content_section {
+	display: block;
+	padding: 2em;
+
+
+	@include themify($themes) {
+		background: themed('subtlePurpleBG');
+	}
+
+	.more_content_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		h3 + a {
+			margin-top: -2em;
+		}
+	}
+
+	.more_content_footer {
+		text-align: right;
+	}
+
+}
