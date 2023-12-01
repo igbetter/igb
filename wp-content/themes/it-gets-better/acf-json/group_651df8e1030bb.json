@@ -22,98 +22,6 @@
             "no_preference": 0
         },
         {
-            "key": "field_653c3dc48a44c",
-            "label": "Site Logo",
-            "name": "site_logo",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 1,
-            "message": "Logo File",
-            "default_value": 0,
-            "ui_on_text": "Advanced",
-            "ui_off_text": "Simple",
-            "ui": 1,
-            "style": ""
-        },
-        {
-            "key": "field_653c3e298a44d",
-            "label": "Logo SVG code",
-            "name": "logo_svg_code",
-            "aria-label": "",
-            "type": "acfe_code_editor",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_653c3dc48a44c",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "70",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 1,
-            "default_value": "",
-            "placeholder": "",
-            "mode": "text\/html",
-            "lines": 1,
-            "indent_unit": 4,
-            "maxlength": "",
-            "rows": 12,
-            "max_rows": "",
-            "return_format": []
-        },
-        {
-            "key": "field_653c3eab8a44e",
-            "label": "Logo image file",
-            "name": "logo_image_file",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_653c3dc48a44c",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "70",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 1,
-            "uploader": "wp",
-            "return_format": "url",
-            "library": "all",
-            "upload_folder": "template",
-            "acfe_thumbnail": 0,
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
             "key": "field_653c3feedfec6",
             "label": "Default excerpt length",
             "name": "default_excerpt_length",
@@ -256,12 +164,11 @@
                     "choices": {
                         "facebook": "Facebook",
                         "instagram": "Instagram (EN)",
-                        "instagram_es": "Instagram (ES)",
+                        "instagramES": "Instagram (ES)",
                         "linkedin": "LinkedIn",
                         "tiktok": "TikTok",
                         "tumblr": "Tumblr",
                         "twitch": "Twitch",
-                        "twitter": "X",
                         "youtube": "YouTube",
                         "other": "[Other]"
                     },
@@ -308,5 +215,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1698449502
+    "modified": 1701462399
 }

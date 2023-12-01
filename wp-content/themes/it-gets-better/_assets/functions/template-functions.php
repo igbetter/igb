@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Helper Functions which enhance the theme by hooking into WordPress
  *
  * @package It_Gets_Better
  */
@@ -227,4 +227,204 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 			)
 		),
 	);
+}
+
+// ---------------------------------site options ---------
+
+/**
+ * Set the post excerpt length to the number of words set on the Site Options
+ * page (if any).
+ */
+function igb_options_excerpt_length( $length ) {
+	if ( 'words' === get_field( 'excerpt_length_unit', 'option' ) ) {
+		if ( $custom_length = get_field( 'excerpt_length', 'option' ) ) {
+			$length = (int) $custom_length;
+		}
+	}
+	return $length;
+}
+add_filter( 'excerpt_length', 'igb_options_excerpt_length' );
+
+
+/**
+ * Re-trim post excerpts to a specific number of *characters*, instead of
+ * words, if we've been asked to do so.
+ */
+function igb_options_trim_excerpt_characters( $trimmed, $raw_excerpt ) {
+
+	// Per wp_trim_excerpt() behavior, if there *is* a raw excerpt, return it.
+	if ( '' !== $raw_excerpt ) {
+		return $raw_excerpt;
+	}
+
+	// If we're supposed to be trimming by words and not characters, bail.
+	if ( 'chars' !== get_field( 'excerpt_length_unit', 'option' ) ) {
+		return $trimmed;
+	}
+
+	// Get the number of characters to trim to.
+	$excerpt_length = (int) get_field( 'excerpt_length', 'option' );
+
+	// If we haven't been told how many characters to trim to, bail.
+	if ( ! $excerpt_length ) {
+		return $trimmed;
+	}
+
+	// Apply filters/etc from wp_trim_excerpt().
+	$text = get_the_content( '' );
+	$text = strip_shortcodes( $text );
+	$text = apply_filters( 'the_content', $text );
+	$text = str_replace( ']]>', ']]&gt;', $text );
+
+	// Strip tags and condense whitespace like wp_trim_words().
+	$text = wp_strip_all_tags( $text );
+	$text = preg_replace( '/[\n\r\t ]+/', ' ', $text );
+
+	// Trim the excerpt to the number of characters given.
+	$trimmed_hard = substr( $text, 0, $excerpt_length );
+
+	// Get the "more" text/link to append to the excerpt.
+	$excerpt_more = apply_filters( 'excerpt_more', ' [&hellip;]', 'start' );
+
+	// NOTE: We're trimming by words in an effort to keep all words whole. If you
+	// don't care about your excerpts looking "like thi", you can skip the below
+	// and just `return $trimmed_hard . $excerpt_more;`.
+	// Get the number of words this corresponds to.
+	$word_count = str_word_count( $trimmed_hard );
+	// Decrement by one, since the chances are very good that $trimmed_hard ends
+	// in the middle of a word.
+	$word_count -= 1;
+	// TrimSpa, baby!
+	$trimmed_soft = wp_trim_words( $text, $word_count, $excerpt_more );
+
+	return $trimmed_soft;
+}
+add_filter( 'wp_trim_excerpt', 'igb_options_trim_excerpt_characters', 10, 2 );
+
+
+//-----------------------------------------------------------------------------
+// "Text" tab
+//-----------------------------------------------------------------------------
+
+/**
+ * Return the footer text as specified on the Site Options page.
+ */
+function igb_options_get_footer_text() {
+	$footer_text = get_field( 'site_footer_text', 'option' );
+
+	// Replace [year] with the year.
+	$footer_text = str_replace( '[year]', date( 'Y' ), $footer_text );
+	return $footer_text;
+}
+
+/**
+ * Output the copyright text as specified on the Site Options page.
+ */
+function igb_options_footer_text() {
+	$footer_text = get_field( 'site_footer_text', 'option' );
+	if ( $footer_text = '' ) {
+		return;
+	}
+	// Escape output (allowing basic markp) & prettify dashes, apostrophes, etc.
+	echo wp_kses_post( wptexturize( igb_options_get_footer_text() ) );
+}
+
+/**
+ * Return the contact info text as specified on the Site Options page.
+ */
+function igb_options_get_contact_info() {
+	return get_field( 'contact_info', 'option' );
+}
+
+/**
+ * Output the contact info as specified on the Site Options page.
+ */
+function igb_options_contact_info() {
+	// Escape output (ACF takes care of wptexturize-ation, shortcodes, etc).
+	echo wp_kses_post( igb_options_get_contact_info() );
+}
+
+
+//-----------------------------------------------------------------------------
+// "URLs" tab
+//-----------------------------------------------------------------------------
+
+/**
+ * Return an array of social links.
+ *
+ * @param array $services An array of service names ('facebook', 'twitter', etc.)
+ *                      to return links for, if links have been set in the Site
+ *                      Options page. Omit or leave empty to return all links
+ *                      provided.
+ * @return array An array of arrays, each second-dimension array containing the
+ *               keys 'service', 'handle', and 'url'. Note that 'service' and
+ *               'handle' may be empty.
+ */
+function igb_options_get_social_links( $services = false ) {
+
+
+	// We'll collect the links in this variable.
+	$links = array();
+
+	// Iterate over 'social_media_urls' rows...
+	while ( have_rows( 'igb_social_media_links', 'option' ) ) {
+		the_row();
+
+		// Get all sub-fields.
+		$link = array(
+			'url'   => get_sub_field( 'link' ),
+			'icon' => get_sub_field( 'icon' ),
+		);
+
+
+		$links[] = $link;
+	}
+
+	return $links;
+}
+
+/**
+ * Output the social links as a nice UL with some helpful classing.
+ *
+ * @param string $class_prefix (default: 'icon-') prefix for html class generated by service name and applied to li elements
+ * @param string $link_target (default: '_blank') html target attribute value for anchors on social links
+ * @param string $ul_class (default: 'menu menu-social-links') css classes applied to enclosing ul
+ * @param string $ul_id (default: '') html id attribute applied to encolding ul
+ * @return void
+ */
+function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_blank', $ul_class = 'menu menu-social-links', $ul_id = '', $svg_icons = false ) {
+
+	$social_links = igb_options_get_social_links();
+	$ul_id_html = '';
+
+	if ( count( $social_links ) ) {
+
+		// Give the UL an ID if specified
+		if ( ! empty( $ul_id ) ) {
+			$ul_id_html = 'id="' . sanitize_html_class( $ul_id ) . '"';
+		}
+
+		// Variable $classes can be a string or an array. Make it an array and sanitize it.
+		$classes = ( ! is_array( $ul_class ) ) ? explode( ' ', $ul_class ) : $ul_class ;
+		$classes = array_map( 'sanitize_html_class', $classes );
+
+		// Output the UL element
+		echo '<ul class="' . implode( ' ', apply_filters( 'igb_options_social_links_ul_classes', $classes ) ) . '" ' . $ul_id_html . ">";
+
+		// Loop through social links and output them
+		foreach ( $social_links as $link ) {
+			$li_class = sanitize_html_class( $class_prefix . ( ! empty( $link['icon'] ) ? $link['icon'] : 'unknown' ) );
+			$li_class = apply_filters( 'igb_options_social_links_li_class', $li_class );
+			echo "<li class='$li_class'><a href='" . esc_url( $link['url'] ) . "' target='" . esc_attr( $link_target ) . "'>";
+
+			if( $svg_icons == true ) :
+				echo "<svg class='icon-" . esc_html( $link['icon'] ) . "-dims icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#" . esc_html( $link['icon'] ) . "'></use><text class='sr-only'>" . $link['icon'] . "</text></svg>";
+			endif;
+			echo "</a></li>";
+		}
+
+		// We're done, close the UL
+		echo "</ul>";
+
+	}
 }

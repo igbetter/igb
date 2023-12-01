@@ -29,7 +29,7 @@
 		<div class="flex-row">
 			<div id="IGB_MAIN_LOGO">
 				<a href="<?php echo home_url(); ?>">
-				<svg version="1.1" id="IT_GETS_BETTER--logo" xmlns="http://www.w3.org/2000/svg" class="main_IGB_logo" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.3 165.2" style="enable-background:new 0 0 352.3 165.2;" xml:space="preserve">
+				<svg version="1.1" id="IT_GETS_BETTER--logo" xmlns="http://www.w3.org/2000/svg" class="main_IGB_logo IGB_LOGO" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.3 165.2" style="enable-background:new 0 0 352.3 165.2;" xml:space="preserve">
 					<g>
 						<rect x="0.6" y="1.5" class="logo_purple" width="17.2" height="74.2"></rect>
 						<polygon class="logo_purple" points="62.3,17.3 76.7,17.3 84.6,2.6 84.6,1.5 22.8,1.5 22.8,17.3 45.1,17.3 45.1,75.7 45.4,75.7 62.3,44.1"></polygon>
@@ -136,6 +136,4 @@
 		</nav>
 
 	</div>
-	<?php // get_template_part( 'template-parts/layout/header', 'content' ); ?>
-
 	<div id="content">
