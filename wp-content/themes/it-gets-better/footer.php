@@ -12,11 +12,8 @@
 ?>
 
 	</div><!-- #content -->
-
 	<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
-
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 <div class="hidden svg-decoration-inject hide-this" aria-hidden="true">
