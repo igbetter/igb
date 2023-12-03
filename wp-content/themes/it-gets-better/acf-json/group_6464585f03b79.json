@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 1,
             "post_type": [
                 "video"
             ],
@@ -26,8 +25,7 @@
             ],
             "taxonomy": "",
             "filters": [
-                "search",
-                "taxonomy"
+                "search"
             ],
             "return_format": "object",
             "acfe_add_post": 0,
@@ -61,7 +59,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 1,
             "post_type": [
                 "eduguide"
             ],
@@ -71,8 +68,7 @@
             ],
             "taxonomy": "",
             "filters": [
-                "search",
-                "taxonomy"
+                "search"
             ],
             "return_format": "object",
             "acfe_add_post": 0,
@@ -105,7 +101,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 1,
             "post_type": [
                 "post"
             ],
@@ -122,7 +117,7 @@
             "acfe_add_post": 0,
             "acfe_edit_post": 1,
             "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_enabled": "1",
                 "acfe_bidirectional_related": [
                     "field_64645aaed4d89"
                 ]
@@ -149,24 +144,23 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 1,
             "taxonomy": "playlist",
             "add_term": 0,
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
-            "field_type": "checkbox",
+            "field_type": "multi_select",
             "min": "",
             "max": "",
+            "allow_null": 1,
             "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "1",
+                "acfe_bidirectional_enabled": true,
                 "acfe_bidirectional_related": [
                     "field_6464476931743"
                 ]
             },
             "bidirectional": 0,
             "multiple": 0,
-            "allow_null": 0,
             "bidirectional_target": []
         }
     ],
@@ -195,5 +189,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701053000
+    "modified": 1701548558
 }

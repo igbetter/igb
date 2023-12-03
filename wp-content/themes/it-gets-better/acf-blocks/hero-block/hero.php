@@ -1,6 +1,6 @@
 <?php
 /**
- * Testimonial Block template.
+ * Hero Block template.
  *
  * @param array $block The block settings and attributes.
  */
@@ -24,7 +24,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'testimonial';
+$class_name = 'hero';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }

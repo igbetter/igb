@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "columns": "6\/12",
             "endpoint": 0,
             "border": [
@@ -41,7 +40,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "required_message": "Hero heading text required",
             "maxlength": "",
@@ -63,7 +61,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "choices": {
                 "sub_heading": "Subheading text",
                 "paragraph": "Paragraph text",
@@ -102,7 +99,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -131,7 +127,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "acfe_wysiwyg_min_height": 300,
             "acfe_wysiwyg_max_height": "",
@@ -221,7 +216,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -250,7 +244,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "post_type": "",
             "post_status": "",
             "taxonomy": "",
@@ -280,7 +273,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "Search for...",
             "maxlength": "",
             "placeholder": "",
@@ -301,7 +293,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "columns": "6\/12",
             "endpoint": 0,
             "border": [
@@ -326,7 +317,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "choices": {
                 "frame_option_01": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_01.png",
                 "frame_option_02": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_02.png",
@@ -361,7 +351,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "uploader": "wp",
             "return_format": "url",
             "library": "all",
@@ -402,5 +391,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1700298216
+    "modified": 1701548557
 }

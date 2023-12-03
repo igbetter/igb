@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "message": "Display as Featured Playlist on Homepage",
             "default_value": 0,
             "ui": 0,
@@ -38,7 +37,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "message": "Display as Curated Playlist",
             "default_value": 0,
             "ui": 0,
@@ -68,7 +66,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "uploader": "",
             "return_format": "array",
             "upload_folder": "",
@@ -109,5 +106,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701053047
+    "modified": 1701548558
 }

@@ -33,8 +33,6 @@ get_header();
 
 					</section>
 
-
-
 					<section class="featured_video_and_popular_terms two_column full_width background-subtle_grey">
 						<div class="featured_video">
 							<?php get_template_part('template-parts/content/homepage/featured-video'); ?>
