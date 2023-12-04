@@ -12,6 +12,92 @@ section.featured_content {
 		}
 	}
 
+	&.video {
+
+		.section_content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+
+			> * {
+				margin: 0.5em ;
+			}
+
+			h6 {
+				align-self: flex-start;
+			}
+
+			.video_wrapper {
+				width: 100%;
+			}
+
+			.featured_video_title {
+				font-size: $font-size-md;
+				max-width: $max_body_text_width_half;
+				padding: 0 1em 2em 1em;
+				margin: 0 auto;
+				text-align: center;
+				text-wrap: balance;
+			}
+
+			.related_videos {
+				align-self: stretch;
+				margin-top: -1.5em;
+
+
+				.flex-row {
+					justify-content: space-evenly;
+					align-items: flex-start;
+				}
+
+				.related_video {
+					flex: 1;
+					padding: 0.5em;
+
+					a {
+						display: block;
+						font-size: $font-size-sm;
+						overflow: hidden;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+					}
+					img {
+						width: 100%;
+						object-fit: cover;
+
+						@include themify($themes) {
+							border: 1px solid rgba(themed('linkColor'), 0.25);
+							filter: themed( 'duotoneFilter' );
+						}
+					}
+				}
+			}
+		}
+
+
+
+		video,
+		iframe {
+			width: 85%;
+			margin: 1em auto;
+			padding: 8px;
+			display: block;
+			//height: calc( 75% * #{$video_aspect_ratio} );
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: themed('backgroundColor');
+				box-shadow: themed( 'subtleShadow');
+			}
+
+			@include tablet-down {
+				width: 100%;
+				margin-top: 3em;
+			}
+		}
+	}
+
 	&.playlist {
 		margin: 6em 0;
 

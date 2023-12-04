@@ -28,10 +28,57 @@ if ( ! empty( $block['align'] ) ) {
 	<div class="section_content">
 		<?php if ( $feature_type === 'video' ) :
 			$video_fields = get_field( 'video_details' );
+			$video_post_object = $video_fields[ 'video_to_feature' ];
+			$video_post_id = $video_post_object[0]->ID;
+			$video = get_post( $video_post_id );
 
-		//	var_dump( $video_fields );
-			?>
-			<h2>video</h2>
+			$is_video_hosted_here = get_field( 'video_file_location', $video_post_id, false );
+			//var_dump( $video_fields );
+			?><br />
+			<h6 class="subhead">Featuerd Video</h6>
+			<div class="video_wrapper">
+			<?php echo igb_display_video_embed( $video_post_id ) ?>
+			</div>
+			<a href="<?php echo get_the_permalink( $video_post_id ); ?>" class="featured_video_title"><?php echo esc_html( $video->post_title ); ?></a>
+			<?php if ( $video_fields[ 'display_additional_videos' ] === true ) : ?>
+				<div class="related_videos">
+					<h6>More Videos</h6>
+					<div class="related_videos_container flex-row">
+						<?php if ( $video_fields[ 'additional_video_selection' ] === 'auto' ) :
+							$videotags = wp_get_post_terms( $video_post_id, 'post_tag', ['fields' => 'ids'] );
+							$args = [
+								'post__not_in'        => array( $video_post_id ),
+								'posts_per_page'      => 4,
+								'ignore_sticky_posts' => 1,
+								'orderby'             => 'rand',
+								'tax_query' => [
+									[
+										'taxonomy' => 'post_tag',
+										'terms'    => $videotags
+									]
+								]
+							];
+							$more_videos_query = new wp_query( $args );
+							if( $more_videos_query->have_posts() ) :
+								while( $more_videos_query->have_posts() ) :
+									$more_videos_query->the_post();
+									$videoID = get_the_ID();?>
+									<div class="related_video small">
+										<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail( array( 400, 90 ), true ); ?>
+										<?php the_title(); ?>
+										</a>
+									</div>
+								<?php endwhile;
+							endif;
+
+						else :
+							// TODO: this.
+						endif;
+						?>
+					 </div>
+				</div>
+			<?php endif; ?>
 		<?php elseif ( $feature_type === 'playlist' ):
 			$playlist_fields = get_field( 'playlist_details' );
 			$playlist_id = $playlist_fields['playlist_to_feature'];
@@ -147,22 +194,20 @@ if ( ! empty( $block['align'] ) ) {
 
 				<?php
 				//echo $featured_term_id;
-				$is_video_hosted_here = get_field( 'featured_video', $featured_term_id, false );
-				if ( $is_video_hosted_here === '0' ) :
+				$is_term_video_hosted_here = get_field( 'featured_video', $featured_term_id, false );
+				if ( $is_term_video_hosted_here === '0' ) :
 					// youtube video
-					$video_url = get_field( 'glossary_youtube_link', $featured_term_id, false);
+					$term_video_url = get_field( 'glossary_youtube_link', $featured_term_id, false);
 
-					$videoargs = array(
+					$termvideoargs = array(
 						'width'		=> '700',
 					);
-					$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
+					$youtube_embed = wp_oembed_get( esc_url( $term_video_url ), $termvideoargs );
 					echo $youtube_embed;
 
 				else :
 					// self hosted video
 					$video_embed = get_field( 'upload_glossary_video', $featured_term_id );
-
-				//	var_dump( $video_embed );
 
 					printf(
 						'<video poster="%s" controls>

@@ -412,7 +412,6 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "acfe_save_meta": 0,
                             "uploader": "",
                             "return_format": "array",
                             "upload_folder": "video\/transcripts\/",
@@ -481,5 +480,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701548558
+    "modified": 1701673395
 }
