@@ -428,3 +428,32 @@ function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_bla
 
 	}
 }
+
+
+function igb_display_video_embed( $video_ID = 'NULL' ) {
+	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
+	echo $is_video_hosted_here;
+	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
+		// self hosted video
+		$video_embed = get_field( 'upload_file', $video_ID );
+
+		$output = sprintf(
+			'<video poster="%s" controls>
+				<source src="%s" type="%s"/>
+			</video>',
+			esc_url( get_the_post_thumbnail_url( $video_ID,'full') ),
+			esc_url( $video_embed['url'] ),
+			esc_attr( $video_embed['mime_type'])
+		);
+	else :
+		// youtube video
+		$video_url = get_field( 'youtube_link', $video_ID, false);
+		$videoargs = array(
+				'width'		=> '700',
+			);
+			$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
+			$output = $youtube_embed;
+
+	endif;
+	return $output;
+}

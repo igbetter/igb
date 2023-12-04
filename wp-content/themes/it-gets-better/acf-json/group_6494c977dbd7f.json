@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "message": "Show as Featured Blog on Homepage",
             "default_value": 0,
             "ui": 0,
@@ -52,5 +51,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701053039
+    "modified": 1701548558
 }

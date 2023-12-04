@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -23,25 +23,182 @@
             "append": ""
         },
         {
+            "key": "field_646425da248b1",
+            "label": "Playlist",
+            "name": "playlist",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Add to or create a playlist, if applicable.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "playlist",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "field_type": "select",
+            "max": "",
+            "allow_null": 1,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_related": [
+                    "field_654e6ead7a18f"
+                ]
+            },
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_654e6ead7a18f"
+            ],
+            "multiple": 0,
+            "min": ""
+        },
+        {
+            "key": "field_64643e1948ae7",
+            "label": "Episode Number",
+            "name": "episode_number",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_646425da248b1",
+                        "operator": "!=empty"
+                    },
+                    {
+                        "field": "field_646425da248b1",
+                        "operator": "!=",
+                        "value": "general"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_648a0ce81895d",
-            "label": "Featured Description",
+            "label": "Description",
             "name": "featured_description",
             "aria-label": "",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
-            "maxlength": "",
+            "acfe_wysiwyg_min_height": 300,
+            "acfe_wysiwyg_max_height": "",
+            "acfe_wysiwyg_valid_elements": "",
+            "acfe_wysiwyg_custom_style": "",
+            "acfe_wysiwyg_disable_wp_style": 0,
+            "acfe_wysiwyg_autoresize": 1,
+            "acfe_wysiwyg_disable_resize": 0,
+            "acfe_wysiwyg_remove_path": 0,
+            "acfe_wysiwyg_menubar": 0,
+            "acfe_wysiwyg_transparent": 0,
+            "acfe_wysiwyg_merge_toolbar": 1,
+            "acfe_wysiwyg_custom_toolbar": 1,
+            "acfe_wysiwyg_toolbar_buttons": {
+                "acfe_wysiwyg_toolbar_1": {
+                    "1": {
+                        "acfe_wysiwyg_toolbar_row": "bold"
+                    },
+                    "2": {
+                        "acfe_wysiwyg_toolbar_row": "italic"
+                    },
+                    "3": {
+                        "acfe_wysiwyg_toolbar_row": "bullist"
+                    },
+                    "4": {
+                        "acfe_wysiwyg_toolbar_row": "numlist"
+                    },
+                    "5": {
+                        "acfe_wysiwyg_toolbar_row": "blockquote"
+                    },
+                    "9": {
+                        "acfe_wysiwyg_toolbar_row": "link"
+                    },
+                    "11": {
+                        "acfe_wysiwyg_toolbar_row": "spellchecker"
+                    }
+                },
+                "acfe_wysiwyg_toolbar_2": {
+                    "0": {
+                        "acfe_wysiwyg_toolbar_row": "strikethrough"
+                    },
+                    "1": {
+                        "acfe_wysiwyg_toolbar_row": "hr"
+                    },
+                    "3": {
+                        "acfe_wysiwyg_toolbar_row": "pastetext"
+                    },
+                    "4": {
+                        "acfe_wysiwyg_toolbar_row": "removeformat"
+                    },
+                    "5": {
+                        "acfe_wysiwyg_toolbar_row": "charmap"
+                    },
+                    "8": {
+                        "acfe_wysiwyg_toolbar_row": "undo"
+                    },
+                    "9": {
+                        "acfe_wysiwyg_toolbar_row": "redo"
+                    },
+                    "10": {
+                        "acfe_wysiwyg_toolbar_row": "wp_help"
+                    }
+                },
+                "acfe_wysiwyg_toolbar_3": "",
+                "acfe_wysiwyg_toolbar_4": ""
+            },
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "acfe_wysiwyg_auto_init": 0,
+            "acfe_wysiwyg_height": 300
+        },
+        {
+            "key": "field_65676f67678ca",
+            "label": "Release Date",
+            "name": "release_date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 0,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "min_date": "",
+            "max_date": "",
+            "no_weekends": 0
         },
         {
             "key": "field_6464238582262",
@@ -86,7 +243,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "width": "",
             "height": 360
         },
@@ -129,76 +285,6 @@
             "max": ""
         },
         {
-            "key": "field_646425da248b1",
-            "label": "Playlist",
-            "name": "playlist",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "Add to or create a playlist, if applicable.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "65",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 0,
-            "taxonomy": "playlist",
-            "add_term": 1,
-            "save_terms": 1,
-            "load_terms": 1,
-            "return_format": "id",
-            "field_type": "select",
-            "max": "",
-            "allow_null": 1,
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "1",
-                "acfe_bidirectional_related": [
-                    "field_654e6ead7a18f",
-                    "field_646425da248b1"
-                ]
-            },
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": [],
-            "min": ""
-        },
-        {
-            "key": "field_64643e1948ae7",
-            "label": "Episode Number",
-            "name": "episode_number",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_646425da248b1",
-                        "operator": "!=empty"
-                    },
-                    {
-                        "field": "field_646425da248b1",
-                        "operator": "!=",
-                        "value": "General"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6489ecbe75acc",
             "label": "Featured Video",
             "name": "featured_video",
@@ -212,48 +298,12 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "message": "Featured Video",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": "",
             "style": ""
-        },
-        {
-            "key": "field_64643f696d1a5",
-            "label": "Of",
-            "name": "of_total_episodes",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_646425da248b1",
-                        "operator": "!=empty"
-                    },
-                    {
-                        "field": "field_646425da248b1",
-                        "operator": "!=",
-                        "value": "General"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "15",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_64643b2e12e0c",
@@ -362,7 +412,6 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "acfe_save_meta": 0,
                             "uploader": "",
                             "return_format": "array",
                             "upload_folder": "video\/transcripts\/",
@@ -402,33 +451,6 @@
             "acfe_flexible_empty_message": "",
             "acfe_flexible_layouts_previews": false,
             "acfe_flexible_grid_container": false
-        },
-        {
-            "key": "field_6489f03f5105d",
-            "label": "Border Color",
-            "name": "border_color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_save_meta": 0,
-            "default_value": "",
-            "enable_opacity": 0,
-            "return_format": "string",
-            "display": "default",
-            "button_label": "Select Color",
-            "color_picker": 1,
-            "absolute": 0,
-            "input": 1,
-            "allow_null": 0,
-            "theme_colors": 0,
-            "colors": []
         }
     ],
     "location": [
@@ -446,12 +468,11 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "categories",
-        "tags"
+        "categories"
     ],
     "active": true,
     "description": "",
-    "show_in_rest": 0,
+    "show_in_rest": 1,
     "acfe_autosync": [
         "json"
     ],
@@ -459,5 +480,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701102254
+    "modified": 1701673395
 }

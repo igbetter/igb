@@ -1,0 +1,266 @@
+section.featured_content {
+
+	.subhead {
+		display: inline-block;
+		padding: 0.5em 2em 0.5em 3em;
+		margin-top: 0;
+		margin-left: -3em;
+		clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
+
+		@include themify($themes) {
+			background: themed('accentButtonBGColor');
+		}
+	}
+
+	&.video {
+
+		.section_content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+
+			> * {
+				margin: 0.5em ;
+			}
+
+			h6 {
+				align-self: flex-start;
+			}
+
+			.video_wrapper {
+				width: 100%;
+			}
+
+			.featured_video_title {
+				font-size: $font-size-md;
+				max-width: $max_body_text_width_half;
+				padding: 0 1em 2em 1em;
+				margin: 0 auto;
+				text-align: center;
+				text-wrap: balance;
+			}
+
+			.related_videos {
+				align-self: stretch;
+				margin-top: -1.5em;
+
+
+				.flex-row {
+					justify-content: space-evenly;
+					align-items: flex-start;
+				}
+
+				.related_video {
+					flex: 1;
+					padding: 0.5em;
+
+					a {
+						display: block;
+						font-size: $font-size-sm;
+						overflow: hidden;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+					}
+					img {
+						width: 100%;
+						object-fit: cover;
+
+						@include themify($themes) {
+							border: 1px solid rgba(themed('linkColor'), 0.25);
+							filter: themed( 'duotoneFilter' );
+						}
+					}
+				}
+			}
+		}
+
+
+
+		video,
+		iframe {
+			width: 85%;
+			margin: 1em auto;
+			padding: 8px;
+			display: block;
+			//height: calc( 75% * #{$video_aspect_ratio} );
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: themed('backgroundColor');
+				box-shadow: themed( 'subtleShadow');
+			}
+
+			@include tablet-down {
+				width: 100%;
+				margin-top: 3em;
+			}
+		}
+	}
+
+	&.playlist {
+		margin: 6em 0;
+
+		.column_left {
+			> * {
+				max-width: $max_body_text_width_half;
+			}
+
+			.excerpt {
+				margin: 0 auto;
+			}
+		}
+
+		.column_right {
+			align-self: stretch;
+			justify-self: flex-end;
+			margin: 0;
+			padding: 0;
+
+			figure,
+			img {
+				width: 100%;
+				height: calc( 100% + 4em );
+			}
+
+			figure {
+				margin: -2em 0 ;
+			}
+		}
+	}
+
+	&.blog {
+		padding: 2em;
+
+		.featured_blog_container {
+			margin: 1%;
+			padding: 3em;
+			position: relative;
+			height: 85vh;
+			transition: all 200ms ease-in-out;
+
+			@include portrait {
+				height: 50vh;
+			}
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: themed('backgroundColor');
+				box-shadow: themed( 'subtleShadow');
+			}
+
+			&:hover {
+				@include themify($themes) {
+					border: 1px solid themed('linkHoverColor');
+				}
+
+				img {
+					@include themify($themes) {
+						filter:none;
+					}
+				}
+			}
+
+			a:not(.primary_button) {
+				@include themify($themes) {
+					color: themed('textColor');
+					text-decoration: none;
+				}
+			}
+
+			img {
+				position: absolute;
+				width: calc( 100% - 16px );
+				height: calc( 100% - 16px );
+				top: 8px;
+				left: 8px;
+				bottom: 8px;
+				right: 0;
+				object-fit: cover;
+				z-index: 0;
+				@include themify($themes) {
+					filter: themed( 'duotoneFilter' );
+				}
+			}
+
+			h6 {
+				position: relative;
+				z-index: 99;
+				padding-left: 2em;
+				margin-left: -4em;
+			}
+
+			.blog_overlay {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 99;
+				width: $max_body_text_width;
+				max-width: 50vw;
+				clip-path: polygon(4% 0, 100% 0%, 100% 100%, 0% 100%);
+				padding: 2em 3% 3em 6%;
+
+				@include themify($themes) {
+					background: rgba( themed('backgroundColor'), 0.9 );
+
+				}
+
+				@include phone-only {
+					max-width: 75vw;
+				}
+				.excerpt {
+					font-size: $font-size-md;
+				}
+			}
+		}
+	}
+
+	&.term {
+		margin: 5em 0;
+
+		.section_content {
+			position: relative;
+		}
+		.two_column {
+			> * {
+				flex: 50%;
+			}
+
+			.column_left {
+				padding: 2em;
+				margin: 0 auto;
+
+				> * {
+					max-width: $max_body_text_width_half;
+
+				}
+
+			}
+			.column_right {
+				margin: -3em 0;
+			}
+		}
+
+		.excerpt {
+			font-size: $font-size-md;
+			margin: 0 auto;
+		}
+		video,
+		iframe {
+			width: 50vw;
+			min-height: 29vw;
+			padding: 8px;
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: themed('backgroundColor');
+				box-shadow: themed( 'subtleShadow');
+			}
+
+			@include tablet-down {
+				width: 100%;
+				margin-top: 3em;
+			}
+		}
+	}
+}

@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -84,7 +83,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "enable_opacity": 1,
             "return_format": "color_label",
@@ -244,5 +242,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701239800
+    "modified": 1701548557
 }

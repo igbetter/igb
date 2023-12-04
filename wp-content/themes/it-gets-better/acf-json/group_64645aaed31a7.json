@@ -32,7 +32,7 @@
             "acfe_add_post": 1,
             "acfe_edit_post": 1,
             "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "1",
+                "acfe_bidirectional_enabled": true,
                 "acfe_bidirectional_related": [
                     "field_6464597e2335b"
                 ]
@@ -111,5 +111,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701052971
+    "modified": 1701548557
 }
