@@ -9,6 +9,7 @@ section.featured_content {
 
 		@include themify($themes) {
 			background: themed('accentButtonBGColor');
+			color: themed( 'accentButtonTextColor' );
 		}
 	}
 
@@ -26,7 +27,10 @@ section.featured_content {
 
 			h6 {
 				align-self: flex-start;
-				margin-bottom: -2em;
+
+				&.subhead {
+					margin-bottom: -2em;
+				}
 			}
 
 			.video_wrapper {
