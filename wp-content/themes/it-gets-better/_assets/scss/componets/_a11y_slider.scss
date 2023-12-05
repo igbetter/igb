@@ -48,6 +48,11 @@ https://splidejs.com/
 			height: auto;
 		}
 
+		a {
+			display: block;
+			padding-bottom: 1em;
+		}
+
 		a.slide_content,
 		a.slide_content:visited {
 			display: flex;

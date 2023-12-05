@@ -26,6 +26,7 @@ section.featured_content {
 
 			h6 {
 				align-self: flex-start;
+				margin-bottom: -2em;
 			}
 
 			.video_wrapper {
@@ -61,6 +62,19 @@ section.featured_content {
 						overflow: hidden;
 						-webkit-box-orient: vertical;
 						-webkit-line-clamp: 2;
+						max-height: 13em;
+
+						&:hover,
+						&:focus,
+						&:target {
+							img {
+								@include themify($themes) {
+									border: 1px solid rgba(themed('linkColor'), 0.25);
+									filter:  none;
+								}
+							}
+
+						}
 					}
 					img {
 						width: 100%;
