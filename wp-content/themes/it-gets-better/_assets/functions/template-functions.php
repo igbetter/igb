@@ -430,12 +430,11 @@ function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_bla
 }
 
 
-function igb_display_video_embed( $video_ID = 'NULL' ) {
+function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
 	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
-	echo $is_video_hosted_here;
 	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
 		// self hosted video
-		$video_embed = get_field( 'upload_file', $video_ID );
+		$video_embed = get_field( $file_upload_key, $video_ID );
 
 		$output = sprintf(
 			'<video poster="%s" controls>
@@ -447,7 +446,7 @@ function igb_display_video_embed( $video_ID = 'NULL' ) {
 		);
 	else :
 		// youtube video
-		$video_url = get_field( 'youtube_link', $video_ID, false);
+		$video_url = get_field( $youtube_link_key, $video_ID, false);
 		$videoargs = array(
 				'width'		=> '700',
 			);

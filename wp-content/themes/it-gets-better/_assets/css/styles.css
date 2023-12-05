@@ -1879,8 +1879,12 @@ https://splidejs.com/
 .horizontal_slider .slide {
   background-size: cover;
 }
-.horizontal_slider .slide a,
-.horizontal_slider .slide a:visited {
+.horizontal_slider .slide img {
+  width: 100%;
+  height: auto;
+}
+.horizontal_slider .slide a.slide_content,
+.horizontal_slider .slide a.slide_content:visited {
   display: flex;
   height: 100%;
   justify-content: center;
@@ -1890,37 +1894,37 @@ https://splidejs.com/
   border: 2px solid transparent;
   font-weight: 600;
 }
-.horizontal_slider .slide a:hover, .horizontal_slider .slide a:focus, .horizontal_slider .slide a:target,
-.horizontal_slider .slide a:visited:hover,
-.horizontal_slider .slide a:visited:focus,
-.horizontal_slider .slide a:visited:target {
+.horizontal_slider .slide a.slide_content:hover, .horizontal_slider .slide a.slide_content:focus, .horizontal_slider .slide a.slide_content:target,
+.horizontal_slider .slide a.slide_content:visited:hover,
+.horizontal_slider .slide a.slide_content:visited:focus,
+.horizontal_slider .slide a.slide_content:visited:target {
   backdrop-filter: brightness(120%) saturate(120%);
 }
-.theme-light .horizontal_slider .slide a:hover, .theme-light .horizontal_slider .slide a:focus, .theme-light .horizontal_slider .slide a:target,
-.theme-light .horizontal_slider .slide a:visited:hover,
-.theme-light .horizontal_slider .slide a:visited:focus,
-.theme-light .horizontal_slider .slide a:visited:target {
+.theme-light .horizontal_slider .slide a.slide_content:hover, .theme-light .horizontal_slider .slide a.slide_content:focus, .theme-light .horizontal_slider .slide a.slide_content:target,
+.theme-light .horizontal_slider .slide a.slide_content:visited:hover,
+.theme-light .horizontal_slider .slide a.slide_content:visited:focus,
+.theme-light .horizontal_slider .slide a.slide_content:visited:target {
   border: 2px solid #292929;
 }
-.theme-dark .horizontal_slider .slide a:hover, .theme-dark .horizontal_slider .slide a:focus, .theme-dark .horizontal_slider .slide a:target,
-.theme-dark .horizontal_slider .slide a:visited:hover,
-.theme-dark .horizontal_slider .slide a:visited:focus,
-.theme-dark .horizontal_slider .slide a:visited:target {
+.theme-dark .horizontal_slider .slide a.slide_content:hover, .theme-dark .horizontal_slider .slide a.slide_content:focus, .theme-dark .horizontal_slider .slide a.slide_content:target,
+.theme-dark .horizontal_slider .slide a.slide_content:visited:hover,
+.theme-dark .horizontal_slider .slide a.slide_content:visited:focus,
+.theme-dark .horizontal_slider .slide a.slide_content:visited:target {
   border: 2px solid #ffffff;
 }
-.horizontal_slider .slide a span,
-.horizontal_slider .slide a:visited span {
+.horizontal_slider .slide a.slide_content span,
+.horizontal_slider .slide a.slide_content:visited span {
   display: inline-block;
   padding: 0.5em 12%;
   clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
 }
-.theme-light .horizontal_slider .slide a span,
-.theme-light .horizontal_slider .slide a:visited span {
+.theme-light .horizontal_slider .slide a.slide_content span,
+.theme-light .horizontal_slider .slide a.slide_content:visited span {
   background: rgba(245, 243, 247, 0.75);
   color: #292929;
 }
-.theme-dark .horizontal_slider .slide a span,
-.theme-dark .horizontal_slider .slide a:visited span {
+.theme-dark .horizontal_slider .slide a.slide_content span,
+.theme-dark .horizontal_slider .slide a.slide_content:visited span {
   background: rgba(66, 52, 79, 0.75);
   color: #ffffff;
 }
@@ -2221,6 +2225,27 @@ section.featured_content.term iframe {
     width: 100%;
     margin-top: 3em;
   }
+}
+section.featured_content.term .related_content {
+  margin: 2em;
+  padding: 1em 0 2.7em 0;
+}
+section.featured_content.term .related_content img {
+  object-fit: cover;
+  height: 100%;
+  max-height: 200px;
+  padding: 6px;
+  margin: 1em 0;
+}
+.theme-light section.featured_content.term .related_content img {
+  border: 1px solid rgba(41, 41, 41, 0.5);
+  background: #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.theme-dark section.featured_content.term .related_content img {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #292929;
+  box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 }
 
 .more_content_section {

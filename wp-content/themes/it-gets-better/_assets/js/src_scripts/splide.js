@@ -3,7 +3,7 @@
 		 perPage: 4,
 		 perMove: 1,
 		 gap: '2rem',
-		 height: '200px',
+		 height: 'auto',
 		 drag: 'free',
 		 noDrag: 'input, textarea, .no-drag',
 		 dragMinThreshold: {
