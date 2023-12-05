@@ -2278,11 +2278,13 @@ ul.term_list a {
 }
 .theme-light ul.term_list a:hover, .theme-light ul.term_list a:focus, .theme-light ul.term_list a:target {
   background: rgba(41, 41, 41, 0.7);
-  border-color: #ffffff;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 .theme-dark ul.term_list a:hover, .theme-dark ul.term_list a:focus, .theme-dark ul.term_list a:target {
   background: rgba(255, 255, 255, 0.7);
-  border-color: #292929;
+  border-top-color: #292929;
+  border-bottom-color: #292929;
 }
 ul.term_list a span {
   display: block;

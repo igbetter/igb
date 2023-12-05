@@ -89,7 +89,8 @@ ul.term_list {
 		&:target  {
 			@include themify($themes) {
 				background: rgba( themed('textColor'), 0.7 );
-				border-color: themed('backgroundColor');
+				border-top-color: themed('backgroundColor');
+				border-bottom-color: themed('backgroundColor');
 			}
 		}
 
