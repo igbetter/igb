@@ -33,7 +33,6 @@ if ( ! empty( $block['align'] ) ) {
 			$video = get_post( $video_post_id );
 
 			$is_video_hosted_here = get_field( 'video_file_location', $video_post_id, false );
-			//var_dump( $video_fields );
 			?><br />
 			<h6 class="subhead">Featuerd Video</h6>
 			<div class="video_wrapper">
@@ -191,39 +190,58 @@ if ( ! empty( $block['align'] ) ) {
 					</div>
 				</div>
 				<div class="column_right">
-
-				<?php
-				//echo $featured_term_id;
-				$is_term_video_hosted_here = get_field( 'featured_video', $featured_term_id, false );
-				if ( $is_term_video_hosted_here === '0' ) :
-					// youtube video
-					$term_video_url = get_field( 'glossary_youtube_link', $featured_term_id, false);
-
-					$termvideoargs = array(
-						'width'		=> '700',
-					);
-					$youtube_embed = wp_oembed_get( esc_url( $term_video_url ), $termvideoargs );
-					echo $youtube_embed;
-
-				else :
-					// self hosted video
-					$video_embed = get_field( 'upload_glossary_video', $featured_term_id );
-
-					printf(
-						'<video poster="%s" controls>
-							<source src="%s" type="%s"/>
-						</video>',
-						esc_url( get_the_post_thumbnail_url(get_the_ID(),'full') ),
-						esc_url( $video_embed['url'] ),
-						esc_attr( $video_embed['mime_type'])
-					);
-
-				endif;
-				?>
+					<?php echo igb_display_video_embed( $featured_term_id,  'upload_glossary_video', 'glossary_youtube_link' ) ?>
 
 				</div>
 
 				</div>
+				<?php if ( $glossary_term_fields[ 'display_related_content' ] === true ) : ?>
+				<div class="related_content splide">
+					<?php
+
+					$relatedglossaryargs = array(
+						'post_type'		=> 'any',
+						'posts_per_page' => 8,
+						'orderby'		=> 'date',
+						'order'			=> 'desc',
+						'meta_query' => array(
+							array(
+								'value' => sprintf(':"%s";', $featured_term_id),
+								'compare' => 'LIKE'
+							)
+						),
+					);
+					$related_content_query = new WP_Query( $relatedglossaryargs );
+					?>
+					<h6>Related Content</h6>
+					<div class="related-content-slider more_content_slider splide__track">
+
+						<ul class="horizontal_slider splide__list">
+							<?php
+							if( $related_content_query->have_posts() ) :
+								while( $related_content_query->have_posts() ) :
+									$related_content_query->the_post();
+									$featured_image_url = get_the_post_thumbnail_url( 'large' );
+									printf(
+										'
+										<li class="slide splide__slide">
+											<a href="%s">
+												%s
+												%s
+											</a>
+										</li>
+										',
+										get_the_permalink(),
+										get_the_post_thumbnail( get_the_ID(), array( 400, 175 ) ),
+										get_the_title()
+									);
+								endwhile;
+							endif;
+							?>
+						</ul>
+					</div>
+				</div>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 	</div>

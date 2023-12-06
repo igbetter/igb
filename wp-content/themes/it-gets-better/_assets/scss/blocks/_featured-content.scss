@@ -2,13 +2,14 @@ section.featured_content {
 
 	.subhead {
 		display: inline-block;
-		padding: 0.5em 2em 0.5em 3em;
+		padding: 0.5em 2em 0.5em 5em;
 		margin-top: 0;
-		margin-left: -3em;
+		margin-left: -5em;
 		clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
 
 		@include themify($themes) {
 			background: themed('accentButtonBGColor');
+			color: themed( 'accentButtonTextColor' );
 		}
 	}
 
@@ -26,6 +27,11 @@ section.featured_content {
 
 			h6 {
 				align-self: flex-start;
+
+				&.subhead {
+					margin-bottom: -2em;
+					margin-left: -3em;
+				}
 			}
 
 			.video_wrapper {
@@ -61,6 +67,19 @@ section.featured_content {
 						overflow: hidden;
 						-webkit-box-orient: vertical;
 						-webkit-line-clamp: 2;
+						max-height: 13em;
+
+						&:hover,
+						&:focus,
+						&:target {
+							img {
+								@include themify($themes) {
+									border: 1px solid rgba(themed('linkColor'), 0.25);
+									filter:  none;
+								}
+							}
+
+						}
 					}
 					img {
 						width: 100%;
@@ -262,5 +281,26 @@ section.featured_content {
 				margin-top: 3em;
 			}
 		}
+		.related_content {
+			margin: 2em;
+			padding: 1em 0 2.7em 0;
+
+			img {
+				object-fit: cover;
+				height: 100%;
+				max-height:200px;
+				padding: 6px;
+				margin: 1em 0;
+
+				@include themify($themes) {
+					border: 1px solid rgba( themed('textColor'), 0.5 );
+					background: themed('backgroundColor');
+					box-shadow: themed( 'subtleShadow');
+
+				}
+
+			}
+		}
+
 	}
 }

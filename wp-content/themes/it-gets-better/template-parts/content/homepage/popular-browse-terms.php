@@ -12,7 +12,6 @@ $popularTermsQuery = array(
 		)
 	);
 
-
 	$results = get_posts($popularTermsQuery);
 
 	$popularBrowseTermsHeading = "Popular Browse Terms";

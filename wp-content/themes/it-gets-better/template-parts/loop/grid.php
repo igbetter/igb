@@ -5,7 +5,7 @@
  *
  */
 
- $post_type = get_post_type( $post->ID );
+ $post_type = get_post_type( get_the_ID() );
 
  ?>
 
