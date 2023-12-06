@@ -671,9 +671,9 @@ body {
 
 section.featured_content .subhead {
   display: inline-block;
-  padding: 0.5em 2em 0.5em 3em;
+  padding: 0.5em 2em 0.5em 5em;
   margin-top: 0;
-  margin-left: -3em;
+  margin-left: -5em;
   clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
 }
 .theme-light section.featured_content .subhead {
@@ -698,6 +698,7 @@ section.featured_content.video .section_content h6 {
 }
 section.featured_content.video .section_content h6.subhead {
   margin-bottom: -2em;
+  margin-left: -3em;
 }
 section.featured_content.video .section_content .video_wrapper {
   width: 100%;

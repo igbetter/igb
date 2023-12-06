@@ -2,9 +2,9 @@ section.featured_content {
 
 	.subhead {
 		display: inline-block;
-		padding: 0.5em 2em 0.5em 3em;
+		padding: 0.5em 2em 0.5em 5em;
 		margin-top: 0;
-		margin-left: -3em;
+		margin-left: -5em;
 		clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
 
 		@include themify($themes) {
@@ -30,6 +30,7 @@ section.featured_content {
 
 				&.subhead {
 					margin-bottom: -2em;
+					margin-left: -3em;
 				}
 			}
 
