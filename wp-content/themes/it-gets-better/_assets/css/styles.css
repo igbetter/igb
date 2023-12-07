@@ -752,6 +752,15 @@ body.home .featured_video h6 {
   flex-direction: column;
 }
 
+.page-template-archive-glossary nav.breadcrumb_navigation {
+  display: none;
+}
+
+footer.glossary_term_bottom_border {
+  height: 4px;
+  margin-bottom: 2em;
+}
+
 .facetwp-facet .facetwp-checkbox.checked .facetwp-display-value {
   font-weight: 500;
 }
@@ -1788,6 +1797,9 @@ iframe {
   max-height: 90vh;
 }
 
+.single_video_page {
+  padding-bottom: 5em;
+}
 .single_video_page .video_container {
   margin: 0 auto;
   text-align: center;
@@ -1795,7 +1807,7 @@ iframe {
 .single_video_page video,
 .single_video_page iframe {
   width: 90vw;
-  height: 37.8vw;
+  height: 55.8vw;
   margin: 1em auto;
   padding: 6px;
 }
@@ -1810,6 +1822,11 @@ iframe {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: #292929;
   box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
+}
+.single_video_page .video_title {
+  max-width: 45ch;
+  margin: 1em auto;
+  padding: 0 1em;
 }
 
 /**
