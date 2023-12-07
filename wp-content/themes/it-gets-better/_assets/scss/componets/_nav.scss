@@ -336,3 +336,38 @@
 	}
 
 }
+
+// breadcrumb nav
+
+nav.breadcrumb_navigation {
+	font-size: $font-size-sm;
+
+	ul {
+		margin: 3em 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+
+		li {
+
+			transform: skewX(-22deg);
+
+				@include themify($themes) {
+
+					border-right: 1px solid rgba( themed('linkColor'), 0.5);
+				}
+
+
+			&:last-child {
+				border-right: none;
+			}
+
+			a,
+			span {
+				display: inline-block;
+				padding: 0.25em 1em;
+				transform: skewX( 22deg);
+			}
+		}
+	}
+}

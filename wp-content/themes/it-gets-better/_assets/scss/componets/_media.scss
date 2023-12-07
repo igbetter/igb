@@ -4,3 +4,25 @@ iframe {
 	max-width: 100% !important;
 	max-height: 90vh;
 }
+
+.single_video_page {
+
+	.video_container {
+		margin: 0 auto;
+		text-align: center;
+
+	}
+	video,
+	iframe {
+		width: 90vw;
+		height: calc( 90vw * 0.42 );
+		margin: 1em auto;
+		padding: 6px;
+
+		@include themify($themes) {
+			border: 1px solid rgba( themed('textColor'), 0.5 );
+			background: themed('backgroundColor');
+			box-shadow: themed( 'subtleShadow');
+		}
+	}
+}

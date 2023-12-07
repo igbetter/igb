@@ -136,4 +136,7 @@
 		</nav>
 
 	</div>
+	<nav class="breadcrumb_navigation">
+		<?php get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>
+	</nav>
 	<div id="content">
