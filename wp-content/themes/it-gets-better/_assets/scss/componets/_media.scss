@@ -6,6 +6,7 @@ iframe {
 }
 
 .single_video_page {
+	padding-bottom: 5em;
 
 	.video_container {
 		margin: 0 auto;
@@ -15,7 +16,7 @@ iframe {
 	video,
 	iframe {
 		width: 90vw;
-		height: calc( 90vw * 0.42 );
+		height: calc( 90vw * 0.62 );
 		margin: 1em auto;
 		padding: 6px;
 
@@ -24,5 +25,11 @@ iframe {
 			background: themed('backgroundColor');
 			box-shadow: themed( 'subtleShadow');
 		}
+	}
+
+	.video_title{
+		max-width: $max_body_text_width_half;
+		margin: 1em auto;
+		padding: 0 1em;
 	}
 }

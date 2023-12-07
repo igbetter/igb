@@ -34,7 +34,7 @@ if ( ! empty( $block['align'] ) ) {
 
 			$is_video_hosted_here = get_field( 'video_file_location', $video_post_id, false );
 			?><br />
-			<h6 class="subhead">Featuerd Video</h6>
+			<h6 class="subhead">Featured Video</h6>
 			<div class="video_wrapper">
 			<?php echo igb_display_video_embed( $video_post_id ) ?>
 			</div>
