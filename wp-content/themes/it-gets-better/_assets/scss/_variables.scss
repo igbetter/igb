@@ -76,6 +76,8 @@ rgba(0, 0, 0, 0.09) 0px -3px 5px;
 $subtle_inset: rgb(204, 219, 232) 3px 3px 6px 0px inset,
 rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
+
+
 // Define animation speeds
 $transition_speed: 250ms;
 
@@ -174,6 +176,11 @@ $themes: (
 		subtleShadow: $subtle_shadow_light,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
+
+		// text shadow options
+		textBackgroundBlurShadow: $white,
+		textShadowBelow: $black,
+		textHighlightAbove: $white,
 
 		// program box, global
 		programBGColorGlobal: $pink,
@@ -275,7 +282,12 @@ $themes: (
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
 
-		// program box, globalhttp://localhost:3000/playlist/perfectly-queer-the-it-gets-better-project-vodcast-season-1/
+		// text shadow options
+		textBackgroundBlurShadow: $black,
+		textShadowBelow: $black,
+		textHighlightAbove: $white,
+
+		// program box, global
 		programBGColorGlobal: $subtle-pink-dark,
 		programTextColorGlobal: $white,
 		programAccentColorGlobal: $pink,

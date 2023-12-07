@@ -14,9 +14,7 @@
 
 	.playlist_header_image {
 		position: relative;
-		//top: 0;
-	//	left: 0;
-	//	bottom: 0;
+
 		width: 100%;
 		height: 100%;
 		background-size: cover;
@@ -29,8 +27,11 @@
 		z-index: 99;
 		height: 100%;
 		padding: 290px 2em 19vh 2em;
+
+
 		@include themify($themes) {
-			background-image: linear-gradient( 40deg, rgba( themed( 'backgroundColor' ), 0.65) 45%, rgba( themed( 'backgroundColor' ), 0.05) 70%,  )
+			background-image: linear-gradient( 34deg, rgba( themed( 'backgroundColor' ), 0.65) 45%, rgba( themed( 'backgroundColor' ), 0.05) 70%, );
+			text-shadow: 0 1px 20px rgba(themed( 'textBackgroundBlurShadow' ), 0.8 ), 0 1px 2px rgba( themed( 'textShadowBelow' ), 0.9 ), -1px -1px 0 rgba( themed( 'textHighlightAbove' ), 0.99 );
 		}
 
 

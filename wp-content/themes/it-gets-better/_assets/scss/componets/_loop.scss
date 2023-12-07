@@ -134,8 +134,8 @@
 	}
 
 	@include themify($themes) {
-
 		box-shadow: themed( 'normalShadow');
+		background-image: linear-gradient( 171deg, themed( 'backgroundColor' ) 10%, darken( themed( 'backgroundColor' ), 4) 98% );
 	}
 
 	.description_side {

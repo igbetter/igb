@@ -10,15 +10,16 @@
 get_header();
 ?>
 
-	<section id="primary">
+	<section id="primary" class="single_video_page">
 		<main id="main">
 
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', 'video' );
-                
+
+				echo igb_display_video_embed( get_the_ID(),  'upload_video', 'youtube_link' );
+
 				// End the loop.
 			endwhile;
 			?>

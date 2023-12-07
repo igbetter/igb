@@ -215,7 +215,7 @@ function it_gets_better_html5_comment( $comment, $args, $depth ) {
 function it_gets_better_query_glossary_by_term_category_slug($term) {
 	return array(
 		'post_type' => 'glossary',
-    'status'    => 'published',
+		'status'    => 'published',
 		'posts_per_page' => -1,
 		'orderby' => 'title',
 		'order' => 'asc',
@@ -450,9 +450,11 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 		$video_embed = get_field( $file_upload_key, $video_ID );
 
 		$output = sprintf(
-			'<video poster="%s" controls>
+			'<div class="video_container">
+			<video poster="%s" controls>
 				<source src="%s" type="%s"/>
-			</video>',
+			</video>
+			</div>',
 			esc_url( get_the_post_thumbnail_url( $video_ID,'full') ),
 			esc_url( $video_embed['url'] ),
 			esc_attr( $video_embed['mime_type'])
@@ -464,7 +466,7 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 				'width'		=> '700',
 			);
 			$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
-			$output = $youtube_embed;
+			$output = '<div class="video_container">' . $youtube_embed . '</div>';
 
 	endif;
 	return $output;
