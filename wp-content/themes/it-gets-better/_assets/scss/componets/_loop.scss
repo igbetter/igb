@@ -120,3 +120,50 @@
 		}
 	}
 }
+
+// card
+
+// video card
+.video_card {
+	margin: 1em 0;
+
+	@include tablet-up {
+		&:nth-of-type( 2n ) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	@include themify($themes) {
+
+		box-shadow: themed( 'normalShadow');
+	}
+
+	.description_side {
+
+		.content_container {
+			max-width: $max_body_text_width_half;
+			text-align: left;
+			text-wrap: balance;
+			margin: 0 auto;
+		}
+
+	}
+	.video_side {
+		padding: 0;
+		min-width: 60vw;
+
+		video,
+		iframe {
+			min-width: 480px;
+			width: 100%;
+			padding: 6px;
+
+			height: calc( 60vw * 0.58 );
+
+			@include portrait {
+				height: calc( 98vw * 0.58 );
+			}
+
+		}
+	}
+}

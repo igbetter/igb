@@ -229,6 +229,19 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 	);
 }
 
+
+// attempt at reordering playlist view
+
+add_filter( 'pre_get_posts', function() {
+
+	global $wp_query;
+	if ( $wp_query->is_tax( 'playlist' ) ) {
+		$wp_query->set( 'order', 'ASC' );
+	}
+
+});
+
+
 // ---------------------------------site options ---------
 
 /**
