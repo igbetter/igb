@@ -999,6 +999,17 @@ body.theme-dark .dark-toggle__switch:after {
   position: relative;
   top: auto !important;
 }
+@media (min-width: 900px) {
+  #menu_toggle_button:after {
+    content: "Menu";
+    position: relative;
+    top: -5px;
+    display: inline-block;
+  }
+  #menu_toggle_button:hover:after {
+    opacity: 0;
+  }
+}
 .theme-light #menu_toggle_button {
   color: #292929;
 }
@@ -1654,7 +1665,7 @@ body.hc-nav-open {
 }
 .hc-offcanvas-nav ul.IGB_site_main_navigation_menu {
   margin-top: 130px;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 132px);
   width: 50vw;
   display: flex;
   flex-direction: column;
