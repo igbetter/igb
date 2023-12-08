@@ -180,7 +180,9 @@
 	.larger {
 
 		img {
-			max-height: 19vh;
+			height: 15vh;
+			width: 15vh;
+			margin-left: 1.75rem;
 		}
 
 		a,
@@ -192,25 +194,53 @@
 
 	}
 
+	.IGB_site_main_navigation_menu > li.nav-item {
+		&:nth-of-type(4n + 1) {
+			img {
+				background: $purple;
+			}
+		}
+		&:nth-of-type(4n + 2) {
+			img {
+				background: $pink;
+			}
+		}
+		&:nth-of-type(4n + 3) {
+			img {
+				background: $yellow;
+			}
+		}
+		&:nth-of-type(4n + 4) {
+			img {
+				background: $blue;
+			}
+		}
+	}
+
 	img {
-		max-height: 11vh;
-		height: 100%;
-		min-width: 150px;
-		max-width: 35%;
-		object-fit: cover;
+	//	max-height: 11vh;
+	//	height: 100%;
+	//	min-width: 150px;
+	//	max-width: 35%;
+
+		height: 13vh;
+		width: 13vh;
+		background: $yellow;
+		border-radius: 50%;
+		object-fit: contain;
 		object-position: center bottom;
 		overflow: visible;
-		margin: 1px -0.5em -1px -1em;
+		margin: 1px 1.5em -1px 1em;
 		align-self: flex-end;
 
 		@include tablet-up {
-			max-width: 50%;
+			//max-width: 50%;
 		}
 	}
 
 	ul.IGB_site_main_navigation_menu {
-		margin-top: 100px;
-		height: calc( 100vh - 100px );
+		margin-top: 130px;
+		height: calc( 100vh - 130px );
 		width: 50vw;
 		display: flex;
 		flex-direction: column;
@@ -269,7 +299,7 @@
 
 		a.nav-item-link {
 			flex: 1;
-			padding: 0.2em 1em 0.2em 2.5em;
+			padding: 0.2em 1rem;
 
 			span {
 				align-self: center;
@@ -292,11 +322,6 @@
 				padding: 5px;
 				transform: rotate(-45deg);
 			}
-		}
-
-		img {
-			margin: 0 0 -1px -2.6em;
-			align-self: flex-end;
 		}
 	}
 
@@ -342,19 +367,24 @@
 nav.breadcrumb_navigation {
 	font-size: $font-size-sm;
 
+	body.page-homepage &,
+	body.page-browse-content & {
+		display: none;
+	}
+
 	ul {
-		margin: 3em 0;
+		margin: 3em 0 -3em 0;
 		padding: 0;
 		list-style: none;
 		display: flex;
 
 		li {
 
-			transform: skewX(-22deg);
+			transform: skewX(-26deg);
 
 				@include themify($themes) {
 
-					border-right: 1px solid rgba( themed('linkColor'), 0.5);
+					border-right: 2px solid rgba( themed('linkColor'), 0.25);
 				}
 
 
@@ -365,8 +395,8 @@ nav.breadcrumb_navigation {
 			a,
 			span {
 				display: inline-block;
-				padding: 0.25em 1em;
-				transform: skewX( 22deg);
+				padding: 0.2em 1.1em;
+				transform: skewX( 26deg);
 			}
 		}
 	}

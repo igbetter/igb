@@ -27,6 +27,19 @@ function wp_change_search_url() {
 add_action( 'template_redirect', 'wp_change_search_url' );
 
 /**
+ * add page slug to body class names
+ */
+
+function igb_add_page_slug_to_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'igb_add_page_slug_to_body_class' );
+
+/**
  * Changes comment form default fields.
  *
  * @param array $defaults The default comment form arguments.
