@@ -246,7 +246,7 @@ body.theme-dark {
 }
 
 .theme-light .background-subtle_pink {
-  background: #FFEDEF;
+  background: #f9dde0;
 }
 .theme-dark .background-subtle_pink {
   background: #473134;
@@ -633,6 +633,9 @@ body {
   margin-top: -250px;
   padding-top: 150px;
 }
+body.page-homepage.theme-light .section_hero {
+  background: #f9dde0;
+}
 .section_hero > div {
   width: 50%;
   padding-top: 50px;
@@ -641,8 +644,9 @@ body {
   max-width: 100%;
 }
 .section_hero .hero_text-container {
-  padding: 2em 1.5em 2.5em 1.5em;
-  margin-top: 4.25em;
+  padding: 2em 1.5em 3.5em 1.5em;
+  margin-top: 3em;
+  margin-bottom: 2em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -666,7 +670,32 @@ body {
 .section_hero .hero_image-container img {
   position: relative;
   z-index: 9;
-  padding: 25% 15% 0 15%;
+  padding: 12% 14% 0 15%;
+  margin-bottom: 3em;
+  -webkit-mask: linear-gradient(168deg, red 70%, transparent 90%);
+  mask: linear-gradient(168deg, red 70%, transparent 90%);
+}
+.theme-light .section_hero .hero_image-container img {
+  /* filter:
+  		drop-shadow(3px 2px 0 rgba( themed( 'accentYellow' ), 0.97 ) )
+  		drop-shadow(6px 4px 0 rgba( themed( 'accentPink' ), 0.97 ) )
+  	//	drop-shadow(9px 6px 0 rgba( themed( 'accentBlue' ), 0.97 ) )
+  		drop-shadow(15px 10px 0 rgba( themed( 'accentPurple' ), 0.87 ) )
+  	//	drop-shadow(15px 8px 20px rgba( themed( 'accentPurple' ), 0.57 ) )
+  	//	drop-shadow(15px 8px 20px rgba( themed( 'accentPurple' ), 0.87 ) )
+  		drop-shadow(-10px 8px 28px rgba( 0, 0, 0, 0.23 ) )
+  	; */
+}
+.theme-dark .section_hero .hero_image-container img {
+  /* filter:
+  		drop-shadow(3px 2px 0 rgba( themed( 'accentYellow' ), 0.97 ) )
+  		drop-shadow(6px 4px 0 rgba( themed( 'accentPink' ), 0.97 ) )
+  	//	drop-shadow(9px 6px 0 rgba( themed( 'accentBlue' ), 0.97 ) )
+  		drop-shadow(15px 10px 0 rgba( themed( 'accentPurple' ), 0.87 ) )
+  	//	drop-shadow(15px 8px 20px rgba( themed( 'accentPurple' ), 0.57 ) )
+  	//	drop-shadow(15px 8px 20px rgba( themed( 'accentPurple' ), 0.87 ) )
+  		drop-shadow(-10px 8px 28px rgba( 0, 0, 0, 0.23 ) )
+  	; */
 }
 
 section.featured_content .subhead {
