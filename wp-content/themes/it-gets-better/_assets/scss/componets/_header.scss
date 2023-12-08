@@ -252,6 +252,26 @@ label.dark-toggle {
 	position: relative;
 	top: auto !important;
 
+	@include tablet-up {
+
+		&:after {
+			content: 'Menu';
+			position: relative;
+			top: -5px;
+			display: inline-block;
+
+
+		}
+		&:hover {
+			&:after {
+				opacity: 0;
+			}
+
+		}
+	}
+
+
+
 	@include themify($themes) {
 		color: themed('textColor');
 	}
