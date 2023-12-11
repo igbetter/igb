@@ -756,6 +756,22 @@ body.home .featured_video h6 {
   display: none;
 }
 
+sub.term_category {
+  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-weight: 500;
+}
+.theme-light sub.term_category {
+  color: #45acce;
+}
+.theme-dark sub.term_category {
+  color: #fbad41;
+}
+
+dfn.term_category_def {
+  font-style: normal;
+  cursor: help;
+}
+
 footer.glossary_term_bottom_border {
   height: 4px;
   margin-bottom: 2em;

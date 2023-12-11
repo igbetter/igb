@@ -6,6 +6,18 @@
 	}
 }
 
+sub.term_category {
+	font-size: $font-size-base;
+	font-weight: 500;
+	@include themify($themes) {
+		color: themed( 'linkColor' );
+	}
+}
+dfn.term_category_def {
+	font-style: normal;
+	cursor: help;
+}
+
 footer.glossary_term_bottom_border {
 	height: 4px;
 	margin-bottom: 2em;
