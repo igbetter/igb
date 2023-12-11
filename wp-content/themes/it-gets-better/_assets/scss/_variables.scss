@@ -63,8 +63,8 @@ $font-size-xxxl:  clamp(2.14rem, 6.16vw + -0.94rem, 10.77rem);
 // Shadow options
 
 $subtle_shadow_light: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+rgba(50, 50, 93, 0.12) 0px 50px 100px -20px,
+rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 $subtle_shadow_dark: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px,
 rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 $heavy_shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -73,8 +73,8 @@ rgba(0, 0, 0, 0.12) 0px 4px 6px,
 rgba(0, 0, 0, 0.17) 0px 12px 13px,
 rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-$subtle_inset: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+$subtle_inset: rgba(45, 53, 60, 0.4) 3px 3px 6px 0px inset,
+rgba(43, 39, 39, 0.5) -3px -3px 6px 1px inset;
 
 
 
@@ -176,6 +176,7 @@ $themes: (
 		subtleShadow: $subtle_shadow_light,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
+		insetShadow: $subtle_inset,
 
 		// text shadow options
 		textBackgroundBlurShadow: $white,
@@ -281,6 +282,7 @@ $themes: (
 		subtleShadow: $subtle_shadow_dark,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
+		insetShadow: $subtle_inset,
 
 		// text shadow options
 		textBackgroundBlurShadow: $black,
