@@ -791,7 +791,7 @@ section.featured_content.video iframe {
 .theme-light section.featured_content.video iframe {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #ffffff;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark section.featured_content.video video,
 .theme-dark section.featured_content.video iframe {
@@ -847,7 +847,7 @@ section.featured_content.blog .featured_blog_container {
 .theme-light section.featured_content.blog .featured_blog_container {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #ffffff;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark section.featured_content.blog .featured_blog_container {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -954,7 +954,7 @@ section.featured_content.term iframe {
 .theme-light section.featured_content.term iframe {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #ffffff;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark section.featured_content.term video,
 .theme-dark section.featured_content.term iframe {
@@ -983,7 +983,7 @@ section.featured_content.term .related_content img {
 .theme-light section.featured_content.term .related_content img {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #ffffff;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark section.featured_content.term .related_content img {
   border: 1px solid rgba(255, 255, 255, 0.5);

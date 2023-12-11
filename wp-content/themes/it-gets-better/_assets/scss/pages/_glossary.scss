@@ -19,6 +19,107 @@ dfn.term_category_def {
 }
 
 footer.glossary_term_bottom_border {
-	height: 4px;
-	margin-bottom: 2em;
+	height: 5px;
 }
+
+.glossary_list {
+	padding: 3em;
+
+	.single_term {
+		margin: 3em 0;
+		padding: 0;
+
+		h3 {
+			padding: 0;
+		}
+
+		header {
+			padding: 2em 2em 0 2em;
+		}
+		main {
+			padding: 0 2em 2em 2em;
+		}
+
+		img {
+			margin: -2em -2em -2.4em -2em;
+		//	height: 100%;
+			width: calc( 100% + 4em );
+			max-width: none !important;
+			object-fit: cover;
+
+			@include themify($themes) {
+				box-shadow: themed( 'subtleShadow');
+			}
+		}
+	}
+
+
+}
+a,
+a:visited {
+	article.single_term {
+		transition: all 200ms ease-in-out;
+		border: 1px solid transparent;
+		border-bottom: none;
+
+
+		@include themify($themes) {
+			background: themed('backgroundColor');
+			box-shadow: themed( 'normalShadow');
+			color: themed( 'textColor' );
+		}
+
+		main {
+			font-weight: 200;
+
+			p {
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		article.single_term {
+			@include themify($themes) {
+				background: darken( themed( 'backgroundColor' ), 6 );
+			}
+
+			&.color-IGB_Purple {
+				@include themify($themes) {
+					border: 1px solid rgba( themed('accentPurple'), 0.5 );
+					border-bottom: none;
+				}
+			}
+			&.color-IGB_Pink {
+				@include themify($themes) {
+					border: 1px solid rgba( themed('accentPink'), 0.5 );
+					border-bottom: none;
+				}
+
+			}
+			&.color-IGB_Blue {
+				@include themify($themes) {
+					border: 1px solid rgba( themed('accentBlue'), 0.5 );
+					border-bottom: none;
+				}
+
+			}
+			&.color-IGB_Yellow {
+
+				@include themify($themes) {
+					border: 1px solid rgba( themed('accentYellow'), 0.5 );
+					border-bottom: none;
+				}
+			}
+			&.color-IGB_Dark {
+
+				@include themify($themes) {
+					border: 1px solid rgba( themed('accentGrey'), 0.5 );
+					border-bottom: none;
+				}
+			}
+		}
+	}
+};

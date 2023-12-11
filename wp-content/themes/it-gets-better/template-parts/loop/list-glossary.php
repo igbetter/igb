@@ -23,8 +23,10 @@ if( $glossary_term_categories ) :
 	$term_categories_ID_array = array_diff($term_categories_ID_array, array( $general_term_category_ID ) );
 endif;
 ?>
-
+<a href="<?php the_permalink(); ?>">
 <article id="glossary_term_ID-<?php echo esc_attr( get_the_ID() );?>" class="single_term color-<?php echo esc_attr( $color_label ); ?>">
+<div class="two_column container">
+	<div class="col_one">
 	<header class="glossary_term_header">
 		<h3 class="glossary_term"><?php the_title(); ?>
 			<?php
@@ -43,8 +45,15 @@ endif;
 		</h3>
 	</header>
 	<main class="glossary_term_main">
+
 		<p><?php the_field( 'definition' ); ?></p>
 	</main>
+	</div>
+	<div class="col_two">
+		<?php the_post_thumbnail( 'medium_large' ); ?>
+	</div>
+	</div>
 	<footer class="glossary_term_footer glossary_term_bottom_border background-<?php echo esc_attr( $color_label ); ?>">
 	</footer>
 </article>
+</a>
