@@ -41,7 +41,6 @@ endif;
 					echo '</sub>';
 				endif;
 			?>
-		<sub><?php //esc_html_e( $glossary_term_category ); ?></sub>
 		</h3>
 	</header>
 	<main class="glossary_term_main">
