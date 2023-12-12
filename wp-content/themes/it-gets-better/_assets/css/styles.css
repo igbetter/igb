@@ -267,6 +267,43 @@ body.theme-dark {
   background: #665741;
 }
 
+.theme-light .underline-,
+.theme-light .underline-IGB_Purple {
+  border-bottom: 1px solid #5e3a7e;
+}
+.theme-dark .underline-,
+.theme-dark .underline-IGB_Purple {
+  border-bottom: 1px solid #a662e2;
+}
+
+.theme-light .underline-IGB_Pink {
+  border-bottom: 1px solid #f2566e;
+}
+.theme-dark .underline-IGB_Pink {
+  border-bottom: 1px solid #f2566e;
+}
+
+.theme-light .underline-IGB_Blue {
+  border-bottom: 1px solid #45acce;
+}
+.theme-dark .underline-IGB_Blue {
+  border-bottom: 1px solid #3dcaf9;
+}
+
+.theme-light .underline-IGB_Yellow {
+  border-bottom: 1px solid #fbad41;
+}
+.theme-dark .underline-IGB_Yellow {
+  border-bottom: 1px solid #fbad41;
+}
+
+.theme-light .underline-IGB_Dark {
+  border-bottom: 1px solid #393939;
+}
+.theme-dark .underline-IGB_Dark {
+  border-bottom: 1px solid #d6d6d6;
+}
+
 a,
 a:visited {
   font-weight: 500;
@@ -595,6 +632,14 @@ use {
   max-width: 100%;
 }
 @media (max-width: 900px) {
+  .two_column {
+    display: block;
+  }
+  .two_column > * {
+    width: 100%;
+  }
+}
+@media (orientation: portrait) {
   .two_column {
     display: block;
   }
@@ -944,6 +989,12 @@ a:visited article.single_term main p {
   flex-direction: column;
 }
 @media (max-width: 900px) {
+  .glossary_term_header .two_column .col_two {
+    width: 100%;
+    height: 65vw;
+  }
+}
+@media (orientation: portrait) {
   .glossary_term_header .two_column .col_two {
     width: 100%;
     height: 65vw;
