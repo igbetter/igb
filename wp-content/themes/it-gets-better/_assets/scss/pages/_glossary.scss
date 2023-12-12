@@ -26,7 +26,7 @@ footer.glossary_term_bottom_border {
 	padding: 3em;
 
 	.single_term {
-		margin: 3em 0;
+		margin: 2em 0;
 		padding: 0;
 
 		h3 {
@@ -34,7 +34,7 @@ footer.glossary_term_bottom_border {
 		}
 
 		header {
-			padding: 2em 2em 0 2em;
+			padding: 0.5em 2em 0 2em;
 		}
 		main {
 			padding: 0 2em 2em 2em;
@@ -129,14 +129,12 @@ a:visited {
 
 .single-glossary {
 	.glossary_term_header {
-		margin-top: 3em;
+		margin-top: 1em;
 	}
 }
 
 
 .glossary_term_header {
-	margin-top: 3em;
-
 
 	.two_column {
 		min-height: 70vh;
@@ -177,6 +175,46 @@ a:visited {
 	}
 	.definition {
 		font-size: $font-size-lg;
+
+		.pronunciation {
+			font-family: monospace;
+			font-size: $font-size-base;
+			font-weight: 200;
+			letter-spacing: 2px;
+		}
+		span.phonetic_key {
+			word-wrap: pre;
+		}
+
+		span.part_of_speech {
+			font-style: italic;
+		}
+
+		.flex-row {
+			align-items: center;
+			justify-content: space-between;
+		}
 	}
 
+	ul.term_category_list {
+		list-style: none;
+		font-size: $font-size-sm;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			padding: 3px;
+		}
+	}
+}
+
+
+.extended_definition {
+	padding: 2em;
+
+	> * {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }

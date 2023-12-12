@@ -484,3 +484,50 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 	endif;
 	return $output;
 }
+
+function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general_category = false, $display_style = 'subscript' ) {
+	$general_term_category = get_term_by( 'name', 'general', 'term-category');
+	$general_term_category_ID = $general_term_category->term_id; // so we can exclude the "general" category in the arrays below if needed
+
+	$glossary_term_categories = get_the_terms( $post_ID, 'term-category');
+	$output = '';
+
+	if( $glossary_term_categories ) :
+		// if this has term categories set, start an array to store the term_ids
+		$term_categories_ID_array = [];
+		foreach( $glossary_term_categories as $glossary_term_category ) :
+			$term_categories_ID_array[] = $glossary_term_category->term_id;
+		endforeach;
+
+		if( $display_general_category === false ) :
+			$term_categories_ID_array = array_diff($term_categories_ID_array, array( $general_term_category_ID ) );
+		endif;
+
+		if( $display_style === 'subscript' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<sub class="term_category">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '(<dfn class="term_category_def" title="' . esc_html( $term_name ) . '">' . get_field( 'sub_headline_abbreviation', $acftermid ) . '</dfn>)';
+				endforeach;
+				$output .= '</sub>';
+			};
+		elseif( $display_style === 'full' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<ul class="term_category_list">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '<li>(' . esc_html( $term_name ) . ')</li>';
+				endforeach;
+				$output .= '</ul>';
+			}
+		endif;
+
+	endif;
+
+	return $output;
+}

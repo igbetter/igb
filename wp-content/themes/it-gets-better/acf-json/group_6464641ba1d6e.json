@@ -74,7 +74,6 @@
             "hide_label": "",
             "hide_instructions": "",
             "hide_required": "",
-            "acfe_save_meta": 0,
             "uploader": "",
             "return_format": "array",
             "upload_folder": "",
@@ -133,7 +132,87 @@
                 "class": "",
                 "id": ""
             },
-            "field_type": "excerpt"
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "field_type": "excerpt",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "required_message": "",
+            "instruction_placement": "",
+            "acfe_permissions": ""
+        },
+        {
+            "key": "field_657792d5eccad",
+            "label": "Part of Speech",
+            "name": "part_of_speech",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "choices": {
+                "noun": "Noun",
+                "pronoun": "Pronoun",
+                "verb": "Verb",
+                "adjective": "Adjective",
+                "adverb": "Adverb"
+            },
+            "default_value": [],
+            "return_format": "label",
+            "multiple": 1,
+            "min": "",
+            "max": "",
+            "allow_custom": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "allow_null": 1,
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "ui": 1,
+            "ajax": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_65779262eccaa",
+            "label": "Phonetic Spelling",
+            "name": "phonetic_spelling",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "https:\/\/easypronunciation.com\/en\/english-phonetic-transcription-converter",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "default_value": "",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "maxlength": "",
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_65677cfb58976",
@@ -258,9 +337,9 @@
         {
             "key": "field_656779fb58973",
             "label": "Extended Definition",
-            "name": "",
+            "name": "extended_definition",
             "aria-label": "",
-            "type": "acfe_post_field",
+            "type": "acfe_block_editor",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -273,11 +352,69 @@
             "hide_label": "",
             "hide_instructions": "",
             "hide_required": "",
-            "field_type": "content",
+            "min_height": 350,
+            "max_height": "",
+            "autoresize": 1,
+            "topbar": 0,
+            "fixed_toolbar": 1,
+            "allow_code_mode": 1,
+            "allow_lock": 1,
+            "allow_upload": 1,
+            "allow_library": 1,
+            "allowed_blocks": {
+                "4": {
+                    "block": "core\/heading"
+                },
+                "0": {
+                    "block": "core\/paragraph"
+                },
+                "9": {
+                    "block": "core\/embed"
+                },
+                "6577e4f1d2a09": {
+                    "block": "core\/media-text"
+                },
+                "5": {
+                    "block": "core\/list"
+                },
+                "6577e4bad2a07": {
+                    "block": "core\/button"
+                },
+                "1": {
+                    "block": "core\/image"
+                },
+                "2": {
+                    "block": "core\/gallery"
+                },
+                "3": {
+                    "block": "core\/quote"
+                },
+                "6577e4cdd2a08": {
+                    "block": "core\/group"
+                },
+                "6": {
+                    "block": "core\/code"
+                },
+                "7": {
+                    "block": "core\/shortcode"
+                },
+                "8": {
+                    "block": "core\/html"
+                },
+                "6577e536d2a0a": {
+                    "block": "core\/spacer"
+                }
+            },
             "acfe_settings": "",
             "acfe_validate": "",
             "instruction_placement": "",
-            "acfe_permissions": ""
+            "acfe_permissions": "",
+            "height": 175,
+            "topbar_tools": [
+                "inserter",
+                "undo",
+                "navigation"
+            ]
         }
     ],
     "location": [
@@ -298,6 +435,7 @@
         "block_editor",
         "categories",
         "comments",
+        "the_content",
         "discussion",
         "excerpt",
         "featured_image",
@@ -314,5 +452,5 @@
     "acfe_permissions": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701563005
+    "modified": 1702356770
 }

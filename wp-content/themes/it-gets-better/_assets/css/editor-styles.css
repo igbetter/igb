@@ -774,11 +774,9 @@ section.featured_content.video .section_content .related_videos .related_video i
 }
 .theme-light section.featured_content.video .section_content .related_videos .related_video img {
   border: 1px solid rgba(69, 172, 206, 0.25);
-  filter: url("#duotone-blue_purple");
 }
 .theme-dark section.featured_content.video .section_content .related_videos .related_video img {
   border: 1px solid rgba(251, 173, 65, 0.25);
-  filter: url("#duotone-purple_yellow");
 }
 section.featured_content.video video,
 section.featured_content.video iframe {
@@ -884,12 +882,6 @@ section.featured_content.blog .featured_blog_container img {
   right: 0;
   object-fit: cover;
   z-index: 0;
-}
-.theme-light section.featured_content.blog .featured_blog_container img {
-  filter: url("#duotone-blue_purple");
-}
-.theme-dark section.featured_content.blog .featured_blog_container img {
-  filter: url("#duotone-purple_yellow");
 }
 section.featured_content.blog .featured_blog_container h6 {
   position: relative;

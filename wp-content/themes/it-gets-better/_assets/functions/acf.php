@@ -1,5 +1,39 @@
 <?php
 
+/**
+ * On post save, map values from 'extended_definition'
+ * to WordPress's native content field
+ */
+function igb_glossary_content_proxy_field( $post_id ) {
+
+	// bail if not a person
+	if ( 'glossary' !== get_post_type( $post_id  ) ) {
+		return;
+	}
+
+	// bail if this is not a normal save
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ||
+		( defined( 'DOING_AJAX' ) && DOING_AJAX ) ||
+		( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
+		return;
+	}
+
+
+	$content = get_field( 'extended_definition', $post_id );
+
+	if ( $content ) {
+		$the_post = array(
+			'ID' => $post_id,
+			'post_content' => $content,
+		);
+
+		// update the content
+		wp_update_post( $the_post );
+	}
+}
+add_action( 'acf/save_post', 'igb_glossary_content_proxy_field', 15 );
+
+
 add_filter( 'block_categories_all' , function( $categories ) {
 
 	// Adding a new category.

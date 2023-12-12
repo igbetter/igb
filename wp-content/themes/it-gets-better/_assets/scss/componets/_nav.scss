@@ -37,6 +37,14 @@
 		margin: 0;
 		transition: all 150ms linear;
 		transition-delay: 0s;
+
+		@include tablet-up {
+			opacity: 1;
+			max-width: none;
+			max-height: none;
+			padding: 0.25em 1em 0.25em 0;
+			margin: -1.5em  3em 0 3em;
+		}
 	}
 
 
@@ -400,5 +408,67 @@ nav.breadcrumb_navigation {
 				transform: skewX( 26deg);
 			}
 		}
+	}
+}
+
+// previous / next links
+.next_previous_glossary {
+	opacity: 0.5;
+	transition: all 150ms ease-in-out;
+	@include themify($themes) {
+		background: rgba(themed('subtleGreyBG'), 0.85);
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.top {
+		margin-top: 7em;
+	}
+}
+.nav-links {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+
+
+	> * {
+		flex: 1;
+		width: 49%;
+
+		@include themify($themes) {
+			border-left: 1px solid rgba( themed( 'linkHoverColor' ), 0.96 );
+		}
+
+		&:first-child {
+			border-left: none;
+		}
+
+		a {
+			display: block;
+			font-weight: 200;
+			padding: 1em 2em;
+
+			&:hover,
+			&:focus,
+			&:target {
+				@include themify($themes) {
+					background: rgba(themed('footerLinkHoverColor'), 0.1);
+				}
+			}
+
+			em {
+				font-style: normal;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.nav-next {
+
+		text-align: right;
 	}
 }
