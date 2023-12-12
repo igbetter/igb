@@ -21,8 +21,8 @@
 	@include themify($themes) {
 		background-image: linear-gradient( 118deg,
 		rgba( themed('utilityNavBGColor'), 0 ) 0,
-		rgba(themed('utilityNavBGColor'), 0) 4%,
-		rgba(themed('utilityNavBGColor'), 1) 4.1%,
+		rgba(themed('utilityNavBGColor'), 0) 2%,
+		rgba(themed('utilityNavBGColor'), 1) 2.1%,
 		rgba(themed('utilityNavBGColor'), 1) 65%,
 		rgba(themed('utilityNavBGColor'), 0) 98%,
 		);
@@ -66,10 +66,11 @@
 			text-decoration: none;
 			text-align: center;
 			font-weight: 400;
+			margin: 0 1em;
 
 			@include themify($themes) {
 				color: themed( 'utilityNavLinkColor' );
-				//background: rgba(themed('mainNavBGColor'), 0.55);
+
 			}
 
 			&:hover,
@@ -77,7 +78,7 @@
 			&:target {
 				@include themify($themes) {
 					color: themed( 'utilityNavLinkHoverColor' );
-					background: rgba(themed('mainNavBGColor'), 0.55);
+					background: rgba(themed('utilityNavBGHoverColor'), 0.55);
 				}
 			}
 		}
