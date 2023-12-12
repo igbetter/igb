@@ -2087,6 +2087,114 @@ body.hc-nav-open {
   opacity: 0.75;
 }
 
+nav#programs_nav {
+  width: 46vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  top: 10%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 50ms ease-in-out;
+  transition-delay: 0s;
+}
+.menu_is_open nav#programs_nav {
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 550ms ease-in-out;
+  transition-delay: 0.2s;
+}
+@media (max-width: 900px) {
+  nav#programs_nav {
+    display: none;
+  }
+}
+nav#programs_nav .program_box {
+  padding: 1em 2em;
+  margin: 2em;
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+  transition: all 150ms ease-in-out;
+}
+.theme-light nav#programs_nav .program_box {
+  background: #F5F3F7;
+}
+.theme-dark nav#programs_nav .program_box {
+  background: #393939;
+}
+.theme-light nav#programs_nav .program_box.global:hover * {
+  color: #ffffff;
+}
+.theme-dark nav#programs_nav .program_box.global:hover * {
+  color: #ffffff;
+}
+.theme-light nav#programs_nav .program_box.global:hover {
+  background: #f2566e;
+  color: #ffffff;
+}
+.theme-dark nav#programs_nav .program_box.global:hover {
+  background: #f2566e;
+  color: #ffffff;
+}
+.theme-light nav#programs_nav .program_box.global:hover span {
+  color: #000000;
+}
+.theme-dark nav#programs_nav .program_box.global:hover span {
+  color: #000000;
+}
+.theme-light nav#programs_nav .program_box.edu:hover * {
+  color: #ffffff;
+}
+.theme-dark nav#programs_nav .program_box.edu:hover * {
+  color: #ffffff;
+}
+.theme-light nav#programs_nav .program_box.edu:hover {
+  background: #45acce;
+  color: #ffffff;
+}
+.theme-dark nav#programs_nav .program_box.edu:hover {
+  background: #45acce;
+  color: #ffffff;
+}
+.theme-light nav#programs_nav .program_box.edu:hover span {
+  color: #000000;
+}
+.theme-dark nav#programs_nav .program_box.edu:hover span {
+  color: #000000;
+}
+nav#programs_nav a,
+nav#programs_nav a:visited {
+  font-weight: 200;
+  display: block;
+  padding: 5%;
+}
+.theme-light nav#programs_nav a,
+.theme-light nav#programs_nav a:visited {
+  text-decoration: none !important;
+  text-decoration-color: transparent;
+  color: #292929;
+}
+.theme-dark nav#programs_nav a,
+.theme-dark nav#programs_nav a:visited {
+  text-decoration: none !important;
+  text-decoration-color: transparent;
+  color: #ffffff;
+}
+nav#programs_nav a object,
+nav#programs_nav a:visited object {
+  display: block;
+}
+.theme-light nav#programs_nav a h3 span,
+.theme-light nav#programs_nav a:visited h3 span {
+  color: #f2566e;
+}
+.theme-dark nav#programs_nav a h3 span,
+.theme-dark nav#programs_nav a:visited h3 span {
+  color: #f2566e;
+}
+
 nav.breadcrumb_navigation {
   font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
   margin-bottom: 3em;
