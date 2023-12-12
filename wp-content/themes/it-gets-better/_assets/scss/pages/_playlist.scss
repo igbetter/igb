@@ -72,6 +72,29 @@
 		text-align: center;
 		padding: 1em;
 
+		@include themify($themes) {
+			filter:
+			//	drop-shadow( 3px 3px 1px rgba( themed( 'backgroundColor' ), 0.9 ) )
+			//	drop-shadow( 3px 0 1px rgba( themed( 'backgroundColor' ), 0.9 ) )
+			//	drop-shadow( -1px -2px 1px rgba( themed( 'backgroundColor' ), 0.9 ) )
+			//	drop-shadow( -3px 0 0 rgba( themed( 'backgroundColor' ), 0.4 ) )
+			//	drop-shadow( 1px 1px 0 rgba( themed( 'backgroundColor' ), 0.9 ) )
+			//	drop-shadow( -1px -1px 0 rgba( themed( 'backgroundColor' ), 0.6 ) )
+
+			//	drop-shadow( 0 0 3px rgba( themed( 'backgroundColor' ), 0.9 ) )
+			//	drop-shadow( 0 0 3px rgba( themed( 'backgroundColor' ), 0.4 ) )
+				drop-shadow( 0 0 1px rgba( themed( 'backgroundColor' ), 0.9 ) )
+				drop-shadow( 0 0 9px rgba( themed( 'backgroundColor' ), 0.35 ) )
+
+				drop-shadow( 2px 0 0 rgba( themed( 'backgroundColor' ), 0.98 ) )
+				drop-shadow( 0 2px 0 rgba( themed( 'backgroundColor' ), 0.98 ) )
+				drop-shadow( -2px 0 0 rgba( themed( 'backgroundColor' ), 0.98 ) )
+				drop-shadow( 0 -2px 0 rgba( themed( 'backgroundColor' ), 0.98 ) )
+
+
+				;
+		}
+
 		svg * {
 			@include themify($themes) {
 				fill: themed( 'textColor' );
@@ -96,8 +119,9 @@
 }
 
 .series_trailer {
+	position: relative;
+	z-index: 999;
 	margin: 7em auto;
-
 	padding: 2em 1em;
 	text-align: center;
 ;

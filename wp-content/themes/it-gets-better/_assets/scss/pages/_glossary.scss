@@ -28,6 +28,10 @@ footer.glossary_term_bottom_border {
 	.single_term {
 		margin: 2em 0;
 		padding: 0;
+		@include themify($themes) {
+			box-shadow: themed( 'normalShadow');
+			background-image: linear-gradient( 171deg, themed( 'backgroundColor' ) 10%, darken( themed( 'backgroundColor' ), 4) 98% );
+		}
 
 		h3 {
 			padding: 0;

@@ -30,6 +30,19 @@ $auto_or_manual_query = get_field( 'content_selection' );
 
 if( $auto_or_manual_query ===  true  ) {
 	// manual selection of content
+	$selected_content = get_field( 'manually_selected_content' );
+
+	$selected_content_ID_array = [];
+
+	foreach( $selected_content as $content ) {
+		$selected_content_ID_array[] = $content->ID;
+	}
+
+
+	$args = array(
+		'post_type'		=> 'any',
+		'post__in'		=>  $selected_content_ID_array ,
+	);
 
 }
 
@@ -62,6 +75,7 @@ endif;
 		<h2><?php echo wp_kses_post( $heading_text ); ?></h2>
 		<?php
 		$more_content_query = new WP_Query( $args );
+
 		if( $more_content_query->have_posts() ) :
 			echo '<div class="content_' . esc_attr( $layout ) . '_container">';
 			if( $layout === 'carousel' ) { ?>
