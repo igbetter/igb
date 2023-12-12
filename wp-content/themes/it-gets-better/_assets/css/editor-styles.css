@@ -672,8 +672,8 @@ body.page-homepage.theme-light .section_hero {
   z-index: 9;
   padding: 12% 14% 0 15%;
   margin-bottom: 3em;
-  -webkit-mask: linear-gradient(168deg, red 70%, transparent 90%);
-  mask: linear-gradient(168deg, red 70%, transparent 90%);
+  -webkit-mask: linear-gradient(168deg, red 70%, transparent 85%);
+  mask: linear-gradient(168deg, red 70%, transparent 85%);
 }
 .theme-light .section_hero .hero_image-container img {
   /* filter:
