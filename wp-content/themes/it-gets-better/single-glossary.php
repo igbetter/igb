@@ -8,6 +8,9 @@
  */
 
 get_header();
+
+ $color = get_field( 'border_color' );
+ $color_label = ( is_array( $color ) ? $color['label'] : $color );
 ?>
 
 	<section id="primary">
@@ -29,7 +32,7 @@ get_header();
 				<header class="glossary_term_header">
 					<div class="two_column container">
 						<div class="col_one">
-							<h1><?php the_title(); ?></h1>
+							<h1 class="underline-<?php esc_html_e( $color_label ); ?>"><?php the_title(); ?></h1>
 							<div class="definition">
 								<div class="flex-row">
 

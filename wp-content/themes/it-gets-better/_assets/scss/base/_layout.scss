@@ -42,7 +42,15 @@
 		}
 	}
 
+
 	@include tablet-down {
+		display: block;
+
+		> * {
+			width: 100%;
+		}
+	}
+	@include portrait {
 		display: block;
 
 		> * {

@@ -226,6 +226,37 @@ body {
 	}
 }
 
+.underline-,
+.underline-IGB_Purple {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPurple' );
+	}
+}
+
+.underline-IGB_Pink {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPink' );
+	}
+}
+
+.underline-IGB_Blue {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentBlue' );
+	}
+}
+
+.underline-IGB_Yellow {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentYellow' );
+	}
+}
+
+.underline-IGB_Dark {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentGrey' );
+	}
+}
+
 
 
 // =============================================	3. links & buttons

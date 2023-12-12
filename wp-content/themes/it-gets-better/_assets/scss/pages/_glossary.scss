@@ -153,6 +153,10 @@ a:visited {
 				width: 100%;
 				height: calc( 100vw * .65);
 			}
+			@include portrait{
+				width: 100%;
+				height: calc( 100vw * .65);
+			}
 
 			.video_container {
 				flex: 1;
