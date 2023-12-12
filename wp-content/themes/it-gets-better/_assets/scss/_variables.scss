@@ -153,9 +153,10 @@ $themes: (
 		mainNavLinkHoverColor: $yellow,
 
 		// utility navigation
-		utilityNavBGColor: $purple,
-		utilityNavLinkColor: $white,
-		utilityNavLinkHoverColor: $yellow,
+		utilityNavBGColor: $subtle-purple-light,
+		utilityNavBGHoverColor: $yellow,
+		utilityNavLinkColor: $purple,
+		utilityNavLinkHoverColor: $dark,
 
 		// accent colors
 		accentPurple: $purple,
@@ -260,6 +261,7 @@ $themes: (
 
 		// utility navigation
 		utilityNavBGColor: $subtle-purple-dark,
+		utilityNavBGHoverColor: $darker,
 		utilityNavLinkColor: $white,
 		utilityNavLinkHoverColor: $yellow,
 
