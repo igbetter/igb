@@ -371,6 +371,119 @@
 
 }
 
+// mega nav cont. program boxes
+
+nav#programs_nav {
+	width: 46vw;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: fixed;
+	right: 0;
+	top: 10%;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 50ms ease-in-out;
+		transition-delay: 0s;
+
+
+
+	.menu_is_open & {
+		z-index: 9999;
+		opacity: 1;
+
+
+		transition: opacity 550ms ease-in-out;
+	transition-delay: .2s;
+	}
+
+	//padding: 3em;
+
+	@include tablet-down {
+		display: none;
+	}
+
+	.program_box {
+		padding: 1em 2em;
+		margin: 2em;
+		clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+		transition: all 150ms ease-in-out;
+
+
+		@include themify($themes) {
+			background: themed( 'subtleGreyBG' );
+		}
+
+		&.global {
+
+			&:hover {
+
+				* {
+					@include themify($themes) {
+						color: $white;
+					}
+				}
+				@include themify($themes) {
+					background: $pink;
+					color: $white;
+				}
+
+				span {
+					@include themify($themes) {
+						color: $black;
+					}
+				}
+			}
+		}
+		&.edu {
+
+			&:hover {
+				* {
+					@include themify($themes) {
+						color: $white;
+					}
+				}
+				@include themify($themes) {
+					background: $blue;
+					color: $white;
+				}
+
+				span {
+					@include themify($themes) {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+
+	a,
+	a:visited {
+		font-weight: 200;
+		display: block;
+		padding: 5%;
+
+		@include themify($themes) {
+			text-decoration: none !important;
+			text-decoration-color: transparent;
+			color: themed( 'textColor' );
+		}
+
+		object {
+			display: block;
+		}
+
+		h3 {
+			span {
+				@include themify($themes) {
+					color: themed( 'secondaryButtonBGHoverColor' );
+				}
+			}
+		}
+	}
+}
+
 // breadcrumb nav
 
 nav.breadcrumb_navigation {
