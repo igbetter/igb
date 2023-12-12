@@ -102,7 +102,8 @@ section.featured_content {
 			margin: 1em auto;
 			padding: 8px;
 			display: block;
-			//height: calc( 75% * #{$video_aspect_ratio} );
+			min-height: calc( 50vw * .57);
+		//	height: calc( 95% * #{$video_aspect_ratio} );
 
 			@include themify($themes) {
 				border: 1px solid rgba( themed('textColor'), 0.5 );

@@ -10,7 +10,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'more_content';
+$class_name = 'more_content_section';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
@@ -72,7 +72,14 @@ endif;
 ?>
 
 <section <?php echo esc_attr( $anchor ); ?>class="<?php echo esc_attr( $class_name ) . ' layout-' . esc_attr( $layout ) . ' background-' . esc_html( $background_color ) . ' ' . esc_attr( $extra_carousel_class ); ?>">
-		<h2><?php echo wp_kses_post( $heading_text ); ?></h2>
+	<header class="more_content_header">
+		<div class="header_text">
+			<?php if ( $subheading_text ) {
+				echo '<h6 class="subhead">' . esc_html( $subheading_text ) . '</h6>';
+				} ?>
+			<h2><?php echo wp_kses_post( $heading_text ); ?></h2>
+		</div>
+	</header>
 		<?php
 		$more_content_query = new WP_Query( $args );
 

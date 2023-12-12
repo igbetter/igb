@@ -375,6 +375,7 @@
 
 nav.breadcrumb_navigation {
 	font-size: $font-size-sm;
+	margin-bottom: 3em;
 
 	body.page-homepage &,
 	body.page-browse-content &,
@@ -417,7 +418,7 @@ nav.breadcrumb_navigation {
 	opacity: 0.95;
 	transition: all 150ms ease-in-out;
 	@include themify($themes) {
-		background: rgba(themed('subtleGreyBG'), 0.85);
+		background: rgba(themed('subtleGreyBG'), 0.95);
 	}
 
 	&:hover {
@@ -462,7 +463,7 @@ nav.breadcrumb_navigation {
 		width: 50%;
 
 		@include themify($themes) {
-			border-left: 1px solid rgba( themed( 'linkHoverColor' ), 0.96 );
+			border-left: 1px solid themed( 'backgroundColor' ) ;
 		}
 
 		&:first-child {
