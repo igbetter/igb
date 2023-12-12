@@ -2089,6 +2089,7 @@ body.hc-nav-open {
 
 nav.breadcrumb_navigation {
   font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  margin-bottom: 3em;
 }
 body.page-homepage nav.breadcrumb_navigation, body.page-browse-content nav.breadcrumb_navigation, body.single-glossary nav.breadcrumb_navigation {
   display: none;
@@ -2123,10 +2124,10 @@ nav.breadcrumb_navigation ul li span {
   transition: all 150ms ease-in-out;
 }
 .theme-light .next_previous_glossary {
-  background: rgba(245, 243, 247, 0.85);
+  background: rgba(245, 243, 247, 0.95);
 }
 .theme-dark .next_previous_glossary {
-  background: rgba(57, 57, 57, 0.85);
+  background: rgba(57, 57, 57, 0.95);
 }
 .next_previous_glossary:hover {
   opacity: 1;
@@ -2167,10 +2168,10 @@ nav.breadcrumb_navigation ul li span {
   width: 50%;
 }
 .theme-light .nav-links > * {
-  border-left: 1px solid rgba(94, 58, 126, 0.96);
+  border-left: 1px solid #ffffff;
 }
 .theme-dark .nav-links > * {
-  border-left: 1px solid rgba(251, 101, 123, 0.96);
+  border-left: 1px solid #292929;
 }
 .nav-links > *:first-child {
   border-left: none;
@@ -2652,6 +2653,7 @@ section.featured_content.video iframe {
   margin: 1em auto;
   padding: 8px;
   display: block;
+  min-height: 28.5vw;
 }
 .theme-light section.featured_content.video video,
 .theme-light section.featured_content.video iframe {
@@ -2955,6 +2957,10 @@ ul.term_list a span {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.more_content_section .more_content_header h2 {
+  margin-top: 0;
+  padding-top: 0;
 }
 .more_content_section .more_content_header h3 + a {
   margin-top: -2em;
