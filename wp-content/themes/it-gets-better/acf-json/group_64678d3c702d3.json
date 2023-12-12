@@ -1,68 +1,52 @@
 {
     "key": "group_64678d3c702d3",
-    "title": "Meta Data - Glossary Term",
+    "title": "Meta Data - Glossary Term Category",
     "fields": [
         {
             "key": "field_64678d3c7a577",
-            "label": "Button \/ Border Color",
-            "name": "button_color",
+            "label": "Accent Color",
+            "name": "accent_color",
             "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
-            "default_value": "#512b67",
+            "default_value": "",
             "enable_opacity": 0,
-            "return_format": "string",
-            "display": "default",
-            "button_label": "Select Color",
-            "color_picker": 1,
-            "absolute": 0,
-            "input": 1,
+            "return_format": "color_label",
+            "display": "palette",
+            "color_picker": 0,
             "allow_null": 1,
             "theme_colors": 1,
-            "colors": []
+            "colors": [],
+            "button_label": "Select Color",
+            "absolute": false,
+            "input": true
         },
         {
             "key": "field_64678ecc7a578",
             "label": "Sub Headline Abbreviation",
             "name": "sub_headline_abbreviation",
             "aria-label": "",
-            "type": "select",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
-            "choices": {
-                "GE": "GE",
-                "GI": "GI",
-                "S": "S",
-                "SO": "SO"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "max": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Example: GE",
             "prepend": "",
-            "append": "",
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "allow_custom": 0,
-            "search_placeholder": "",
-            "min": ""
+            "append": ""
         }
     ],
     "location": [
@@ -75,9 +59,9 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
-    "label_placement": "left",
+    "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
@@ -90,5 +74,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701052938
+    "modified": 1701548557
 }

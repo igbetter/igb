@@ -1,0 +1,103 @@
+section.glossary_term_list {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+//	align-self: stretch;
+	justify-content: center;
+
+	.wp-block-column & {
+		height: 100%;
+	}
+
+	> .section_content {
+		display: flex;
+		flex-direction: column;
+	//	flex: 1;
+		justify-content: space-evenly;
+		padding: 3em 0;
+		//height: 100%;
+	}
+
+	h2 {
+		text-align: center;
+		margin: -2.5em  0 0 0;
+	}
+
+}
+
+ul.term_list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0;
+	margin: 1.5em 0;
+	overflow: hidden;
+	list-style: none;
+	flex-flow: row wrap;
+
+
+	.term {
+		flex-grow: 1;
+		text-align: center;
+		margin: 0 -9px;
+		padding: 0 9px 0 1px;
+		border: 1px solid;
+		transform: skewX(-26deg);
+
+		@include themify($themes) {
+			border-color: themed( 'textColor' );
+		}
+
+		&:last-of-type,
+		&:nth-last-of-type(2) {
+			padding-right: 0;
+		}
+
+		&.more_terms {
+			margin: 0 11px -1px 11px;
+			a {
+				@include themify($themes) {
+					color: themed('textColor');
+				}
+
+				&:hover,
+				&:focus,
+				&:target {
+					@include themify($themes) {
+						color: themed('backgroundColor');
+					}
+				}
+			}
+
+		}
+	}
+
+	a {
+		display: block;
+		padding: 0.5em 1.75em;
+		text-decoration: none;
+		border: 2px solid transparent;
+
+		@include themify($themes) {
+			color: themed('backgroundColor');
+		}
+
+		&:hover,
+		&:focus,
+		&:target  {
+			@include themify($themes) {
+				background: rgba( themed('textColor'), 0.7 );
+				border-top-color: themed('backgroundColor');
+				border-bottom-color: themed('backgroundColor');
+			}
+		}
+
+
+		span {
+			display: block;
+			transform: skewX( 26deg );
+		}
+	}
+}

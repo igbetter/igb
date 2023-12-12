@@ -31,7 +31,7 @@ $darker: #212023;
 $black: #000000;
 
 $subtle-purple-light: #F5F3F7;
-$subtle-pink-light: #FFEDEF;
+$subtle-pink-light: #f9dde0;
 $subtle-blue-light: #F2F8FA;
 $subtle-yellow-light: #FFF7EC;
 
@@ -42,6 +42,7 @@ $subtle-yellow-dark: #665741;
 
 // Define measurements
 $max_body_text_width: 90ch;
+$max_body_text_width_half: 45ch;
 $max_heading_text_width: 30ch;
 $max_wide_page_width: 1600px;
 $basefont_size: 16px;
@@ -56,14 +57,14 @@ $font-size-md: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
 $font-size-lg: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
 $font-size-xl: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
 $font-size-xxl: clamp(1.46rem, 2.79vw + 0.07rem, 5.37rem);
-$font-size-xxxl: clamp(1.8rem, 5.35vw + -0.88rem, 9.28rem);
+$font-size-xxxl:  clamp(2.14rem, 6.16vw + -0.94rem, 10.77rem);
 
 
 // Shadow options
 
 $subtle_shadow_light: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+rgba(50, 50, 93, 0.12) 0px 50px 100px -20px,
+rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 $subtle_shadow_dark: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px,
 rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 $heavy_shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -72,12 +73,15 @@ rgba(0, 0, 0, 0.12) 0px 4px 6px,
 rgba(0, 0, 0, 0.17) 0px 12px 13px,
 rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-$subtle_inset: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+$subtle_inset: rgba(45, 53, 60, 0.4) 3px 3px 6px 0px inset,
+rgba(43, 39, 39, 0.5) -3px -3px 6px 1px inset;
+
+
 
 // Define animation speeds
 $transition_speed: 250ms;
 
+$video_aspect_ratio:  315 / 560 315 / 560;
 // Define breakpoints
 $breakpoint-small: 600px;
 $breakpoint-medium: 900px;
@@ -172,6 +176,12 @@ $themes: (
 		subtleShadow: $subtle_shadow_light,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
+		insetShadow: $subtle_inset,
+
+		// text shadow options
+		textBackgroundBlurShadow: $white,
+		textShadowBelow: $black,
+		textHighlightAbove: $white,
 
 		// program box, global
 		programBGColorGlobal: $pink,
@@ -272,8 +282,14 @@ $themes: (
 		subtleShadow: $subtle_shadow_dark,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
+		insetShadow: $subtle_inset,
 
-		// program box, globalhttp://localhost:3000/playlist/perfectly-queer-the-it-gets-better-project-vodcast-season-1/
+		// text shadow options
+		textBackgroundBlurShadow: $black,
+		textShadowBelow: $black,
+		textHighlightAbove: $white,
+
+		// program box, global
 		programBGColorGlobal: $subtle-pink-dark,
 		programTextColorGlobal: $white,
 		programAccentColorGlobal: $pink,

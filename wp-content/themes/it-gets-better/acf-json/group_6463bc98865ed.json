@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -84,7 +83,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "enable_opacity": 1,
             "return_format": "color_label",
@@ -200,7 +198,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "acfe_save_meta": 0,
                     "uploader": "",
                     "return_format": "array",
                     "upload_folder": "playlists\/{year}\/",
@@ -217,6 +214,24 @@
                     "parent_repeater": "field_646449a714a0a"
                 }
             ]
+        },
+        {
+            "key": "field_657121e020ada",
+            "label": "Trailer",
+            "name": "trailer",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "width": "",
+            "height": ""
         }
     ],
     "location": [
@@ -244,5 +259,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701239800
+    "modified": 1701913090
 }

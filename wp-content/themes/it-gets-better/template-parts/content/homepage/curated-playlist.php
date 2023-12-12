@@ -15,8 +15,7 @@ $query = array(
 	)
 );
 
-$terms = get_terms($query);
-?>
+$terms = get_terms($query); ?>
 
 <section class="popular-playlist-section more_content_section more_playlists splide" aria-labelledby="more_content_heading--playlists">
 	<header class="section_header more_content_header">

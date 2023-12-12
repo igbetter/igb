@@ -107,7 +107,7 @@
 
 			@include themify($themes) {
 				border: 1px solid rgba(themed('linkColor'), 0.25);
-				filter: themed( 'duotoneFilter' );
+			//	filter: themed( 'duotoneFilter' );
 			}
 		}
 
@@ -117,6 +117,53 @@
 			display: inline-block;
 			padding: 1.5em;
 			margin: 0;
+		}
+	}
+}
+
+// card
+
+// video card
+.video_card {
+	margin: 1em 0;
+
+	@include tablet-up {
+		&:nth-of-type( 2n ) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	@include themify($themes) {
+		box-shadow: themed( 'normalShadow');
+		background-image: linear-gradient( 171deg, themed( 'backgroundColor' ) 10%, darken( themed( 'backgroundColor' ), 4) 98% );
+	}
+
+	.description_side {
+
+		.content_container {
+			max-width: $max_body_text_width_half;
+			text-align: left;
+			text-wrap: balance;
+			margin: 0 auto;
+		}
+
+	}
+	.video_side {
+		padding: 0;
+		min-width: 60vw;
+
+		video,
+		iframe {
+			min-width: 480px;
+			width: 100%;
+			padding: 6px;
+
+			height: calc( 60vw * 0.58 );
+
+			@include portrait {
+				height: calc( 98vw * 0.58 );
+			}
+
 		}
 	}
 }

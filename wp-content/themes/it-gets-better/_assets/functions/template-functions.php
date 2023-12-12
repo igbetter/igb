@@ -27,6 +27,19 @@ function wp_change_search_url() {
 add_action( 'template_redirect', 'wp_change_search_url' );
 
 /**
+ * add page slug to body class names
+ */
+
+function igb_add_page_slug_to_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'igb_add_page_slug_to_body_class' );
+
+/**
  * Changes comment form default fields.
  *
  * @param array $defaults The default comment form arguments.
@@ -215,7 +228,7 @@ function it_gets_better_html5_comment( $comment, $args, $depth ) {
 function it_gets_better_query_glossary_by_term_category_slug($term) {
 	return array(
 		'post_type' => 'glossary',
-    'status'    => 'published',
+		'status'    => 'published',
 		'posts_per_page' => -1,
 		'orderby' => 'title',
 		'order' => 'asc',
@@ -228,6 +241,19 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 		),
 	);
 }
+
+
+// attempt at reordering playlist view
+
+add_filter( 'pre_get_posts', function() {
+
+	global $wp_query;
+	if ( $wp_query->is_tax( 'playlist' ) ) {
+		$wp_query->set( 'order', 'ASC' );
+	}
+
+});
+
 
 // ---------------------------------site options ---------
 
@@ -427,4 +453,81 @@ function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_bla
 		echo "</ul>";
 
 	}
+}
+
+
+function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
+	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
+	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
+		// self hosted video
+		$video_embed = get_field( $file_upload_key, $video_ID );
+
+		$output = sprintf(
+			'<div class="video_container">
+			<video poster="%s" controls>
+				<source src="%s" type="%s"/>
+			</video>
+			</div>',
+			esc_url( get_the_post_thumbnail_url( $video_ID,'full') ),
+			esc_url( $video_embed['url'] ),
+			esc_attr( $video_embed['mime_type'])
+		);
+	else :
+		// youtube video
+		$video_url = get_field( $youtube_link_key, $video_ID, false);
+		$videoargs = array(
+				'width'		=> '700',
+			);
+			$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
+			$output = '<div class="video_container">' . $youtube_embed . '</div>';
+
+	endif;
+	return $output;
+}
+
+function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general_category = false, $display_style = 'subscript' ) {
+	$general_term_category = get_term_by( 'name', 'general', 'term-category');
+	$general_term_category_ID = $general_term_category->term_id; // so we can exclude the "general" category in the arrays below if needed
+
+	$glossary_term_categories = get_the_terms( $post_ID, 'term-category');
+	$output = '';
+
+	if( $glossary_term_categories ) :
+		// if this has term categories set, start an array to store the term_ids
+		$term_categories_ID_array = [];
+		foreach( $glossary_term_categories as $glossary_term_category ) :
+			$term_categories_ID_array[] = $glossary_term_category->term_id;
+		endforeach;
+
+		if( $display_general_category === false ) :
+			$term_categories_ID_array = array_diff($term_categories_ID_array, array( $general_term_category_ID ) );
+		endif;
+
+		if( $display_style === 'subscript' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<sub class="term_category">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '(<dfn class="term_category_def" title="' . esc_html( $term_name ) . '">' . get_field( 'sub_headline_abbreviation', $acftermid ) . '</dfn>)';
+				endforeach;
+				$output .= '</sub>';
+			};
+		elseif( $display_style === 'full' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<ul class="term_category_list">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '<li>(' . esc_html( $term_name ) . ')</li>';
+				endforeach;
+				$output .= '</ul>';
+			}
+		endif;
+
+	endif;
+
+	return $output;
 }

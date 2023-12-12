@@ -1,6 +1,6 @@
 <?php
 /**
- * Testimonial Block template.
+ * Hero Block template.
  *
  * @param array $block The block settings and attributes.
  */
@@ -24,7 +24,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'testimonial';
+$class_name = 'hero';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
@@ -39,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
 		<?php if ( $subheading_text ) {
 			echo '<h6 class="subhead">' . esc_html( $subheading_text ) . '</h6>';
 			} ?>
-		<h1><?php echo esc_html( $heading_text ); ?></h1>
+		<h1><?php echo wp_kses_post( $heading_text ); ?></h1>
 		<?php if ( $paragraph_text ) {
 			echo '<p>' . wp_kses_post( $paragraph_text ) . '</p>';
 			} ?>

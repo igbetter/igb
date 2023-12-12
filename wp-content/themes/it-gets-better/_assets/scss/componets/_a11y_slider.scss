@@ -43,8 +43,18 @@ https://splidejs.com/
 	.slide {
 		background-size: cover;
 
-		a,
-		a:visited {
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		a {
+			display: block;
+			padding-bottom: 1em;
+		}
+
+		a.slide_content,
+		a.slide_content:visited {
 			display: flex;
 			height: 100%;
 			justify-content: center;
