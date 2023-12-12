@@ -231,7 +231,7 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 		'status'    => 'published',
 		'posts_per_page' => -1,
 		'orderby' => 'title',
-		'order' => 'asc',
+		'order' => 'ASC',
 		'tax_query' => array(
 			array (
 				'taxonomy' => 'term-category',
@@ -243,14 +243,23 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 }
 
 
-// attempt at reordering playlist view
+// reordering playlist view & glossary
 
 add_filter( 'pre_get_posts', function() {
 
 	global $wp_query;
+	//global $post;
+//	$post_type = $wp_query->query['post_type'];
+	$post_type = get_post_type();
+
 	if ( $wp_query->is_tax( 'playlist' ) ) {
 		$wp_query->set( 'order', 'ASC' );
-	}
+	};
+
+	if ( $post_type == 'glossary' ) {
+		$wp_query->set( 'orderby', 'title' );
+		$wp_query->set( 'order', 'ASC' );
+	};
 
 });
 

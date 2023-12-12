@@ -2068,7 +2068,7 @@ nav.breadcrumb_navigation ul li span {
 }
 
 .next_previous_glossary {
-  opacity: 0.5;
+  opacity: 0.95;
   transition: all 150ms ease-in-out;
 }
 .theme-light .next_previous_glossary {
@@ -2083,6 +2083,28 @@ nav.breadcrumb_navigation ul li span {
 .next_previous_glossary.top {
   margin-top: 7em;
 }
+.next_previous_glossary a.glossary_back_link {
+  display: block;
+  margin: 1px;
+  font-weight: 200;
+  text-align: center;
+  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  padding: 0.5em 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.theme-light .next_previous_glossary a.glossary_back_link {
+  background: rgba(255, 255, 255, 0.85);
+}
+.theme-dark .next_previous_glossary a.glossary_back_link {
+  background: rgba(41, 41, 41, 0.85);
+}
+.theme-light .next_previous_glossary a.glossary_back_link:hover, .theme-light .next_previous_glossary a.glossary_back_link:focus, .theme-light .next_previous_glossary a.glossary_back_link:target {
+  background: rgba(69, 172, 206, 0.1);
+}
+.theme-dark .next_previous_glossary a.glossary_back_link:hover, .theme-dark .next_previous_glossary a.glossary_back_link:focus, .theme-dark .next_previous_glossary a.glossary_back_link:target {
+  background: rgba(251, 101, 123, 0.1);
+}
 
 .nav-links {
   display: flex;
@@ -2091,8 +2113,7 @@ nav.breadcrumb_navigation ul li span {
   width: 100%;
 }
 .nav-links > * {
-  flex: 1;
-  width: 49%;
+  width: 50%;
 }
 .theme-light .nav-links > * {
   border-left: 1px solid rgba(94, 58, 126, 0.96);
@@ -2119,7 +2140,11 @@ nav.breadcrumb_navigation ul li span {
   font-weight: 500;
 }
 .nav-links .nav-next {
+  margin-left: auto;
   text-align: right;
+}
+.nav-links .nav-previous {
+  margin-right: auto;
 }
 
 img,
@@ -2453,7 +2478,7 @@ body.page-homepage.theme-light .section_hero {
   position: absolute;
   width: 100%;
   height: auto;
-  max-height: 110vh;
+  max-height: 92vh;
   top: 0;
   right: 0;
   left: 0;

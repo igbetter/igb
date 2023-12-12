@@ -18,11 +18,13 @@ get_header();
 			while ( have_posts() ) :
 				the_post(); ?>
 				<div class="next_previous_glossary top">
+					<a href="/glossary/" class="glossary_back_link">Back to the Glossary</a>
 					<?php the_post_navigation(
 					array(
 						'prev_text'  => __( '&laquo; Previous: <em>%title</em>' ),
 						'next_text'  => __( 'Next: <em>%title</em> &raquo;' ),
 						) ); ?>
+
 				</div>
 				<header class="glossary_term_header">
 					<div class="two_column container">
@@ -80,6 +82,7 @@ get_header();
 						'prev_text'  => __( '&laquo; Previous: <em>%title</em>' ),
 						'next_text'  => __( 'Next: <em>%title</em> &raquo;' ),
 						) ); ?>
+				<a href="/glossary/" class="glossary_back_link">Back to the Glossary</a>
 			</div>
 			<?php endwhile;
 			?>

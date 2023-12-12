@@ -414,7 +414,7 @@ nav.breadcrumb_navigation {
 
 // previous / next links
 .next_previous_glossary {
-	opacity: 0.5;
+	opacity: 0.95;
 	transition: all 150ms ease-in-out;
 	@include themify($themes) {
 		background: rgba(themed('subtleGreyBG'), 0.85);
@@ -427,6 +427,27 @@ nav.breadcrumb_navigation {
 	&.top {
 		margin-top: 7em;
 	}
+	a.glossary_back_link {
+		display: block;
+		margin: 1px;
+		font-weight: 200;
+		text-align: center;
+		font-size: $font-size-sm;
+		padding: 0.5em 3em;
+		text-transform: uppercase;
+		text-decoration: none;
+		@include themify($themes) {
+			background: rgba(themed('backgroundColor'), 0.85);
+		}
+
+		&:hover,
+		&:focus,
+		&:target {
+			@include themify($themes) {
+				background: rgba(themed('footerLinkHoverColor'), 0.1);
+			}
+		}
+	}
 }
 .nav-links {
 	display: flex;
@@ -437,8 +458,8 @@ nav.breadcrumb_navigation {
 
 
 	> * {
-		flex: 1;
-		width: 49%;
+		//flex: 1;
+		width: 50%;
 
 		@include themify($themes) {
 			border-left: 1px solid rgba( themed( 'linkHoverColor' ), 0.96 );
@@ -469,7 +490,10 @@ nav.breadcrumb_navigation {
 	}
 
 	.nav-next {
-
+		margin-left: auto;
 		text-align: right;
+	}
+	.nav-previous {
+		margin-right: auto;
 	}
 }

@@ -6,7 +6,7 @@
  */
 function igb_glossary_content_proxy_field( $post_id ) {
 
-	// bail if not a person
+	// bail if not a glossary term
 	if ( 'glossary' !== get_post_type( $post_id  ) ) {
 		return;
 	}
