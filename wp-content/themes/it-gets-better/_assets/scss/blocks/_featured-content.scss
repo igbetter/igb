@@ -87,7 +87,7 @@ section.featured_content {
 
 						@include themify($themes) {
 							border: 1px solid rgba(themed('linkColor'), 0.25);
-							filter: themed( 'duotoneFilter' );
+						//	filter: themed( 'duotoneFilter' );
 						}
 					}
 				}
@@ -198,7 +198,7 @@ section.featured_content {
 				object-fit: cover;
 				z-index: 0;
 				@include themify($themes) {
-					filter: themed( 'duotoneFilter' );
+				//	filter: themed( 'duotoneFilter' );
 				}
 			}
 
