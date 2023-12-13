@@ -20,9 +20,8 @@ get_header();
 				<div class="entry-content">
 					<section class="section_hero image_right">
 						<div class="hero_text-container">
-							<h1>Empowering LGBTQ+ youth to define their own journey.</h1>
-							<p>Search for...</p>
-							<p>(and the search box will go here)</p>
+							<h1>I'm still working on this page</h1>
+							<p>but just so you know this will be the blog post page. the content below was ported over from MC's hard-coded version of the website so nothing is forgotten</p>
 						</div>
 						<div class="hero_image-container">
 							<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 100 115">

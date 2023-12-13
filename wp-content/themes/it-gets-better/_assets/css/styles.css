@@ -2627,7 +2627,7 @@ body.page-homepage.theme-light .section_hero {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: flex-end;
+  justify-content: center;
   text-wrap: balance;
 }
 .section_hero .hero_image-container {
@@ -2703,7 +2703,7 @@ section.featured_content.video .section_content h6 {
   align-self: flex-start;
 }
 section.featured_content.video .section_content h6.subhead {
-  margin-bottom: -2em;
+  margin-bottom: -0.75em;
   margin-left: -3em;
 }
 section.featured_content.video .section_content .video_wrapper {
