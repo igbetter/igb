@@ -186,7 +186,7 @@ if ( ! empty( $block['align'] ) ) {
 					<h2><?php esc_html_e( $featured_term_object[0]->post_title ); ?></h2>
 					<div class="excerpt">
 						<?php echo wp_kses_post( $featured_term_object[0]->post_excerpt ) ?>
-						<p><a href="" class="primary_button">Learn More</a></p>
+						<p><a href="<?php the_permalink( $featured_term_id ); ?>" class="primary_button">Learn More</a></p>
 					</div>
 				</div>
 				<div class="column_right">
