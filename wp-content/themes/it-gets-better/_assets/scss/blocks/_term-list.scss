@@ -15,7 +15,7 @@ section.glossary_term_list {
 		flex-direction: column;
 	//	flex: 1;
 		justify-content: space-evenly;
-		padding: 3em 0;
+		padding: 3.2em 0;
 		//height: 100%;
 	}
 
@@ -41,8 +41,8 @@ ul.term_list {
 	.term {
 		flex-grow: 1;
 		text-align: center;
-		margin: 0 -9px;
-		padding: 0 9px 0 1px;
+		margin: 0 -11px;
+		padding: 0 11px 0 3px;
 		border: 1px solid;
 		transform: skewX(-26deg);
 
@@ -74,7 +74,8 @@ ul.term_list {
 		}
 	}
 
-	a {
+	a,
+	a:visited {
 		display: block;
 		padding: 0.5em 1.75em;
 		text-decoration: none;

@@ -278,70 +278,74 @@ a:visited {
 	}
 }
 
-#main {
-	.wp-element-button,
-	.wp-block-button__link,
-	.primary_button {
-		display: inline-block;
+.wp-element-button,
+.wp-block-button__link,
+a.primary_button,
+a.primary_button:visited {
+	display: inline-block;
+	border-radius: 3px;
+	position: relative;
+	padding: 0.8em 2em;
+	background-color: transparent;
+	margin-left: .5em;
+	z-index: 9;
+	text-decoration: none;
+
+	@include themify($themes) {
+		color: themed('primaryButtonTextColor');
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		transform: skew(-18deg);
+		-webkit-backface-visibility: hidden;
 		border-radius: 3px;
-		position: relative;
-		padding: 0.8em 2em;
-		background-color: transparent;
-		margin-left: .5em;
+		z-index: -1;
 
 		@include themify($themes) {
-			color: themed('primaryButtonTextColor');
-		}
-
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			transform: skew(-18deg);
-			-webkit-backface-visibility: hidden;
-			z-index: -1;
-			border-radius: 3px;
-
-			@include themify($themes) {
-				background-color: themed('primaryButtonBGColor');
-				border: themed('primaryButtonBorder')
-			}
-		}
-
-		&:hover,
-		&:focus {
-			@include themify($themes) {
-				color: themed('primaryButtonTextHoverColor');
-			}
-			&:after {
-				@include themify($themes) {
-					background-color: themed('primaryButtonBGHoverColor');
-
-				}
-			}
+			background-color: themed('primaryButtonBGColor');
+			border: themed('primaryButtonBorder');
+			box-shadow: themed( 'subtleShadow' );
 		}
 	}
 
-	.secondary_button {
-
-		padding: 0.5em 1.5em;
-
+	&:hover,
+	&:focus {
 		@include themify($themes) {
-			background-color: themed('secondaryButtonBGColor');
-			color: themed('secondaryButtonTextColor');
-			border: themed('secondaryButtonBorder');
+			color: themed('primaryButtonTextHoverColor');
 		}
-
-		&:hover,
-		&:focus {
+		&:after {
 			@include themify($themes) {
-				background-color: themed('secondaryButtonBGHoverColor');
-				color: themed('secondaryButtonTextHoverColor');
+				background-color: themed('primaryButtonBGHoverColor');
+				border: themed('primaryButtonHoverBorder');
+				box-shadow: themed( 'normalShadow' );
+
 			}
+		}
+	}
+}
+
+.secondary_button {
+
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: themed('secondaryButtonBGColor');
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
 		}
 	}
 }

@@ -122,8 +122,9 @@ $themes: (
 		primaryButtonBGColor: $blue,
 		primaryButtonTextColor: $white,
 		primaryButtonBGHoverColor: $pink,
-		primaryButtonTextHoverColor: $black,
+		primaryButtonTextHoverColor: $white,
 		primaryButtonBorder: 2px solid transparent,
+		primaryButtonHoverBorder: 2px solid $white,
 
 		// secondary button
 		secondaryButtonBGColor: transparent,
@@ -229,8 +230,9 @@ $themes: (
 		primaryButtonBGColor: $blue,
 		primaryButtonTextColor: $white,
 		primaryButtonBGHoverColor: $pink,
-		primaryButtonTextHoverColor: $black,
+		primaryButtonTextHoverColor: $white,
 		primaryButtonBorder: 2px solid transparent,
+		primaryButtonHoverBorder: 2px solid $medium-grey,
 
 		// secondary button
 		secondaryButtonBGColor: transparent,
