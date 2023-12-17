@@ -6,6 +6,15 @@
 	max-width: 100vw;
 	margin-top: -250px;
 	padding-top: 150px;
+	min-height: 700px;
+
+	@include tablet-down {
+		min-height: 500px;
+	}
+
+	@include phone-only {
+		min-height: 270px;
+	}
 
 	body.page-homepage.theme-light & {
 		background: $subtle-pink-light;
@@ -23,14 +32,18 @@
 	}
 
 	.hero_text-container {
-		padding: 2em 1.5em 3.5em 1.5em;
-		margin-top: 3em;
-		margin-bottom: 2em;
+		padding: 3em 1.5em 0 1.5em;
+		margin-top: 100px;
+		margin-bottom: -2em;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: center;
 		text-wrap: balance;
+
+		@include phone-only {
+			padding-top: 1em;
+		}
 	}
 
 	.hero_image-container {

@@ -6,6 +6,7 @@
 ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!------------------------------ frames ---------------------------->
 	<symbol id="igb_frame_option_01" class="feature_frame" x="0px" y="0px" preserveAspectRatio="none meet"
 		 viewBox="0 -20 100 135">
 		<path class="svg_line pink"
@@ -149,6 +150,218 @@
 					 L 101 22"/>
 	</symbol>
 
+	<symbol id="igb_frame_option_07" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 38 -20
+					 l -17.7 33
+					 l -17.6 24
+					 l 31 41
+					 l 34 4
+					 L 100 49"/>
+			<path class="svg_line yellow"
+				  d="m 42 -20
+					 l -20.3 39
+					 l -10 25
+					 l 6 25
+					 L 102 52"/>
+			<path class="svg_line blue"
+				  d="m 45.5 -20
+					 l -15.98 32
+					 L 44 27
+					 l 28 2
+					 L 101 22"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_08" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 48 -20
+					 l -17.7 33
+					 l -27.6 20
+					 l 31 61
+					 l 34 4
+					 L 100 49"/>
+			<path class="svg_line yellow"
+				  d="m 52 -20
+					 l -15.3 29
+					 l 20 9
+					 l -40 40
+					 l 40 34
+					 L 102 62"/>
+			<path class="svg_line blue"
+				  d="m 55.5 -20
+					 l -20 40
+					 l -15 9
+					 L 24 57
+					 l 48 25
+					 L 101 72"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_09" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 48 -20
+					 l -17.7 33
+					 l 27.6 20
+					 l -31 61
+					 l 34 4
+					 L 100 97"/>
+			<path class="svg_line yellow"
+				  d="m 52 -20
+					 l -31.3 59
+					 l 55 9
+					 l -4 20
+					 L 102 68"/>
+			<path class="svg_line blue"
+				  d="m 55.65 -20
+					 l -15 30
+					 l -25 2
+					 L 8 67
+					 l 71 39
+					 L 101 102"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_10" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 38 -20
+					 l -17.7 33
+					 l -15 14
+					 l 21 11
+					 l -3 65
+					 l 60 -5
+					 L 100 100"/>
+			<path class="svg_line yellow"
+				  d="m 42 -20
+					 l -20.3 39
+					 l 20 25
+					 l -24 30
+					 l 32 20
+					 L 104 87"/>
+			<path class="svg_line blue"
+				  d="m 45.5 -20
+					 l -15.98 32
+					 L 72 17
+					 l 8 15
+					 L 101 22"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_11" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 38 -20
+					 l -17.7 33
+					 l -15 14
+					 l 21 11
+					 l -3 45
+					 l 60 -5
+					 L 100 100"/>
+			<path class="svg_line yellow"
+				  d="m 42 -20
+					 l -11.3 21
+					 l -20 5
+					 l 4 50
+					 l 32 20
+					 L 104 87"/>
+			<path class="svg_line blue"
+				  d="m 45.5 -20
+					 l -15.98 32
+					 L 52 17
+					 l 18 -10
+					 l 5 55
+					 L 101 38"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_12" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 38 -20
+					 l -17.7 33
+					 l -15 14
+					 l 5 11
+					 l -3 49
+					 l 60 -15
+					 L 100 68"/>
+			<path class="svg_line yellow"
+				  d="m 42 -20
+					 l -11.3 21
+					 l -3 25
+					 l -25 43
+					 l 52 20
+					 L 104 71"/>
+			<path class="svg_line blue"
+				  d="m 45.5 -20
+					 l -15.98 32
+					 L 52 17
+					 l 28 -3
+					 l 5 35
+					 L 101 38"/>
+	</symbol>
+
+	<symbol id="igb_frame_option_13" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+			<path class="svg_line pink"
+				  d="m 58 -20
+					 l -17.7 33
+					 l -33 14
+					 l 8 21
+					 l -13 49
+					 l 60 -15
+					 L 100 78"/>
+			<path class="svg_line yellow"
+				  d="m 62 -20
+					 l -21.3 41
+					 l -3 25
+					 l -25 43
+					 l 52 20
+					 L 104 71"/>
+			<path class="svg_line blue"
+				  d="m 65.5 -20
+					 l -15.98 32
+					 l 18 -3
+					 l 5 35
+					 L 101 28"/>
+	</symbol>
+
+
+	<symbol id="igb_frame_option_14" class="feature_frame" x="0px" y="0px"
+		preserveAspectRatio="none meet"
+		viewBox="0 -20 100 135">
+		<path class="svg_line pink"
+				  d="m 58 -20
+					 l -17.7 33
+					 l -33 8
+					 l 5 41
+					 l 13 29
+					 l 60 -15
+					 L 100 78"/>
+			<path class="svg_line yellow"
+				  d="m 62 -20
+					 l -21.3 41
+					 l -27 15
+					 l 25 43
+					 l 52 20
+					 L 104 91"/>
+			<path class="svg_line blue"
+				  d="m 65.5 -20
+					 l -15.98 32
+					 l 6 21
+					 l 25 5
+					 L 101 28"/>
+	</symbol>
+
+
+
+	<!------------------------------ small frames ---------------------------->
+
 	<symbol id="igb_smaller_frame_option_01" class="small_frame" x="0" y="0"
 		 viewBox="0 0 100 70">
 		 	<path class="svg_line blue"
@@ -174,6 +387,8 @@
 					 l 15 -50
 					 l 45 -9" />
 	</symbol>
+
+	<!------------------------------ lines ---------------------------->
 
 	<symbol id="line_divider_option_01"  class="divider_line"  x="0" y="0"
 		 viewBox="0 0 500 60"  preserveAspectRatio="none slice">

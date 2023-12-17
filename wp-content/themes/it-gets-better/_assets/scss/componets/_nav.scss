@@ -490,6 +490,7 @@ nav.breadcrumb_navigation {
 	font-size: $font-size-sm;
 	margin-bottom: 3em;
 
+	body.page &,
 	body.page-homepage &,
 	body.page-browse-content &,
 	body.single-glossary & {
