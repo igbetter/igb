@@ -317,13 +317,25 @@
                 "class": "",
                 "id": ""
             },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
             "choices": {
                 "frame_option_01": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_01.png",
                 "frame_option_02": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_02.png",
                 "frame_option_03": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_03.png",
                 "frame_option_04": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_04.png",
                 "frame_option_05": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_05.png",
-                "frame_option_06": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_06.png"
+                "frame_option_06": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_06.png",
+                "frame_option_07": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_07.png",
+                "frame_option_08": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_08.png",
+                "frame_option_09": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_09.png",
+                "frame_option_10": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_10.png",
+                "frame_option_11": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_11.png",
+                "frame_option_12": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_12.png",
+                "frame_option_13": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_13.png",
+                "frame_option_14": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/frame_14.png"
             },
             "default_value": false,
             "image_size": "thumbnail",
@@ -335,6 +347,10 @@
             "multiple": 0,
             "max": "",
             "layout": "horizontal",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "instruction_placement": "",
+            "acfe_permissions": "",
             "min": ""
         },
         {
@@ -389,7 +405,8 @@
     ],
     "acfe_form": 1,
     "acfe_display_title": "",
+    "acfe_permissions": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701548557
+    "modified": 1702765164
 }

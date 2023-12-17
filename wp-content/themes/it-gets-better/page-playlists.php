@@ -16,7 +16,15 @@ get_header();
 ?>
 	<section id="primary">
 		<main id="main">
-			<?php get_template_part( 'template-parts/content/browse','playlists'); ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/content/content', 'page' );
+
+				endwhile; // End of the loop.
+			?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

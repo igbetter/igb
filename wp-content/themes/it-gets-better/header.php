@@ -144,7 +144,7 @@
 				</a>
 			</div>
 			<div class="program_box edu">
-				<a href="/edu/">
+				<a href="/education/">
 					<object>
 						<h3>It Gets Better <span>EDU</span></h3>
 						<p>It Gets Better EDU programming reaches tens of thousands of LGBTQ+ middle and high school students every year. This includes a robust grantmaking program to make schools more LGBTQ+ affirming, a youth ambassador program to educate community supporters and bring LGBTQ+ youth together, and free educational and mental health resources for educators and LGBTQ+ youth.</p>
