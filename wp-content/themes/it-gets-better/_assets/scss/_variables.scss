@@ -129,9 +129,10 @@ $themes: (
 		// secondary button
 		secondaryButtonBGColor: transparent,
 		secondaryButtonTextColor: $purple,
-		secondaryButtonBGHoverColor: $pink,
-		secondaryButtonTextHoverColor: $black,
+		secondaryButtonBGHoverColor: $purple,
+		secondaryButtonTextHoverColor: $white,
 		secondaryButtonBorder: 2px solid $purple,
+		secondaryButtonHoverBorder: 2px solid $black,
 
 		// accent button (safe exit, etc)
 		accentButtonBGColor: $pink,
@@ -240,6 +241,7 @@ $themes: (
 		secondaryButtonBGHoverColor: $pink,
 		secondaryButtonTextHoverColor: $black,
 		secondaryButtonBorder: 2px solid $white,
+		secondaryButtonHoverBorder: 2px solid $white,
 
 		// accent button (safe exit, etc)
 		accentButtonBGColor: $pink,

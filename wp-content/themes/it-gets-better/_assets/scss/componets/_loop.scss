@@ -31,8 +31,9 @@
 		padding: 1em;
 		text-decoration: none;
 
-		a,
-		a:visited {
+
+		a:not(.secondary_button),
+		a:not(.secondary_button):visited {
 			text-decoration: none;
 			border: 3px solid transparent;
 			display: block;

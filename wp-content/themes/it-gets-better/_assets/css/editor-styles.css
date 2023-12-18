@@ -431,32 +431,48 @@ a.primary_button:visited:after {
 }
 
 .secondary_button,
+a.secondary_button,
+a.secondary_button:visited,
 .fake_secondary_button {
   padding: 0.5em 1.5em;
 }
 .theme-light .secondary_button,
+.theme-light a.secondary_button,
+.theme-light a.secondary_button:visited,
 .theme-light .fake_secondary_button {
   background-color: transparent;
   color: #5e3a7e;
   border: 2px solid #5e3a7e;
 }
 .theme-dark .secondary_button,
+.theme-dark a.secondary_button,
+.theme-dark a.secondary_button:visited,
 .theme-dark .fake_secondary_button {
   background-color: transparent;
   color: #ffffff;
   border: 2px solid #ffffff;
 }
 .theme-light .secondary_button:hover, .theme-light .secondary_button:focus,
+.theme-light a.secondary_button:hover,
+.theme-light a.secondary_button:focus,
+.theme-light a.secondary_button:visited:hover,
+.theme-light a.secondary_button:visited:focus,
 .theme-light .fake_secondary_button:hover,
 .theme-light .fake_secondary_button:focus {
-  background-color: #f2566e;
-  color: #000000;
+  background-color: #5e3a7e;
+  color: #ffffff;
+  border: 2px solid #000000;
 }
 .theme-dark .secondary_button:hover, .theme-dark .secondary_button:focus,
+.theme-dark a.secondary_button:hover,
+.theme-dark a.secondary_button:focus,
+.theme-dark a.secondary_button:visited:hover,
+.theme-dark a.secondary_button:visited:focus,
 .theme-dark .fake_secondary_button:hover,
 .theme-dark .fake_secondary_button:focus {
   background-color: #f2566e;
   color: #000000;
+  border: 2px solid #ffffff;
 }
 
 .safe-exit-button {

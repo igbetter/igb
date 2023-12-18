@@ -475,8 +475,7 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 			'<div class="video_container">
 			<video poster="%s" controls>
 				<source src="%s" type="%s"/>
-			</video>
-			</div>',
+			</video>',
 			esc_url( get_the_post_thumbnail_url( $video_ID,'full') ),
 			esc_url( $video_embed['url'] ),
 			esc_attr( $video_embed['mime_type'])
@@ -488,8 +487,41 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 				'width'		=> '700',
 			);
 			$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
-			$output = '<div class="video_container">' . $youtube_embed . '</div>';
+			$output = '<div class="video_container">' . $youtube_embed . '';
 
+	endif;
+	// now add any glossary terms, if there are any.
+	$output .= igb_display_related_glossary_term_tags( $video_ID, 'video' );
+
+	$output .= '</div>'; // end the video_container div
+
+	return $output;
+}
+
+function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = 'video', $smaller = false ) {
+	$related_term_key = $post_type . '_related_glossary_terms';
+	$related_glossary_terms = get_field( $related_term_key, $post_ID );
+	$output = '';
+
+	if( $related_glossary_terms ) :
+		$smaller_class = '';
+		if( $smaller === true ) {
+			$smaller_class = 'smaller';
+		}
+		$output .= '<aside class="related_terms term_pill_list_container ' . $smaller_class . '"><ul class="nav_pills">';
+
+		foreach( $related_glossary_terms as $related_glossary_term ) :
+			$the_term_id = $related_glossary_term->ID;
+			$the_term_name = $related_glossary_term->post_title;
+			$output .= sprintf(
+				'
+				<li><a href="%s" class="secondary_button"><span>%s</span></a></li>
+				',
+				get_the_permalink( $the_term_id ),
+				esc_html( $the_term_name )
+			);
+		endforeach;
+		$output .= '</ul></aside>';
 	endif;
 	return $output;
 }
