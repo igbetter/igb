@@ -16,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -37,7 +36,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "choices": {
                 "default": "None",
                 "subtle_grey": "Subtle Grey",
@@ -74,7 +72,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -95,7 +92,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "choices": {
                 "grid": "Grid",
                 "list": "List",
@@ -129,7 +125,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "choices": {
                 "post": "Blog posts",
                 "video": "Videos",
@@ -160,7 +155,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "default_value": 4,
             "min": 1,
             "max": 15,
@@ -183,7 +177,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "message": "",
             "default_value": 0,
             "style": "",
@@ -217,6 +210,9 @@
             "layout": "block",
             "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_656f7cf22641b",
@@ -232,7 +228,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "acfe_save_meta": 0,
                     "taxonomy": [
                         "post_tag"
                     ],
@@ -271,7 +266,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "acfe_save_meta": 0,
                     "display_format": "F j, Y",
                     "return_format": "F j, Y",
                     "first_day": 0,
@@ -294,10 +288,7 @@
                     "auto_close": 1,
                     "allow_null": 1
                 }
-            ],
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large"
+            ]
         },
         {
             "key": "field_656f6c560aa14",
@@ -321,13 +312,13 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "post_type": [
                 "post",
                 "eduguide",
                 "video",
                 "resource",
-                "glossary"
+                "glossary",
+                "page"
             ],
             "post_status": [
                 "publish"
@@ -339,8 +330,8 @@
                 "taxonomy"
             ],
             "return_format": "object",
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0,
+            "acfe_add_post": 1,
+            "acfe_edit_post": 1,
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": "0"
             },
@@ -378,5 +369,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701805887
+    "modified": 1702890871
 }
