@@ -51,6 +51,14 @@ h3.link_title {
 	}
 	span {
 		font-weight: 200;
+
+		&.subheading {
+			font-size: $font-size-sm;
+			display: block;
+			margin-bottom: 0.25em;
+			line-height: 1.1;
+			font-weight: 500;
+		}
 	}
 
 	&:hover,
