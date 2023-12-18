@@ -331,7 +331,8 @@ a.primary_button:visited {
 	}
 }
 
-.secondary_button {
+.secondary_button,
+.fake_secondary_button {
 
 	padding: 0.5em 1.5em;
 
@@ -402,6 +403,12 @@ h1 {
 	font-weight: 600;
 	margin-top: 0;
 	margin-bottom: 0;
+
+	> span {
+		@include themify($themes) {
+			color: themed( 'accentButtonBGColor' );
+		}
+	}
 }
 h2 {
 	font-size: $font_size_xxl;

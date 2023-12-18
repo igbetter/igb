@@ -102,4 +102,4 @@
 		</feComponentTransfer>
 		<feBlend mode="color" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 	</filter>
- </svg>
+</svg>

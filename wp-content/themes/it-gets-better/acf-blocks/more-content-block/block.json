@@ -1,0 +1,16 @@
+{
+	"name": "igb/more-contnt",
+	"title": "More Content",
+	"description": "Display additional content based on set query",
+	"style": [ "file:./more-content.css" ],
+	"category": "igb",
+	"keywords": ["more", "content", "related", "additional", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "more-content.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}
