@@ -32,6 +32,7 @@ if( $page_title_override === true ) {
 } else {
 	$link_title = $page_link[0]->post_title;
 }
+$subheading_text = get_field( 'subtitle' );
 
 $featured_image_override = get_field( 'featured_image_override' );
 if ( $featured_image_override === true ) {
@@ -49,6 +50,11 @@ $frame_option = get_field( 'decoration_option' );
 	<div class="page_link-text_container">
 		<a href="<?php echo esc_url( get_the_permalink( $link_id ) ); ?>">
 			<h3 class="link_title">
+				<?php
+				if( $subheading_text ) {
+					echo '<span class="subheading">' . esc_html( $subheading_text ) . '</span>';
+				}
+				?>
 				<?php echo wp_kses_post( $link_title ); ?> <span> &raquo; </span>
 			</h3>
 			<?php if( $link_description ) : ?>

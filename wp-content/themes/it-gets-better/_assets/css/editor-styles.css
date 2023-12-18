@@ -1138,6 +1138,13 @@ h3.link_title {
 h3.link_title span {
   font-weight: 200;
 }
+h3.link_title span.subheading {
+  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  display: block;
+  margin-bottom: 0.25em;
+  line-height: 1.1;
+  font-weight: 500;
+}
 .theme-light h3.link_title:hover, .theme-light h3.link_title:target, .theme-light h3.link_title:focus {
   background: #f2566e;
   color: #ffffff;
