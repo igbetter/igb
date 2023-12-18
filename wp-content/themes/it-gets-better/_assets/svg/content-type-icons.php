@@ -12,7 +12,8 @@
 	.post_type_icon path.icon_purple {
 		fill: var( --wp--preset--color--igb-purple );
 	}
-	.post_type_icon path.icon_pink {
+	.post_type_icon path.icon_pink,
+	.post_type_icon polygon.icon_pink {
 		fill: var( --wp--preset--color--igb-pink );
 	}
 	.post_type_icon path.icon_blue {
