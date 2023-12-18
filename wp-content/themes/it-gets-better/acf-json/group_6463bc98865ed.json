@@ -216,6 +216,25 @@
             ]
         },
         {
+            "key": "field_65717f2301da7",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        },
+        {
             "key": "field_657121e020ada",
             "label": "Trailer",
             "name": "trailer",
@@ -259,5 +278,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701913090
+    "modified": 1701936966
 }

@@ -154,7 +154,9 @@
 		</nav>
 
 	</div>
+	<?php if( is_single() && !is_home() ) : ?>
 	<nav class="breadcrumb_navigation">
 		<?php get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>
 	</nav>
+	<?php endif; ?>
 	<div id="content">

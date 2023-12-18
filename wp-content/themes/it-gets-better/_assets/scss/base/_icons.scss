@@ -1,6 +1,17 @@
 @import "../../svg/output/sprite";
 
-
+/**
+ * NOTE: these styles are not actually controlling the post
+ * icons because they are embeded with the <use> tag, so the
+ * styles have to be included in the SVG symbol directly.
+ * (thanks a *lot* CSS  (╯°□°）╯︵ ┻━┻  )
+ * so if you need to update post type icon styles, change the CSS at:
+ *
+ *** 		/_assets/svg/content-type-icons.php			***
+ *
+ * thank you for coming to my TED talk
+ *			┬──┬ ノ( ゜-゜ノ)
+ */
 
 path[class*="icon_purple"] {
 	@include themify($themes) {
@@ -8,7 +19,8 @@ path[class*="icon_purple"] {
 	}
 }
 
-path[class*="icon_pink"] {
+path[class*="icon_pink"],
+polygon[class*="icon_pink"] {
 	@include themify($themes) {
 		fill: themed('accentPink');
 	}
