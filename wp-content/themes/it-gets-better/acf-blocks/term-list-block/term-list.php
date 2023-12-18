@@ -51,8 +51,8 @@ if ( ! empty( $block['align'] ) ) {
 				if( is_array( $color ) ) {
 					$color = $color['label'];
 				}
-				$tagLink = get_the_permalink($glossary_term);
-				$name = get_field('button_text', $glossary_term->ID);
+				$tagLink = get_the_permalink( $glossary_term );
+				$name = get_the_title( $glossary_term );
 				printf(
 					'<li class="term background-%s">
 						<a href="%s"><span>%s</span></a>

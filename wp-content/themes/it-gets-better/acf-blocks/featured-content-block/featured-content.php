@@ -39,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
 			<?php echo igb_display_video_embed( $video_post_id ) ?>
 			</div>
 			<a href="<?php echo get_the_permalink( $video_post_id ); ?>" class="featured_video_title"><?php echo esc_html( $video->post_title ); ?></a>
-			<?php echo igb_display_related_glossary_term_tags( $video_post_id, 'video', true ); ?>
+			<?php //echo igb_display_related_glossary_term_tags( $video_post_id, 'video', true ); ?>
 			<?php if ( $video_fields[ 'display_additional_videos' ] === true ) : ?>
 				<div class="related_videos">
 					<h6>More Videos</h6>
