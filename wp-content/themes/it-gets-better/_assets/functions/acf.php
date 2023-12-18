@@ -103,7 +103,7 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
-	acf_register_block_type(array(
+/* 	acf_register_block_type(array(
 		'name' 				=> 'featured-term-block',
 		'title' 			=> __('Single Term w/content'),
 		'description'		=> __('Highlight a glossary term with related content'),
@@ -118,7 +118,7 @@ function igb_initialize_acf_blocks() {
 				)
 			)
 		)
-	));
+	)); */
 
 	acf_register_block_type(array(
 		'name' 				=> 'more-content-block',
@@ -138,6 +138,23 @@ function igb_initialize_acf_blocks() {
 	));
 
 	acf_register_block_type(array(
+		'name' 				=> 'page-link-block',
+		'title' 			=> __('Page Link'),
+		'description'		=> __('Similar to media/text box, with more options'),
+		'render_template'  	=> get_template_directory() . '/acf-blocks/page-link-block/page-link.php',
+		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-page-link.svg' ),
+		'category' 			=> 'igb',
+		'example'  			=> array(
+			'attributes' 	=> array(
+				'mode' 		=> 'preview',
+				'data' 		=> array(
+					'is_preview'    => true
+				)
+			)
+		)
+	));
+
+/* 	acf_register_block_type(array(
 		'name' 				=> 'related-content-block',
 		'title' 			=> __('Related Content'),
 		'description'		=> __('Display related content'),
@@ -152,7 +169,7 @@ function igb_initialize_acf_blocks() {
 				)
 			)
 		)
-	));
+	)); */
 
   }
 }

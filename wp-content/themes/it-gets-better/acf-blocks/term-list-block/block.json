@@ -1,0 +1,16 @@
+{
+	"name": "igb/term-list",
+	"title": "Term List",
+	"description": "Display popular glossary terms in a stylized list",
+	"style": [ "file:./term-list.css" ],
+	"category": "igb",
+	"keywords": ["term", "glossary", "glossary terms", "tags", "term block", "popular glossary terms", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "term-list.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}

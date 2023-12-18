@@ -1,0 +1,16 @@
+{
+	"name": "igb/page-link",
+	"title": "Page Link",
+	"description": "Similar to media/text block with more options",
+	"style": [ "file:./page-link.css" ],
+	"category": "igb",
+	"keywords": ["page", "link", "media", "text", "link box", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "page-link.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}
