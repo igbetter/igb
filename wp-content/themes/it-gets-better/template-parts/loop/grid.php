@@ -18,6 +18,7 @@
 				</svg>
 			</span>
 			<?php the_post_thumbnail( 'medium' ) ?>
+			<?php echo igb_display_related_glossary_term_tags( get_the_ID(), $post_type, true ); ?>
 			<h3 class="item_title"><?php the_title(); ?></h3>
 		</object>
 	</a>

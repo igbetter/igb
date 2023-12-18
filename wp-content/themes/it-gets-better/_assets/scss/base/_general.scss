@@ -332,6 +332,8 @@ a.primary_button:visited {
 }
 
 .secondary_button,
+a.secondary_button,
+a.secondary_button:visited,
 .fake_secondary_button {
 
 	padding: 0.5em 1.5em;
@@ -347,6 +349,7 @@ a.primary_button:visited {
 		@include themify($themes) {
 			background-color: themed('secondaryButtonBGHoverColor');
 			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
 		}
 	}
 }
