@@ -720,6 +720,11 @@ use {
   }
 }
 
+main#main > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .singular_post .post_header {
   text-align: center;
   width: 90vw;
