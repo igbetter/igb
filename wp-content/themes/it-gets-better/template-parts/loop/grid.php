@@ -7,6 +7,10 @@
 
  $post_type = get_post_type( get_the_ID() );
 
+ if( $post_type === 'post' ) {
+	$post_type = 'blog_post';
+ }
+
  ?>
 
  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

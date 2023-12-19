@@ -729,7 +729,7 @@ body {
   max-width: 100vw;
   margin-top: -250px;
   padding-top: 150px;
-  min-height: 700px;
+  min-height: 800px;
 }
 @media (max-width: 900px) {
   .section_hero {
@@ -739,6 +739,11 @@ body {
 @media (max-width: 600px) {
   .section_hero {
     min-height: 270px;
+  }
+}
+@media (min-width: 1200px) {
+  .section_hero {
+    min-height: 80vh;
   }
 }
 body.page-homepage.theme-light .section_hero {
@@ -779,6 +784,7 @@ body.page-homepage.theme-light .section_hero {
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 0;
 }
 .section_hero .hero_image-container img {
   position: relative;
