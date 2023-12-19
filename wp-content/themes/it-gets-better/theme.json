@@ -37,8 +37,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "40rem",
-			"wideSize": "60rem"
+			"contentSize": "40ch",
+			"wideSize": "80ch"
 		}
 	}
 }

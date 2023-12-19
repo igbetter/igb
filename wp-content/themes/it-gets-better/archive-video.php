@@ -2,7 +2,7 @@
 /*
 Template Name: Video Archive Template
 */
- 
+
 get_header();
 ?>
 
@@ -10,7 +10,7 @@ get_header();
 		<main id="main">
 			<?php
 			/* Start the Loop */
-				get_template_part( 'template-parts/content/content', 'videoArchive' );
+				get_template_part( 'template-parts/loop/grid' );
       ?>
 
 		</main><!-- #main -->

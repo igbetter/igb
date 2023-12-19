@@ -18,31 +18,26 @@ get_header();
 	<section id="primary">
 		<main id="main">
 		<?php
-		if ( have_posts() ) {
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post(); ?>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php single_post_title(); ?></h1>
-				</header><!-- .entry-header -->
+				<main id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php
-			endif;
-
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/content' );
-			}
-
+				the_content();
+				wp_link_pages(
+					array('before' => '<div>' . __( 'Pages:', 'it-gets-better' ),	'after'  => '</div>')
+				);
+				?>
+				</main><!-- #post-<?php the_ID(); ?> -->
+			<?php
+			endwhile;
 			// Previous/next page navigation.
 			it_gets_better_the_posts_navigation();
+		else :
+			// no content
+		endif;
 
-		} else {
-
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
-
-		}
 		?>
 
 		</main><!-- #main -->
