@@ -719,6 +719,11 @@ use {
   }
 }
 
+main#main > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body {
   font-family: "Poppins", Helvetica, sans-serif;
 }
