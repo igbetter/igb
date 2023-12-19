@@ -248,8 +248,7 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 add_filter( 'pre_get_posts', function() {
 
 	global $wp_query;
-	//global $post;
-//	$post_type = $wp_query->query['post_type'];
+
 	$post_type = get_post_type();
 
 	if ( $wp_query->is_tax( 'playlist' ) ) {
@@ -464,7 +463,17 @@ function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_bla
 	}
 }
 
-
+/**
+ *
+ * helpful little video embed code that checks to see if the video is uploaded to the site,
+ * or if it is a youtube link, then displays it in the video template.
+ *
+ * @param int $video_ID -- the ID of the video post
+ * @param string $file_upload_key -- the key used in ACF for an uploaded file. default: `upload_file`
+ * @param string $youtube_link_key -- the key used in ACF for the youtube link option. default: `youtube_link`
+ * @param bool $is_video_hosted_here -- ACF key for the true/false video location field
+ *
+ */
 function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
 	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
 	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
@@ -498,6 +507,14 @@ function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload
 	return $output;
 }
 
+/**
+ * helper function to display the related glossary term tags, with a few params:
+ *
+ * @param int $post_ID -- the id of the current post
+ * @param string $post_type -- the post type must equal the begining the ACF fields, eg: `blog_post`_related_glossary_terms
+ * @param bool $smaller -- true/false for display style: false = default style / true = smaller style
+ *
+ */
 function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = 'video', $smaller = false ) {
 	$related_term_key = $post_type . '_related_glossary_terms';
 	$related_glossary_terms = get_field( $related_term_key, $post_ID );
@@ -525,6 +542,15 @@ function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = '
 	endif;
 	return $output;
 }
+
+/**
+ * helper function to display the glossary term category, with some display options
+ *
+ * @param int $post_ID -- the id of the term
+ * @param bool $display_general_category -- true/false to show or hide the "general" category term. default is false (do not show)
+ * @param string $display_style -- two options for display: `subscript` displays abbreviation with hover def. in a <sub> tag; `full` displays the entire word
+ *
+ */
 
 function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general_category = false, $display_style = 'subscript' ) {
 	$general_term_category = get_term_by( 'name', 'general', 'term-category');
@@ -572,3 +598,13 @@ function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general
 
 	return $output;
 }
+
+/**
+ *
+ * helper function to query and display other stuff in the template
+ *
+ * options as follows
+ *
+ * 
+ *
+ */
