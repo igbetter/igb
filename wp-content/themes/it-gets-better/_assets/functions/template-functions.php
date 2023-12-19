@@ -526,17 +526,38 @@ function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = '
 			$smaller_class = 'smaller';
 		}
 		$output .= '<aside class="related_terms term_pill_list_container ' . $smaller_class . '"><ul class="nav_pills">';
+		$count = count( $related_glossary_terms );
+		$i = 0;
+		$smaller_max = 5;
 
 		foreach( $related_glossary_terms as $related_glossary_term ) :
 			$the_term_id = $related_glossary_term->ID;
 			$the_term_name = $related_glossary_term->post_title;
-			$output .= sprintf(
-				'
-				<li><a href="%s" class="secondary_button"><span>%s</span></a></li>
-				',
-				get_the_permalink( $the_term_id ),
-				esc_html( $the_term_name )
-			);
+
+			if( ( $smaller === true ) && ( ++$i >= $smaller_max ) ) {
+				// mini "smaller" loop
+				if( $i == $smaller_max ) {
+					$output .= '<li class="full_term_list"><a href="#" class="more_term_dropdown_trigger secondary_button"><span>MORE</span></a><ul class="more_terms_dropdown"><li class="more_terms">';
+				}
+				$output .= sprintf(
+					'
+					<a href="%s">%s</a>
+					',
+					get_the_permalink( $the_term_id ),
+					esc_html( $the_term_name )
+				);
+				if( $i == $count ) {
+					$output .= '</li></ul></li>';
+				}
+			} else {
+				$output .= sprintf(
+					'
+					<li><a href="%s" class="secondary_button"><span>%s</span></a></li>
+					',
+					get_the_permalink( $the_term_id ),
+					esc_html( $the_term_name )
+				);
+			}
 		endforeach;
 		$output .= '</ul></aside>';
 	endif;
@@ -605,6 +626,6 @@ function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general
  *
  * options as follows
  *
- * 
+ *
  *
  */

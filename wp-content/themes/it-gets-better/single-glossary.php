@@ -87,10 +87,154 @@ get_header();
 						) ); ?>
 				<a href="/glossary/" class="glossary_back_link">Back to the Glossary</a>
 			</div>
+			<svg class="full_width svg_divider">
+				<use xlink:href="#line_divider_option_01" />
+			</svg>
 			<?php endwhile;
 			?>
 
 		</main><!-- #main -->
+		<aside id="supplementary" class="additional_content related_content_container">
+			<h3 class="aside_heading underline-<?php esc_html_e( $color_label ); ?>">More <?php the_title( '<span>', '</span>' ); ?> Related Content</h3>
+			<?php
+			$related_videos = get_field( 'glossary_term_related_videos' ); // returns post object
+			$related_posts = get_field( 'glossary_term_related_posts' ); // returns post object
+			$related_playlists = get_field( 'glossary_term_related_playlists' ); // returns array of term id(s)
+			$related_eduguides = get_field( 'glossary_term_related_eduguide' ); // returns post object
+
+			$max_display = 7;
+
+			////////////////////// related videos ////////////////
+			if( $related_videos ) :
+				$count = count( $related_videos );
+				$id_array = [];
+				$i = 0;
+				foreach( $related_videos as $related_video ) :
+					$id_array[] = $related_video->ID;
+					if (++$i == $max_display ) break;
+				endforeach; ?>
+
+				<section class="related_videos_container related">
+					<header class="section_header flex-row">
+						<h6>Videos <span class="count">(<?php echo esc_attr( $count ); ?>)</span></h6>
+					</header>
+				</section>
+
+			<?php
+				$args = array(
+					'post_type'		=> 'any',
+					'post__in'		=>  $id_array,
+				);
+				$more_content_query = new WP_Query( $args );
+				if( $more_content_query->have_posts() ) :
+					echo '<div class="content_grid_container">';
+					while( $more_content_query->have_posts() ) :
+						$more_content_query->the_post();
+						get_template_part( 'template-parts/loop/grid' );
+					endwhile;
+					echo '</div>';
+				endif; // end loop
+			endif; // end if videos
+
+			////////////////////// related posts ////////////////
+			if( $related_posts ) :
+				$count = count( $related_posts );
+				$id_array = [];
+				$i = 0;
+				foreach( $related_posts as $related_post ) :
+					$id_array[] = $related_post->ID;
+					if (++$i == $max_display ) break;
+				endforeach; ?>
+
+				<section class="related_videos_container related">
+					<header class="section_header flex-row">
+						<h6>Blog Posts <span class="count">(<?php echo esc_attr( $count ); ?>)</span></h6>
+					</header>
+				</section>
+
+			<?php
+				$args = array(
+					'post_type'		=> 'any',
+					'post__in'		=>  $id_array,
+				);
+				$more_content_query = new WP_Query( $args );
+				if( $more_content_query->have_posts() ) :
+					echo '<div class="content_grid_container">';
+					while( $more_content_query->have_posts() ) :
+						$more_content_query->the_post();
+						get_template_part( 'template-parts/loop/grid' );
+					endwhile;
+					echo '</div>';
+				endif; // end loop
+			endif; // end if blog posts
+
+			////////////////////// related eduguides ////////////////
+			if( $related_eduguides ) :
+				$count = count( $related_eduguides );
+				$id_array = [];
+				$i = 0;
+				foreach( $related_eduguides as $related_eduguide ) :
+					$id_array[] = $related_eduguide->ID;
+					if (++$i == $max_display ) break;
+				endforeach; ?>
+
+				<section class="related_videos_container related">
+					<header class="section_header flex-row">
+						<h6>EduGuides <span class="count">(<?php echo esc_attr( $count ); ?>)</span></h6>
+					</header>
+				</section>
+
+			<?php
+				$args = array(
+					'post_type'		=> 'any',
+					'post__in'		=>  $id_array,
+				);
+				$more_content_query = new WP_Query( $args );
+				if( $more_content_query->have_posts() ) :
+					echo '<div class="content_grid_container">';
+					while( $more_content_query->have_posts() ) :
+						$more_content_query->the_post();
+						get_template_part( 'template-parts/loop/grid' );
+					endwhile;
+					echo '</div>';
+				endif; // end loop
+			endif; // end if eduguides
+
+			////////////////////// related playlists ////////////////
+			if( $related_playlists ) :
+				$count = count( $related_playlists );
+			//	$id_array = [];
+				/* $i = 0;
+				foreach( $related_playlists as $related_playlist ) :
+					$id_array[] = $related_playlists->ID;
+					if (++$i == $max_display ) break;
+				endforeach; */ ?>
+
+				<section class="related_videos_container related">
+					<header class="section_header flex-row">
+						<h6>Playlists <span class="count">(<?php echo esc_attr( $count ); ?>)</span></h6>
+					</header>
+				</section>
+
+			<?php
+				$args = array(
+					'post_type'		=> 'any',
+					'post__in'		=>  $related_playlists,
+				);
+				$more_content_query = new WP_Query( $args );
+				if( $more_content_query->have_posts() ) :
+					echo '<div class="content_grid_container">';
+					while( $more_content_query->have_posts() ) :
+						$more_content_query->the_post();
+						get_template_part( 'template-parts/loop/grid' );
+					endwhile;
+					echo '</div>';
+				endif; // end loop
+			endif; // end if playlists
+			?>
+
+
+		</aside>
 	</section><!-- #primary -->
 
 <?php

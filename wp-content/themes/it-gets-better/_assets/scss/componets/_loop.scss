@@ -72,6 +72,9 @@
 		flex-direction: column;
 		align-items: center;
 		border: 5px solid transparent;
+		overflow: visible !important;
+		overflow-inline: visible !important;
+
 
 		&:hover {
 			span.content_type {
