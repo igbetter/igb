@@ -877,6 +877,9 @@ body.home .featured_video h6 {
 .theme-dark .playlist_details_row .partnership img {
   filter: invert(100%);
 }
+.playlist_details_row .partnership img.partner_logo {
+  margin: 0.5em 1em;
+}
 
 .series_trailer {
   position: relative;
