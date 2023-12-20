@@ -93,11 +93,8 @@
                 "id": ""
             },
             "layout": "block",
-            "acfe_seamless_style": 1,
+            "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_656a96acfae65",
@@ -241,7 +238,10 @@
                     "bidirectional": 0,
                     "bidirectional_target": []
                 }
-            ]
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_656b5e49a9715",
@@ -266,11 +266,8 @@
                 "id": ""
             },
             "layout": "block",
-            "acfe_seamless_style": 1,
+            "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_656a98cd9be53",
@@ -418,8 +415,107 @@
                     "rows": 5,
                     "placeholder": "",
                     "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_65825a5e5dfbe",
+                    "label": "Display Additional Playlists",
+                    "name": "display_additional_playlists",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui_on_text": "Yes (default)",
+                    "ui_off_text": "No",
+                    "ui": 1,
+                    "style": ""
+                },
+                {
+                    "key": "field_65825be15dfbf",
+                    "label": "Playlist Selection",
+                    "name": "playlist_selection",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Select if you want to manually choose what playlists are displayed. Otherwise the recent \"curated\" playlists will display here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65825a5e5dfbe",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "style": "",
+                    "ui_on_text": "Manually select",
+                    "ui_off_text": "Auto (default)",
+                    "ui": 1
+                },
+                {
+                    "key": "field_65825c915dfc0",
+                    "label": "Select Playlists",
+                    "name": "select_playlists",
+                    "aria-label": "",
+                    "type": "acfe_taxonomy_terms",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65825be15dfbf",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": [
+                        "playlist"
+                    ],
+                    "allow_terms": "",
+                    "allow_level": "",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "default_value": [],
+                    "return_format": "object",
+                    "layout": "horizontal",
+                    "toggle": 1,
+                    "save_terms": 1,
+                    "load_terms": 1,
+                    "choices": [],
+                    "ui": 0,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "search_placeholder": "",
+                    "allow_custom": 0,
+                    "other_choice": 0
                 }
-            ]
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_656b637a61a00",
@@ -444,11 +540,8 @@
                 "id": ""
             },
             "layout": "block",
-            "acfe_seamless_style": 1,
+            "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_656b641b61a01",
@@ -518,7 +611,10 @@
                     "bidirectional": 0,
                     "bidirectional_target": []
                 }
-            ]
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_656b6a8810052",
@@ -543,11 +639,8 @@
                 "id": ""
             },
             "layout": "block",
-            "acfe_seamless_style": 1,
+            "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_656b6add10053",
@@ -628,7 +721,10 @@
                     "ui_off_text": "No",
                     "ui": 1
                 }
-            ]
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -656,5 +752,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1702871163
+    "modified": 1703063156
 }

@@ -6,7 +6,7 @@
 	"category": "igb",
 	"keywords": ["more", "content", "related", "additional", "igb"],
 	"acf": {
-		"mode": "auto",
+		"mode": "edit",
 		"renderTemplate": "more-content.php"
 	},
 	"supports": {

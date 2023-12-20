@@ -13,6 +13,13 @@ section.featured_content {
 		}
 	}
 
+
+	svg.svg_divider {
+		margin: 1em 0 -7em 0;
+		display: block;
+	}
+
+
 	&.video {
 
 		.section_content {
@@ -145,6 +152,14 @@ section.featured_content {
 
 			figure {
 				margin: -2em 0 ;
+			}
+		}
+
+		.more_playlists_container {
+			margin: 3em 2em 0 2em;
+
+			h6 {
+				margin: 1em;
 			}
 		}
 	}
