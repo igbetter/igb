@@ -3,7 +3,6 @@
  * Enqueue scripts and styles.
  */
 function it_gets_better_scripts() {
-//	wp_enqueue_style('it-gets-better-style', get_stylesheet_uri(), array(), IT_GETS_BETTER_VERSION );
 	wp_enqueue_style('igb-styles', get_template_directory_uri() . '/_assets/css/styles.css', array(), IT_GETS_BETTER_VERSION );
 
 	wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true );
@@ -11,8 +10,6 @@ function it_gets_better_scripts() {
 	wp_enqueue_script('font-awesome-kit', '//kit.fontawesome.com/dc8c838d72.js', array(), null, true );
 	wp_enqueue_script('offcanvas-menu', '//cdn.jsdelivr.net/npm/hc-offcanvas-nav/dist/hc-offcanvas-nav.min.js', array( 'jquery' ), null, true);
 	wp_enqueue_script('a11y-slider', '//cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
-	//wp_enqueue_script('jquery-popover', "//cdn.jsdelivr.net/npm/webui-popover@1.2.18/dist/jquery.webui-popover.min.js", array(), null, true);
-	//wp_enqueue_style('jquery-popover-css', "//cdn.jsdelivr.net/npm/webui-popover@1.2.18/dist/jquery.webui-popover.min.css");
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
