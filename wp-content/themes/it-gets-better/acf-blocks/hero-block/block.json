@@ -6,11 +6,13 @@
 	"category": "igb",
 	"keywords": ["hero", "header", "igb"],
 	"acf": {
-		"mode": "auto",
+		"mode": "edit",
 		"renderTemplate": "hero.php"
 	},
 	"supports": {
 		"anchor": true,
-		"align_content": "matrix"
+		"multiple": false,
+		"align_content": "matrix",
+		"align": [ "full" ]
 	}
 }
