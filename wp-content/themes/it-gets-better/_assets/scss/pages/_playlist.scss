@@ -114,6 +114,10 @@
 			.theme-dark & {
 				filter: invert(100%);
 			}
+
+			&.partner_logo {
+				margin: 0.5em 1em;
+			}
 		}
 	}
 }
