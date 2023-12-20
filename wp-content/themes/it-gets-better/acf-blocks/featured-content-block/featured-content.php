@@ -88,6 +88,8 @@ if ( ! empty( $block['align'] ) ) {
 			$featured_image = get_field( 'header_image', $playlist_id_formatted );
 
 			$featured_image_url = $featured_image['url'];
+			$display_additional_playlists = get_field( 'display_additional_playlists' );
+			var_dump( $display_additional_playlists );
 
 			if( $playlist_fields['featured_image_override'] === true ) {
 				$featured_image_url = $playlist_fields['new_featured_image'];
@@ -124,6 +126,20 @@ if ( ! empty( $block['align'] ) ) {
 					</svg>
 				</div>
 			</div>
+			<?php
+
+			if( $display_additional_playlists === true ) :
+				?><h1>yep</h1>
+				<aside class="more_playlists_container splide">
+					<div class="related-playlists-slider more_content_slider splide__track">
+
+					</div>
+				</aside>
+				<?php
+			endif; // end if display more playlists is true
+			 ?>
+
+		</div>
 		<?php elseif ( $feature_type === 'blog' ) :
 			$blog_fields = get_field( 'blog_details' );
 
