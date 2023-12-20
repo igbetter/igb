@@ -88,8 +88,7 @@ if ( ! empty( $block['align'] ) ) {
 			$featured_image = get_field( 'header_image', $playlist_id_formatted );
 
 			$featured_image_url = $featured_image['url'];
-			$display_additional_playlists = get_field( 'display_additional_playlists' );
-			var_dump( $display_additional_playlists );
+			$display_additional_playlists = $playlist_fields['display_additional_playlists'];
 
 			if( $playlist_fields['featured_image_override'] === true ) {
 				$featured_image_url = $playlist_fields['new_featured_image'];
@@ -129,10 +128,59 @@ if ( ! empty( $block['align'] ) ) {
 			<?php
 
 			if( $display_additional_playlists === true ) :
-				?><h1>yep</h1>
+				?>
 				<aside class="more_playlists_container splide">
-					<div class="related-playlists-slider more_content_slider splide__track">
+					<h6>More Playlists</h6>
+					<div class="popular-playlist-slider more_content_slider splide__track">
+						<ul class="horizontal_slider splide__list">
+						<?php // populate the $terms query conditinoally based on user selection
+						$manual_playlist_selection = $playlist_fields['playlist_selection'];
+						if ( $manual_playlist_selection === true ) :
+							// manusally choosing playlists
+							$manual_query = $playlist_fields[ 'select_playlists' ];
+							$terms = $manual_query;
+						else :
+							// auto display of playlists marked "curated"
+							$auto_query = array(
+								'taxonomy' => 'playlist',
+								'number' => 7,
+								'hide_empty' => false,
+								'meta_query' => array(
+									array(
+										'key' => 'show_as_curated',
+										'value' => true
+									)
+								)
+							);
+							$terms = get_terms( $auto_query );
+						endif; // now that we found $terms, what are we gonna do... with iiiittttt.
 
+						// (the answer is a foreach loop, obvi)
+						foreach ($terms as $term):
+							$imagearray = get_field ( 'header_image', 'term_' . $term->term_id );
+							$image = ($imagearray != '' ) ? esc_url( $imagearray['url'] ) : '';
+							$link = get_term_link($term);
+							$slug = esc_attr( $term->slug );
+							$name = esc_html( $term->name );
+							$colorarray = get_field( 'main_color', 'term_' . $term->term_id);
+							$color = ( $colorarray != '' ) ?  esc_html( $colorarray['label'] ) : 'default';
+
+							printf( '
+								<li class="slide background-%s splide__slide" style="background-image: url(\'%s\');">
+									<a href="%s" class="slide_content overlay-%s">
+										<span>%s</span>
+									</a>
+								</li>',
+								$color,
+								$image,
+								$link,
+								$color,
+								$name
+							);
+						endforeach;
+
+						?>
+						</ul>
 					</div>
 				</aside>
 				<?php
@@ -140,6 +188,9 @@ if ( ! empty( $block['align'] ) ) {
 			 ?>
 
 		</div>
+		<svg class="full_width svg_divider">
+			<use xlink:href="#line_divider_option_01" />
+		</svg>
 		<?php elseif ( $feature_type === 'blog' ) :
 			$blog_fields = get_field( 'blog_details' );
 
@@ -260,6 +311,10 @@ if ( ! empty( $block['align'] ) ) {
 				</div>
 				<?php endif; ?>
 			</div>
+			<svg class="full_width svg_divider">
+				<use xlink:href="#line_divider_option_02" />
+			</svg>
 		<?php endif; ?>
 	</div>
+
 </section>

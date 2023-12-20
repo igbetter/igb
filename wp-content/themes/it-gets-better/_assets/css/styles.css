@@ -2977,6 +2977,10 @@ section.featured_content .subhead {
   background: #f2566e;
   color: #ffffff;
 }
+section.featured_content svg.svg_divider {
+  margin: 1em 0 -7em 0;
+  display: block;
+}
 section.featured_content.video .section_content {
   display: flex;
   flex-direction: column;
@@ -3091,6 +3095,12 @@ section.featured_content.playlist .column_right img {
 }
 section.featured_content.playlist .column_right figure {
   margin: -2em 0;
+}
+section.featured_content.playlist .more_playlists_container {
+  margin: 3em 2em 0 2em;
+}
+section.featured_content.playlist .more_playlists_container h6 {
+  margin: 1em;
 }
 section.featured_content.blog {
   padding: 2em;

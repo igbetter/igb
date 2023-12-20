@@ -497,7 +497,7 @@
                     "min": "",
                     "max": "",
                     "default_value": [],
-                    "return_format": "id",
+                    "return_format": "object",
                     "layout": "horizontal",
                     "toggle": 1,
                     "save_terms": 1,
@@ -752,5 +752,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1703048947
+    "modified": 1703063156
 }
