@@ -2978,7 +2978,7 @@ section.featured_content .subhead {
   color: #ffffff;
 }
 section.featured_content svg.svg_divider {
-  margin: 1em 0 -7em 0;
+  margin: -0.2em 0 -9.5em 0;
   display: block;
 }
 section.featured_content.video .section_content {
@@ -3074,7 +3074,8 @@ section.featured_content.video iframe {
   }
 }
 section.featured_content.playlist {
-  margin: 6em 0;
+  margin: 6em 0 8em 0;
+  padding-bottom: 4em;
 }
 section.featured_content.playlist .column_left > * {
   max-width: 45ch;
@@ -3189,7 +3190,8 @@ section.featured_content.blog .featured_blog_container .blog_overlay .excerpt {
   font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
 }
 section.featured_content.term {
-  margin: 5em 0;
+  margin: 5em 0 7em 0;
+  padding-bottom: 6em;
 }
 section.featured_content.term .section_content {
   position: relative;
