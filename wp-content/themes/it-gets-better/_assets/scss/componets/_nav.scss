@@ -612,3 +612,49 @@ nav.breadcrumb_navigation {
 		margin-right: auto;
 	}
 }
+
+// post pagination
+nav.pagination {
+//	width: 50vw;
+//	min-width: 450px;
+	margin: 3em 2em;
+
+	.nav-links {
+		justify-content: center;
+	}
+
+	.page-numbers {
+		text-align: center;
+		padding: 0.5em 1em;
+		margin: 0 0.25em;
+		width: auto;
+		text-decoration: none;
+
+		@include themify($themes) {
+			background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+			border: 1px solid rgba( themed('linkColor'), 0.25);
+		}
+
+		&:hover {
+			@include themify($themes) {
+				background:  themed('linkHoverColor');
+				color: themed( 'backgroundColor' );
+				border: 1px solid rgba( themed('linkColor'), 0.5);
+			}
+		}
+
+		&.current {
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.15);
+			}
+
+			&:hover {
+			@include themify($themes) {
+				background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+				color: themed( 'textColor' );
+				border: 1px solid rgba( themed('textColor'), 0.15);
+			}
+		}
+		}
+	}
+}
