@@ -1,3 +1,81 @@
+// playlist archive (loop)
+
+article.single_playlist {
+	background-repeat: no-repeat;
+	background-size: auto 120%;
+	margin: 3em 0 8em 0;
+	background-position: 100% 50%;
+
+	@include themify($themes) {
+		box-shadow: themed('subtleShadow');
+	}
+
+	&:nth-of-type(2n) {
+		background-position: 0% 50%;
+
+		.two_column {
+			flex-direction: row-reverse;
+			@include themify($themes) {
+				background-image: linear-gradient(  -84deg, rgba( themed( 'backgroundColor' ), 1) 35%, rgba( themed( 'backgroundColor' ), 0) 55%, );
+			}
+		}
+	}
+
+
+	.two_column {
+		@include themify($themes) {
+			background-image: linear-gradient( 84deg, rgba( themed( 'backgroundColor' ), 1) 35%, rgba( themed( 'backgroundColor' ), 0) 55% );
+		}
+	}
+
+	.single_playlist_header {
+		margin-top: -4em;
+
+
+		@include themify($themes) {
+			background: rgba( themed( 'backgroundColor' ), 0.985);
+			box-shadow: themed('normalShadow');
+		}
+
+		h3 {
+			margin: 0;
+			padding: 0;
+
+			a span.subhead {
+				display: block;
+				font-size: $font-size-sm;
+				font-weight: 200;
+
+				@include themify($themes) {
+					text-decoration-color: transparent;
+					color: themed( 'textColor' );
+				}
+			}
+		}
+		a {
+			display: block;
+			border-radius: 4px;
+			padding: 1em;
+
+
+		}
+	}
+
+	.playlist_description {
+		padding: 2em;
+		border-radius: 4px;
+		margin-bottom: -1em;
+
+		@include themify($themes) {
+			background: rgba( themed( 'backgroundColor' ), 0.85);
+			box-shadow: themed('normalShadow');
+		}
+
+
+	}
+}
+
+// playlist detail page
 .playlist_header {
 	position: relative;
 	width: 100%;

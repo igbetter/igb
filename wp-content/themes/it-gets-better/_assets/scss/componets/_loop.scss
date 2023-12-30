@@ -172,6 +172,89 @@
 	}
 }
 
+//eduguide
+.eduguide_card {
+	margin: 2em auto;
+	width: 50vw;
+	min-width: 300px;
+	max-width: 700px;
+
+	@include themify($themes) {
+		background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+		//box-shadow: themed( 'subtleShadow' );
+		box-shadow: 2px 2px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+		3px 3px 1px rgba( themed( 'textColor' ), 0.4 ),
+		4px 4px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+		7px 7px 1px rgba( themed( 'textColor' ), 0.3 ),
+		8px 8px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+		11px 11px 1px rgba( themed( 'textColor' ), 0.2 ),
+		12px 12px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+		15px 15px 1px rgba( themed( 'textColor' ), 0.1 );
+	}
+
+
+	.content_container {
+		position: relative;
+		padding: 18em 0 2em 0;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			overflow: hidden;
+		}
+
+		h3.eduguide_title {
+			margin: 0 -2em;
+			padding: 1em;
+			text-align: center;
+			border-radius: 5px;
+			font-size: $font-size-md;
+			text-wrap: balance;
+
+			@include themify($themes) {
+				background: darken( themed('backgroundColor'), 10 );
+			}
+
+			span {
+				font-weight: 200;
+			}
+		}
+
+		.button_container {
+			margin: 2em 1em 0 1em;
+			text-align: center;
+		}
+
+		span.content_type {
+			position: absolute;
+			display: block;
+			z-index: 99;
+			top: 0;
+			right: 0;
+			background: rgba( 255, 255, 255, 0.8 );
+
+			clip-path: circle(50% at 100% 0);
+			padding: 3px 3px 100px 100px;
+
+			svg,
+			use {
+				width: 50px;
+				height: 50px;
+			//	transform: translateX(10px) translateY(-10px);
+			}
+		}
+	}
+}
+
+.file_size {
+	font-size: $font-size-sm;
+	font-weight: 200;
+}
+
 // list vew
 .list_container {
 	padding-top: 1em;

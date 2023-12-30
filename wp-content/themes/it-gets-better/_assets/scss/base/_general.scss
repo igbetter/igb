@@ -89,7 +89,7 @@ body {
 
 .background-IGB_Purple {
 	@include themify($themes) {
-		background: themed('accentPurple');
+		background-color: themed('accentPurple');
 		color: themed( 'accentTextColor' );
 	}
 
@@ -104,21 +104,21 @@ body {
 	&:target,
 	&:focus {
 		@include themify($themes) {
-			background: rgba(themed('accentPurple'), 0.75);
+			background-color: rgba(themed('accentPurple'), 0.75);
 		}
 	}
 }
 
 .background-IGB_Pink {
 	@include themify($themes) {
-		background: themed('accentPink');
+		background-color: themed('accentPink');
 		color: themed('accentTextColor');
 	}
 }
 
 .overlay-IGB_Pink {
 	@include themify($themes) {
-		background: rgba(themed('accentPink'), 0.5);
+		background-color: rgba(themed('accentPink'), 0.5);
 	}
 
 	&:hover,
@@ -132,7 +132,7 @@ body {
 
 .background-IGB_Blue {
 	@include themify($themes) {
-		background: themed('accentBlue');
+		background-color: themed('accentBlue');
 		color: themed('accentTextColor');
 	}
 
@@ -140,14 +140,14 @@ body {
 
 .overlay-IGB_Blue {
 	@include themify($themes) {
-		background: rgba(themed('accentBlue'), 0.5);
+		background-color: rgba(themed('accentBlue'), 0.5);
 	}
 
 	&:hover,
 	&:target,
 	&:focus {
 		@include themify($themes) {
-			background: rgba(themed('accentBlue'), 0.75);
+			background-color: rgba(themed('accentBlue'), 0.75);
 		}
 	}
 }
@@ -162,21 +162,21 @@ body {
 
 .overlay-IGB_Yellow {
 	@include themify($themes) {
-		background: rgba(themed('accentYellow'), 0.5);
+		background-color: rgba(themed('accentYellow'), 0.5);
 	}
 
 	&:hover,
 	&:target,
 	&:focus {
 		@include themify($themes) {
-			background: rgba(themed('accentYellow'), 0.75);
+			background-color: rgba(themed('accentYellow'), 0.75);
 		}
 	}
 }
 
 .background-IGB_Dark {
 	@include themify($themes) {
-		background: themed('accentGrey');
+		background-color: themed('accentGrey');
 		color: themed('accentTextColor');
 	}
 
@@ -184,45 +184,45 @@ body {
 
 .overlay-IGB_Dark {
 	@include themify($themes) {
-		background: rgba(themed('accentGrey'), 0.5);
+		background-color: rgba(themed('accentGrey'), 0.5);
 	}
 
 	&:hover,
 	&:target,
 	&:focus {
 		@include themify($themes) {
-			background: rgba(themed('accentGrey'), 0.75);
+			background-color: rgba(themed('accentGrey'), 0.75);
 		}
 	}
 }
 
 .background-subtle_grey {
 	@include themify($themes) {
-		background: themed('subtleGreyBG');
+		background-color: themed('subtleGreyBG');
 	}
 }
 
 .background-subtle_purple {
 	@include themify($themes) {
-		background: themed('subtlePurpleBG');
+		background-color: themed('subtlePurpleBG');
 	}
 }
 
 .background-subtle_pink {
 	@include themify($themes) {
-		background: themed('subtlePinkBG');
+		background-color: themed('subtlePinkBG');
 	}
 }
 
 .background-subtle_blue {
 	@include themify($themes) {
-		background: themed('subtleBlueBG');
+		background-color: themed('subtleBlueBG');
 	}
 }
 
 .background-subtle_yellow {
 	@include themify($themes) {
-		background: themed('subtleYellowBG');
+		background-color: themed('subtleYellowBG');
 	}
 }
 
@@ -231,11 +231,41 @@ body {
 	@include themify($themes) {
 		border-bottom: 1px solid themed( 'accentPurple' );
 	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPurple' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPurple' );
+					background: themed('subtlePurpleBG');
+				}
+			}
+		}
+	}
 }
 
 .underline-IGB_Pink {
 	@include themify($themes) {
 		border-bottom: 1px solid themed( 'accentPink' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPink' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPink' );
+					background: themed('subtlePinkBG');
+				}
+			}
+		}
 	}
 }
 
@@ -243,17 +273,62 @@ body {
 	@include themify($themes) {
 		border-bottom: 1px solid themed( 'accentBlue' );
 	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentBlue' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentBlue' );
+					background: themed('subtleBlueBG');
+				}
+			}
+		}
+	}
 }
 
 .underline-IGB_Yellow {
 	@include themify($themes) {
 		border-bottom: 1px solid themed( 'accentYellow' );
 	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentYellow' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentYellow' );
+					background: themed('subtleYellowBG');
+				}
+			}
+		}
+	}
 }
 
 .underline-IGB_Dark {
 	@include themify($themes) {
 		border-bottom: 1px solid themed( 'accentGrey' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentGrey' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentGrey' );
+					background: themed('subtleGreyBG');
+				}
+			}
+		}
 	}
 }
 
@@ -340,6 +415,28 @@ a.secondary_button:visited,
 
 	@include themify($themes) {
 		background-color: themed('secondaryButtonBGColor');
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
+		}
+	}
+}
+
+.subtle_overlay_button,
+a.subtle_overlay_button,
+a.subtle_overlay_button:visited {
+	font-weight: 300;
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: rgba( themed('backgroundColor'), 0.7 );
 		color: themed('secondaryButtonTextColor');
 		border: themed('secondaryButtonBorder');
 	}
