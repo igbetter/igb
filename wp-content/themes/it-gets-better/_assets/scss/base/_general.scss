@@ -493,9 +493,13 @@ a.subtle_overlay_button:visited {
 
 
 // =============================================	3. base body text & headings
-p {
+p, blockquote {
 	max-width: $max_body_text_width;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+
 
 h1 {
 	font-size: $font_size_xxxl;
