@@ -3,8 +3,14 @@
  * display of a single video, with description
  */
 
- $episode = get_field( 'episode_number' );
- $description = get_field( 'featured_description' );
+$episode = get_field( 'episode_number' );
+$description = get_field( 'featured_description' );
+
+$post_type = get_post_type( get_the_ID() );
+
+ if( $post_type === 'eduguide' ) {
+	get_template_part('template-parts/loop/card', 'eduguide');
+ } else {
 ?>
 
 <article id="cardID-<?php echo get_the_ID(); ?>" class="video_card two_column">
@@ -29,3 +35,5 @@
 		<?php echo igb_display_video_embed( get_the_ID(),  'upload_video', 'youtube_link' ) ?>
 	</div>
 </article>
+
+<?php }

@@ -26,6 +26,18 @@ if( $main_color ) {
 	$color_class = 'overlay-' . esc_attr( $main_color['label']);
 }
 ?>
+<div class="next_previous_glossary top">
+					<a href="/playlists/" class="glossary_back_link">View all Playlists</a>
+					<?php
+					/* the_post_navigation(
+					array(
+						'prev_text'  => __( '&laquo; Previous: <em>%title</em>' ),
+						'next_text'  => __( 'Next: <em>%title</em> &raquo;' ),
+						'taxonomy'	=> 'playlist',
+						) ); */
+						?>
+
+				</div>
 
 <section id="primary" class="playlist_detail_page" style=" <?php echo $custom_css; ?>">
 	<header class="playlist_header">

@@ -187,7 +187,7 @@ if ( ! empty( $block['align'] ) ) {
 			endif; // end if display more playlists is true
 			 ?>
 
-		</div>
+
 		<svg class="full_width svg_divider">
 			<use xlink:href="#line_divider_option_01" />
 		</svg>
@@ -240,7 +240,7 @@ if ( ! empty( $block['align'] ) ) {
 					<?php endwhile;
 				endif;
 				?>
-			 </div>
+			</div>
 		<?php elseif ( $feature_type === 'term' ) :
 			$glossary_term_fields = get_field( 'glossary_term_details' );
 
@@ -310,7 +310,6 @@ if ( ! empty( $block['align'] ) ) {
 					</div>
 				</div>
 				<?php endif; ?>
-			</div>
 			<svg class="full_width svg_divider">
 				<use xlink:href="#line_divider_option_02" />
 			</svg>
