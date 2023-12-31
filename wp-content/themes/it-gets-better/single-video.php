@@ -35,6 +35,31 @@ get_header();
 					echo '<div class="video_description_container">' . wp_kses_post( get_field( 'featured_description' ) ) . '</div>';
 				endif;
 
+				$related_eduguides = get_field( 'video_related_eduguide' );
+				$related_playlist = get_the_terms( get_the_ID(), 'playlist' );
+
+				//var_dump( $related_playlist );
+
+				if( $related_playlist ) :
+					echo '<div class="related_playlist_container"><h6>Watch The Entire Playlist:</h6>';
+					foreach( $related_playlist as $playlist ) :
+
+					$playlist_id = $playlist->term_id;
+						get_template_part(
+							'template-parts/loop/list',
+							'playlist',
+							array(
+								'playlist_id'	=> $playlist_id
+							)
+						);
+					endforeach;
+					echo '</div>';
+				endif; // end if there is a related playlist to this video
+
+				if( $related_eduguides ) :
+					get_template_part('template-parts/loop/card', 'eduguide');
+				endif; // end if there are related eduguide(s)
+
 				// End the loop.
 			endwhile;
 			?>

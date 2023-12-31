@@ -4,9 +4,11 @@
  */
 $eduguide_download = get_field( 'eduguide_pdf', get_the_ID() );
 
-$eduguide_download_file_type = $eduguide_download['subtype'];
-$eduguide_download_size = $eduguide_download['filesize'];
-$eduguide_download_url = $eduguide_download['url'];
+if( $eduguide_download ) {
+	$eduguide_download_file_type = $eduguide_download['subtype'];
+	$eduguide_download_size = $eduguide_download['filesize'];
+	$eduguide_download_url = $eduguide_download['url'];
+}
 ?>
 
 <article id="cardID-<?php echo get_the_ID(); ?>" class="eduguide_card">
