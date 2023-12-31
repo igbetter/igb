@@ -41,11 +41,12 @@
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
-            "field_type": "select",
+            "field_type": "multi_select",
+            "min": "",
             "max": "",
             "allow_null": 1,
             "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_enabled": "1",
                 "acfe_bidirectional_related": [
                     "field_654e6ead7a18f"
                 ]
@@ -54,8 +55,7 @@
             "bidirectional_target": [
                 "field_654e6ead7a18f"
             ],
-            "multiple": 0,
-            "min": ""
+            "multiple": 0
         },
         {
             "key": "field_64643e1948ae7",
@@ -480,5 +480,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701673395
+    "modified": 1703997784
 }
