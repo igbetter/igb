@@ -1,0 +1,18 @@
+.eduguide_list {
+	margin-top: 2em;
+
+	.grid_container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(371px, 1fr));
+		grid-gap: 3.5em;
+
+		.eduguide_card {
+			width: auto;
+			min-width: auto;
+			max-width: 100%;
+			margin: 1em;
+
+			
+		}
+	}
+}

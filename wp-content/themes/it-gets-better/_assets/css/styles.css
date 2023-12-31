@@ -1443,6 +1443,21 @@ a:visited article.single_term main p {
   margin-right: auto;
 }
 
+.eduguide_list {
+  margin-top: 2em;
+}
+.eduguide_list .grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(371px, 1fr));
+  grid-gap: 3.5em;
+}
+.eduguide_list .grid_container .eduguide_card {
+  width: auto;
+  min-width: auto;
+  max-width: 100%;
+  margin: 1em;
+}
+
 .facetwp-facet .facetwp-checkbox.checked .facetwp-display-value {
   font-weight: 500;
 }
@@ -3000,6 +3015,9 @@ h3.item_title {
   margin: 2em 1em 0 1em;
   text-align: center;
 }
+.eduguide_card .content_container .button_container a {
+  display: inline-block;
+}
 .eduguide_card .content_container span.content_type {
   position: absolute;
   display: block;
@@ -3019,6 +3037,8 @@ h3.item_title {
 .file_size {
   font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
   font-weight: 200;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .list_container {

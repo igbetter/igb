@@ -227,6 +227,9 @@
 		.button_container {
 			margin: 2em 1em 0 1em;
 			text-align: center;
+			a {
+				display: inline-block;
+			}
 		}
 
 		span.content_type {
@@ -253,6 +256,8 @@
 .file_size {
 	font-size: $font-size-sm;
 	font-weight: 200;
+	white-space: nowrap;
+	line-height: 1;
 }
 
 // list vew
