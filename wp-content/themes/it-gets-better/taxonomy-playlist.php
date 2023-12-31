@@ -45,6 +45,12 @@ if( $main_color ) {
 			<?php echo ( !empty( $header_image ) ) ? ' style="background-image: url(' . esc_url( $header_image['url'] ) . ');"' : ''; ?>
 		>
 		<div class="playlist_header_text">
+			<span class="header_post_type_icon smaller content_type playlist">
+				<svg class="icon-content_type">
+					<use xlink:href="#CONTENT_TYPE_playlist"></use>
+				</svg>
+
+			</span>
 			<h6 class="playlist_tag">Playlist:</h6>
 			<h1><?php echo wp_kses_post( $playlist->name ); ?></h1>
 			<?php if( $subheading ) { echo '<h3 class="subhead">' . esc_html( $subheading ) . '</h3>'; } ?>

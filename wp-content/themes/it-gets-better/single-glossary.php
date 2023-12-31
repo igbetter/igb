@@ -16,10 +16,12 @@ get_header();
 	<section id="primary">
 		<main id="main">
 
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post(); ?>
+
 				<div class="next_previous_glossary top">
 					<a href="/glossary/" class="glossary_back_link">Back to the Glossary</a>
 					<?php the_post_navigation(
@@ -32,6 +34,12 @@ get_header();
 				<header class="glossary_term_header">
 					<div class="two_column container">
 						<div class="col_one">
+							<span class="header_post_type_icon smaller content_type glossary term">
+								<svg class="icon-content_type">
+									<use xlink:href="#CONTENT_TYPE_term"></use>
+								</svg>
+								<h6>Glossary Term</h6>
+							</span>
 							<h1 class="underline-<?php esc_html_e( $color_label ); ?>"><?php the_title(); ?></h1>
 							<div class="definition">
 								<div class="flex-row">

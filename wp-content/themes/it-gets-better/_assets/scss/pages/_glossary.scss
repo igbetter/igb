@@ -163,11 +163,7 @@ a:visited {
 				width: 100%;
 				padding: 6px;
 
-				@include themify($themes) {
-					border: 1px solid rgba( themed('textColor'), 0.5 );
-					background: themed('backgroundColor');
-					box-shadow: themed( 'subtleShadow');
-				}
+
 			}
 
 			img,

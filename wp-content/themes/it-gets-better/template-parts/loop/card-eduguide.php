@@ -4,7 +4,6 @@
  */
 $eduguide_download = get_field( 'eduguide_pdf', get_the_ID() );
 
-//var_dump( $eduguide_download );
 $eduguide_download_file_type = $eduguide_download['subtype'];
 $eduguide_download_size = $eduguide_download['filesize'];
 $eduguide_download_url = $eduguide_download['url'];

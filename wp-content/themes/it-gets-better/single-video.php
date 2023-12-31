@@ -11,8 +11,17 @@ get_header();
 ?>
 
 	<section id="primary" class="single_video_page">
-		<main id="main">
+		<header class="post_header">
+			<span class="header_post_type_icon content_type video">
+				<svg class="icon-content_type">
+					<use xlink:href="#CONTENT_TYPE_video"></use>
+				</svg>
+				<h6>Video</h6>
+			</span>
 
+			<?php the_title( '<h2 class="video_title">', '</h2>'); ?>
+		</header>
+		<main id="main">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -20,7 +29,7 @@ get_header();
 
 				echo igb_display_video_embed( get_the_ID(),  'upload_video', 'youtube_link' );
 
-				the_title( '<h2 class="video_title">', '</h2>');
+
 
 				if( the_field( 'featured_description' ) ) :
 					echo '<div class="video_description_container">' . wp_kses_post( get_field( 'featured_description' ) ) . '</div>';
