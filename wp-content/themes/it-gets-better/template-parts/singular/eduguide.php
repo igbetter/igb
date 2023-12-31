@@ -1,17 +1,21 @@
 <?php
 /**
- * 	Template part for singular post display
+ * 	Template part for singular eduguide (post) display
  *  DEFAULT view
  *
  *
  */
-
 $post_type = get_post_type( get_the_ID() );
-if( $post_type === 'post' ) {
-	$post_type = 'blog_post';
+
+$eduguide_download = get_field( 'eduguide_pdf', get_the_ID() );
+if( $eduguide_download ) {
+	$eduguide_download_file_type = $eduguide_download['subtype'];
+	$eduguide_download_size = $eduguide_download['filesize'];
+	$eduguide_download_url = $eduguide_download['url'];
 }
 
-$post_class_list = 'singular_post';
+
+ $post_class_list = 'singular_eduguide';
 if( has_post_thumbnail() ) :
 	$post_class_list .= ' has_featured_image';
 else :
@@ -25,7 +29,7 @@ endif;
 			<svg class="icon-content_type">
 				<use xlink:href="#CONTENT_TYPE_<?php esc_html_e( $post_type ); ?>"></use>
 			</svg>
-			<h6>Blog Post</h6>
+			<h6>EduGuide</h6>
 		</span>
 		<?php the_title( '<h1 class="post_title">', '</h1>' ); ?>
 		<div class="post_date">
@@ -41,7 +45,13 @@ endif;
 		?>
 
 		<?php echo igb_display_related_glossary_term_tags( get_the_ID(), 'blog_post' ); ?>
-
+		<?php if( $eduguide_download ) : ?>
+			<a href="<?php echo esc_url( $eduguide_download_url ); ?>" class="primary_button main_eduguide_download_button filetype-<?php echo esc_attr( $eduguide_download_file_type ); ?>">
+				Download the EduGuide <span class="file_size">(&nbsp;<?php
+					echo size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
+							?>&nbsp;)</span>
+			</a>
+		<?php endif;?>
 	</header>
 	<main class="post_main">
 		<?php the_content(); ?>

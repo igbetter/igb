@@ -1,4 +1,6 @@
-.singular_post {
+.singular_post,
+.singular_eduguide,
+.single_video_page {
 	.post_header {
 		text-align: center;
 		width: 90vw;
@@ -49,4 +51,40 @@
 		}
 	}
 
+}
+
+.main_eduguide_download_button {
+	margin: -2em auto 3em auto;
+}
+
+.header_post_type_icon {
+	padding: 1em;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25vw;
+	max-width: 250px;
+	height: auto;
+	background: rgba( 255, 255, 255, 0.02 );
+	border-radius: 10px;
+	display: inline-block;
+	box-shadow: $subtle_shadow_light;
+	text-align: center;
+
+	svg {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.theme-dark & {
+		filter: brightness(1.24);
+	}
+
+	&.smaller {
+		//display: block;
+		transform: scale(0.45);
+		transform-origin: bottom left;
+		margin: -8.9em 0 1em -2em;
+		max-width: 50%;
+	}
 }

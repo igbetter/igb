@@ -6,7 +6,6 @@
  *
  */
 
-
 ?>
 
 <main id="post-<?php the_ID(); ?>" <?php post_class( 'singular_page' ); ?>>
