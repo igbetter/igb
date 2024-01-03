@@ -283,9 +283,20 @@ label.dark-toggle {
 		&:after {
 			content: 'Menu';
 			position: relative;
-			top: -5px;
+			top: -9px;
+			left: -5px;
 			display: inline-block;
+			border-radius: 5px;
+			padding: 5px 10px;
 
+			@include themify($themes) {
+				background: rgba( themed('backgroundColor'), 0.7 );
+
+			}
+
+			.menu_is_open & {
+				opacity: 0;
+			}
 
 		}
 		&:hover {
@@ -294,6 +305,8 @@ label.dark-toggle {
 			}
 
 		}
+
+
 	}
 
 
