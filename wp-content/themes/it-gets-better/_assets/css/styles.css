@@ -1765,8 +1765,20 @@ body.theme-dark .dark-toggle__switch:after {
   #menu_toggle_button:after {
     content: "Menu";
     position: relative;
-    top: -5px;
+    top: -9px;
+    left: -5px;
     display: inline-block;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  .theme-light #menu_toggle_button:after {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .theme-dark #menu_toggle_button:after {
+    background: rgba(41, 41, 41, 0.7);
+  }
+  .menu_is_open #menu_toggle_button:after {
+    opacity: 0;
   }
   #menu_toggle_button:hover:after {
     opacity: 0;
