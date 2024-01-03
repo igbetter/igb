@@ -5,7 +5,7 @@
 
 @import '../../node_modules/hc-offcanvas-nav/src/scss/_core.scss';
 @import '../../node_modules/hc-offcanvas-nav/src/scss/toggle';
-//@import '../../node_modules/hc-offcanvas-nav/src/scss/theme-carbon';
+
 
 // utility nav
 
@@ -46,7 +46,6 @@
 			margin: -1.5em  3em 0 3em;
 		}
 	}
-
 
 	ul {
 		margin: 0;
@@ -105,6 +104,30 @@
 				}
 			}
 		}
+	}
+
+	@include tablet-down {
+		width: calc( 100% - 140px );
+		position: absolute;
+		top: 13vh;
+		left: -2.75em;
+
+		ul {
+			flex-wrap: wrap;
+			align-items: stretch;
+			line-height: 1;
+
+			a {
+				padding: 0.75em;
+				font-weight: 700;
+			}
+		}
+	}
+
+	@include phone-landscape {
+		width: 50vw;
+		left: 45%;
+		top: 25vh;
 	}
 }
 
@@ -192,6 +215,12 @@
 			height: 15vh;
 			width: 15vh;
 			margin-left: 1.75rem;
+
+			@include phone-only {
+				height: 55px;
+				width: 55px;
+				margin-left: 1em;
+			}
 		}
 
 		a,
@@ -227,11 +256,6 @@
 	}
 
 	img {
-	//	max-height: 11vh;
-	//	height: 100%;
-	//	min-width: 150px;
-	//	max-width: 35%;
-
 		height: 13vh;
 		width: 13vh;
 		background: $yellow;
@@ -245,6 +269,11 @@
 		@include tablet-up {
 			//max-width: 50%;
 		}
+		@include phone-only {
+			height: 55px;
+			width: 55px;
+			margin-top: -0.75em;
+		}
 	}
 
 	ul.IGB_site_main_navigation_menu {
@@ -254,8 +283,15 @@
 		display: flex;
 		flex-direction: column;
 
-		@include tablet-down {
+		@include phone-only {
 			width: 100%;
+			height: 60vh;
+			margin-top: 20vh;
+		}
+
+		@include phone-landscape {
+			margin-top: 18vh;
+			height: 80vh;
 		}
 
 		li {
@@ -280,8 +316,18 @@
 			background: rgba(themed('mainNavBGColor'), 0.85);
 		}
 
-		@include tablet-down {
+		@include phone-only {
 			width: 100%;
+		}
+
+
+	}
+
+	&.nav-levels-overlap {
+		ul .nav-wrapper {
+				@include phone-only {
+					height: 80vh;
+				}
 		}
 	}
 
@@ -360,6 +406,10 @@
 				text-align: right;
 				justify-content: flex-end;
 				font-style: italic;
+
+				@include phone-landscape {
+					padding: 0.5em 1em;
+				}
 			}
 		}
 	}
@@ -367,6 +417,11 @@
 		margin-top: 150px;
 		padding: 0 2em;
 		opacity: 0.75;
+
+		@include phone-landscape {
+			margin-top: 100px;
+			margin-bottom: 2px;
+		}
 	}
 
 }
@@ -385,23 +440,32 @@ nav#programs_nav {
 	z-index: -1;
 	opacity: 0;
 	transition: opacity 50ms ease-in-out;
-		transition-delay: 0s;
+	transition-delay: 0s;
 
 
 
 	.menu_is_open & {
 		z-index: 9999;
 		opacity: 1;
-
-
 		transition: opacity 550ms ease-in-out;
-	transition-delay: .2s;
+		transition-delay: .2s;
 	}
 
 	//padding: 3em;
 
-	@include tablet-down {
-		display: none;
+	@include phone-only {
+		width: 100%;
+		position: absolute;
+		top: 80vh;
+		left: 0;
+		flex-direction: row;
+		height: auto;
+		max-height: 20vh;
+	}
+
+	@include phone-landscape {
+		height: 50vh;
+		top: 45vh;
 	}
 
 	.program_box {
@@ -413,6 +477,22 @@ nav#programs_nav {
 
 		@include themify($themes) {
 			background: themed( 'subtleGreyBG' );
+		}
+
+		@include phone-only {
+			width: 48%;
+
+			p {
+				display: none;
+			}
+		}
+
+		@include phone-landscape {
+			margin: 0.25em 2em 0.25em 1em;
+
+			p {
+				display: none;
+			}
 		}
 
 		&.global {

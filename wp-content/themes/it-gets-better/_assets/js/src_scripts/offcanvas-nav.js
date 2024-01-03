@@ -6,8 +6,8 @@ jQuery(document).ready(function ($) {
 		levelTitleAsBack: true,
 		width: '100%',
 		height: '100%',
-		//expanded: true, //(just for testing/styling)
-		disableBody: false,
+		//expanded: true, //(turn on just for testing/styling, but don't forget to remove before pushing!)
+		disableBody: true,
 		insertClose: false,
 	});
 });
