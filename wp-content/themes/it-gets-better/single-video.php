@@ -38,7 +38,6 @@ get_header();
 				$related_eduguides = get_field( 'video_related_eduguide' );
 				$related_playlist = get_the_terms( get_the_ID(), 'playlist' );
 
-				//var_dump( $related_playlist );
 
 				if( $related_playlist ) :
 					echo '<div class="related_playlist_container"><h6>Watch The Entire Playlist:</h6>';
