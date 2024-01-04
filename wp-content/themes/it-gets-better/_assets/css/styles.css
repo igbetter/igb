@@ -3674,6 +3674,9 @@ body.page-homepage.theme-light .section_hero {
   bottom: 0;
   z-index: 0;
 }
+body:not(.home) .section_hero .hero_image-container svg {
+  z-index: -1;
+}
 .section_hero .hero_image-container img {
   position: relative;
   z-index: 9;
