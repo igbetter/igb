@@ -3524,6 +3524,89 @@ https://splidejs.com/
   color: #ffffff;
 }
 
+.accordion_tabs_container {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  z-index: 999;
+}
+.accordion_tabs_container.half_width {
+  width: 45vw;
+  min-width: 410px;
+}
+.accordion_tabs_container.half_width .tab {
+  overflow: hidden;
+}
+.accordion_tabs_container.half_width .tab .tab_content {
+  width: 30vw;
+  min-width: 270px;
+}
+.accordion_tabs_container.half_width .tab.expanded {
+  width: 70%;
+}
+.accordion_tabs_container.half_width .tab.collapsed {
+  width: 2.5em;
+}
+.accordion_tabs_container.full_width {
+  width: 100vw;
+}
+.accordion_tabs_container.full_width .tab .tab_content {
+  width: 90vw;
+}
+.accordion_tabs_container .tab {
+  position: relative;
+  display: inline-block;
+  transition-property: width;
+  transition-duration: 450ms;
+}
+.accordion_tabs_container .tab:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+.accordion_tabs_container .tab:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+.accordion_tabs_container .tab .tab_inner {
+  padding: 1em 1em 3em 1em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.65), 1px 1px 19px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.32);
+}
+.accordion_tabs_container .tab h5 {
+  display: block;
+  position: absolute;
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  left: 0rem;
+  bottom: 2rem;
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  white-space: nowrap;
+  line-height: 1em;
+  text-align: left;
+  transform: rotate(-90deg);
+  transition-property: left right transform;
+  transition-duration: 550ms;
+  font-weight: 600;
+}
+.accordion_tabs_container .tab .tab_content {
+  margin: 0;
+  padding: 1em;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 400ms;
+  overflow: hidden;
+  font-weight: 400;
+}
+.accordion_tabs_container .expanded h5 {
+  left: 1rem;
+  bottom: 1rem;
+  transform: rotate(0deg);
+}
+.accordion_tabs_container .expanded .tab_content {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 400ms;
+}
+
 .svg_divider.full_width {
   width: 100vw;
 }
