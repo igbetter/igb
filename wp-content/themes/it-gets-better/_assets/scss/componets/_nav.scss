@@ -455,7 +455,7 @@ nav#programs_nav {
 
 	@include phone-only {
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		top: 80vh;
 		left: 0;
 		flex-direction: row;
