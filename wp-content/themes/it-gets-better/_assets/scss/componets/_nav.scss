@@ -340,6 +340,10 @@
 			background-image: linear-gradient(90deg, darken(rgba(themed('mainNavItemBGColor'), 1), 10) 3%, rgba(themed('mainNavBGColor'), 0) 25%);
 		}
 
+		@include phone-landscape {
+			padding-left: 1em;
+		}
+
 		a,
 		a:visited {
 			&:hover,
@@ -466,6 +470,7 @@ nav#programs_nav {
 	@include phone-landscape {
 		height: 50vh;
 		top: 45vh;
+		padding-right: 1em;
 	}
 
 	.program_box {

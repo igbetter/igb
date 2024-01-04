@@ -118,10 +118,6 @@ body.theme-dark {
   opacity: 0;
 }
 
-.flex-row {
-  display: flex;
-}
-
 .theme-light .background-IGB_Purple {
   background-color: #5e3a7e;
   color: #ffffff;
@@ -785,10 +781,23 @@ use {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .wp-block-embed,
+  .contained_width {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 
 .full_width {
   width: 100%;
   max-width: 100vw;
+}
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .full_width {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .alignwide,
@@ -799,10 +808,26 @@ use {
   margin-right: auto;
 }
 
+.flex-row {
+  display: flex;
+}
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .flex-row {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
 .two_column {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .two_column {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 .two_column > * {
   width: 48%;
@@ -839,6 +864,18 @@ main.post_main > ul {
   padding-left: 2em;
   padding-right: 2em;
 }
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  main.post_main > p,
+  main.post_main > h2,
+  main.post_main > h3,
+  main.post_main > h4,
+  main.post_main > h5,
+  main.post_main > ol,
+  main.post_main > ul {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
 main.post_main > h4,
 main.post_main > h5 {
   max-width: 1600px;
@@ -851,6 +888,14 @@ main.post_main > h3 {
   max-width: 45ch;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  main.post_main > h1,
+  main.post_main > h2,
+  main.post_main > h3 {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .content_grid_container {
@@ -876,6 +921,12 @@ main.post_main > h3 {
 main#main > p {
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  main#main > p {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .singular_post .post_header,
@@ -1492,6 +1543,10 @@ a:visited article.single_term main p {
   min-width: auto;
   max-width: 100%;
   margin: 1em;
+}
+
+.single-eduguide .post_date {
+  display: none;
 }
 
 .facetwp-facet .facetwp-checkbox.checked .facetwp-display-value {
@@ -2546,6 +2601,11 @@ body.hc-nav-open {
 .theme-dark .hc-offcanvas-nav .nav-item-wrapper {
   background-image: linear-gradient(90deg, #442a5b 3%, rgba(33, 32, 35, 0) 25%);
 }
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  .hc-offcanvas-nav .nav-item-wrapper {
+    padding-left: 1em;
+  }
+}
 .theme-light .hc-offcanvas-nav .nav-item-wrapper a:hover, .theme-light .hc-offcanvas-nav .nav-item-wrapper a:target, .theme-light .hc-offcanvas-nav .nav-item-wrapper a:focus,
 .theme-light .hc-offcanvas-nav .nav-item-wrapper a:visited:hover,
 .theme-light .hc-offcanvas-nav .nav-item-wrapper a:visited:target,
@@ -2659,6 +2719,7 @@ nav#programs_nav {
   nav#programs_nav {
     height: 50vh;
     top: 45vh;
+    padding-right: 1em;
   }
 }
 nav#programs_nav .program_box {
@@ -2961,6 +3022,10 @@ iframe {
   max-width: 45ch;
   margin: 1em auto;
   padding: 0 1em;
+}
+
+.wp-block-embed__wrapper {
+  margin-bottom: 4em;
 }
 
 /**

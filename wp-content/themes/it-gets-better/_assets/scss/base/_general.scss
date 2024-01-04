@@ -83,10 +83,6 @@ body {
 	opacity: 0;
 }
 
-.flex-row {
-	display: flex;
-}
-
 .background-IGB_Purple {
 	@include themify($themes) {
 		background-color: themed('accentPurple');
