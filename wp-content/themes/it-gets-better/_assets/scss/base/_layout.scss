@@ -14,11 +14,21 @@
 	max-width: $max_body_text_width;
 	margin-left: auto;
 	margin-right: auto;
+
+	@include phone-landscape {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
 }
 
 .full_width {
 	width: 100%;
 	max-width: 100vw;
+
+	@include phone-landscape {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
 .alignwide,
@@ -29,10 +39,24 @@
 	margin-right: auto;
 }
 
+.flex-row {
+	display: flex;
+
+	@include phone-landscape {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+}
+
 .two_column {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@include phone-landscape {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 
 	> * {
 		width: 48%;
@@ -71,6 +95,11 @@ main.post_main {
 		max-width: $max_body_text_width;
 		padding-left: 2em;
 		padding-right: 2em;
+
+		@include phone-landscape {
+			padding-left: 3em;
+			padding-right: 3em;
+		}
 	}
 
 	> h4,
@@ -85,6 +114,11 @@ main.post_main {
 		max-width: $max_body_text_width_half;
 		margin-left: auto;
 		margin-right: auto;
+
+		@include phone-landscape {
+			padding-left: 2em;
+			padding-right: 2em;
+		}
 	}
 }
 
@@ -113,5 +147,10 @@ main#main {
 	> p {
 		margin-left: auto;
 		margin-right: auto;
+
+		@include phone-landscape {
+			padding-left: 2em;
+			padding-right: 2em;
+		}
 	}
 }
