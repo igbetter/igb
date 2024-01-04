@@ -2647,7 +2647,7 @@ nav#programs_nav {
 @media (max-width: 600px) {
   nav#programs_nav {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 80vh;
     left: 0;
     flex-direction: row;
