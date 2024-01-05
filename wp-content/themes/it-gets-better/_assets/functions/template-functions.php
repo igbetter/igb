@@ -14,17 +14,7 @@ function it_gets_better_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'it_gets_better_pingback_header' );
-/**
- * change search URL (browse-content)
- */
 
-function wp_change_search_url() {
-	if ( is_search() && ! empty( $_GET['s'] ) ) {
-			wp_redirect( home_url( "/browse-content?term=" ) . urlencode( get_query_var( 's' ) ) );
-			exit();
-	}
-}
-add_action( 'template_redirect', 'wp_change_search_url' );
 
 /**
  * add page slug to body class names
