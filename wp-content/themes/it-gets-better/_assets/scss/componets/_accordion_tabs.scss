@@ -42,8 +42,17 @@
 	.tab {
 		position: relative;
 		display: inline-block;
-		transition-property: width;
+		transition-property: width border;
 		transition-duration: 450ms;
+		cursor: pointer;
+		border:2px solid transparent;
+
+		&:hover {
+			@include themify($themes) {
+				border: 2px solid themed('backgroundColor');
+			}
+
+		}
 
 		&:first-of-type {
 			border-radius:  10px 0 0 10px;

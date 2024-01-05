@@ -3756,8 +3756,16 @@ https://splidejs.com/
 .accordion_tabs_container .tab {
   position: relative;
   display: inline-block;
-  transition-property: width;
+  transition-property: width border;
   transition-duration: 450ms;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.theme-light .accordion_tabs_container .tab:hover {
+  border: 2px solid #ffffff;
+}
+.theme-dark .accordion_tabs_container .tab:hover {
+  border: 2px solid #292929;
 }
 .accordion_tabs_container .tab:first-of-type {
   border-radius: 10px 0 0 10px;
