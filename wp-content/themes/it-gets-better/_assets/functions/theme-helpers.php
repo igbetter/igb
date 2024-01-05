@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function it_gets_better_custom_logo_setup() {
 	$defaults = array(
@@ -7,7 +7,7 @@ function it_gets_better_custom_logo_setup() {
 		'flex-height'          => true,
 		'flex-width'           => true,
 		'header-text'          => array( 'site-title', 'site-description' ),
-		'unlink-homepage-logo' => true, 
+		'unlink-homepage-logo' => true,
 	);
 	add_theme_support( 'custom-logo', $defaults );
 }
@@ -18,7 +18,7 @@ function the_breadcrumb() {
     $sep = ' > ';
 
     if (!is_front_page()) {
-	
+
 	// Start the breadcrumb with a link to your homepage
         echo '<div class="breadcrumbs text-igb-purple dark:text-igb-orange absolute top-[200px]">';
        if(is_tag()){
@@ -35,7 +35,7 @@ function the_breadcrumb() {
         if (is_home()){
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
-            if ( $page_for_posts_id ) { 
+            if ( $page_for_posts_id ) {
                 $post = get_post($page_for_posts_id);
                 setup_postdata($post);
                 the_title();
@@ -50,13 +50,13 @@ function the_breadcrumb() {
 * Credit: http://www.thatweblook.co.uk/blog/tutorials/tutorial-wordpress-breadcrumb-function/
 */
 
-	
+
 add_post_type_support( 'page', 'excerpt' );
 
 function my_cptui_add_post_types_to_archives( $query ) {
 	// We do not want unintended consequences.
 	if ( is_admin() || ! $query->is_main_query() ) {
-		return;    
+		return;
 	}
 
 	if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
@@ -74,3 +74,32 @@ function my_cptui_add_post_types_to_archives( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
+
+/**
+ *
+ * admin mods
+ *
+ * // columns for videos
+ */
+
+add_filter( 'manage_video_posts_columns', 'igb_video_columns');
+ function igb_video_columns( $columns ) {
+
+	$columns[ 'glossary_terms' ] = __( 'Glossary Terms', 'igb' );
+	unset( $columns[ 'date' ] );
+	unset( $columns[ 'author' ] );
+
+	return $columns;
+
+ }
+
+// add_action( 'manage_video_posts_custom_column', 'igb_video_columns_populate', 10, 2 );
+ function igb_video_columns_populate( $column_id, $post_id ) {
+
+/* 	switch( $column_id ) {
+		case 'glossary_terms' :
+			
+		break;
+	} */
+
+ }
