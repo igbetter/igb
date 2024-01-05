@@ -74,9 +74,24 @@ rgba(0, 0, 0, 0.12) 0px 4px 6px,
 rgba(0, 0, 0, 0.17) 0px 12px 13px,
 rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-$subtle_inset: rgba(45, 53, 60, 0.4) 3px 3px 6px 0px inset,
-rgba(43, 39, 39, 0.5) -3px -3px 6px 1px inset;
 
+$subtle_inset_light: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset,
+rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset,
+rgba(0, 0, 0, 0.45) 0 -1px 1px;
+$subtle_inset_dark: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset,
+rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset,
+rgba(0, 0, 0, 0.75) 0 -1px 3px;
+
+$active_shadow_light: rgba(0, 0, 0, 0.15) 0 0 15px,
+rgba(0, 0, 0, 0.08) 0 -2px 6px,
+rgba(0, 0, 0, 0.18) 0px 3px 8px,
+rgba(0, 0, 0, 0.17) 0px 7px 15px,
+rgba(0, 0, 0, 0.59) 0 1px 1px;
+$active_shadow_dark: rgba(0, 0, 0, 0.25) 0 0 15px,
+rgba(0, 0, 0, 0.18) 0 -2px 6px,
+rgba(0, 0, 0, 0.28) 0px 3px 8px,
+rgba(0, 0, 0, 0.19) 0px 7px 15px,
+rgba(0, 0, 0, 0.62) 0 1px 1px;
 
 
 // Define animation speeds
@@ -180,7 +195,8 @@ $themes: (
 		subtleShadow: $subtle_shadow_light,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
-		insetShadow: $subtle_inset,
+		activeShadow: $active_shadow_light,
+		insetShadow: $subtle_inset_light,
 
 		// text shadow options
 		textBackgroundBlurShadow: $white,
@@ -289,7 +305,8 @@ $themes: (
 		subtleShadow: $subtle_shadow_dark,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
 		largeShadow: $heavy_shadow,
-		insetShadow: $subtle_inset,
+		activeShadow: $active_shadow_dark,
+		insetShadow: $subtle_inset_dark,
 
 		// text shadow options
 		textBackgroundBlurShadow: $black,
