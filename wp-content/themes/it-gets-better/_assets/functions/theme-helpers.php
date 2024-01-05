@@ -75,31 +75,3 @@ function my_cptui_add_post_types_to_archives( $query ) {
 }
 add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
 
-/**
- *
- * admin mods
- *
- * // columns for videos
- */
-
-add_filter( 'manage_video_posts_columns', 'igb_video_columns');
- function igb_video_columns( $columns ) {
-
-	$columns[ 'glossary_terms' ] = __( 'Glossary Terms', 'igb' );
-	unset( $columns[ 'date' ] );
-	unset( $columns[ 'author' ] );
-
-	return $columns;
-
- }
-
-// add_action( 'manage_video_posts_custom_column', 'igb_video_columns_populate', 10, 2 );
- function igb_video_columns_populate( $column_id, $post_id ) {
-
-/* 	switch( $column_id ) {
-		case 'glossary_terms' :
-			
-		break;
-	} */
-
- }
