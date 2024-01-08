@@ -54,17 +54,21 @@
 				z-index: 99;
 				transition: all 300ms ease-in-out;
 
-
 				@include themify($themes) {
 					background: themed( 'backgroundColor' );
 				}
 
+				.mobile_filter_sticky_container {
+					position: relative;
+				}
+
 				#mobile_filter_toggle_button {
 					display: block;
-					position: fixed;
-					bottom: 20%;
-					left:0px;
-					width:7ch;
+					position: sticky;
+					bottom: 10%;
+					left: 0;
+					width: 7ch;
+					margin-right: -7ch;
 					text-wrap: balance;
 					padding:0.25em 0 0.25em 0.25em;
 					border-radius: 0 4px 4px 0;
