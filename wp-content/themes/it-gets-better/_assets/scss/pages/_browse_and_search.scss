@@ -196,4 +196,46 @@
 			}
 		}
 	}
+
+	.facetwp-facet-pagination {
+		text-align: center;
+
+
+		.facetwp-page {
+
+			text-decoration: none;
+			padding: 0.25em 1em;
+			border-radius: 4px;
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed( 'linkColor' ), 0.5 );
+				box-shadow: themed( 'normalShadow' );
+			}
+
+
+
+			&.active {
+				text-decoration: none;
+				font-weight: 200;
+				opacity: 0.7;
+
+				@include themify($themes) {
+					color: themed( 'textColor' );
+					border: 1px solid rgba( themed( 'textColor' ), 0.15 );
+				}
+			}
+
+			&:not(.active) {
+				&:hover,
+				&:target,
+				&:focus {
+					@include themify($themes) {
+						border: 1px solid themed( 'backgroundColor' );
+						background: themed( 'linkColor' );
+						color: themed( 'backgroundColor' );
+					}
+				}
+			}
+		}
+	}
 }
