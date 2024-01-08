@@ -38,11 +38,15 @@ const igbDarkMode = {
   /**
    * Toggle the body class and cache the variable
    */
-  toggle(isChecked) {
-	document.querySelector('body').classList.toggle('theme-light');
-    document.querySelector('body').classList.toggle('theme-dark', isChecked);
-    localStorage.setItem('darkMode', isChecked);
-  },
+	toggle(isChecked) {
+		document.querySelector('body').classList.toggle('theme-light');
+		document.querySelector('body').classList.toggle('theme-dark', isChecked);
+		localStorage.setItem('darkMode', isChecked);
+
+		// set jetpack search modal as well
+		document.getElementsByClassName('jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--light');
+		document.getElementsByClassName('jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--dark');
+	},
 };
 
 document.addEventListener('DOMContentLoaded', () => {
