@@ -49,22 +49,37 @@ if ( ! empty( $block['align'] ) ) {
 			} ?>
 		<?php if ( $tabs ) {
 			echo '<div class="accordion_tabs_container half_width">';
+			$i=1;
 			foreach( $tabs as $tab ) :
-				$color = 'IGB_Purple';
-				if( isset( $tab['background_color']) ) :
-					$color = esc_attr( $tab['background_color'] );
-				endif;
-				printf(
-					'<div class="tab background-%s">
-						<div class="tab_inner">
-							<h5 class="tab_title" role="tab">%s</h5>
-							<div class="tab_content" role="tabpanel">%s</div>
-						</div>
-					</div>',
-					$color,
-					esc_html( $tab['tab_title'] ),
-					wp_kses_post( $tab['tab_content'] )
-				);
+				if($i==1) {
+					printf(
+						'<div class="tab expanded">
+							<div class="tab_inner">
+								<h5 class="tab_title" role="tab">%s</h5>
+								<div class="tab_content" role="tabpanel">%s</div>
+							</div>
+						</div>',
+						esc_html( $tab['tab_title'] ),
+						wp_kses_post( $tab['tab_content'] )
+					);
+				} else {
+					$color = 'IGB_Purple';
+					if( isset( $tab['background_color']) ) :
+						$color = esc_attr( $tab['background_color'] );
+					endif;
+					printf(
+						'<div class="tab collapsed background-%s">
+							<div class="tab_inner">
+								<h5 class="tab_title" role="tab">%s</h5>
+								<div class="tab_content" role="tabpanel">%s</div>
+							</div>
+						</div>',
+						$color,
+						esc_html( $tab['tab_title'] ),
+						wp_kses_post( $tab['tab_content'] )
+					);
+				}
+				$i++;
 			endforeach;
 			echo '</div>';
 		} ?>
