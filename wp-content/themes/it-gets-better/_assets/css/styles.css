@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  *
  *	Variabiles
@@ -778,6 +779,156 @@ use {
 .masked_image_container_double video {
   height: 100%;
   object-fit: cover;
+}
+
+.icon-doc-dims {
+  width: 335px;
+  height: 450px;
+}
+
+.icon-facebook-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-instagram-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-instagramES-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-linkedin-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-mp3-dims {
+  width: 335px;
+  height: 447px;
+}
+
+.icon-mp4-dims {
+  width: 335px;
+  height: 447px;
+}
+
+.icon-pdf-dims {
+  width: 359px;
+  height: 447px;
+}
+
+.icon-ppt-dims {
+  width: 335px;
+  height: 447px;
+}
+
+.icon-svg-dims {
+  width: 335px;
+  height: 447px;
+}
+
+.icon-tiktok-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-tumblr-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-twitch-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-youtube-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-zip-dims {
+  width: 335px;
+  height: 447px;
+}
+
+/**
+ * NOTE: these styles are not actually controlling the post
+ * icons because they are embeded with the <use> tag, so the
+ * styles have to be included in the SVG symbol directly.
+ * (thanks a *lot* CSS  (╯°□°）╯︵ ┻━┻  )
+ * so if you need to update post type icon styles, change the CSS at:
+ *
+ *** 		/_assets/svg/content-type-icons.php			***
+ *
+ * thank you for coming to my TED talk
+ *			┬──┬ ノ( ゜-゜ノ)
+ */
+.theme-light path[class*=icon_purple] {
+  fill: #5e3a7e;
+}
+.theme-dark path[class*=icon_purple] {
+  fill: #a662e2;
+}
+
+.theme-light path[class*=icon_pink],
+.theme-light polygon[class*=icon_pink] {
+  fill: #f2566e;
+}
+.theme-dark path[class*=icon_pink],
+.theme-dark polygon[class*=icon_pink] {
+  fill: #f2566e;
+}
+
+.theme-light path[class*=icon_blue] {
+  fill: #45acce;
+}
+.theme-dark path[class*=icon_blue] {
+  fill: #3dcaf9;
+}
+
+.theme-light path[class*=icon_yellow] {
+  fill: #fbad41;
+}
+.theme-dark path[class*=icon_yellow] {
+  fill: #fbad41;
+}
+
+.theme-light path[class*=icon_grey] {
+  fill: #393939;
+}
+.theme-dark path[class*=icon_grey] {
+  fill: #d6d6d6;
+}
+
+.search_icon {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(2);
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 100%;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+.search_icon:after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  top: 10px;
+  left: 12px;
 }
 
 #page.sticky-container {
@@ -1817,6 +1968,10 @@ body.theme-dark .dark-toggle__switch:after {
   height: calc(var(--width) * 0.7);
 }
 
+.header_button_group {
+  display: flex;
+}
+
 #menu_toggle_button {
   width: 55px;
   height: 55px;
@@ -1886,6 +2041,171 @@ body.theme-dark .dark-toggle__switch:after {
 }
 #menu_toggle_button.menu_open .middle_line {
   opacity: 0;
+}
+
+.site_search_bar {
+  position: absolute;
+  right: 87px;
+  display: flex;
+  align-items: center;
+}
+.site_search_bar form {
+  width: 0;
+  overflow: hidden;
+  transition: width 400ms ease-in-out, border 200ms linear;
+  border: 3px solid transparent;
+  border-right: 25px solid transparent;
+  border-radius: 10px;
+  margin-right: -25px;
+}
+.site_search_bar.search_open form {
+  width: 50vw;
+  min-width: 300px;
+}
+.theme-light .site_search_bar.search_open form {
+  border-color: #f2566e;
+  background: #ffffff;
+}
+.theme-dark .site_search_bar.search_open form {
+  border-color: #f2566e;
+  background: #292929;
+}
+.site_search_bar .search_form_row {
+  display: flex;
+  align-items: center;
+}
+.site_search_bar .search_form_row #search {
+  padding: 0.5em 2.5em 0.5em 0.5em;
+  font-size: 16px;
+}
+.site_search_bar .search_button {
+  padding: 0.5em 1em;
+  text-indent: -999px;
+  margin-left: -2.1em;
+  position: relative;
+  border: none;
+  background-size: 20% 20%, 20% 20%;
+  background-repeat: no-repeat;
+  background-position: center 38.2%, center 63.1%;
+}
+.theme-light .site_search_bar .search_button {
+  background-image: linear-gradient(45deg, rgba(41, 41, 41, 0.7) 0%, rgba(41, 41, 41, 0.4) 50%, transparent 51%), linear-gradient(135deg, rgba(41, 41, 41, 0.7) 0%, rgba(41, 41, 41, 0.4) 50%, transparent 51%);
+}
+.theme-dark .site_search_bar .search_button {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 50%, transparent 51%), linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 50%, transparent 51%);
+}
+.site_search_bar.search_open form {
+  flex: 1;
+}
+.site_search_bar.search_open form label,
+.site_search_bar.search_open form #search {
+  width: 100%;
+}
+
+#search_bar_toggle {
+  display: inline-block;
+  width: calc(3em + 10px);
+  height: calc(3em + 10px);
+  border-radius: 100%;
+  position: relative;
+  padding: 1px 1em 1em 1px;
+}
+.theme-light #search_bar_toggle:hover, .theme-light #search_bar_toggle:target {
+  background: #f2566e;
+}
+.theme-dark #search_bar_toggle:hover, .theme-dark #search_bar_toggle:target {
+  background: #f2566e;
+}
+#search_bar_toggle .search_icon {
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  display: block;
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  margin: 1em;
+}
+.theme-light #search_bar_toggle .search_icon {
+  border: 2px solid #292929;
+}
+.theme-dark #search_bar_toggle .search_icon {
+  border: 2px solid #ffffff;
+}
+.theme-light #search_bar_toggle .search_icon:hover {
+  border-color: #ffffff;
+}
+.theme-dark #search_bar_toggle .search_icon:hover {
+  border-color: #ffffff;
+}
+.theme-light #search_bar_toggle .search_icon:hover:before, .theme-light #search_bar_toggle .search_icon:hover:after {
+  background: #ffffff;
+}
+.theme-dark #search_bar_toggle .search_icon:hover:before, .theme-dark #search_bar_toggle .search_icon:hover:after {
+  background: #ffffff;
+}
+#search_bar_toggle .search_icon:before, #search_bar_toggle .search_icon:after {
+  width: 2px;
+  height: 7px;
+  border-radius: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -3px;
+  transform: rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
+.theme-light #search_bar_toggle .search_icon:before, .theme-light #search_bar_toggle .search_icon:after {
+  background: #292929;
+}
+.theme-dark #search_bar_toggle .search_icon:before, .theme-dark #search_bar_toggle .search_icon:after {
+  background: #ffffff;
+}
+#search_bar_toggle .search_icon:after {
+  transform: rotate(45deg);
+  opacity: 0;
+}
+.theme-light #search_bar_toggle.search_open {
+  background: #f2566e;
+}
+.theme-dark #search_bar_toggle.search_open {
+  background: #f2566e;
+}
+#search_bar_toggle.search_open .search_icon {
+  transform: scale(2.3);
+  transform-origin: top left;
+  margin-left: 0.88em;
+  margin-top: 0.85em;
+}
+.theme-light #search_bar_toggle.search_open .search_icon {
+  border-color: #ffffff;
+}
+.theme-dark #search_bar_toggle.search_open .search_icon {
+  border-color: #ffffff;
+}
+#search_bar_toggle.search_open .search_icon:before {
+  top: 2px;
+  right: 5px;
+  width: 1px;
+}
+.theme-light #search_bar_toggle.search_open .search_icon:before {
+  background: #ffffff;
+}
+.theme-dark #search_bar_toggle.search_open .search_icon:before {
+  background: #ffffff;
+}
+#search_bar_toggle.search_open .search_icon:after {
+  top: 2px;
+  left: 5px;
+  opacity: 1;
+  width: 1px;
+}
+.theme-light #search_bar_toggle.search_open .search_icon:after {
+  background: #ffffff;
+}
+.theme-dark #search_bar_toggle.search_open .search_icon:after {
+  background: #ffffff;
 }
 
 footer.site_footer {
@@ -2338,6 +2658,11 @@ body.hc-nav-open {
     margin: -1.5em 3em 0 3em;
   }
 }
+@media (min-width: 900px) {
+  .search_is_open #site_utility_nav.hidden {
+    opacity: 0.2;
+  }
+}
 #site_utility_nav ul {
   margin: 0;
   padding: 0;
@@ -2444,19 +2769,19 @@ body.hc-nav-open {
 .theme-dark .hc-offcanvas-nav {
   color: #ffffff;
 }
-.menu_is_open .hc-offcanvas-nav {
+.search_is_open .hc-offcanvas-nav, .menu_is_open .hc-offcanvas-nav {
   z-index: 9999;
   visibility: visible;
 }
-.menu_is_open .hc-offcanvas-nav:before, .menu_is_open .hc-offcanvas-nav:after {
+.search_is_open .hc-offcanvas-nav:before, .search_is_open .hc-offcanvas-nav:after, .menu_is_open .hc-offcanvas-nav:before, .menu_is_open .hc-offcanvas-nav:after {
   transition-delay: 0s;
   transform: translateX(0%) translateY(0%);
   border-radius: 0;
 }
-.menu_is_open .hc-offcanvas-nav:after {
+.search_is_open .hc-offcanvas-nav:after, .menu_is_open .hc-offcanvas-nav:after {
   transition-delay: 0.1s;
 }
-.menu_is_open .hc-offcanvas-nav:before {
+.search_is_open .hc-offcanvas-nav:before, .menu_is_open .hc-offcanvas-nav:before {
   transition-delay: 0s;
 }
 .hc-offcanvas-nav:before, .hc-offcanvas-nav:after {
@@ -3045,7 +3370,7 @@ iframe {
 input {
   font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
 }
-input[type=text], input[type=tel], input[type=number], input[type=password], input[type=url], input[type=email] {
+input[type=text], input[type=tel], input[type=number], input[type=password], input[type=url], input[type=email], input[type=search] {
   font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
   padding: 0.5em 0.75em;
   margin: 0.5em auto;
@@ -3055,36 +3380,44 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
   border-radius: 8px;
   transition: all 250ms ease-in-out;
 }
-.theme-light input[type=text], .theme-light input[type=tel], .theme-light input[type=number], .theme-light input[type=password], .theme-light input[type=url], .theme-light input[type=email] {
+.theme-light input[type=text], .theme-light input[type=tel], .theme-light input[type=number], .theme-light input[type=password], .theme-light input[type=url], .theme-light input[type=email], .theme-light input[type=search] {
+  color: #292929;
   border: 1px solid rgba(255, 255, 255, 0.95);
   background: rgba(255, 255, 255, 0.7);
   box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
 }
-.theme-dark input[type=text], .theme-dark input[type=tel], .theme-dark input[type=number], .theme-dark input[type=password], .theme-dark input[type=url], .theme-dark input[type=email] {
+.theme-dark input[type=text], .theme-dark input[type=tel], .theme-dark input[type=number], .theme-dark input[type=password], .theme-dark input[type=url], .theme-dark input[type=email], .theme-dark input[type=search] {
+  color: #ffffff;
   border: 1px solid rgba(54, 54, 54, 0.95);
   background: rgba(41, 41, 41, 0.7);
   box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
 }
-.theme-light input[type=text]:hover, .theme-light input[type=text]:target, .theme-light input[type=text]:active, .theme-light input[type=tel]:hover, .theme-light input[type=tel]:target, .theme-light input[type=tel]:active, .theme-light input[type=number]:hover, .theme-light input[type=number]:target, .theme-light input[type=number]:active, .theme-light input[type=password]:hover, .theme-light input[type=password]:target, .theme-light input[type=password]:active, .theme-light input[type=url]:hover, .theme-light input[type=url]:target, .theme-light input[type=url]:active, .theme-light input[type=email]:hover, .theme-light input[type=email]:target, .theme-light input[type=email]:active {
+.theme-light input[type=text]:hover, .theme-light input[type=text]:target, .theme-light input[type=text]:active, .theme-light input[type=tel]:hover, .theme-light input[type=tel]:target, .theme-light input[type=tel]:active, .theme-light input[type=number]:hover, .theme-light input[type=number]:target, .theme-light input[type=number]:active, .theme-light input[type=password]:hover, .theme-light input[type=password]:target, .theme-light input[type=password]:active, .theme-light input[type=url]:hover, .theme-light input[type=url]:target, .theme-light input[type=url]:active, .theme-light input[type=email]:hover, .theme-light input[type=email]:target, .theme-light input[type=email]:active, .theme-light input[type=search]:hover, .theme-light input[type=search]:target, .theme-light input[type=search]:active {
   border: 1px solid rgba(94, 58, 126, 0.95);
   background: white;
 }
-.theme-dark input[type=text]:hover, .theme-dark input[type=text]:target, .theme-dark input[type=text]:active, .theme-dark input[type=tel]:hover, .theme-dark input[type=tel]:target, .theme-dark input[type=tel]:active, .theme-dark input[type=number]:hover, .theme-dark input[type=number]:target, .theme-dark input[type=number]:active, .theme-dark input[type=password]:hover, .theme-dark input[type=password]:target, .theme-dark input[type=password]:active, .theme-dark input[type=url]:hover, .theme-dark input[type=url]:target, .theme-dark input[type=url]:active, .theme-dark input[type=email]:hover, .theme-dark input[type=email]:target, .theme-dark input[type=email]:active {
-  border: 1px solid rgba(166, 98, 226, 0.95);
+.theme-dark input[type=text]:hover, .theme-dark input[type=text]:target, .theme-dark input[type=text]:active, .theme-dark input[type=tel]:hover, .theme-dark input[type=tel]:target, .theme-dark input[type=tel]:active, .theme-dark input[type=number]:hover, .theme-dark input[type=number]:target, .theme-dark input[type=number]:active, .theme-dark input[type=password]:hover, .theme-dark input[type=password]:target, .theme-dark input[type=password]:active, .theme-dark input[type=url]:hover, .theme-dark input[type=url]:target, .theme-dark input[type=url]:active, .theme-dark input[type=email]:hover, .theme-dark input[type=email]:target, .theme-dark input[type=email]:active, .theme-dark input[type=search]:hover, .theme-dark input[type=search]:target, .theme-dark input[type=search]:active {
+  border: 1px solid rgba(94, 58, 126, 0.95);
   background: #292929;
 }
-.theme-light input[type=text]:focus, .theme-light input[type=text]:focus-visible, .theme-light input[type=tel]:focus, .theme-light input[type=tel]:focus-visible, .theme-light input[type=number]:focus, .theme-light input[type=number]:focus-visible, .theme-light input[type=password]:focus, .theme-light input[type=password]:focus-visible, .theme-light input[type=url]:focus, .theme-light input[type=url]:focus-visible, .theme-light input[type=email]:focus, .theme-light input[type=email]:focus-visible {
+.theme-light input[type=text]:focus, .theme-light input[type=text]:focus-visible, .theme-light input[type=tel]:focus, .theme-light input[type=tel]:focus-visible, .theme-light input[type=number]:focus, .theme-light input[type=number]:focus-visible, .theme-light input[type=password]:focus, .theme-light input[type=password]:focus-visible, .theme-light input[type=url]:focus, .theme-light input[type=url]:focus-visible, .theme-light input[type=email]:focus, .theme-light input[type=email]:focus-visible, .theme-light input[type=search]:focus, .theme-light input[type=search]:focus-visible {
   outline: 3px solid #5e3a7e;
   box-shadow: rgba(0, 0, 0, 0.15) 0 0 15px, rgba(0, 0, 0, 0.08) 0 -2px 6px, rgba(0, 0, 0, 0.18) 0px 3px 8px, rgba(0, 0, 0, 0.17) 0px 7px 15px, rgba(0, 0, 0, 0.59) 0 1px 1px;
 }
-.theme-dark input[type=text]:focus, .theme-dark input[type=text]:focus-visible, .theme-dark input[type=tel]:focus, .theme-dark input[type=tel]:focus-visible, .theme-dark input[type=number]:focus, .theme-dark input[type=number]:focus-visible, .theme-dark input[type=password]:focus, .theme-dark input[type=password]:focus-visible, .theme-dark input[type=url]:focus, .theme-dark input[type=url]:focus-visible, .theme-dark input[type=email]:focus, .theme-dark input[type=email]:focus-visible {
-  outline: 3px solid #a662e2;
+.theme-dark input[type=text]:focus, .theme-dark input[type=text]:focus-visible, .theme-dark input[type=tel]:focus, .theme-dark input[type=tel]:focus-visible, .theme-dark input[type=number]:focus, .theme-dark input[type=number]:focus-visible, .theme-dark input[type=password]:focus, .theme-dark input[type=password]:focus-visible, .theme-dark input[type=url]:focus, .theme-dark input[type=url]:focus-visible, .theme-dark input[type=email]:focus, .theme-dark input[type=email]:focus-visible, .theme-dark input[type=search]:focus, .theme-dark input[type=search]:focus-visible {
+  outline: 3px solid #5e3a7e;
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 15px, rgba(0, 0, 0, 0.18) 0 -2px 6px, rgba(0, 0, 0, 0.28) 0px 3px 8px, rgba(0, 0, 0, 0.19) 0px 7px 15px, rgba(0, 0, 0, 0.62) 0 1px 1px;
 }
 
 label {
   display: block;
   font-weight: 300;
+}
+.theme-light label {
+  color: #292929;
+}
+.theme-dark label {
+  color: #ffffff;
 }
 
 button {

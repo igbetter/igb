@@ -106,5 +106,4 @@ endif;
 		endif;
 		?>
 
-	</div>
 </section>

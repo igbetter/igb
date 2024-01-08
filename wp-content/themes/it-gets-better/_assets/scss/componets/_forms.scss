@@ -7,7 +7,8 @@ input {
 	&[type="number"],
 	&[type="password"],
 	&[type="url"],
-	&[type="email"] {
+	&[type="email"],
+	&[type="search"] {
 		font-size: $font-size-md;
 		padding: 0.5em 0.75em;
 		margin: 0.5em auto;
@@ -18,23 +19,24 @@ input {
 		transition: all 250ms ease-in-out;
 
 		@include themify($themes) {
+			color: themed( 'inputTextColor' );
 			border: 1px solid rgba( lighten( themed('backgroundColor'), 5 ), 0.95 );
-			background: rgba( themed('backgroundColor'), 0.7 );
+			background: rgba( themed('inputBGColor'), 0.7 );
 			box-shadow: themed( 'insetShadow' );
 		}
 		&:hover,
 		&:target,
 		&:active {
 			@include themify($themes) {
-				border: 1px solid rgba(  themed('accentPurple'), 0.95 );
-				background: rgba( themed('backgroundColor'), 1 );
+				border: 1px solid rgba(  themed('inputBorderColor'), 0.95 );
+				background: rgba( themed('inputBGColor'), 1 );
 			}
 		}
 		&:focus,
 		&:focus-visible {
 
 			@include themify($themes) {
-				outline: 3px solid themed('accentPurple');
+				outline: 3px solid themed('inputBorderColor');
 				box-shadow: themed( 'activeShadow' );
 			}
 		}
@@ -44,6 +46,10 @@ input {
 label {
 	display: block;
 	font-weight: 300;
+
+	@include themify($themes) {
+		color: themed( 'labelTextColor' );
+	}
 }
 
 button {
