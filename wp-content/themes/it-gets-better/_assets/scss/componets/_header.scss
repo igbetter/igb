@@ -264,6 +264,11 @@ label.dark-toggle {
 
 // =============================================	4. main nav toggle button
 
+// grouping search icon and menu button
+.header_button_group {
+	display: flex;
+}
+
 #menu_toggle_button {
 	width: 55px;
 	height: 55px;
