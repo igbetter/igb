@@ -1770,12 +1770,16 @@ a:visited article.single_term main p {
   .theme-dark #main.browse_content_page .browse_content_main .filter_column {
     background: #292929;
   }
+  #main.browse_content_page .browse_content_main .filter_column .mobile_filter_sticky_container {
+    position: relative;
+  }
   #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button {
     display: block;
-    position: fixed;
-    bottom: 20%;
-    left: 0px;
+    position: sticky;
+    bottom: 10%;
+    left: 0;
     width: 7ch;
+    margin-right: -7ch;
     text-wrap: balance;
     padding: 0.25em 0 0.25em 0.25em;
     border-radius: 0 4px 4px 0;
