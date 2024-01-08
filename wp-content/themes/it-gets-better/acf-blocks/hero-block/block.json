@@ -1,15 +1,18 @@
 {
-    "name": "igb/hero",
-    "title": "Hero",
-    "description": "Hero block for the page header",
-    "style": [ "file:./hero.css" ],
-    "category": "igb",
-    "keywords": ["hero", "header", "igb"],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "hero.php"
-    },
-    "supports": {
-        "anchor": true
-    }
+	"name": "igb/hero",
+	"title": "Hero",
+	"description": "Hero block for the page header",
+	"style": [ "file:./hero.css" ],
+	"category": "igb",
+	"keywords": ["hero", "header", "igb"],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "hero.php"
+	},
+	"supports": {
+		"anchor": true,
+		"multiple": false,
+		"align_content": "matrix",
+		"align": [ "full" ]
+	}
 }

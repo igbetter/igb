@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Helper Functions which enhance the theme by hooking into WordPress
  *
  * @package It_Gets_Better
  */
@@ -14,17 +14,20 @@ function it_gets_better_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'it_gets_better_pingback_header' );
+
+
 /**
- * change search URL (browse-content)
+ * add page slug to body class names
  */
 
-function wp_change_search_url() {
-	if ( is_search() && ! empty( $_GET['s'] ) ) {
-			wp_redirect( home_url( "/browse-content?term=" ) . urlencode( get_query_var( 's' ) ) );
-			exit();
+function igb_add_page_slug_to_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
+	return $classes;
 }
-add_action( 'template_redirect', 'wp_change_search_url' );
+add_filter( 'body_class', 'igb_add_page_slug_to_body_class' );
 
 /**
  * Changes comment form default fields.
@@ -215,10 +218,10 @@ function it_gets_better_html5_comment( $comment, $args, $depth ) {
 function it_gets_better_query_glossary_by_term_category_slug($term) {
 	return array(
 		'post_type' => 'glossary',
-    'status'    => 'published',
+		'status'    => 'published',
 		'posts_per_page' => -1,
 		'orderby' => 'title',
-		'order' => 'asc',
+		'order' => 'ASC',
 		'tax_query' => array(
 			array (
 				'taxonomy' => 'term-category',
@@ -228,3 +231,391 @@ function it_gets_better_query_glossary_by_term_category_slug($term) {
 		),
 	);
 }
+
+
+// reordering playlist view & glossary
+
+add_filter( 'pre_get_posts', function() {
+
+	global $wp_query;
+
+	$post_type = get_post_type();
+
+	if ( $wp_query->is_tax( 'playlist' ) ) {
+		$wp_query->set( 'order', 'ASC' );
+	};
+
+	if ( $post_type == 'glossary' ) {
+		$wp_query->set( 'orderby', 'title' );
+		$wp_query->set( 'order', 'ASC' );
+	};
+
+});
+
+
+// ---------------------------------site options ---------
+
+/**
+ * Set the post excerpt length to the number of words set on the Site Options
+ * page (if any).
+ */
+function igb_options_excerpt_length( $length ) {
+	if ( 'words' === get_field( 'excerpt_length_unit', 'option' ) ) {
+		if ( $custom_length = get_field( 'excerpt_length', 'option' ) ) {
+			$length = (int) $custom_length;
+		}
+	}
+	return $length;
+}
+add_filter( 'excerpt_length', 'igb_options_excerpt_length' );
+
+
+/**
+ * Re-trim post excerpts to a specific number of *characters*, instead of
+ * words, if we've been asked to do so.
+ */
+function igb_options_trim_excerpt_characters( $trimmed, $raw_excerpt ) {
+
+	// Per wp_trim_excerpt() behavior, if there *is* a raw excerpt, return it.
+	if ( '' !== $raw_excerpt ) {
+		return $raw_excerpt;
+	}
+
+	// If we're supposed to be trimming by words and not characters, bail.
+	if ( 'chars' !== get_field( 'excerpt_length_unit', 'option' ) ) {
+		return $trimmed;
+	}
+
+	// Get the number of characters to trim to.
+	$excerpt_length = (int) get_field( 'excerpt_length', 'option' );
+
+	// If we haven't been told how many characters to trim to, bail.
+	if ( ! $excerpt_length ) {
+		return $trimmed;
+	}
+
+	// Apply filters/etc from wp_trim_excerpt().
+	$text = get_the_content( '' );
+	$text = strip_shortcodes( $text );
+	$text = apply_filters( 'the_content', $text );
+	$text = str_replace( ']]>', ']]&gt;', $text );
+
+	// Strip tags and condense whitespace like wp_trim_words().
+	$text = wp_strip_all_tags( $text );
+	$text = preg_replace( '/[\n\r\t ]+/', ' ', $text );
+
+	// Trim the excerpt to the number of characters given.
+	$trimmed_hard = substr( $text, 0, $excerpt_length );
+
+	// Get the "more" text/link to append to the excerpt.
+	$excerpt_more = apply_filters( 'excerpt_more', ' [&hellip;]', 'start' );
+
+	// NOTE: We're trimming by words in an effort to keep all words whole. If you
+	// don't care about your excerpts looking "like thi", you can skip the below
+	// and just `return $trimmed_hard . $excerpt_more;`.
+	// Get the number of words this corresponds to.
+	$word_count = str_word_count( $trimmed_hard );
+	// Decrement by one, since the chances are very good that $trimmed_hard ends
+	// in the middle of a word.
+	$word_count -= 1;
+	// TrimSpa, baby!
+	$trimmed_soft = wp_trim_words( $text, $word_count, $excerpt_more );
+
+	return $trimmed_soft;
+}
+add_filter( 'wp_trim_excerpt', 'igb_options_trim_excerpt_characters', 10, 2 );
+
+
+//-----------------------------------------------------------------------------
+// "Text" tab
+//-----------------------------------------------------------------------------
+
+/**
+ * Return the footer text as specified on the Site Options page.
+ */
+function igb_options_get_footer_text() {
+	$footer_text = get_field( 'site_footer_text', 'option' );
+
+	// Replace [year] with the year.
+	$footer_text = str_replace( '[year]', date( 'Y' ), $footer_text );
+	return $footer_text;
+}
+
+/**
+ * Output the copyright text as specified on the Site Options page.
+ */
+function igb_options_footer_text() {
+	$footer_text = get_field( 'site_footer_text', 'option' );
+	if ( $footer_text = '' ) {
+		return;
+	}
+	// Escape output (allowing basic markp) & prettify dashes, apostrophes, etc.
+	echo wp_kses_post( wptexturize( igb_options_get_footer_text() ) );
+}
+
+/**
+ * Return the contact info text as specified on the Site Options page.
+ */
+function igb_options_get_contact_info() {
+	return get_field( 'contact_info', 'option' );
+}
+
+/**
+ * Output the contact info as specified on the Site Options page.
+ */
+function igb_options_contact_info() {
+	// Escape output (ACF takes care of wptexturize-ation, shortcodes, etc).
+	echo wp_kses_post( igb_options_get_contact_info() );
+}
+
+
+//-----------------------------------------------------------------------------
+// "URLs" tab
+//-----------------------------------------------------------------------------
+
+/**
+ * Return an array of social links.
+ *
+ * @param array $services An array of service names ('facebook', 'twitter', etc.)
+ *                      to return links for, if links have been set in the Site
+ *                      Options page. Omit or leave empty to return all links
+ *                      provided.
+ * @return array An array of arrays, each second-dimension array containing the
+ *               keys 'service', 'handle', and 'url'. Note that 'service' and
+ *               'handle' may be empty.
+ */
+function igb_options_get_social_links( $services = false ) {
+
+
+	// We'll collect the links in this variable.
+	$links = array();
+
+	// Iterate over 'social_media_urls' rows...
+	while ( have_rows( 'igb_social_media_links', 'option' ) ) {
+		the_row();
+
+		// Get all sub-fields.
+		$link = array(
+			'url'   => get_sub_field( 'link' ),
+			'icon' => get_sub_field( 'icon' ),
+		);
+
+
+		$links[] = $link;
+	}
+
+	return $links;
+}
+
+/**
+ * Output the social links as a nice UL with some helpful classing.
+ *
+ * @param string $class_prefix (default: 'icon-') prefix for html class generated by service name and applied to li elements
+ * @param string $link_target (default: '_blank') html target attribute value for anchors on social links
+ * @param string $ul_class (default: 'menu menu-social-links') css classes applied to enclosing ul
+ * @param string $ul_id (default: '') html id attribute applied to encolding ul
+ * @return void
+ */
+function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_blank', $ul_class = 'menu menu-social-links', $ul_id = '', $svg_icons = false ) {
+
+	$social_links = igb_options_get_social_links();
+	$ul_id_html = '';
+
+	if ( count( $social_links ) ) {
+
+		// Give the UL an ID if specified
+		if ( ! empty( $ul_id ) ) {
+			$ul_id_html = 'id="' . sanitize_html_class( $ul_id ) . '"';
+		}
+
+		// Variable $classes can be a string or an array. Make it an array and sanitize it.
+		$classes = ( ! is_array( $ul_class ) ) ? explode( ' ', $ul_class ) : $ul_class ;
+		$classes = array_map( 'sanitize_html_class', $classes );
+
+		// Output the UL element
+		echo '<ul class="' . implode( ' ', apply_filters( 'igb_options_social_links_ul_classes', $classes ) ) . '" ' . $ul_id_html . ">";
+
+		// Loop through social links and output them
+		foreach ( $social_links as $link ) {
+			$li_class = sanitize_html_class( $class_prefix . ( ! empty( $link['icon'] ) ? $link['icon'] : 'unknown' ) );
+			$li_class = apply_filters( 'igb_options_social_links_li_class', $li_class );
+			echo "<li class='$li_class'><a href='" . esc_url( $link['url'] ) . "' target='" . esc_attr( $link_target ) . "'>";
+
+			if( $svg_icons == true ) :
+				echo "<svg class='icon-" . esc_html( $link['icon'] ) . "-dims icon'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#" . esc_html( $link['icon'] ) . "'></use><text class='sr-only'>" . $link['icon'] . "</text></svg>";
+			endif;
+			echo "</a></li>";
+		}
+
+		// We're done, close the UL
+		echo "</ul>";
+
+	}
+}
+
+/**
+ *
+ * helpful little video embed code that checks to see if the video is uploaded to the site,
+ * or if it is a youtube link, then displays it in the video template.
+ *
+ * @param int $video_ID -- the ID of the video post
+ * @param string $file_upload_key -- the key used in ACF for an uploaded file. default: `upload_file`
+ * @param string $youtube_link_key -- the key used in ACF for the youtube link option. default: `youtube_link`
+ * @param bool $is_video_hosted_here -- ACF key for the true/false video location field
+ *
+ */
+function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
+	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
+	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
+		// self hosted video
+		$video_embed = get_field( $file_upload_key, $video_ID );
+
+		$output = sprintf(
+			'<div class="video_container">
+			<video poster="%s" controls>
+				<source src="%s" type="%s"/>
+			</video>',
+			esc_url( get_the_post_thumbnail_url( $video_ID,'full') ),
+			esc_url( $video_embed['url'] ),
+			esc_attr( $video_embed['mime_type'])
+		);
+	else :
+		// youtube video
+		$video_url = get_field( $youtube_link_key, $video_ID, false);
+		$videoargs = array(
+				'width'		=> '700',
+			);
+			$youtube_embed = wp_oembed_get( esc_url( $video_url ), $videoargs );
+			$output = '<div class="video_container">' . $youtube_embed . '';
+
+	endif;
+	// now add any glossary terms, if there are any.
+	$output .= igb_display_related_glossary_term_tags( $video_ID, 'video' );
+
+	$output .= '</div>'; // end the video_container div
+
+	return $output;
+}
+
+/**
+ * helper function to display the related glossary term tags, with a few params:
+ *
+ * @param int $post_ID -- the id of the current post
+ * @param string $post_type -- the post type must equal the begining the ACF fields, eg: `blog_post`_related_glossary_terms
+ * @param bool $smaller -- true/false for display style: false = default style / true = smaller style
+ *
+ */
+function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = 'video', $smaller = false ) {
+	$related_term_key = $post_type . '_related_glossary_terms';
+	$related_glossary_terms = get_field( $related_term_key, $post_ID );
+	$output = '';
+
+	if( $related_glossary_terms ) :
+		$smaller_class = '';
+		if( $smaller === true ) {
+			$smaller_class = 'smaller';
+		}
+		$output .= '<aside class="related_terms term_pill_list_container ' . $smaller_class . '"><ul class="nav_pills">';
+		$count = count( $related_glossary_terms );
+		$i = 0;
+		$smaller_max = 5;
+
+		foreach( $related_glossary_terms as $related_glossary_term ) :
+			$the_term_id = $related_glossary_term->ID;
+			$the_term_name = $related_glossary_term->post_title;
+
+			if( ( $smaller === true ) && ( ++$i >= $smaller_max ) ) {
+				// mini "smaller" loop
+				if( $i == $smaller_max ) {
+					$output .= '<li class="full_term_list"><a href="#" class="more_term_dropdown_trigger secondary_button"><span>MORE</span></a><ul class="more_terms_dropdown"><li class="more_terms">';
+				}
+				$output .= sprintf(
+					'
+					<a href="%s">%s</a>
+					',
+					get_the_permalink( $the_term_id ),
+					esc_html( $the_term_name )
+				);
+				if( $i == $count ) {
+					$output .= '</li></ul></li>';
+				}
+			} else {
+				$output .= sprintf(
+					'
+					<li><a href="%s" class="secondary_button"><span>%s</span></a></li>
+					',
+					get_the_permalink( $the_term_id ),
+					esc_html( $the_term_name )
+				);
+			}
+		endforeach;
+		$output .= '</ul></aside>';
+	endif;
+	return $output;
+}
+
+/**
+ * helper function to display the glossary term category, with some display options
+ *
+ * @param int $post_ID -- the id of the term
+ * @param bool $display_general_category -- true/false to show or hide the "general" category term. default is false (do not show)
+ * @param string $display_style -- two options for display: `subscript` displays abbreviation with hover def. in a <sub> tag; `full` displays the entire word
+ *
+ */
+
+function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general_category = false, $display_style = 'subscript' ) {
+	$general_term_category = get_term_by( 'name', 'general', 'term-category');
+	$general_term_category_ID = $general_term_category->term_id; // so we can exclude the "general" category in the arrays below if needed
+
+	$glossary_term_categories = get_the_terms( $post_ID, 'term-category');
+	$output = '';
+
+	if( $glossary_term_categories ) :
+		// if this has term categories set, start an array to store the term_ids
+		$term_categories_ID_array = [];
+		foreach( $glossary_term_categories as $glossary_term_category ) :
+			$term_categories_ID_array[] = $glossary_term_category->term_id;
+		endforeach;
+
+		if( $display_general_category === false ) :
+			$term_categories_ID_array = array_diff($term_categories_ID_array, array( $general_term_category_ID ) );
+		endif;
+
+		if( $display_style === 'subscript' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<sub class="term_category">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '(<dfn class="term_category_def" title="' . esc_html( $term_name ) . '">' . get_field( 'sub_headline_abbreviation', $acftermid ) . '</dfn>)';
+				endforeach;
+				$output .= '</sub>';
+			};
+		elseif( $display_style === 'full' ) :
+			if( $term_categories_ID_array ) {
+				$output .= '<ul class="term_category_list">';
+				foreach ( $term_categories_ID_array as $single_term_cat ) :
+					$acftermid = 'term-category_' . $single_term_cat;
+					$term_name = get_term( $single_term_cat, 'term-category' );
+					$term_name = $term_name->name;
+					$output .= '<li>(' . esc_html( $term_name ) . ')</li>';
+				endforeach;
+				$output .= '</ul>';
+			}
+		endif;
+
+	endif;
+
+	return $output;
+}
+
+/**
+ *
+ * helper function to query and display other stuff in the template
+ *
+ * options as follows
+ *
+ *
+ *
+ */

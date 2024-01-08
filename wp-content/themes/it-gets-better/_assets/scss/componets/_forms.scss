@@ -1,0 +1,127 @@
+
+input {
+	font-size: $font-size-md;
+
+	&[type="text"],
+	&[type="tel"],
+	&[type="number"],
+	&[type="password"],
+	&[type="url"],
+	&[type="email"],
+	&[type="search"] {
+		font-size: $font-size-md;
+		padding: 0.5em 0.75em;
+		margin: 0.5em auto;
+		line-height: 1.1;
+		font-weight: 300;
+		font-family: $poppins;
+		border-radius: 8px;
+		transition: all 250ms ease-in-out;
+
+		@include themify($themes) {
+			color: themed( 'inputTextColor' );
+			border: 1px solid rgba( lighten( themed('backgroundColor'), 5 ), 0.95 );
+			background: rgba( themed('inputBGColor'), 0.7 );
+			box-shadow: themed( 'insetShadow' );
+		}
+		&:hover,
+		&:target,
+		&:active {
+			@include themify($themes) {
+				border: 1px solid rgba(  themed('inputBorderColor'), 0.95 );
+				background: rgba( themed('inputBGColor'), 1 );
+			}
+		}
+		&:focus,
+		&:focus-visible {
+
+			@include themify($themes) {
+				outline: 3px solid themed('inputBorderColor');
+				box-shadow: themed( 'activeShadow' );
+			}
+		}
+	}
+}
+
+label {
+	display: block;
+	font-weight: 300;
+
+	@include themify($themes) {
+		color: themed( 'labelTextColor' );
+	}
+}
+
+button {
+	display: inline-block;
+	border: none;
+	position: relative;
+	padding: 0.8em 2em;
+	margin-left: .5em;
+	z-index: 9;
+	border-radius: 3px;
+	transition: all 250ms ease-in-out;
+
+	@include themify($themes) {
+		color: themed('primaryButtonTextColor');
+		background-color: themed('primaryButtonBGColor');
+		border: themed('primaryButtonBorder');
+		box-shadow: themed( 'subtleShadow' );
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			color: themed('primaryButtonTextHoverColor');
+			background-color: themed('primaryButtonBGHoverColor');
+			border: themed('primaryButtonHoverBorder');
+			box-shadow: themed( 'normalShadow' );
+		}
+	}
+}
+#main .frm_forms {
+	fieldset {
+		max-width: 90%;
+		margin: 2em auto 5em auto;
+		padding: 3em;
+
+		@include themify($themes) {
+			border: 1px solid rgba( themed('textColor'), 0.5 );
+			background: darken( themed('backgroundColor'), 3 );
+			background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
+			box-shadow: themed( 'subtleShadow');
+		}
+
+		legend {
+			padding: 0.5em 1em;
+			font-weight: 600;
+			font-size: $font-size-md;
+			border-radius: 10px;
+
+			@include themify($themes) {
+				background: themed('backgroundColor');
+			}
+		}
+	}
+
+	.frm_form_fields {
+		input {
+			display: inline-block;
+
+			&[type="text"],
+			&[type="tel"],
+			&[type="number"],
+			&[type="password"],
+			&[type="url"],
+			&[type="email"] {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.frm_form_field {
+			margin-bottom: 1.5em;
+		}
+	}
+
+}

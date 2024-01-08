@@ -1,0 +1,44 @@
+img {
+	max-width: 100% !important;
+	max-height: 90vh;
+}
+video,
+iframe {
+	max-width: 100% !important;
+	max-height: 90vh;
+
+	margin: 1em auto;
+	padding: 6px;
+
+	@include themify($themes) {
+		border: 1px solid rgba( themed('textColor'), 0.5 );
+		background: themed('backgroundColor');
+		box-shadow: themed( 'subtleShadow');
+	}
+}
+
+.single_video_page {
+	padding-bottom: 5em;
+
+	.video_container {
+		margin: 0 auto;
+		text-align: center;
+
+	}
+	video,
+	iframe {
+		width: 90vw;
+		height: calc( 90vw * 0.62 );
+
+	}
+
+	.video_title{
+		max-width: $max_body_text_width_half;
+		margin: 1em auto;
+		padding: 0 1em;
+	}
+}
+
+.wp-block-embed__wrapper {
+	margin-bottom: 4em;
+}

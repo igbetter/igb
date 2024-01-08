@@ -1,5 +1,4 @@
 body.home {
-	//position: relative;
 
 	#content {
 		position: relative;
@@ -18,4 +17,34 @@ body.home {
 			margin: 0.5em auto 1em auto;
 		}
 	}
+}
+
+.program_boxes {
+	align-items: stretch;
+	max-width: 99vw;
+}
+
+section.program_box {
+	padding: 3.8em 4em;
+	margin: 2em;
+	clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+	transition: all 150ms ease-in-out;
+
+	@include tablet-down {
+		padding: 3em;
+		margin: 0.5em 1em;
+	}
+}
+
+section.program_box h2.wp-block-heading span {
+	color: #5e3a7e;
+}
+
+section.program_box a.secondary_button {
+	display: inline-block;
+	margin: 1em auto 0 auto;
+}
+
+.program_boxes > section.program_box {
+	flex: 1;
 }

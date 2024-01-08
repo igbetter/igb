@@ -2,14 +2,18 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const terser = require('gulp-terser');
-const concat = require( 'gulp-concat' );
-const rename = require( 'gulp-rename' );
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+//const path = require('path');
+//const glob = require('glob');
+//const filenames = require("gulp-filenames");
 const svgSprite = require('gulp-svg-sprite');
 const browsersync = require('browser-sync').create();
 
 // File paths
 const files = {
 	scssPath: '_assets/scss/**/*.scss',
+//	blockStylesPath: ['_assets/scss/blocks/*.scss', '!_assets/scss/blocks/_blocks.scss'],
 	jsPath: '_assets/js/src_scripts/*.js',
 	imgPath: '_assets/images/**/*.{png,jpg,gif,svg,webp}',
 	svgPath: '_assets/svg/originals/*.svg',
@@ -17,13 +21,12 @@ const files = {
 	nestedPhpPath: '**/*.php',
 };
 
+// var blocks = glob.sync(files.blockStylesPath);
+
 // Sass task: compiles the style.scss file into style.css
 function stylesTask() {
 	return src(files.scssPath) // set source and turn on sourcemaps
-	//	.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
-	//	.pipe(sourcemaps.write())
-	//	.pipe(rename('igb-styles.css'))
 		.pipe(dest('_assets/css'));
 }
 
@@ -55,6 +58,7 @@ function svgsTask(){
 				example: true, // Build a sample page, please!
 				svg:{
 					xmlDeclaration: false,
+					namespaceClassnames: false,
 				}
 			}
 		}

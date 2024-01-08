@@ -41,6 +41,11 @@ body {
 			stroke-dashoffset: 480;
 			opacity: 0;
 		}
+
+		nav#site_main_navigation {
+			position: fixed;
+			opacity: 0;
+		}
 	}
 
 	&:not(.preload) {
@@ -75,66 +80,251 @@ body {
 	position: absolute;
 	height: 0;
 	overflow: hidden;
-}
-
-.flex-row {
-	display: flex;
+	opacity: 0;
 }
 
 .background-IGB_Purple {
 	@include themify($themes) {
-		background: themed('accentPurple');
+		background-color: themed('accentPurple');
+		color: themed( 'accentTextColor' );
+	}
+
+}
+
+.overlay-IGB_Purple {
+	@include themify($themes) {
+		background: rgba( themed('accentPurple'), 0.5 );
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentPurple'), 0.75);
+		}
 	}
 }
+
 .background-IGB_Pink {
 	@include themify($themes) {
-		background: themed('accentPink');
+		background-color: themed('accentPink');
+		color: themed('accentTextColor');
 	}
 }
+
+.overlay-IGB_Pink {
+	@include themify($themes) {
+		background-color: rgba(themed('accentPink'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPink'), 0.75);
+		}
+	}
+}
+
 .background-IGB_Blue {
 	@include themify($themes) {
-		background: themed('accentBlue');
+		background-color: themed('accentBlue');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Blue {
+	@include themify($themes) {
+		background-color: rgba(themed('accentBlue'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentBlue'), 0.75);
+		}
 	}
 }
+
 .background-IGB_Yellow {
 	@include themify($themes) {
 		background: themed('accentYellow');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Yellow {
+	@include themify($themes) {
+		background-color: rgba(themed('accentYellow'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentYellow'), 0.75);
+		}
 	}
 }
 
 .background-IGB_Dark {
 	@include themify($themes) {
-		background: themed('accentGrey');
+		background-color: themed('accentGrey');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Dark {
+	@include themify($themes) {
+		background-color: rgba(themed('accentGrey'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentGrey'), 0.75);
+		}
 	}
 }
 
 .background-subtle_grey {
 	@include themify($themes) {
-		background: themed('subtleGreyBG');
+		background-color: themed('subtleGreyBG');
 	}
 }
 
 .background-subtle_purple {
 	@include themify($themes) {
-		background: themed('subtlePurpleBG');
+		background-color: themed('subtlePurpleBG');
 	}
 }
 
 .background-subtle_pink {
 	@include themify($themes) {
-		background: themed('subtlePinkBG');
+		background-color: themed('subtlePinkBG');
 	}
 }
 
 .background-subtle_blue {
 	@include themify($themes) {
-		background: themed('subtleBlueBG');
+		background-color: themed('subtleBlueBG');
 	}
 }
 
 .background-subtle_yellow {
 	@include themify($themes) {
-		background: themed('subtleYellowBG');
+		background-color: themed('subtleYellowBG');
+	}
+}
+
+.underline-,
+.underline-IGB_Purple {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPurple' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPurple' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPurple' );
+					background: themed('subtlePurpleBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Pink {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPink' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPink' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPink' );
+					background: themed('subtlePinkBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Blue {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentBlue' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentBlue' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentBlue' );
+					background: themed('subtleBlueBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Yellow {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentYellow' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentYellow' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentYellow' );
+					background: themed('subtleYellowBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Dark {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentGrey' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentGrey' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentGrey' );
+					background: themed('subtleGreyBG');
+				}
+			}
+		}
 	}
 }
 
@@ -158,52 +348,101 @@ a:visited {
 		}
 	}
 }
+input[type="submit"],
+.wp-element-button,
+.wp-block-button__link,
+a.primary_button,
+a.primary_button:visited {
+	display: inline-block;
+	border-radius: 3px;
+	position: relative;
+	padding: 0.8em 2em;
+	background-color: transparent;
+	margin-left: .5em;
+	z-index: 9;
+	text-decoration: none;
 
-#main {
-	.wp-element-button,
-	.wp-block-button__link,
-	.primary_button {
-		display: inline-block;
+	@include themify($themes) {
+		color: themed('primaryButtonTextColor');
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		transform: skew(-18deg);
+		-webkit-backface-visibility: hidden;
 		border-radius: 3px;
-		position: relative;
-		padding: 0.8em 2em;
-		background-color: transparent;
-		margin-left: .5em;
+		z-index: -1;
 
 		@include themify($themes) {
-			color: themed('primaryButtonTextColor');
+			background-color: themed('primaryButtonBGColor');
+			border: themed('primaryButtonBorder');
+			box-shadow: themed( 'subtleShadow' );
 		}
+	}
 
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			color: themed('primaryButtonTextHoverColor');
+		}
 		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			transform: skew(-18deg);
-			-webkit-backface-visibility: hidden;
-			z-index: -1;
-			border-radius: 3px;
-
 			@include themify($themes) {
-					background-color: themed('primaryButtonBGColor');
-					border: themed('primaryButtonBorder')
-				}
+				background-color: themed('primaryButtonBGHoverColor');
+				border: themed('primaryButtonHoverBorder');
+				box-shadow: themed( 'normalShadow' );
+
+			}
 		}
+	}
+}
 
-		&:hover,
-		&:focus {
-			@include themify($themes) {
-				color: themed('primaryButtonTextHoverColor');
-			}
-			&:after {
-				@include themify($themes) {
-					background-color: themed('primaryButtonBGHoverColor');
+.secondary_button,
+a.secondary_button,
+a.secondary_button:visited,
+.fake_secondary_button {
 
-				}
-			}
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: themed('secondaryButtonBGColor');
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
+		}
+	}
+}
+
+.subtle_overlay_button,
+a.subtle_overlay_button,
+a.subtle_overlay_button:visited {
+	font-weight: 300;
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: rgba( themed('backgroundColor'), 0.7 );
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
 		}
 	}
 }
@@ -220,6 +459,10 @@ a:visited {
 		top: 70px;
 	}
 
+	@include phone-landscape {
+		top: 33vh;
+	}
+
 	a,
 	a:visited {
 		display: inline-block;
@@ -228,7 +471,7 @@ a:visited {
 
 		@include themify($themes) {
 			background: themed('accentButtonBGColor');
-				color: themed('accentButtonTextColor');
+			color: themed('accentButtonTextColor');
 		}
 
 		&:hover,
@@ -247,12 +490,21 @@ a:visited {
 		}
 	}
 }
+svg.file_icon {
+	height: 1.5em;
+	width: 1.5em;
+	margin: -.5em -1em -.5em 1em;
+}
 
 
 // =============================================	3. base body text & headings
-p {
+p, blockquote {
 	max-width: $max_body_text_width;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+
 
 h1 {
 	font-size: $font_size_xxxl;
@@ -260,6 +512,12 @@ h1 {
 	font-weight: 600;
 	margin-top: 0;
 	margin-bottom: 0;
+
+	> span {
+		@include themify($themes) {
+			color: themed( 'accentButtonBGColor' );
+		}
+	}
 }
 h2 {
 	font-size: $font_size_xxl;
@@ -303,7 +561,6 @@ h6 {
 use {
 	padding: 0;
 	width: 100%;
-	border: 2px solid #0f0;
 	display: block;
 }
 
@@ -381,6 +638,5 @@ use {
 		object-fit: cover;
 
 	}
-
 
 }

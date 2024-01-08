@@ -29,7 +29,7 @@
 		<div class="flex-row">
 			<div id="IGB_MAIN_LOGO">
 				<a href="<?php echo home_url(); ?>">
-				<svg version="1.1" id="IT_GETS_BETTER--logo" xmlns="http://www.w3.org/2000/svg" class="main_IGB_logo" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.3 165.2" style="enable-background:new 0 0 352.3 165.2;" xml:space="preserve">
+				<svg version="1.1" id="IT_GETS_BETTER--logo" xmlns="http://www.w3.org/2000/svg" class="main_IGB_logo IGB_LOGO" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.3 165.2" style="enable-background:new 0 0 352.3 165.2;" xml:space="preserve">
 					<g>
 						<rect x="0.6" y="1.5" class="logo_purple" width="17.2" height="74.2"></rect>
 						<polygon class="logo_purple" points="62.3,17.3 76.7,17.3 84.6,2.6 84.6,1.5 22.8,1.5 22.8,17.3 45.1,17.3 45.1,75.7 45.4,75.7 62.3,44.1"></polygon>
@@ -81,26 +81,29 @@
 					<div class="dark-toggle__switch" tabindex="0"></div>
 					<span> Dark </span>
 				</label>
-				<button id="menu_toggle_button" class="menu">
-					<svg
-						x="0" y="0" viewBox="0 0 40 40">
-						<path class="menu_line top_line"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="m 15 10
-								l 20 0"/>
-						<path class="menu_line middle_line"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="m 10 20
-								l 25 0"/>
-						<path class="menu_line bottom_line"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="m 5 30
-								l 30 0"/>
-					</svg>
-				</button>
+				<div class="header_button_group">
+					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
+					<button id="menu_toggle_button" class="menu">
+						<svg
+							x="0" y="0" viewBox="0 0 40 40">
+							<path class="menu_line top_line"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m 15 10
+									l 20 0"/>
+							<path class="menu_line middle_line"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m 10 20
+									l 25 0"/>
+							<path class="menu_line bottom_line"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m 5 30
+									l 30 0"/>
+						</svg>
+					</button>
+				</div>
 			</div>
 
 		</div>
@@ -134,8 +137,29 @@
 			wp_nav_menu( $megaNavMainProps );
 			?>
 		</nav>
+		<nav id="programs_nav">
+			<div class="program_box global">
+				<a href="/global/">
+					<object>
+						<h3>It Gets Better <span>Global</span></h3>
+						<p>It Gets Better works alongside affiliates and partners across the globe to spread positive stories and support LGBTQ+ youth everywhere. We not only provide grants and guidance to ensure affiliate organizations can continue this important work, but also host gatherings for LGBTQ+ activists, nonprofits and public figures to advance global LGBTQ+ advocacy.</p>
+					</object>
+				</a>
+			</div>
+			<div class="program_box edu">
+				<a href="/education/">
+					<object>
+						<h3>It Gets Better <span>EDU</span></h3>
+						<p>It Gets Better EDU programming reaches tens of thousands of LGBTQ+ middle and high school students every year. This includes a robust grantmaking program to make schools more LGBTQ+ affirming, a youth ambassador program to educate community supporters and bring LGBTQ+ youth together, and free educational and mental health resources for educators and LGBTQ+ youth.</p>
+					</object>
+				</a>
+			</div>
+		</nav>
 
 	</div>
-	<?php // get_template_part( 'template-parts/layout/header', 'content' ); ?>
-
+	<?php if( !is_home() ) : ?>
+	<nav class="breadcrumb_navigation">
+		<?php get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>
+	</nav>
+	<?php endif; ?>
 	<div id="content">

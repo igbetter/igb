@@ -59,7 +59,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "post_type": [
                 "video"
             ],
@@ -74,7 +73,8 @@
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": true,
                 "acfe_bidirectional_related": [
-                    "field_646479b63bb60"
+                    "field_646479b63bb60",
+                    "field_64647a1c4e2eb"
                 ]
             },
             "min": "",
@@ -97,7 +97,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 0,
             "post_type": [
                 "post"
             ],
@@ -119,6 +118,39 @@
             "max": "",
             "elements": "",
             "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6590ef04746aa",
+            "label": "EduGuide's Related Playlist(s)",
+            "name": "eduguides_related_playlists",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "playlist",
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "min": "",
+            "max": "",
+            "allow_null": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "1",
+                "acfe_bidirectional_related": [
+                    "field_64647a1c4e2eb"
+                ]
+            },
+            "bidirectional": 0,
+            "multiple": 0,
             "bidirectional_target": []
         }
     ],
@@ -147,5 +179,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701053007
+    "modified": 1703998265
 }

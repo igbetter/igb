@@ -33,6 +33,9 @@
 		@include phone-only {
 			min-height: 67px;
 		}
+		@include phone-landscape {
+			min-height: 64px;
+		}
 
 		.menu_is_open & {
 			background: transparent;
@@ -61,7 +64,12 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			width: 50%;
+
+		}
+
+		@include phone-landscape {
+			flex-direction: row;
+			align-items: center;
 		}
 
 
@@ -89,6 +97,15 @@
 	svg {
 		max-width: 100%;
 		height: auto;
+	}
+
+	@include phone-landscape {
+		height: 55px;
+
+		svg {
+			max-height: 100%;
+			width: auto;
+		}
 	}
 }
 
@@ -161,6 +178,15 @@ label.dark-toggle {
 		height: 0;
 		width: 0;
 		overflow: hidden;
+	}
+
+	.menu_is_open & {
+		@include phone-only {
+			display: none;
+		}
+		@include phone-landscape {
+			display: none;
+		}
 	}
 }
 .dark-toggle__switch {
@@ -238,6 +264,11 @@ label.dark-toggle {
 
 // =============================================	4. main nav toggle button
 
+// grouping search icon and menu button
+.header_button_group {
+	display: flex;
+}
+
 #menu_toggle_button {
 	width: 55px;
 	height: 55px;
@@ -251,6 +282,39 @@ label.dark-toggle {
 	background: transparent;
 	position: relative;
 	top: auto !important;
+
+	@include tablet-up {
+
+		&:after {
+			content: 'Menu';
+			position: relative;
+			top: -9px;
+			left: -5px;
+			display: inline-block;
+			border-radius: 5px;
+			padding: 5px 10px;
+
+			@include themify($themes) {
+				background: rgba( themed('backgroundColor'), 0.7 );
+
+			}
+
+			.menu_is_open & {
+				opacity: 0;
+			}
+
+		}
+		&:hover {
+			&:after {
+				opacity: 0;
+			}
+
+		}
+
+
+	}
+
+
 
 	@include themify($themes) {
 		color: themed('textColor');

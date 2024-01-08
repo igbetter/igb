@@ -17,21 +17,8 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', 'single' );
+				get_template_part( 'template-parts/singular/post' );
 
-				if ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					// the_post_navigation(
-					// 	array(
-					// 		'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'it-gets-better' ) . '</span> ' .
-					// 			'<span class="sr-only">' . __( 'Next post:', 'it-gets-better' ) . '</span> <br/>' .
-					// 			'<span>%title</span>',
-					// 		'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'it-gets-better' ) . '</span> ' .
-					// 			'<span class="sr-only">' . __( 'Previous post:', 'it-gets-better' ) . '</span> <br/>' .
-					// 			'<span>%title</span>',
-					// 	)
-					// );
-				}
 
 				// End the loop.
 			endwhile;

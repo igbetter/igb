@@ -1,0 +1,373 @@
+{
+    "key": "group_656ed28ad0334",
+    "title": "Block - More Content",
+    "fields": [
+        {
+            "key": "field_656ed28bad00a",
+            "label": "Heading Text",
+            "name": "heading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "65",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_656ed343ad00b",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "None",
+                "subtle_grey": "Subtle Grey",
+                "subtle_purple": "Subtle Purple",
+                "subtle_pink": "Subtle Pink",
+                "subtle_blue": "Subtle Blue",
+                "subtle_yellow": "Subtle Yellow"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "max": "",
+            "prepend": "",
+            "append": "",
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "min": ""
+        },
+        {
+            "key": "field_656ed37dad00c",
+            "label": "Subheading Text",
+            "name": "subheading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "65",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_656ed494ad00d",
+            "label": "Layout",
+            "name": "layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid": "Grid",
+                "list": "List",
+                "carousel": "Carousel"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "max": "",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "min": ""
+        },
+        {
+            "key": "field_656f56aead00e",
+            "label": "Content Type(s) to Display",
+            "name": "content_types_to_display",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Blog posts",
+                "video": "Videos",
+                "glossary": "Glossary Terms",
+                "eduguide": "EduGuides"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "min": 1,
+            "max": "",
+            "allow_custom": 0,
+            "layout": "horizontal",
+            "toggle": 1,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_656f680f4965a",
+            "label": "Number of items to display",
+            "name": "number_of_items_to_display",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Minimum 1, maximum 15.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 4,
+            "min": 1,
+            "max": 15,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_656f6a3d0aa11",
+            "label": "Content selection",
+            "name": "content_selection",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "",
+            "ui_on_text": "Select Manually",
+            "ui_off_text": "Define filters",
+            "ui": 1
+        },
+        {
+            "key": "field_656f6b090aa12",
+            "label": "Content Filter",
+            "name": "content_filter",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_656f6a3d0aa11",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "65",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 1,
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
+            "sub_fields": [
+                {
+                    "key": "field_656f7cf22641b",
+                    "label": "Show only these tags",
+                    "name": "show_only_these_tags",
+                    "aria-label": "",
+                    "type": "acfe_taxonomy_terms",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": [
+                        "post_tag"
+                    ],
+                    "allow_terms": "",
+                    "allow_level": "",
+                    "field_type": "select",
+                    "min": "",
+                    "max": "",
+                    "default_value": [],
+                    "return_format": "id",
+                    "ui": 1,
+                    "allow_null": 0,
+                    "placeholder": "",
+                    "multiple": 1,
+                    "ajax": 0,
+                    "save_terms": 0,
+                    "load_terms": 1,
+                    "choices": [],
+                    "search_placeholder": "",
+                    "layout": "",
+                    "toggle": 0,
+                    "allow_custom": 0,
+                    "other_choice": 0
+                },
+                {
+                    "key": "field_656f6f52e7767",
+                    "label": "Date filter",
+                    "name": "date_filter",
+                    "aria-label": "",
+                    "type": "acfe_date_range_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "F j, Y",
+                    "first_day": 0,
+                    "placeholder": "",
+                    "separator": "-",
+                    "default_start": "",
+                    "default_end": "",
+                    "min_days": "",
+                    "max_days": "",
+                    "min_date": "",
+                    "max_date": "",
+                    "custom_ranges": [
+                        "Last 7 Days",
+                        "Last 30 Days",
+                        "This Month",
+                        "Last Month"
+                    ],
+                    "show_dropdowns": 1,
+                    "no_weekends": 0,
+                    "auto_close": 1,
+                    "allow_null": 1
+                }
+            ]
+        },
+        {
+            "key": "field_656f6c560aa14",
+            "label": "Manually selected content",
+            "name": "manually_selected_content",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Note: this will override the \"Number of items to display\" setting above",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_656f6a3d0aa11",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "65",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "eduguide",
+                "video",
+                "resource",
+                "glossary",
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "acfe_add_post": 1,
+            "acfe_edit_post": 1,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "min": 1,
+            "max": 20,
+            "elements": [
+                "featured_image"
+            ],
+            "bidirectional": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/more-content-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1702890871
+}

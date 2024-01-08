@@ -108,6 +108,13 @@
 	}
 }
 
+@mixin portrait {
+	@media ( orientation: portrait ) {
+		@content;
+	}
+
+}
+
 
 
 

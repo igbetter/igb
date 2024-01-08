@@ -16,45 +16,48 @@ get_header();
 ?>
 	<section id="primary">
 		<main id="main">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="entry-content">
-					<section class="section_hero image_right">
-						<div class="hero_text-container">
-							<h1>Empowering LGBTQ+ youth to define their own journey.</h1>
-							<p>Search for...</p>
-							<p>(and the search box will go here)</p>
-						</div>
-						<div class="hero_image-container">
-							<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 100 115">
-								<use xlink:href="#igb_frame_option_01"></use>
-							</svg>
-							<img src="<?php echo get_template_directory_uri(); ?>/_assets/images/home-hero-placeholder.png" />
-						</div>
+			<?php
 
-					</section>
-
-
-
-					<section class="featured_video_and_popular_terms two_column full_width background-subtle_grey">
-						<div class="featured_video">
-							<?php get_template_part('template-parts/content/homepage/featured-video'); ?>
-						</div>
-						<div class="popular_terms">
-							<?php get_template_part('template-parts/content/homepage/popular-browse-terms'); ?>
-						</div>
-					</section>
-
-					<?php // get_template_part('template-parts/content/homepage/more-featured-videos'); ?>
-					<?php  get_template_part('template-parts/content/homepage/featured-playlist'); ?>
-					<?php  get_template_part('template-parts/content/homepage/curated-playlist'); ?>
-					<?php  get_template_part('template-parts/content/homepage/svg-divider-orange'); ?>
-					<?php  get_template_part('template-parts/content/homepage/term-of-the-day'); ?>
-					<?php  get_template_part('template-parts/content/homepage/featured-program'); ?>
-					<?php  get_template_part('template-parts/content/homepage/featured-blog'); ?>
-					<?php  get_template_part('template-parts/content/homepage/latest-blogs'); ?>
-					<?php  get_template_part('template-parts/content/homepage/program-blocks'); ?>
+			global $post;
+			$page_for_posts_id = get_option('page_for_posts');
+			if ( $page_for_posts_id ) :
+				$post = get_page( $page_for_posts_id );
+				setup_postdata( $post );
+				?>
+				<div id="post-<?php the_ID(); ?>">
+					<div>
+						<?php the_content(); ?>
+					</div>
 				</div>
-			</article>
+				<?php
+				rewind_posts();
+			endif; ?>
+
+			<section class="blog_posts_container list_container">
+				<?php the_posts_pagination( array(
+					'mid_size'  => 2,
+					'end_size'	=> 2,
+					'prev_text'	=> '&laquo; Previous',
+					'next_text'	=> 'Next &raquo;',
+				)); ?>
+			<?php /* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/loop/list' );
+
+
+				endwhile; // End of the loop.
+			?>
+			</section>
+
+			<?php the_posts_pagination( array(
+				'mid_size'  => 2,
+				'end_size'	=> 2,
+				'prev_text'	=> '&laquo; Previous',
+				'next_text'	=> 'Next &raquo;',
+			)); ?>
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
