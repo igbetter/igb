@@ -1722,6 +1722,184 @@ a:visited article.single_term main p {
   justify-content: space-evenly;
 }
 
+#mobile_filter_toggle_button {
+  display: none;
+}
+
+#main.browse_content_page h6 {
+  margin: 1em 0.5em;
+  display: block;
+  max-width: 100%;
+}
+.theme-light #main.browse_content_page h6 {
+  border-bottom: 1px solid rgba(94, 58, 126, 0.4);
+}
+.theme-dark #main.browse_content_page h6 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+#main.browse_content_page .facetwp-checkbox {
+  text-wrap: balance;
+}
+#main.browse_content_page .facetwp-counter {
+  white-space: nowrap;
+}
+#main.browse_content_page .alignfull {
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+#main.browse_content_page .browse_content_main {
+  position: relative;
+}
+#main.browse_content_page .browse_content_main .filter_column {
+  width: 18vw;
+  min-width: 200px;
+  flex: none;
+}
+@media (max-width: 600px) {
+  #main.browse_content_page .browse_content_main .filter_column {
+    margin-left: -200px;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    transition: all 300ms ease-in-out;
+  }
+  .theme-light #main.browse_content_page .browse_content_main .filter_column {
+    background: #ffffff;
+  }
+  .theme-dark #main.browse_content_page .browse_content_main .filter_column {
+    background: #292929;
+  }
+  #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button {
+    display: block;
+    position: fixed;
+    bottom: 20%;
+    left: 0px;
+    width: 7ch;
+    text-wrap: balance;
+    padding: 0.25em 0 0.25em 0.25em;
+    border-radius: 0 4px 4px 0;
+    text-decoration: none;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+  .theme-light #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button {
+    color: #ffffff;
+    background-color: #45acce;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
+  }
+  .theme-dark #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button {
+    color: #ffffff;
+    background-color: #45acce;
+    box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
+  }
+  .theme-light #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button:hover, .theme-light #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button:focus {
+    background-color: #f2566e;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+  }
+  .theme-dark #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button:hover, .theme-dark #main.browse_content_page .browse_content_main .filter_column #mobile_filter_toggle_button:focus {
+    background-color: #f2566e;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+  }
+}
+@media (max-width: 600px) {
+  #main.browse_content_page .browse_content_main.filter_is_open .filter_column {
+    margin-left: 0;
+  }
+  #main.browse_content_page .browse_content_main.filter_is_open .filter_column #mobile_filter_toggle_button {
+    left: 200px;
+  }
+}
+#main.browse_content_page .browse_content_main .results_column {
+  flex: 1;
+}
+#main.browse_content_page .facetwp-facet-type {
+  justify-content: flex-start;
+}
+#main.browse_content_page .facetwp-facet-type > * {
+  margin-right: 2.5em;
+}
+#main.browse_content_page .facetwp-facet-type > *:last-child {
+  margin: 0;
+}
+#main.browse_content_page .facetwp-type-sort select {
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  padding: 0.5em 0.75em;
+  margin: 0.5em auto;
+  line-height: 1.1;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  transition: all 250ms ease-in-out;
+}
+.theme-light #main.browse_content_page .facetwp-type-sort select {
+  color: #292929;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
+}
+.theme-dark #main.browse_content_page .facetwp-type-sort select {
+  color: #ffffff;
+  border: 1px solid rgba(54, 54, 54, 0.95);
+  background: rgba(41, 41, 41, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
+}
+#main.browse_content_page .facetwp-checkbox {
+  position: relative;
+  padding-left: 1.5em;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox {
+  background: white;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox {
+  background: #292929;
+}
+#main.browse_content_page .facetwp-checkbox:after {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  top: 2px;
+  left: 0;
+  border-radius: 4px;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox:after {
+  border: 1px solid rgba(41, 41, 41, 0.8);
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox:after {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.theme-light #main.browse_content_page .facetwp-checkbox.checked:after {
+  background: #5e3a7e;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox.checked:after {
+  background: #a662e2;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 2):after {
+  background: #f2566e;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 2):after {
+  background: #f2566e;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 3):after {
+  background: #fbad41;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 3):after {
+  background: #fbad41;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 4):after {
+  background: #45acce;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 4):after {
+  background: #3dcaf9;
+}
+.theme-light #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 5):after {
+  background: #393939;
+}
+.theme-dark #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 5):after {
+  background: #d6d6d6;
+}
+
 /*
 * header styles
 *

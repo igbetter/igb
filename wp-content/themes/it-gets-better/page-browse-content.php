@@ -15,7 +15,7 @@
 get_header();
 ?>
 	<section id="primary">
-		<main id="main">
+		<main id="main" class="browse_content_page">
 			<?php
 				while ( have_posts() ) :
 					the_post();
