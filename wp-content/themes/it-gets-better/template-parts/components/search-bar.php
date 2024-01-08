@@ -8,7 +8,7 @@
 		<div class="search_form_row">
 			<label>
 				<span class="screen-reader-text">Search this site</span>
-				<input id="search" type="search" placeholder="Search this site">
+				<input id="search" type="search" placeholder="Search this site" value="<?php echo get_search_query(); ?>" name="s">
 			</label>
 			<input class="search_button" type="submit" value="Search">
 		</div>
