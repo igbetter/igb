@@ -406,7 +406,9 @@ a:visited {
 
 input[type=submit],
 .wp-element-button,
+.wp-element-button:visited,
 .wp-block-button__link,
+.wp-block-button__link:visited,
 a.primary_button,
 a.primary_button:visited {
   display: inline-block;
@@ -420,21 +422,27 @@ a.primary_button:visited {
 }
 .theme-light input[type=submit],
 .theme-light .wp-element-button,
+.theme-light .wp-element-button:visited,
 .theme-light .wp-block-button__link,
+.theme-light .wp-block-button__link:visited,
 .theme-light a.primary_button,
 .theme-light a.primary_button:visited {
   color: #ffffff;
 }
 .theme-dark input[type=submit],
 .theme-dark .wp-element-button,
+.theme-dark .wp-element-button:visited,
 .theme-dark .wp-block-button__link,
+.theme-dark .wp-block-button__link:visited,
 .theme-dark a.primary_button,
 .theme-dark a.primary_button:visited {
   color: #ffffff;
 }
 input[type=submit]:after,
 .wp-element-button:after,
+.wp-element-button:visited:after,
 .wp-block-button__link:after,
+.wp-block-button__link:visited:after,
 a.primary_button:after,
 a.primary_button:visited:after {
   content: "";
@@ -451,7 +459,9 @@ a.primary_button:visited:after {
 }
 .theme-light input[type=submit]:after,
 .theme-light .wp-element-button:after,
+.theme-light .wp-element-button:visited:after,
 .theme-light .wp-block-button__link:after,
+.theme-light .wp-block-button__link:visited:after,
 .theme-light a.primary_button:after,
 .theme-light a.primary_button:visited:after {
   background-color: #45acce;
@@ -460,7 +470,9 @@ a.primary_button:visited:after {
 }
 .theme-dark input[type=submit]:after,
 .theme-dark .wp-element-button:after,
+.theme-dark .wp-element-button:visited:after,
 .theme-dark .wp-block-button__link:after,
+.theme-dark .wp-block-button__link:visited:after,
 .theme-dark a.primary_button:after,
 .theme-dark a.primary_button:visited:after {
   background-color: #45acce;
@@ -470,8 +482,12 @@ a.primary_button:visited:after {
 .theme-light input[type=submit]:hover, .theme-light input[type=submit]:focus,
 .theme-light .wp-element-button:hover,
 .theme-light .wp-element-button:focus,
+.theme-light .wp-element-button:visited:hover,
+.theme-light .wp-element-button:visited:focus,
 .theme-light .wp-block-button__link:hover,
 .theme-light .wp-block-button__link:focus,
+.theme-light .wp-block-button__link:visited:hover,
+.theme-light .wp-block-button__link:visited:focus,
 .theme-light a.primary_button:hover,
 .theme-light a.primary_button:focus,
 .theme-light a.primary_button:visited:hover,
@@ -481,8 +497,12 @@ a.primary_button:visited:after {
 .theme-dark input[type=submit]:hover, .theme-dark input[type=submit]:focus,
 .theme-dark .wp-element-button:hover,
 .theme-dark .wp-element-button:focus,
+.theme-dark .wp-element-button:visited:hover,
+.theme-dark .wp-element-button:visited:focus,
 .theme-dark .wp-block-button__link:hover,
 .theme-dark .wp-block-button__link:focus,
+.theme-dark .wp-block-button__link:visited:hover,
+.theme-dark .wp-block-button__link:visited:focus,
 .theme-dark a.primary_button:hover,
 .theme-dark a.primary_button:focus,
 .theme-dark a.primary_button:visited:hover,
@@ -492,8 +512,12 @@ a.primary_button:visited:after {
 .theme-light input[type=submit]:hover:after, .theme-light input[type=submit]:focus:after,
 .theme-light .wp-element-button:hover:after,
 .theme-light .wp-element-button:focus:after,
+.theme-light .wp-element-button:visited:hover:after,
+.theme-light .wp-element-button:visited:focus:after,
 .theme-light .wp-block-button__link:hover:after,
 .theme-light .wp-block-button__link:focus:after,
+.theme-light .wp-block-button__link:visited:hover:after,
+.theme-light .wp-block-button__link:visited:focus:after,
 .theme-light a.primary_button:hover:after,
 .theme-light a.primary_button:focus:after,
 .theme-light a.primary_button:visited:hover:after,
@@ -505,8 +529,12 @@ a.primary_button:visited:after {
 .theme-dark input[type=submit]:hover:after, .theme-dark input[type=submit]:focus:after,
 .theme-dark .wp-element-button:hover:after,
 .theme-dark .wp-element-button:focus:after,
+.theme-dark .wp-element-button:visited:hover:after,
+.theme-dark .wp-element-button:visited:focus:after,
 .theme-dark .wp-block-button__link:hover:after,
 .theme-dark .wp-block-button__link:focus:after,
+.theme-dark .wp-block-button__link:visited:hover:after,
+.theme-dark .wp-block-button__link:visited:focus:after,
 .theme-dark a.primary_button:hover:after,
 .theme-dark a.primary_button:focus:after,
 .theme-dark a.primary_button:visited:hover:after,

@@ -350,7 +350,9 @@ a:visited {
 }
 input[type="submit"],
 .wp-element-button,
+.wp-element-button:visited,
 .wp-block-button__link,
+.wp-block-button__link:visited,
 a.primary_button,
 a.primary_button:visited {
 	display: inline-block;
