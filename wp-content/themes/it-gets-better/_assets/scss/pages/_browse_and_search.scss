@@ -92,6 +92,12 @@
 				}
 
 			}
+
+			.facetwp-facet-search {
+				@include phone-only {
+					display: none;
+				}
+			}
 		}
 
 		&.filter_is_open {

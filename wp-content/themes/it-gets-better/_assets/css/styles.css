@@ -1835,6 +1835,11 @@ a:visited article.single_term main p {
   }
 }
 @media (max-width: 600px) {
+  #main.browse_content_page .browse_content_main .filter_column .facetwp-facet-search {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
   #main.browse_content_page .browse_content_main.filter_is_open .filter_column {
     margin-left: 0;
   }
