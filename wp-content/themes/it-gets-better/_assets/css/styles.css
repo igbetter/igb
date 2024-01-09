@@ -2301,6 +2301,11 @@ body.theme-dark .dark-toggle__switch:after {
   display: flex;
   align-items: center;
 }
+@media (max-width: 600px) {
+  .site_search_bar {
+    display: none;
+  }
+}
 .site_search_bar form {
   width: 0;
   overflow: hidden;
