@@ -526,6 +526,9 @@ function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = '
 
 			if( ( $smaller === true ) && ( ++$i >= $smaller_max ) ) {
 				// mini "smaller" loop
+
+				/* old version, not working correctly because for some odd reason css isn't allowing me to position the "dropdown" correctly...
+
 				if( $i == $smaller_max ) {
 					$output .= '<li class="full_term_list"><a href="#" class="more_term_dropdown_trigger secondary_button"><span>MORE</span></a><ul class="more_terms_dropdown"><li class="more_terms">';
 				}
@@ -539,6 +542,16 @@ function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = '
 				if( $i == $count ) {
 					$output .= '</li></ul></li>';
 				}
+				*/
+
+				// ** new version, removing the dropdown functionality. TODO: revisit the above version later
+
+				if( $i == $smaller_max ) {
+					$output .= '<li class="more_button"><a href="' . esc_url( get_permalink( $post_ID ) ) . '" class="secondary_button"><span>MORE</span></a></li>' ;
+					break;
+				}
+
+				// end mini "smaller" loop
 			} else {
 				$output .= sprintf(
 					'

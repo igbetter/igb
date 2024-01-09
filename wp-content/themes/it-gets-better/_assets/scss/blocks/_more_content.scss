@@ -4,11 +4,6 @@
 	display: block;
 	padding: 2em;
 
-
-	@include themify($themes) {
-		background: themed('subtlePurpleBG');
-	}
-
 	.more_content_header {
 		display: flex;
 		align-items: center;
