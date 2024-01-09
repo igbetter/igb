@@ -39,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
 			<?php echo igb_display_video_embed( $video_post_id ) ?>
 			</div>
 			<a href="<?php echo get_the_permalink( $video_post_id ); ?>" class="featured_video_title"><?php echo esc_html( $video->post_title ); ?></a>
-			<?php //echo igb_display_related_glossary_term_tags( $video_post_id, 'video', true ); ?>
+
 			<?php if ( $video_fields[ 'display_additional_videos' ] === true ) : ?>
 				<div class="related_videos">
 					<h6>More Videos</h6>
@@ -47,10 +47,11 @@ if ( ! empty( $block['align'] ) ) {
 						<?php if ( $video_fields[ 'additional_video_selection' ] === 'auto' ) :
 							$videotags = wp_get_post_terms( $video_post_id, 'post_tag', ['fields' => 'ids'] );
 							$args = [
-								'post__not_in'        => array( $video_post_id ),
-								'posts_per_page'      => 4,
-								'ignore_sticky_posts' => 1,
-								'orderby'             => 'rand',
+								'post__not_in' 			=> array( $video_post_id ),
+								'post_type'				=> 'video',
+								'posts_per_page' 		=> 4,
+								'ignore_sticky_posts' 	=> 1,
+								'orderby' 				=> 'rand',
 								'tax_query' => [
 									[
 										'taxonomy' => 'post_tag',
@@ -58,7 +59,7 @@ if ( ! empty( $block['align'] ) ) {
 									]
 								]
 							];
-							$more_videos_query = new wp_query( $args );
+							$more_videos_query = new WP_Query( $args );
 							if( $more_videos_query->have_posts() ) :
 								while( $more_videos_query->have_posts() ) :
 									$more_videos_query->the_post();
@@ -73,7 +74,9 @@ if ( ! empty( $block['align'] ) ) {
 							endif;
 
 						else :
-							// TODO: this.
+							// TODO: this. turning it off for now
+							//$more_videos_manual_selection = get_field( 'select_videos' );
+
 						endif;
 						?>
 					 </div>
