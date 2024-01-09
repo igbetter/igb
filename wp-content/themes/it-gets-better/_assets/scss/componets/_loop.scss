@@ -87,12 +87,12 @@
 			position: absolute;
 			display: block;
 			z-index: 99;
-			top: -60px;
-			right: -60px;
+			top: 0;
+			right: 0;
 			background: rgba( 0, 0, 0, 0.98 );
-			border-radius: 50%;
+			clip-path: polygon(8.42% 39.50%,12.96% 49.97%,17.00% 57.68%,22.04% 65.65%,27.58% 73.12%,33.67% 78.56%,40.75% 83.49%,48.33% 87.43%,56.42% 90.87%,67.15% 93.78%,77.88% 96.18%,99.33% 99.50%,99.92% 0.13%,0% 0%,3.63% 20.82%,5.77% 30.16%);
 			filter: brightness(500%) saturate(0%) opacity(0.7);
-			padding: 60px 60px 15px 15px;
+			padding: 3px 3px 15px 15px;
 			transition: all 100ms ease-in-out;
 
 
@@ -100,7 +100,7 @@
 			use {
 				width: 50px;
 				height: 50px;
-			//	transform: translateX(-10px) translateY(10px);
+
 			}
 		}
 
@@ -247,7 +247,6 @@
 			use {
 				width: 50px;
 				height: 50px;
-			//	transform: translateX(10px) translateY(-10px);
 			}
 		}
 	}

@@ -95,3 +95,9 @@
 </symbol>
 
 </svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<clipPath id="content_type_icon_background">
+		<path class="icon_clippath" d="M1.1,0.5c0,0-9.5,99.3,47.5,156.4s145,57.5,145,57.5V0.5H1.1z"/>
+	</clipPath>
+</svg>
