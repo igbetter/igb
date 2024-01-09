@@ -5,6 +5,10 @@
 	display: flex;
 	align-items: center;
 
+	@include phone-only {
+		display: none;
+	}
+
 	form {
 	//	display: none;
 		width: 0;
