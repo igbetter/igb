@@ -1942,12 +1942,12 @@ a:visited article.single_term main p {
 }
 .theme-light #main.browse_content_page .facetwp-facet-pagination .facetwp-page {
   background: rgba(230, 230, 230, 0.25);
-  border: 1px solid rgba(69, 172, 206, 0.25);
+  border: 1px solid rgba(69, 172, 206, 0.26);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
 .theme-dark #main.browse_content_page .facetwp-facet-pagination .facetwp-page {
   background: rgba(16, 16, 16, 0.25);
-  border: 1px solid rgba(251, 173, 65, 0.25);
+  border: 1px solid rgba(251, 173, 65, 0.26);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
 #main.browse_content_page .facetwp-facet-pagination .facetwp-page.active {

@@ -210,7 +210,7 @@
 
 			@include themify($themes) {
 				background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
-				border: 1px solid rgba( themed( 'linkColor' ), 0.25 );
+				border: 1px solid rgba( themed( 'linkColor' ), 0.26 );
 				box-shadow: themed( 'normalShadow' );
 			}
 
