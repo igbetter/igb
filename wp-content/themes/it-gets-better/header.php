@@ -159,7 +159,7 @@
 	</div>
 	<?php if( !is_home() ) : ?>
 	<nav class="breadcrumb_navigation">
-		<?php get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>
+		<?php // get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>
 	</nav>
 	<?php endif; ?>
 	<div id="content">
