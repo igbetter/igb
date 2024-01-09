@@ -56,7 +56,21 @@ get_header();
 				endif; // end if there is a related playlist to this video
 
 				if( $related_eduguides ) :
-					get_template_part('template-parts/loop/card', 'eduguide');
+
+					foreach( $related_eduguides as $related_eduguide ) :
+						$eduguide_id = $related_eduguide->ID;
+
+						get_template_part(
+						'template-parts/loop/card',
+						'eduguide',
+						array(
+							'eduguide_id'	=> $eduguide_id
+						)
+					);
+					endforeach;
+
+
+
 				endif; // end if there are related eduguide(s)
 
 				// End the loop.

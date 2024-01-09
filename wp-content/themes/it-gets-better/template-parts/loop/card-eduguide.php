@@ -2,7 +2,13 @@
  *
  * display of an EDUguide
  */
-$eduguide_download = get_field( 'eduguide_pdf', get_the_ID() );
+
+ if( isset( $args['eduguide_id'] ) ) :
+	$eduguide_id =  $args['eduguide_id'] ;
+else :
+	$eduguide_id = get_the_ID();
+endif;
+$eduguide_download = get_field( 'eduguide_pdf', $eduguide_id);
 
 if( $eduguide_download ) {
 	$eduguide_download_file_type = $eduguide_download['subtype'];
@@ -11,7 +17,7 @@ if( $eduguide_download ) {
 }
 ?>
 
-<article id="cardID-<?php echo get_the_ID(); ?>" class="eduguide_card">
+<article id="cardID-<?php echo $eduguide_id ?>" class="eduguide_card">
 
 		<div class="content_container">
 			<span class="content_type <?php esc_html_e( $post_type ); ?>">
@@ -20,12 +26,15 @@ if( $eduguide_download ) {
 				</svg>
 			</span>
 
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title('<h3 class="eduguide_title"><span>EduGuide:</span> ', '</h3>' ); ?>
+			<a href="<?php the_permalink( $eduguide_id ); ?>">
+			<h3 class="eduguide_title">
+				<span>EduGuide:</span>
+				<?php echo get_the_title( $eduguide_id );?>
+			</h3>
 			</a>
-			<?php the_post_thumbnail(); ?>
+			<?php echo get_the_post_thumbnail( $eduguide_id ); ?>
 			<div class="button_container">
-				<a href="<?php the_permalink(); ?>" class="subtle_overlay_button">
+				<a href="<?php the_permalink( $eduguide_id ); ?>" class="subtle_overlay_button">
 					View the EduGuide
 				</a>
 				<?php if( $eduguide_download ) : ?>
