@@ -43,7 +43,7 @@ const igbDarkMode = {
 		document.querySelector('body').classList.toggle('theme-dark', isChecked);
 		localStorage.setItem('darkMode', isChecked);
 
-		// set jetpack search modal as well
+		// set jetpack search modal as well (not working. waiting on automattic to tell me why)
 		document.getElementsByClassName('jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--light');
 		document.getElementsByClassName('jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--dark');
 	},
