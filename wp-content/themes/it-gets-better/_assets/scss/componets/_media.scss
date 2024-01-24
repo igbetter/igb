@@ -1,6 +1,8 @@
 img {
 	max-width: 100% !important;
-	max-height: 90vh;
+	.featured_image & {
+		max-height: 90vh;
+	}
 }
 video,
 iframe {
