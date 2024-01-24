@@ -123,7 +123,7 @@
         {
             "key": "field_6590ef04746aa",
             "label": "EduGuide's Related Playlist(s)",
-            "name": "eduguides_related_playlists",
+            "name": "eduguide_related_playlists",
             "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
@@ -179,5 +179,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1703998265
+    "modified": 1706097492
 }

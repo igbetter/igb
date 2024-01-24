@@ -112,7 +112,12 @@
 	@media ( orientation: portrait ) {
 		@content;
 	}
+}
 
+@mixin short-screen {
+	@media ( max-height: 625px ) {
+		@content;
+	}
 }
 
 

@@ -43,9 +43,6 @@ const igbDarkMode = {
 		document.querySelector('body').classList.toggle('theme-dark', isChecked);
 		localStorage.setItem('darkMode', isChecked);
 
-		// set jetpack search modal as well
-		document.querySelector('.jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--light');
-		document.querySelector('.jetpack-instant-search').classList.toggle('jetpack-instant-search__overlay--dark');
 	},
 };
 

@@ -79,6 +79,18 @@ endif;
 				} ?>
 			<h2><?php echo wp_kses_post( $heading_text ); ?></h2>
 		</div>
+		<div class="more_button">
+			<?php if( isset( $content_types) ) :
+				$more_stuff_url = '/browse-content/?_type=';
+				foreach( $content_types as $content_type ) :
+					$more_stuff_url .= esc_html( $content_type ) . '%2C';
+				endforeach;
+				$more_stuff_url .= '&_sort_browse_content=published_date_older';
+				?>
+				<a href="<?php echo esc_url( $more_stuff_url ); ?>" class="primary_button">More &raquo;</a>
+			<?php endif; ?>
+
+		</div>
 	</header>
 		<?php
 		$more_content_query = new WP_Query( $args );

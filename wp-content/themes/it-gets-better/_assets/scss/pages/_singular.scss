@@ -1,3 +1,8 @@
+// for pages that don't have a hero, adding the needed padding for heading block H1 level
+h1.wp-block-heading {
+	padding: 1em 0.25em;
+}
+
 .singular_post,
 .singular_eduguide,
 .single_video_page {

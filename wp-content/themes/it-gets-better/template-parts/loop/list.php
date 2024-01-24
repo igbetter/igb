@@ -15,6 +15,7 @@
 	<div class="flex-row">
 		<aside class="thumbnail_image">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium_large' ); ?></a>
+			<?php echo igb_display_related_glossary_term_tags( get_the_ID(), $post_type, true ); ?>
 		</aside>
 		<div class="post_details">
 			<a href="<?php the_permalink(); ?>"><h3 class="content_title"><?php the_title(); ?></h3></a>

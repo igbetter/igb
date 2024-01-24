@@ -99,6 +99,14 @@
 		height: auto;
 	}
 
+	@include short-screen {
+		height: 75px;
+
+		svg {
+			max-height: 100%;
+			width: auto;
+		}
+	}
 	@include phone-landscape {
 		height: 55px;
 

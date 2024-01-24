@@ -64,6 +64,19 @@ body {
 		background: themed('backgroundColor');
 		color: themed('textColor');
 	}
+
+	::-moz-selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
+	::-webkit-selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
+	::selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
 }
 
 // =============================================	2. reusable styles, a11y, etc.
@@ -87,6 +100,9 @@ body {
 	@include themify($themes) {
 		background-color: themed('accentPurple');
 		color: themed( 'accentTextColor' );
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
 	}
 
 }
@@ -109,6 +125,9 @@ body {
 	@include themify($themes) {
 		background-color: themed('accentPink');
 		color: themed('accentTextColor');
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
 	}
 }
 
@@ -130,6 +149,9 @@ body {
 	@include themify($themes) {
 		background-color: themed('accentBlue');
 		color: themed('accentTextColor');
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
 	}
 
 }
@@ -151,7 +173,9 @@ body {
 .background-IGB_Yellow {
 	@include themify($themes) {
 		background: themed('accentYellow');
-		color: themed('accentTextColor');
+		color: $black;
+		text-shadow:
+			0 -1px 0 rgba( 255, 255, 255, 0.35 );
 	}
 
 }

@@ -232,8 +232,8 @@
 			}
 		}
 
-		a,
-		a:visited {
+		> .nav-item-wrapper > a,
+		> .nav-item-wrapper > a:visited {
 			font-size: $font_size_xxl;
 			font-weight: 600;
 			padding-left: 2em;
@@ -302,6 +302,9 @@
 			margin-top: 18vh;
 			height: 80vh;
 		}
+		@include short-screen {
+			margin-top: 90px;
+		}
 
 		li {
 			border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -334,9 +337,9 @@
 
 	&.nav-levels-overlap {
 		ul .nav-wrapper {
-				@include phone-only {
-					height: 80vh;
-				}
+			@include phone-only {
+				height: 80vh;
+			}
 		}
 	}
 
@@ -399,11 +402,38 @@
 		}
 
 		.nav-content {
-			display: flex;
-			flex-direction: column;
+			margin-top: 150px;
+			padding-bottom: 150px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				"title back"
+				"submenu submenu";
 
+			@include phone-landscape {
+				margin-top: 100px;
+				padding-bottom: 100px;
+			}
+
+			@include short-screen {
+				margin-top: 90px;
+				padding-bottom: 90px;
+			}
+
+			h2.level-title {
+				grid-area: title;
+				margin: 0;
+				padding: 0 2em;
+				font-size: $font-size-md;
+				font-weight: 200;
+				line-height: 2;
+			}
+			div.nav-back {
+				grid-area: back;
+			}
 			> ul {
-				flex: 1;
+				grid-area: submenu;
 				display: flex;
 				flex-direction: column;
 
@@ -411,32 +441,24 @@
 					flex: 1;
 				}
 			}
+		}
+	}
+	div.nav-back {
+		width: 100%;
 
-			a.nav-back-button {
-				flex: 1;
-				font-weight: 800;
-				padding: 1em 2em;
-				text-align: right;
-				justify-content: flex-end;
-				font-style: italic;
+		a,
+		a:visited {
+			display: block;
+			width: 100%;
+			padding: 0.5em 1em;
+			text-align: right;
 
-				@include phone-landscape {
-					padding: 0.5em 1em;
-				}
+			@include themify($themes) {
+				background: darken(rgba(themed('mainNavItemBGColor'), 0.9), 10);
+
 			}
 		}
 	}
-	h2.level-title {
-		margin-top: 150px;
-		padding: 0 2em;
-		opacity: 0.75;
-
-		@include phone-landscape {
-			margin-top: 100px;
-			margin-bottom: 2px;
-		}
-	}
-
 }
 
 // mega nav cont. program boxes
@@ -483,8 +505,8 @@ nav#programs_nav {
 	}
 
 	.program_box {
-		padding: 1em 2em;
-		margin: 2em;
+		padding: .5em 1.2em;
+		margin: 1em 2em;
 		clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
 		transition: all 150ms ease-in-out;
 
@@ -504,6 +526,12 @@ nav#programs_nav {
 		@include phone-landscape {
 			margin: 0.25em 2em 0.25em 1em;
 
+			p {
+				display: none;
+			}
+		}
+
+		@include short-screen {
 			p {
 				display: none;
 			}
@@ -556,7 +584,7 @@ nav#programs_nav {
 	a:visited {
 		font-weight: 200;
 		display: block;
-		padding: 5%;
+		padding: 1em 2em;
 
 		@include themify($themes) {
 			text-decoration: none !important;
@@ -622,6 +650,7 @@ nav.breadcrumb_navigation {
 }
 
 // previous / next links
+.next_previous_playlist,
 .next_previous_glossary {
 	opacity: 0.95;
 	transition: all 150ms ease-in-out;
@@ -636,7 +665,8 @@ nav.breadcrumb_navigation {
 	&.top {
 		margin-top: 7em;
 	}
-	a.glossary_back_link {
+	a.glossary_back_link,
+	a.playlist_back_link {
 		display: block;
 		margin: 1px;
 		font-weight: 200;

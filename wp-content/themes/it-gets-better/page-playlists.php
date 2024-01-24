@@ -62,6 +62,10 @@ get_header();
 
 			</div>
 		</main><!-- #main -->
+
+		<aside id="supplementary" class="additional_content related_content_container">
+			<?php igb_display_latest_blog_posts( 6, 'Latest Blog Posts' ) ?>
+		</aside>
 	</section><!-- #primary -->
 
 <?php

@@ -25,7 +25,7 @@
 
  .content_grid_container {
 	width: 90%;
-	margin: 0 auto;
+	margin: 0 auto 3em auto;
 
 	> article {
 		padding: 1em;
@@ -268,7 +268,7 @@
 	}
 
 	.list_item {
-		margin: 4em 2em;
+		margin: 4em 2em 6em 2em;
 		padding: 2em 3em;
 		transition: all 250ms ease-in-out;
 
@@ -295,8 +295,8 @@
 
 		.thumbnail_image {
 			width: 40%;
-
 			margin: -3em 2em -3em -2.5em;
+			position: relative;
 
 			img {
 				width: 100%;
@@ -309,6 +309,11 @@
 						box-shadow: themed( 'largeShadow' );
 						border: 1px solid rgba( themed( 'textColor' ), 0.3 );
 					}
+			}
+
+			aside.related_terms {
+				position: absolute;
+				bottom: 0;
 			}
 		}
 

@@ -2,13 +2,50 @@ aside.related_content_container {
 	width: 90vw;
 	margin: 2em auto;
 
-	
+
 	.aside_heading {
 		font-weight: 200;
 		text-transform: uppercase;
 
 		span {
 			font-weight: 700;
+		}
+	}
+}
+
+.related_content_container {
+	.section_header {
+		padding: 0 0 0 2em;
+
+		@include themify($themes) {
+			background: darken( themed( 'backgroundColor' ), 5 );
+		}
+
+		h6 {
+			margin: 0;
+			line-height: 2.5;
+		}
+	}
+
+	.content_grid_container {
+
+		&.eduguide {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(371px, 1fr));
+			grid-gap: 2.5em;
+
+			.eduguide_card {
+				width: auto;
+				min-width: auto;
+				max-width: 100%;
+				margin: 1em;
+
+				.content_container {
+					padding: 12em 0 0em 0;
+				}
+
+			}
 		}
 	}
 }
