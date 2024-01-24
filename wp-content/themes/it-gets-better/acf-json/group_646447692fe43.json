@@ -58,6 +58,7 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_save_meta": 1,
             "post_type": [
                 "eduguide"
             ],
@@ -81,7 +82,6 @@
             "min": "",
             "max": "",
             "elements": "",
-            "bidirectional": 0,
             "bidirectional_target": []
         },
         {
@@ -121,10 +121,8 @@
             "min": "",
             "max": "",
             "elements": "",
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_646425da248b1"
-            ]
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -152,5 +150,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1703998262
+    "modified": 1706097492
 }

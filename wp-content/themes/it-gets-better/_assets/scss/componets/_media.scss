@@ -42,3 +42,22 @@ iframe {
 .wp-block-embed__wrapper {
 	margin-bottom: 4em;
 }
+
+
+// "offset" gallery block. used for the 'meet the team' page
+.wp-block-coblocks-gallery-offset {
+	.coblocks-gallery--item {
+		min-width: 375px;
+	}
+
+	.has-huge-gutter,
+	.has-large-gutter,
+	.has-medium-gutter,
+	.has-small-gutter {
+		figure {
+			@include phone-only {
+				padding-bottom:2em;
+			}
+		}
+	}
+}

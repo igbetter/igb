@@ -56,5 +56,19 @@ endif;
 	</footer>
 
 </article>
+<aside id="supplementary" class="additional_content related_content_container">
 
+	<?php
+	igb_display_related_content( get_the_ID(), 'glossary_terms', 'Related Glossary Terms', 25 );
+	igb_display_related_content_by_current_tags( get_the_ID(), 'video', 8 );
+	igb_display_related_content_by_current_tags( get_the_ID(), 'post', 3, 'More Related Blog Posts' );
+
+	igb_display_related_content( get_the_ID(), 'eduguide', 'Related EduGuides', 5 );
+
+	?>
+
+
+
+
+</aside>
 

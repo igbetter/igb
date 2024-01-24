@@ -149,7 +149,7 @@
 				<a href="/global/">
 					<object>
 						<h3>It Gets Better <span>Global</span></h3>
-						<p>It Gets Better works alongside affiliates and partners across the globe to spread positive stories and support LGBTQ+ youth everywhere. We not only provide grants and guidance to ensure affiliate organizations can continue this important work, but also host gatherings for LGBTQ+ activists, nonprofits and public figures to advance global LGBTQ+ advocacy.</p>
+						<p>It Gets Better is the world's largest storytelling effort to empower LGBTQ+ youth. Learn more about our global programs &amp; global affiliates here &raquo;</p>
 					</object>
 				</a>
 			</div>
@@ -157,7 +157,7 @@
 				<a href="/education/">
 					<object>
 						<h3>It Gets Better <span>EDU</span></h3>
-						<p>It Gets Better EDU programming reaches tens of thousands of LGBTQ+ middle and high school students every year. This includes a robust grantmaking program to make schools more LGBTQ+ affirming, a youth ambassador program to educate community supporters and bring LGBTQ+ youth together, and free educational and mental health resources for educators and LGBTQ+ youth.</p>
+						<p>It Gets Better EDU provides free educational resources for adults, educators, and student leaders. Explore our education resources &amp; programs here &raquo;</p>
 					</object>
 				</a>
 			</div>

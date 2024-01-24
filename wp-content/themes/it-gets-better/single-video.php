@@ -75,6 +75,10 @@ get_header();
 
 				// End the loop.
 			endwhile;
+
+			igb_display_related_content_by_current_tags( get_the_ID(), 'video', 8, 'More Related Videos' );
+
+			igb_display_related_content_by_current_tags( get_the_ID(), 'post', 3, 'Related Blog Posts' );
 			?>
 
 		</main><!-- #main -->

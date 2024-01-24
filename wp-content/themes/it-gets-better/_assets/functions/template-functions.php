@@ -464,7 +464,7 @@ function igb_options_social_links( $class_prefix = 'icon-', $link_target = '_bla
  * @param bool $is_video_hosted_here -- ACF key for the true/false video location field
  *
  */
-function igb_display_video_embed( $video_ID = 'NULL', $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
+function igb_display_video_embed( $video_ID = NULL, $file_upload_key = 'upload_file', $youtube_link_key = 'youtube_link' ) {
 	$is_video_hosted_here = get_field( 'video_file_location', $video_ID, false );
 	if( ( $is_video_hosted_here === '1' ) || $is_video_hosted_here === 1 ) :
 		// self hosted video
@@ -576,7 +576,7 @@ function igb_display_related_glossary_term_tags( $post_ID = NULL, $post_type = '
  *
  */
 
-function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general_category = false, $display_style = 'subscript' ) {
+function igb_display_glossary_term_category( $post_ID = NULL, $display_general_category = false, $display_style = 'subscript' ) {
 	$general_term_category = get_term_by( 'name', 'general', 'term-category');
 	$general_term_category_ID = $general_term_category->term_id; // so we can exclude the "general" category in the arrays below if needed
 
@@ -625,10 +625,241 @@ function igb_display_glossary_term_category( $post_ID = 'NULL', $display_general
 
 /**
  *
- * helper function to query and display other stuff in the template
+ * helper function display related content below the page content.
+ * params as follows (all are required.)
  *
- * options as follows
+ * @param int $post_ID -- the id of the current post
+ * @param string $type_of_related_content -- the type (to match the ACF field "[[post_type]]_related_[[CONTENT_TYPE]])
+ * @param string $related_content_title -- the title that displays above the content grid
+ * @param int $max_to_display -- max # to display in the grid.
  *
+ */
+
+ function igb_display_related_content( $post_ID = NULL, $type_of_related_content = 'videos', $related_content_title = 'Related', $max_to_display = 7 ) {
+
+	$output = '';
+	if( $post_ID ) {
+		$post_type_of_id = get_post_type( $post_ID );
+		if( $post_type_of_id === 'glossary' ) {
+			$post_type_of_id = 'glossary_term';
+		}
+		if( $post_type_of_id === 'post' ) {
+			$post_type_of_id = 'blog_post';
+		}
+		$acf_field_name = $post_type_of_id . '_related_' . $type_of_related_content;
+		$related_content = get_field( $acf_field_name );
+
+		if( $related_content ) :
+			$total_count = count( $related_content );
+			$id_array =[];
+			$i = 0;
+
+			if( $type_of_related_content == 'playlists' ) {
+				// special display for playlists only
+
+				$playlists_to_exclude = get_terms(
+					array(
+						'fields'	=> 'ids',
+						'slug'		=> array(
+							'none',
+							'general',
+							// any other playlists to ignore go here
+						),
+						'taxonomy'	=> 'playlist'
+					)
+				);
+				$id_array = $related_content;
+				// exclude "none" and general and whatever else
+				$id_array = array_diff( $id_array, $playlists_to_exclude );
+				if( $id_array ) {
+					printf(
+						'
+						<section class="related_content_container %s related">
+							<header class="section_header">
+								<h6>%s <span class="count">(%s)</span></h6>
+							</header>
+						</section>
+						',
+						esc_html( $type_of_related_content ),
+						esc_html( $related_content_title ),
+						esc_attr( $total_count ),
+					);
+
+					foreach( $id_array as $item ) :
+						get_template_part(
+							'template-parts/loop/list',
+							'playlist',
+							array(
+								'playlist_id'	=> $item
+							)
+						);
+					endforeach;
+				}
+
+				// end playlists. now everything else
+			} else {
+				foreach( $related_content as $item ) :
+					$id_array[] = $item->ID;
+					if (++$i == $max_to_display ) break;
+				endforeach;
+
+				$more_button = '';
+				if( $total_count > $max_to_display ) {
+					$button_link = '/browse-content/';
+					if( $type_of_related_content == 'videos' ) {
+						$button_link .= '?_type=video';
+					} elseif( $type_of_related_content == 'posts' ) {
+						$button_link .= '?_type=post';
+					} elseif( $type_of_related_content == 'glossary_terms' ) {
+						$button_link .= '?_type=glossary';
+					} elseif( $type_of_related_content == 'eduguides' ) {
+						$button_link .= '?_type=eduguide';
+					}
+					$more_button = '<a href="' . esc_url( $button_link ) .  '" class="secondary_button more_content">View All &raquo;</a>';
+				}
+
+				printf(
+					'
+					<section class="related_content_container %s related">
+						<header class="section_header flex-row space-between">
+							<h6>%s <span class="count">(%s)</span></h6>
+							%s
+						</header>
+					</section>
+					',
+					esc_html( $type_of_related_content ),
+					esc_html( $related_content_title ),
+					esc_attr( $total_count ),
+					$more_button
+				);
+
+				$args = array(
+					'post_type'		=> 'any',
+					'post__in'		=>  $id_array,
+				);
+
+				$more_content_query = new WP_Query( $args );
+				if( $more_content_query->have_posts() ) :
+					echo '<div class="content_grid_container ' . esc_html( $type_of_related_content ) . '">';
+					while( $more_content_query->have_posts() ) :
+						$more_content_query->the_post();
+
+						if( $type_of_related_content == 'eduguide' ) {
+							get_template_part( 'template-parts/loop/card', 'eduguide' );
+						} else {
+							get_template_part( 'template-parts/loop/grid' );
+						}
+
+
+					endwhile;
+					echo '</div>';
+				endif;
+			}
+
+			wp_reset_postdata();
+
+		endif; // end if there is related content at all
+
+	} else {
+		return;
+	}
+}
+
+
+/**
+ *
+ * yay another helper function for related content.
+ *
+ * but this one is more automated and pulls from tags instead of ACF relationships
+ * it grabs the tags from the post id you send it, and then display
+ * a grid of related content, up to your set max. and a link to the browse content
+ * page for anything over that.
+ *
+ * @param int $post_ID -- the id of the current post
+ * @param string $content_type_to_display -- what post type will be displayed. options: 'video' 'post'
+ * @param int $max_to_display -- max items to display
+ * @param string $related_content_title -- the title that displays above the content grid
  *
  *
  */
+
+ function igb_display_related_content_by_current_tags( $post_ID = NULL, $content_type_to_display = 'video', $max_to_display = 8, $related_content_title = 'Related Videos' ) {
+	$all_tags = get_the_tags( $post_ID );
+
+	$tag_id_array = [];
+	$tag_slug_string = '_content_tags=';
+
+	foreach( $all_tags as $tag ) {
+		$tag_id_array[] = $tag->term_id;
+		$tag_slug_string .= $tag->slug . '%2C';
+	}
+
+	$args = array(
+		'posts_per_page'		=> $max_to_display,
+		'post_type'				=> $content_type_to_display,
+		'tag__in'				=> $tag_id_array,
+		'post__not_in' 			=> [get_the_ID()],
+	);
+	$related_content_query = new WP_Query( $args );
+	if( $related_content_query->have_posts() ) :
+
+		$button_link = '/browse-content/?_type=' . $content_type_to_display . '&' . $tag_slug_string;
+		$more_button = '<a href="' . esc_url( $button_link ) .  '" class="secondary_button more_content">More &raquo;</a>';
+
+		printf(
+			'
+			<section class="related_content_container related">
+				<header class="section_header flex-row space-between">
+					<h6>%s</h6>
+					%s
+				</header>
+			</section>
+			',
+			esc_html( $related_content_title ),
+			$more_button
+		);
+		echo '<div class="content_grid_container ' . esc_html( $content_type_to_display ) . '">';
+
+		while( $related_content_query->have_posts() ) :
+			$related_content_query->the_post();
+			get_template_part( 'template-parts/loop/grid' );
+		endwhile;
+
+		echo '</div>';
+	endif;
+	wp_reset_postdata();
+ }
+
+/**
+ *
+ * display the latest blog posts,
+ *
+ * @param int $max_to_display -- how many to display
+ * @param string $section_title -- what the title should say
+ *
+ */
+ function igb_display_latest_blog_posts( $max_to_display = 8, $section_title = 'Latest Blog Posts' ) {
+	$latest_blog_posts_args = array(
+		'post_type' 		=> 'post',
+		'posts_per_page'	=> $max_to_display,
+		'orderby'			=> 'date',
+		'order'				=> 'DESC',
+	);
+	$latest_blogs_query = new WP_Query( $latest_blog_posts_args );
+
+	if( $latest_blogs_query->have_posts() ) : ?>
+	<section class="related_content_container glossary_terms related">
+			<header class="section_header">
+				<h6><?php echo esc_html( $section_title ) ?></h6>
+			</header>
+		</section>
+		<div class="content_grid_container blog_posts">
+		<?php while( $latest_blogs_query->have_posts() ) :
+			$latest_blogs_query->the_post();
+			get_template_part( 'template-parts/loop/grid' );
+		endwhile; ?>
+		</div>
+	<?php endif;
+
+	wp_reset_postdata();
+}
