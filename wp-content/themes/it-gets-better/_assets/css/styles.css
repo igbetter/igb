@@ -3854,6 +3854,8 @@ nav.pagination .page-numbers {
 
 img {
   max-width: 100% !important;
+}
+.featured_image img {
   max-height: 90vh;
 }
 

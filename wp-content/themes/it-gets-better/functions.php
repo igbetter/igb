@@ -86,6 +86,9 @@ if ( ! function_exists( 'it_gets_better_setup' ) ) :
 		remove_theme_support( 'block-templates' );
 
 		show_admin_bar(false);
+
+		// Adds support for Woo Support
+		add_theme_support( 'woocommerce' );
 	}
 endif;
 add_action( 'after_setup_theme', 'it_gets_better_setup' );
