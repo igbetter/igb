@@ -42,7 +42,42 @@ input {
 		}
 	}
 }
+select {
+	font-size: $font-size-md;
+		padding: 0.5em 0.75em;
+		margin: 0.5em auto;
+		line-height: 1.1;
+		font-weight: 300;
+		font-family: $poppins;
+		border-radius: 8px;
+		transition: all 250ms ease-in-out;
 
+		@include themify($themes) {
+			color: themed( 'inputTextColor' );
+			border: 1px solid rgba( lighten( themed('backgroundColor'), 5 ), 0.95 );
+			background: rgba( themed('inputBGColor'), 0.7 );
+			box-shadow: themed( 'insetShadow' );
+		}
+}
+textarea {
+	font-size: $font-size-md;
+	padding: 0.5em 0.75em;
+	margin: 0.5em auto;
+	line-height: 1.1;
+	font-weight: 300;
+	font-family: $poppins;
+	border-radius: 8px;
+	transition: all 250ms ease-in-out;
+	width: 100%;
+	min-height: 5em;
+
+	@include themify($themes) {
+		color: themed( 'inputTextColor' );
+		border: 1px solid rgba( lighten( themed('backgroundColor'), 5 ), 0.95 );
+		background: rgba( themed('inputBGColor'), 0.7 );
+		box-shadow: themed( 'insetShadow' );
+	}
+}
 label {
 	display: block;
 	font-weight: 300;

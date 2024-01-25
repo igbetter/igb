@@ -829,6 +829,11 @@ use {
   object-fit: cover;
 }
 
+.icon-VK-dims {
+  width: 30px;
+  height: 30px;
+}
+
 .icon-doc-dims {
   width: 335px;
   height: 450px;
@@ -874,6 +879,11 @@ use {
   height: 447px;
 }
 
+.icon-spotify-dims {
+  width: 30px;
+  height: 30px;
+}
+
 .icon-svg-dims {
   width: 335px;
   height: 447px;
@@ -890,6 +900,16 @@ use {
 }
 
 .icon-twitch-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-website-dims {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-x-dims {
   width: 30px;
   height: 30px;
 }
@@ -1964,6 +1984,44 @@ a:visited article.single_term main p {
 }
 .theme-dark #main.browse_content_page .facetwp-checkbox.checked:nth-of-type(5n + 5):after {
   background: #d6d6d6;
+}
+#main.browse_content_page .facetwp-facet-playlist {
+  width: 100%;
+}
+#main.browse_content_page .facetwp-facet-playlist .fs-wrap {
+  width: 100%;
+}
+#main.browse_content_page .facetwp-facet-playlist .fs-label-wrap {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+}
+.theme-light #main.browse_content_page .facetwp-facet-playlist .fs-label-wrap {
+  color: #292929;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
+}
+.theme-dark #main.browse_content_page .facetwp-facet-playlist .fs-label-wrap {
+  color: #ffffff;
+  border: 1px solid rgba(54, 54, 54, 0.95);
+  background: rgba(41, 41, 41, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
+}
+#main.browse_content_page .facetwp-facet-playlist .fs-label-wrap .fs-label {
+  white-space: initial;
+  line-height: 1.1;
+}
+.theme-light #main.browse_content_page .facetwp-facet-playlist .fs-dropdown,
+.theme-light #main.browse_content_page .facetwp-facet-playlist .fs-search {
+  color: #292929;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
+}
+.theme-dark #main.browse_content_page .facetwp-facet-playlist .fs-dropdown,
+.theme-dark #main.browse_content_page .facetwp-facet-playlist .fs-search {
+  color: #ffffff;
+  background: #292929;
+  box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
 }
 #main.browse_content_page .facetwp-facet-pagination {
   text-align: center;
@@ -3955,6 +4013,54 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 15px, rgba(0, 0, 0, 0.18) 0 -2px 6px, rgba(0, 0, 0, 0.28) 0px 3px 8px, rgba(0, 0, 0, 0.19) 0px 7px 15px, rgba(0, 0, 0, 0.62) 0 1px 1px;
 }
 
+select {
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  padding: 0.5em 0.75em;
+  margin: 0.5em auto;
+  line-height: 1.1;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  transition: all 250ms ease-in-out;
+}
+.theme-light select {
+  color: #292929;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
+}
+.theme-dark select {
+  color: #ffffff;
+  border: 1px solid rgba(54, 54, 54, 0.95);
+  background: rgba(41, 41, 41, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
+}
+
+textarea {
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  padding: 0.5em 0.75em;
+  margin: 0.5em auto;
+  line-height: 1.1;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  transition: all 250ms ease-in-out;
+  width: 100%;
+  min-height: 5em;
+}
+.theme-light textarea {
+  color: #292929;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.019) 2px 2px 6px 0px inset, rgba(0, 0, 0, 0.09) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.45) 0 -1px 1px;
+}
+.theme-dark textarea {
+  color: #ffffff;
+  border: 1px solid rgba(54, 54, 54, 0.95);
+  background: rgba(41, 41, 41, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.19) 2px 2px 8px 0px inset, rgba(0, 0, 0, 0.25) -1px -1px 6px 1px inset, rgba(0, 0, 0, 0.75) 0 -1px 3px;
+}
+
 label {
   display: block;
   font-weight: 300;
@@ -4728,6 +4834,34 @@ https://splidejs.com/
 
 .svg_divider.full_width {
   width: 100vw;
+}
+
+body .has-x-large-font-size,
+#content .has-x-large-font-size {
+  font-size: clamp(1.39rem, 2vw + 0.39rem, 4.19rem) !important;
+}
+body .has-large-font-size,
+#content .has-large-font-size {
+  font-size: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem) !important;
+}
+body .has-medium-font-size,
+#content .has-medium-font-size {
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem) !important;
+}
+body .has-small-font-size,
+#content .has-small-font-size {
+  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem) !important;
+}
+body .has-igb-purple-background-color,
+body .has-igb-blue-background-color,
+body .has-igb-yellow-background-color,
+body .has-igb-pink-background-color,
+#content .has-igb-purple-background-color,
+#content .has-igb-blue-background-color,
+#content .has-igb-yellow-background-color,
+#content .has-igb-pink-background-color {
+  font-weight: 300;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .section_hero {

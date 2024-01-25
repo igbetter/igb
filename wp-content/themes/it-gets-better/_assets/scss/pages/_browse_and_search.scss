@@ -202,6 +202,40 @@
 			}
 		}
 	}
+	.facetwp-facet-playlist {
+		width: 100%;
+
+		.fs-wrap {
+			width: 100%;
+		}
+
+		.fs-label-wrap {
+			padding: 0.5em 1em;
+			border-radius: 8px;
+
+			@include themify($themes) {
+				color: themed( 'inputTextColor' );
+				border: 1px solid rgba( lighten( themed('backgroundColor'), 5 ), 0.95 );
+				background: rgba( themed('inputBGColor'), 0.7 );
+				box-shadow: themed( 'insetShadow' );
+			}
+
+			.fs-label {
+				white-space: initial;
+				line-height: 1.1;
+
+			}
+		}
+		.fs-dropdown,
+		.fs-search {
+			@include themify($themes) {
+				color: themed( 'inputTextColor' );
+
+				background: themed('inputBGColor');
+				box-shadow: themed( 'insetShadow' );
+			}
+		}
+	}
 
 	.facetwp-facet-pagination {
 		text-align: center;
