@@ -1,0 +1,218 @@
+{
+    "key": "group_65b1968009af1",
+    "title": "Block - Link tree",
+    "fields": [
+        {
+            "key": "field_65b1968084a07",
+            "label": "Heading text",
+            "name": "heading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65b1973e84a08",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "None",
+                "subtle_grey": "Subtle Grey",
+                "subtle_purple": "Subtle Purple",
+                "subtle_pink": "Subtle Pink",
+                "subtle_blue": "Subtle Blue",
+                "subtle_yellow": "Subtle Yellow"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "max": "",
+            "prepend": "",
+            "append": "",
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "min": ""
+        },
+        {
+            "key": "field_65b1996824739",
+            "label": "Link Group",
+            "name": "link_group",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 1,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_65b199a42473a",
+            "button_label": "Add Link Group",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65b199a42473a",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65b1996824739"
+                },
+                {
+                    "key": "field_65b199de2473b",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_repeater_stylised_button": 1,
+                    "layout": "block",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_65b19b8f38f72",
+                    "button_label": "Add Link",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_65b199fe2473c",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "acfe_image_selector",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "none :": "none :",
+                                "website": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/website.svg",
+                                "facebook": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/facebook.svg",
+                                "instagram": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/instagram.svg",
+                                "instagramES": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/instagramES.svg",
+                                "linkedin": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/linkedin.svg",
+                                "spotify": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/spotify.svg",
+                                "tiktok": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/tiktok.svg",
+                                "twitch": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/twitch.svg",
+                                "VK": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/VK.svg",
+                                "x": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/x.svg",
+                                "youtube": "\/wp-content\/themes\/it-gets-better\/_assets\/svg\/originals\/youtube.svg"
+                            },
+                            "default_value": false,
+                            "image_size": "thumbnail",
+                            "width": 100,
+                            "height": "",
+                            "border": 4,
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "layout": "horizontal",
+                            "max": "",
+                            "min": "",
+                            "parent_repeater": "field_65b199de2473b"
+                        },
+                        {
+                            "key": "field_65b19b8f38f72",
+                            "label": "URL",
+                            "name": "url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "parent_repeater": "field_65b199de2473b"
+                        }
+                    ],
+                    "parent_repeater": "field_65b1996824739"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/link-tree-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1706140920
+}

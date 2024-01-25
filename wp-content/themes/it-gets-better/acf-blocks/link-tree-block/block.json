@@ -1,0 +1,16 @@
+{
+	"name": "igb/link-tree",
+	"title": "Link Tree",
+	"description": "Display a collection of links in groups, styled like the glossary term tag cloud",
+	"style": [ "file:./link-tree.css" ],
+	"category": "igb",
+	"keywords": ["links", "global", "affiliate links", "link tree", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "link-tree.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}
