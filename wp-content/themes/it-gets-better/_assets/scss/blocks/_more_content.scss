@@ -1,0 +1,25 @@
+
+
+.more_content_section {
+	display: block;
+	padding: 2em;
+
+	.more_content_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		h2 {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		h3 + a {
+			margin-top: -2em;
+		}
+	}
+
+	.more_content_footer {
+		text-align: right;
+	}
+
+}

@@ -1,0 +1,16 @@
+{
+	"name": "igb/featured-contnt",
+	"title": "Featured Content",
+	"description": "Display featured video, playlist, blog or glossary term",
+	"style": [ "file:./featured-content.css" ],
+	"category": "igb",
+	"keywords": ["featured", "content", "related", "additional", "igb"],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "featured-content.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}

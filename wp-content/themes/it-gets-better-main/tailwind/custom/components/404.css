@@ -1,9 +1,0 @@
-body.error404 {
-  #content {
-    @apply flex justify-center m-0 h-[270px];
-  }
-
-  .page-title {
-    @apply mx-0;
-  }
-} 

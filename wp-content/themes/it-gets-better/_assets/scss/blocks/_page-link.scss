@@ -1,0 +1,135 @@
+.page_link_section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: all 300ms ease-in-out;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+
+	&.image_left {
+		flex-direction: row-reverse;
+	}
+
+	> div {
+		width: 50%;
+
+		&.page_link-text_container {
+			width: 55%;
+			margin-left: -5%;
+			position: relative;
+			z-index: 99;
+
+			@include phone-only {
+				width: 72%;
+			}
+		}
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			border-top: 1px solid rgba( themed( 'textColor' ), 0.23 );
+			border-bottom: 1px solid rgba( themed( 'textColor' ), 0.23 );
+			box-shadow: themed( 'largeShadow');
+		}
+	}
+}
+
+h3.link_title {
+	display: block;
+	padding: 1em 1em 1em 6%;
+	transition: all 250ms ease-in-out;
+
+	clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0% 100%);
+
+	@include themify( $themes) {
+		background: themed( 'primaryButtonBGColor' );
+		color: themed( 'primaryButtonTextColor' );
+		border: themed( 'primaryButtonBorder' );
+		text-decoration: none;
+	}
+	span {
+		font-weight: 200;
+
+		&.subheading {
+			font-size: $font-size-sm;
+			display: block;
+			margin-bottom: 0.25em;
+			line-height: 1.1;
+			font-weight: 500;
+		}
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify( $themes) {
+			background: themed( 'primaryButtonBGHoverColor' );
+			color: themed( 'primaryButtonTextHoverColor' );
+			border: themed( 'primaryButtonHoverBorder' );
+			text-decoration: none;
+		}
+	}
+}
+.page_link-text_container {
+
+	a,
+	a:visited {
+		text-decoration: none;
+
+
+		.link_description {
+			font-weight: 200;
+			//padding: 0 2em 1em 10%;
+			font-size: $font-size-md;
+			max-width: $max_body_text_width_half;
+			margin: 0 auto;
+
+			@include themify( $themes) {
+				color: themed( 'textColor' );
+			}
+
+			@include tablet-down {
+				padding: 0 2em 0 8%;
+			}
+		}
+	}
+
+	.fake_button {
+		display: inline-block;
+		margin: 1.25em 2em;
+		float: right;
+		transition: all 250ms ease-in-out;
+	}
+}
+.page_link-image_container {
+	position: relative;
+	margin: 2em 0;
+
+	.small_frame {
+		position: absolute;
+		width: 110%;
+		left: 0;
+		z-index: -1;
+
+		height: 100%;
+	}
+
+	figure {
+		margin: 0 0 0 -3em;
+		width: 95%;
+		filter: drop-shadow(0 18px 18px rgba( 0, 0, 0, 0.23 ) );
+
+		img {
+			margin: 3em 0;
+			width: 100%;
+			max-height: 350px;
+
+			@include themify($themes) {
+				border: 6px solid themed( 'backgroundColor' );
+			}
+
+		}
+	}
+}

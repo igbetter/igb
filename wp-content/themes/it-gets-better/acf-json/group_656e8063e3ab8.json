@@ -1,0 +1,138 @@
+{
+    "key": "group_656e8063e3ab8",
+    "title": "Block - Glossary Term List",
+    "fields": [
+        {
+            "key": "field_656e8064c1faa",
+            "label": "Heading text",
+            "name": "heading_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "55",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "acfe_save_meta": 0,
+            "default_value": "Browse Popular Terms",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "maxlength": "",
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_656e80a3c1fab",
+            "label": "Number of terms to display",
+            "name": "number_of_terms_to_display",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "How many terms to display (max 20)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "acfe_save_meta": 0,
+            "default_value": 17,
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "min": "",
+            "max": 20,
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_656eae439f898",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "acfe_save_meta": 0,
+            "choices": {
+                "default": "None",
+                "subtle_grey": "Subtle Grey",
+                "subtle_purple": "Subtle Purple",
+                "subtle_pink": "Subtle Pink",
+                "subtle_blue": "Subtle Blue",
+                "subtle_yellow": "Subtle Yellow"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "max": "",
+            "prepend": "",
+            "append": "",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "allow_null": 0,
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "min": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/term-list-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 1,
+    "acfe_display_title": "",
+    "acfe_permissions": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1701752684
+}

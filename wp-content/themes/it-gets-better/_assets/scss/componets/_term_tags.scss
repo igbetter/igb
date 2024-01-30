@@ -1,0 +1,147 @@
+aside.related_terms {
+	max-width: 90vw;
+	margin: -1em auto 0 auto;
+	position: relative;
+
+	&:not(.smaller) {
+		ul {
+			@include themify( $themes ) {
+				background-image: linear-gradient(
+					to right,
+					rgba( themed('accentPurple'), 0 ) 6%,
+					rgba(themed('accentPurple'), 1) 45%,
+				);
+
+			}
+		}
+	}
+
+	&.smaller {
+		display: flex;
+		justify-content: flex-end;
+		width: 103%;
+
+		a,
+		a:visited,
+		a.secondary_button,
+		a.secondary_button:visited {
+			font-size: $font-size-sm;
+			padding: 0.1em 0.5em;
+			border-radius: 2px;
+		}
+
+	}
+
+	> ul {
+		margin: 0 2em 0 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+
+		> li { // only the first level
+			margin-left: -1px;
+			transform: skewX(-26deg);
+
+			@include themify( $themes ) {
+				background: themed( 'backgroundColor' );
+			}
+
+			&:last-of-type {
+				margin-right: -1em;
+			}
+
+			> a > span { // only the first level
+					transform: skewX(26deg);
+				}
+			}
+		}
+
+
+	a,
+	a:visited {
+		display: inline-block;
+		padding: 0.25em 1em;
+
+
+		span {
+			display: inline-block;
+
+		}
+	}
+	ul.more_terms_dropdown {
+		transform: skewX(26deg);
+		margin: 0;
+		padding: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+		z-index: 99999;
+		top: 100%;
+		left: 0;
+		//right: 0;
+		width: 100%;
+		list-style: none;
+
+		@include themify( $themes ) {
+			background: rgba( themed( 'backgroundColor' ), 0.8 );
+		}
+
+		> li {
+			flex: none;
+			margin: 2px;
+			padding: 0;
+
+			a,
+			a:visited {
+				display: inline-block;
+			}
+		}
+
+	}
+}
+
+// small, subtle display of the tag tags.
+
+div.list_of_all_tags {
+	font-size: $font-size-sm;
+	font-weight: 200;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 90vw;
+	margin: 5em auto -2.5em auto;
+	justify-content: center;
+	align-items: baseline;
+	position: relative;
+	z-index: 9;
+
+	@include themify($themes) {
+		color: rgba( themed('textColor'), 0.3 );
+	}
+
+	a,
+	a:visited {
+		display: inline-block;
+		line-height: 1;
+		padding: 0.1em 0.51em;
+		margin: 0 0.25em;
+		border-radius: 5px;
+
+		@include themify($themes) {
+			color: themed('backgroundColor');
+			background: rgba( themed( 'linkColor' ), 0.6 );
+			text-decoration-color: transparent;
+		}
+
+		&:hover,
+		&:target,
+		&:focus {
+			@include themify($themes) {
+				color: themed('backgroundColor');
+				background: rgba( themed( 'linkHoverColor' ), 0.76 );
+				text-decoration-color: transparent;
+			}
+		}
+	}
+}

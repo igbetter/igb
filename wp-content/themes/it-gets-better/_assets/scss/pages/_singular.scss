@@ -1,0 +1,107 @@
+// for pages that don't have a hero, adding the needed padding for heading block H1 level
+h1.wp-block-heading {
+	padding: 1em 0.25em;
+}
+
+.singular_post,
+.singular_eduguide,
+.single_video_page {
+	.post_header {
+		text-align: center;
+		width: 90vw;
+		margin: 1em auto;
+
+		h1 {
+			font-size: $font-size-blog-title;
+			max-width: $max_heading_text_width;
+			margin: 1em auto 0.35em auto;
+			text-align: center;
+			line-height: 1.1;
+			text-wrap: balance;
+		}
+
+		.post_date {
+			margin-bottom: 1em;
+		}
+
+		.featured_image {
+			padding: 8px;
+			height: 65vh;
+			margin: 1em 0 5em 0;
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: themed('backgroundColor');
+				box-shadow: themed( 'subtleShadow');
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.related_terms {
+			margin-top: -8em;
+			margin-bottom: 8em;
+			margin-right: 0.5em;
+		}
+	}
+
+	.post_main {
+		> * {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}
+
+.main_eduguide_download_button {
+	margin: -2em auto 3em auto;
+}
+
+.header_post_type_icon {
+	padding: 1em;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25vw;
+	max-width: 250px;
+	height: auto;
+	background: rgba( 255, 255, 255, 0.02 );
+	border-radius: 10px;
+	display: inline-block;
+	box-shadow: $subtle_shadow_light;
+	text-align: center;
+
+	svg {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.theme-dark & {
+		filter: brightness(1.24);
+	}
+
+	&.smaller {
+		//display: block;
+		transform: scale(0.45);
+		transform-origin: bottom left;
+		margin: -8.9em 0 1em -2em;
+		max-width: 50%;
+	}
+}
+
+
+// related _____ footer
+
+// related playlist
+
+.related_playlist_container {
+	h6 {
+		text-align: center;
+		margin-top: 2em;
+	}
+}
