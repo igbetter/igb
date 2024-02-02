@@ -1,0 +1,668 @@
+/*
+* general styles
+*
+*	1. core elements, html, body
+*	2. reusable styles, a11y, etc.
+*	2. links & buttons
+*	3. base body text & headings
+*	4. SVG line things
+*	5. SVG masks
+*
+*/
+
+// =============================================	1. core elements, html, body
+
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $poppins;
+	font-weight: 200;
+	font-size: $font_size_base;
+	max-width: 100vw;
+	overflow-x: hidden;
+
+	&.preload {
+		// remove all animations while page is loading.
+		// .preload is removed via JS once the page loads
+		* {
+			transition: none !important;
+			animation-duration: 0s !important;
+			-webkit-animation-duration: 0s !important;
+		}
+
+		.feature_frame .svg_line {
+			stroke-dashoffset: 480;
+			opacity: 0;
+		}
+
+		nav#site_main_navigation {
+			position: fixed;
+			opacity: 0;
+		}
+	}
+
+	&:not(.preload) {
+		transition: background-color 200ms ease-in-out;
+
+		a,
+		:after  {
+			transition: all 250ms ease-in-out;
+		}
+		*[class^="logo_"] {
+			transition: all 300ms ease-in-out;
+		}
+	}
+
+	@include init($themes) {
+		background: themed('backgroundColor');
+		color: themed('textColor');
+	}
+
+	::-moz-selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
+	::-webkit-selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
+	::selection {
+		background: rgba( 255, 244, 0, 0.8 );
+		color: $darker;
+	}
+}
+
+// =============================================	2. reusable styles, a11y, etc.
+
+.hide-this {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	padding: 0;
+	display: none;
+}
+
+.sr-only {
+	position: absolute;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.background-IGB_Purple {
+	@include themify($themes) {
+		background-color: themed('accentPurple');
+		color: themed( 'accentTextColor' );
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
+	}
+
+}
+
+.overlay-IGB_Purple {
+	@include themify($themes) {
+		background: rgba( themed('accentPurple'), 0.5 );
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentPurple'), 0.75);
+		}
+	}
+}
+
+.background-IGB_Pink {
+	@include themify($themes) {
+		background-color: themed('accentPink');
+		color: themed('accentTextColor');
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
+	}
+}
+
+.overlay-IGB_Pink {
+	@include themify($themes) {
+		background-color: rgba(themed('accentPink'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background: rgba(themed('accentPink'), 0.75);
+		}
+	}
+}
+
+.background-IGB_Blue {
+	@include themify($themes) {
+		background-color: themed('accentBlue');
+		color: themed('accentTextColor');
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
+	}
+
+}
+
+.overlay-IGB_Blue {
+	@include themify($themes) {
+		background-color: rgba(themed('accentBlue'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentBlue'), 0.75);
+		}
+	}
+}
+
+.background-IGB_Yellow {
+	@include themify($themes) {
+		background: themed('accentYellow');
+		color: $black;
+		text-shadow:
+			0 -1px 0 rgba( 255, 255, 255, 0.35 );
+	}
+
+}
+
+.overlay-IGB_Yellow {
+	@include themify($themes) {
+		background-color: rgba(themed('accentYellow'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentYellow'), 0.75);
+		}
+	}
+}
+
+.background-IGB_Dark {
+	@include themify($themes) {
+		background-color: themed('accentGrey');
+		color: themed('accentTextColor');
+	}
+
+}
+
+.overlay-IGB_Dark {
+	@include themify($themes) {
+		background-color: rgba(themed('accentGrey'), 0.5);
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			background-color: rgba(themed('accentGrey'), 0.75);
+		}
+	}
+}
+
+.background-subtle_grey {
+	@include themify($themes) {
+		background-color: themed('subtleGreyBG');
+	}
+}
+
+.background-subtle_purple {
+	@include themify($themes) {
+		background-color: themed('subtlePurpleBG');
+	}
+}
+
+.background-subtle_pink {
+	@include themify($themes) {
+		background-color: themed('subtlePinkBG');
+	}
+}
+
+.background-subtle_blue {
+	@include themify($themes) {
+		background-color: themed('subtleBlueBG');
+	}
+}
+
+.background-subtle_yellow {
+	@include themify($themes) {
+		background-color: themed('subtleYellowBG');
+	}
+}
+
+.underline-,
+.underline-IGB_Purple {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPurple' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPurple' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPurple' );
+					background: themed('subtlePurpleBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Pink {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentPink' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentPink' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentPink' );
+					background: themed('subtlePinkBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Blue {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentBlue' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentBlue' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentBlue' );
+					background: themed('subtleBlueBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Yellow {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentYellow' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentYellow' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentYellow' );
+					background: themed('subtleYellowBG');
+				}
+			}
+		}
+	}
+}
+
+.underline-IGB_Dark {
+	@include themify($themes) {
+		border-bottom: 1px solid themed( 'accentGrey' );
+	}
+
+	&.single_playlist {
+		@include themify($themes) {
+			border-top: 5px solid themed( 'accentGrey' );
+		}
+
+		.single_playlist_header {
+			a {
+				@include themify($themes) {
+					border-top: 1px solid themed( 'accentGrey' );
+					background: themed('subtleGreyBG');
+				}
+			}
+		}
+	}
+}
+
+
+
+// =============================================	3. links & buttons
+a,
+a:visited {
+	font-weight: 500;
+	@include themify($themes) {
+		color: themed('linkColor');
+		text-decoration-color: rgba( themed('linkColor'), 0.5 );
+	}
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			color: themed('linkHoverColor');
+			text-decoration-color: themed('linkColor');
+		}
+	}
+}
+input[type="submit"],
+.wp-element-button,
+.wp-element-button:visited,
+.wp-block-button__link,
+.wp-block-button__link:visited,
+a.primary_button,
+a.primary_button:visited {
+	display: inline-block;
+	border-radius: 3px;
+	position: relative;
+	padding: 0.8em 2em;
+	background-color: transparent;
+	margin-left: .5em;
+	z-index: 9;
+	text-decoration: none;
+
+	@include themify($themes) {
+		color: themed('primaryButtonTextColor');
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		transform: skew(-18deg);
+		-webkit-backface-visibility: hidden;
+		border-radius: 3px;
+		z-index: -1;
+
+		@include themify($themes) {
+			background-color: themed('primaryButtonBGColor');
+			border: themed('primaryButtonBorder');
+			box-shadow: themed( 'subtleShadow' );
+		}
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			color: themed('primaryButtonTextHoverColor');
+		}
+		&:after {
+			@include themify($themes) {
+				background-color: themed('primaryButtonBGHoverColor');
+				border: themed('primaryButtonHoverBorder');
+				box-shadow: themed( 'normalShadow' );
+
+			}
+		}
+	}
+}
+
+.secondary_button,
+a.secondary_button,
+a.secondary_button:visited,
+.fake_secondary_button {
+
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: themed('secondaryButtonBGColor');
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
+		}
+	}
+}
+
+.subtle_overlay_button,
+a.subtle_overlay_button,
+a.subtle_overlay_button:visited {
+	font-weight: 300;
+	padding: 0.5em 1.5em;
+
+	@include themify($themes) {
+		background-color: rgba( themed('backgroundColor'), 0.7 );
+		color: themed('secondaryButtonTextColor');
+		border: themed('secondaryButtonBorder');
+	}
+
+	&:hover,
+	&:focus {
+		@include themify($themes) {
+			background-color: themed('secondaryButtonBGHoverColor');
+			color: themed('secondaryButtonTextHoverColor');
+			border: themed('secondaryButtonHoverBorder');
+		}
+	}
+}
+
+.safe-exit-button {
+	position: fixed;
+    top: 160px;
+	display: flex;
+    right: 0;
+    z-index: 999999999;
+	filter: drop-shadow(0 1px 1px rgba(50, 50, 0, 0.75));
+
+	@include phone-only {
+		top: 70px;
+	}
+
+	@include phone-landscape {
+		top: 33vh;
+	}
+
+	a,
+	a:visited {
+		display: inline-block;
+		clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+		padding: 0.65em 1.1em 0.45em 2.15em;
+
+		@include themify($themes) {
+			background: themed('accentButtonBGColor');
+			color: themed('accentButtonTextColor');
+		}
+
+		&:hover,
+		&:target,
+		&:focus {
+			@include themify($themes) {
+				background: themed('accentButtonBGHoverColor');
+				color: themed('accentButtonTextHoverColor');
+			}
+		}
+
+		svg {
+			margin-left: 2px;
+			padding-left: 2px;
+
+		}
+	}
+}
+svg.file_icon {
+	height: 1.5em;
+	width: 1.5em;
+	margin: -.5em -1em -.5em 1em;
+}
+
+
+// =============================================	3. base body text & headings
+p, blockquote {
+	max-width: $max_body_text_width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+h1 {
+	font-size: $font_size_xxxl;
+	line-height: 1.08;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	> span {
+		@include themify($themes) {
+			color: themed( 'accentButtonBGColor' );
+		}
+	}
+}
+h2 {
+	font-size: $font_size_xxl;
+	line-height: 1;
+	font-weight: 700;
+	margin-top: 0.5em;
+}
+h3 {
+	font-size: $font_size_xl;
+	line-height: 1;
+	font-weight: 700;
+	margin-top: 0.5em;
+}
+
+h4 {
+	font-size: $font_size_lg;
+	line-height: 1;
+	font-weight: 500;
+	margin-top: 0.5em;
+//	text-transform: uppercase;
+}
+h5 {
+	font-size: $font_size_md;
+	line-height: 1;
+	font-weight: 300;
+	margin-top: 0.5em;
+}
+h6 {
+	font-size: $font_size_base;
+	line-height: 1;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+
+
+// =============================================	4. SVG line things
+
+use {
+	padding: 0;
+	width: 100%;
+	display: block;
+}
+
+.feature_frame {
+	width: 50%;
+	height: auto;
+
+
+}
+
+.svg_line {
+	fill: transparent;
+	stroke-width: 3.4%;
+	stroke-linecap: square;
+	stroke-linejoin: round;
+
+	.feature_frame & {
+		stroke-dasharray: 290;
+
+		animation: dash 2.15s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+		&:nth-of-type( 2 ) {
+			animation-delay: 100ms;
+		}
+		&:nth-of-type(3) {
+			animation-delay: 140ms;
+		}
+	}
+
+
+	&.thin_line {
+		stroke-width: 0.3rem;
+	}
+
+	&.blue {
+		stroke: $blue;
+	}
+
+	&.pink {
+		stroke: $pink;
+	}
+
+	&.purple {
+		stroke: $purple;
+	}
+
+	&.yellow {
+		stroke: $yellow;
+	}
+}
+
+
+// =============================================	5. SVG masks
+
+.masked_image_container_single {
+	-webkit-clip-path: url(#image_mask_slash);
+	clip-path: url(#image_mask_slash);
+
+	img,
+	video {
+		height: 100%;
+		object-fit: cover;
+
+	}
+}
+
+.masked_image_container_double {
+	-webkit-clip-path: url(#image_mask_double_slash);
+	clip-path: url(#image_mask_double_slash);
+	margin: -2% 0;
+
+	img,
+	video {
+		height: 100%;
+		object-fit: cover;
+
+	}
+
+}

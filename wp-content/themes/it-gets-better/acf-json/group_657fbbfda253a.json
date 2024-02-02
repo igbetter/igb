@@ -1,0 +1,293 @@
+{
+    "key": "group_657fbbfda253a",
+    "title": "Block - Page Link",
+    "fields": [
+        {
+            "key": "field_657fbbfd244fc",
+            "label": "Page \/ Content Link",
+            "name": "page_link",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Select only one item to link to.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "eduguide",
+                "resource",
+                "video",
+                "glossary",
+                "post"
+            ],
+            "post_status": [
+                "publish",
+                "future"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "acfe_add_post": 1,
+            "acfe_edit_post": 1,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "required_message": "Choose only one page to link to",
+            "min": 1,
+            "max": 1,
+            "elements": [
+                "featured_image"
+            ],
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_657fbe42244ff",
+            "label": "Text\/Content Side",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1,
+            "no_preference": 0
+        },
+        {
+            "key": "field_657fbd10244fd",
+            "label": "Override Page Title?",
+            "name": "override_page_title",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Title Override:",
+            "ui_off_text": "Use Existing Title",
+            "ui": 1,
+            "style": ""
+        },
+        {
+            "key": "field_657fbd8e244fe",
+            "label": "Link Title",
+            "name": "link_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_657fbd10244fd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Override Title Text",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657fbee124500",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Appears above the page title, in smaller text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657ff1fd05cb7",
+            "label": "Link Description",
+            "name": "link_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "rows": 7,
+            "placeholder": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_657fbf5e24501",
+            "label": "Image Side",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0
+        },
+        {
+            "key": "field_657fbf7a24502",
+            "label": "Featured Image Override",
+            "name": "featured_image_override",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "",
+            "ui_on_text": "Override image",
+            "ui_off_text": "Use existing image",
+            "ui": 1
+        },
+        {
+            "key": "field_657fc02124503",
+            "label": "New Featured Image",
+            "name": "new_featured_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_657fbf7a24502",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "wp",
+            "return_format": "url",
+            "library": "all",
+            "upload_folder": "",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_657fc0c224504",
+            "label": "Decoration Option",
+            "name": "decoration_option",
+            "aria-label": "",
+            "type": "acfe_image_selector",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/none.png",
+                "smaller_frame_option_01": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/smaller_frame_option_01.png",
+                "smaller_frame_option_02": "\/wp-content\/themes\/it-gets-better\/_assets\/images\/smaller_frame_option_02.png"
+            },
+            "default_value": "none",
+            "image_size": "thumbnail",
+            "width": "",
+            "height": "",
+            "border": 4,
+            "return_format": "value",
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "layout": "horizontal",
+            "min": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/page-link-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1702883963
+}

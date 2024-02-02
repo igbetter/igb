@@ -1,0 +1,26 @@
+// typography sizing
+body,
+#content {
+	.has-x-large-font-size {
+		font-size: $font-size-xl !important;
+	}
+	.has-large-font-size {
+		font-size: $font-size-lg !important;
+	}
+	.has-medium-font-size {
+		font-size: $font-size-md !important;
+	}
+	.has-small-font-size {
+		font-size: $font-size-sm !important;
+	}
+
+	.has-igb-purple-background-color,
+	.has-igb-blue-background-color,
+	.has-igb-yellow-background-color,
+	.has-igb-pink-background-color {
+		font-weight: 300;
+		text-shadow:
+			0 1px 0 rgba( 0, 0, 0, 0.45 ),
+			0 0 20px rgba( 0, 0, 0, 0.2 );
+	}
+}
