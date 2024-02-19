@@ -6,6 +6,15 @@
 	}
 }
 
+section.glossary_header {
+	> div,
+	> p {
+		padding: 1em 2em;
+		max-width: 100%;
+	}
+}
+
+
 sub.term_category {
 	font-size: $font-size-base;
 	font-weight: 500;
@@ -39,9 +48,17 @@ footer.glossary_term_bottom_border {
 
 		header {
 			padding: 0.5em 2em 0 2em;
+
+			@include phone-only {
+				padding: 0;
+			}
 		}
 		main {
 			padding: 0 2em 2em 2em;
+
+			@include phone-only {
+				padding: 0;
+			}
 		}
 
 		img {
@@ -50,6 +67,10 @@ footer.glossary_term_bottom_border {
 			width: calc( 100% + 4em );
 			max-width: none !important;
 			object-fit: cover;
+
+			@include phone-only {
+				max-height: 150px;
+			}
 
 			@include themify($themes) {
 				box-shadow: themed( 'subtleShadow');

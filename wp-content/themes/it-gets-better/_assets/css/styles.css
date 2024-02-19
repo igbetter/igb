@@ -1531,6 +1531,12 @@ article.single_playlist .playlist_description {
   display: none;
 }
 
+section.glossary_header > div,
+section.glossary_header > p {
+  padding: 1em 2em;
+  max-width: 100%;
+}
+
 sub.term_category {
   font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
   font-weight: 500;
@@ -1572,14 +1578,29 @@ footer.glossary_term_bottom_border {
 .glossary_list .single_term header {
   padding: 0.5em 2em 0 2em;
 }
+@media (max-width: 600px) {
+  .glossary_list .single_term header {
+    padding: 0;
+  }
+}
 .glossary_list .single_term main {
   padding: 0 2em 2em 2em;
+}
+@media (max-width: 600px) {
+  .glossary_list .single_term main {
+    padding: 0;
+  }
 }
 .glossary_list .single_term img {
   margin: -2em -2em -2.4em -2em;
   width: calc(100% + 4em);
   max-width: none !important;
   object-fit: cover;
+}
+@media (max-width: 600px) {
+  .glossary_list .single_term img {
+    max-height: 150px;
+  }
 }
 .theme-light .glossary_list .single_term img {
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
@@ -4753,6 +4774,14 @@ https://splidejs.com/
   width: 45vw;
   min-width: 410px;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container.half_width {
+    width: calc(100vw - 3em);
+    min-width: 0;
+    display: block;
+    margin-top: 2em;
+  }
+}
 .accordion_tabs_container.half_width .tab {
   overflow: hidden;
 }
@@ -4760,11 +4789,28 @@ https://splidejs.com/
   width: 30vw;
   min-width: 270px;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container.half_width .tab .tab_content {
+    width: 100%;
+    min-width: 0;
+  }
+}
 .accordion_tabs_container.half_width .tab.expanded {
   width: 70%;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container.half_width .tab.expanded {
+    width: 100%;
+  }
+}
 .accordion_tabs_container.half_width .tab.collapsed {
   width: 2.5em;
+}
+@media (max-width: 600px) {
+  .accordion_tabs_container.half_width .tab.collapsed {
+    width: 100%;
+    opacity: 1;
+  }
 }
 .accordion_tabs_container.full_width {
   width: 100vw;
@@ -4786,14 +4832,34 @@ https://splidejs.com/
 .theme-dark .accordion_tabs_container .tab:hover {
   border: 2px solid #292929;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab {
+    border-radius: 10px;
+  }
+}
 .accordion_tabs_container .tab:first-of-type {
   border-radius: 10px 0 0 10px;
+}
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab:first-of-type {
+    border-radius: 10px;
+  }
 }
 .accordion_tabs_container .tab:last-of-type {
   border-radius: 0 10px 10px 0;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab:last-of-type {
+    border-radius: 10px;
+  }
+}
 .accordion_tabs_container .tab .tab_inner {
   padding: 1em 1em 3em 1em;
+}
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab .tab_inner {
+    padding: 1em;
+  }
 }
 .accordion_tabs_container .tab h5 {
   display: block;
@@ -4812,6 +4878,14 @@ https://splidejs.com/
   transition-duration: 550ms;
   font-weight: 600;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab h5 {
+    transform: rotate(0);
+    width: 100%;
+    bottom: 0.5em;
+    left: 0.5em;
+  }
+}
 .accordion_tabs_container .tab .tab_content {
   margin: 0;
   padding: 1em;
@@ -4821,15 +4895,35 @@ https://splidejs.com/
   overflow: hidden;
   font-weight: 400;
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container .tab .tab_content {
+    transition: all 400ms ease-in-out;
+    max-height: 0;
+    padding: 0;
+  }
+}
 .accordion_tabs_container .expanded h5 {
   left: 1rem;
   bottom: 1rem;
   transform: rotate(0deg);
 }
+@media (max-width: 600px) {
+  .accordion_tabs_container .expanded h5 {
+    top: 1em;
+    left: 0.5em;
+  }
+}
 .accordion_tabs_container .expanded .tab_content {
   opacity: 1;
   transition-property: opacity;
   transition-duration: 400ms;
+}
+@media (max-width: 600px) {
+  .accordion_tabs_container .expanded .tab_content {
+    height: auto;
+    max-height: none;
+    padding: 1.75em 0.5em 1.1em 0.5em;
+  }
 }
 
 .svg_divider.full_width {

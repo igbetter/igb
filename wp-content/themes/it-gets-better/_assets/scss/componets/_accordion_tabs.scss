@@ -9,6 +9,13 @@
 		width: 45vw;
 		min-width: 410px;
 
+		@include phone-only {
+			width: calc( 100vw - 3em );
+			min-width: 0;
+			display: block;
+			margin-top: 2em;
+		}
+
 		.tab {
 
 			overflow: hidden;
@@ -17,16 +24,31 @@
 			.tab_content {
 				width: 30vw;
 				min-width: 270px;
+
+				@include phone-only {
+					width: 100%;
+					min-width: 0;
+					//opacity: 0;
+				}
+
 			}
 
 			&.expanded {
 				width: 70%;
 
+				@include phone-only {
+					width: 100%;
+				}
 			}
 
 			&.collapsed {
 			//	flex: none;
 				width: 2.5em;
+
+				@include phone-only {
+					width: 100%;
+					opacity: 1;
+				}
 			}
 		}
 
@@ -54,15 +76,31 @@
 
 		}
 
+		@include phone-only {
+			border-radius: 10px;
+		}
+
 		&:first-of-type {
 			border-radius:  10px 0 0 10px;
+
+			@include phone-only {
+				border-radius: 10px;
+			}
 		}
 		&:last-of-type {
 			border-radius: 0 10px 10px 0;
+
+			@include phone-only {
+				border-radius: 10px;
+			}
 		}
 
 		.tab_inner {
 			padding: 1em 1em 3em 1em;
+
+			@include phone-only {
+				padding: 1em;
+			}
 		}
 
 		h5 {
@@ -81,6 +119,13 @@
 			transition-property: left right transform;
 			transition-duration: 550ms;
 			font-weight: 600;
+
+			@include phone-only {
+				transform: rotate(0);
+				width: 100%;
+				bottom: 0.5em;
+				left: 0.5em;
+			}
 		}
 
 		.tab_content {
@@ -93,6 +138,12 @@
 			transition-duration: 400ms;
 			overflow: hidden;
 			font-weight: 400;
+
+			@include phone-only {
+				transition: all 400ms ease-in-out;
+				max-height: 0;
+				padding: 0;
+			}
 		}
 	}
 
@@ -104,6 +155,11 @@
 			left: 1rem;
 			bottom: 1rem;
 			transform: rotate(0deg);
+
+			@include phone-only {
+				top: 1em;
+				left: 0.5em;
+			}
 		}
 
 
@@ -111,6 +167,12 @@
 			opacity: 1;
 			transition-property: opacity;
 			transition-duration: 400ms;
+
+			@include phone-only {
+				height: auto;
+				max-height: none;
+				padding: 1.75em 0.5em 1.1em 0.5em;
+			}
 		}
 	}
 
