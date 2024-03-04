@@ -2102,7 +2102,7 @@ a:visited article.single_term main p {
   width: 100%;
   height: 0;
   min-height: 90px;
-  z-index: 99999;
+  z-index: 1111;
   padding: 0.75rem 1.5em;
   transition: all 250ms ease-in-out;
 }
@@ -4128,44 +4128,53 @@ button {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
 
-#main .frm_forms fieldset {
+.frm_forms fieldset {
   max-width: 90%;
   margin: 2em auto 5em auto;
   padding: 3em;
 }
-.theme-light #main .frm_forms fieldset {
+.theme-light .frm_forms fieldset {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #f7f7f7;
   background-image: linear-gradient(178deg, #ffffff 10%, #fafafa 31%, #f7f7f7 70%);
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
-.theme-dark #main .frm_forms fieldset {
+.theme-dark .frm_forms fieldset {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: #212121;
   background-image: linear-gradient(178deg, #292929 10%, #242424 31%, #212121 70%);
   box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 }
-#main .frm_forms fieldset legend {
+.frm_forms fieldset legend {
   padding: 0.5em 1em;
   font-weight: 600;
   font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
   border-radius: 10px;
 }
-.theme-light #main .frm_forms fieldset legend {
+.theme-light .frm_forms fieldset legend {
   background: #ffffff;
 }
-.theme-dark #main .frm_forms fieldset legend {
+.theme-dark .frm_forms fieldset legend {
   background: #292929;
 }
-#main .frm_forms .frm_form_fields input {
+.frm_forms .frm_form_fields input {
   display: inline-block;
 }
-#main .frm_forms .frm_form_fields input[type=text], #main .frm_forms .frm_form_fields input[type=tel], #main .frm_forms .frm_form_fields input[type=number], #main .frm_forms .frm_form_fields input[type=password], #main .frm_forms .frm_form_fields input[type=url], #main .frm_forms .frm_form_fields input[type=email] {
+.frm_forms .frm_form_fields input[type=text], .frm_forms .frm_form_fields input[type=tel], .frm_forms .frm_form_fields input[type=number], .frm_forms .frm_form_fields input[type=password], .frm_forms .frm_form_fields input[type=url], .frm_forms .frm_form_fields input[type=email] {
   display: block;
   width: 100%;
 }
-#main .frm_forms .frm_form_fields .frm_form_field {
+.frm_forms .frm_form_fields .frm_form_field {
   margin-bottom: 1.5em;
+}
+
+.wp-block-frm-modal-content .modal-header {
+  border-bottom: none;
+  padding-bottom: 0 !important;
+}
+
+.wp-block-frm-modal-content .modal-body {
+  padding-top: 0;
 }
 
 /**

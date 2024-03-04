@@ -46,11 +46,40 @@ endif;
 
 		<?php echo igb_display_related_glossary_term_tags( get_the_ID(), 'blog_post' ); ?>
 		<?php if( $eduguide_download ) : ?>
-			<a href="<?php echo esc_url( $eduguide_download_url ); ?>" class="primary_button main_eduguide_download_button filetype-<?php echo esc_attr( $eduguide_download_file_type ); ?>">
-				Download the EduGuide <span class="file_size">(&nbsp;<?php
-					echo size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
-							?>&nbsp;)</span>
-			</a>
+			<?php
+				$formidable_form_modal_anchor = "<a data-js-action=\"formidable-form-popup\" href=\"" . esc_url( $eduguide_download_url ) . "\" class=\"primary_button main_eduguide_download_button filetype--" . esc_attr( $eduguide_download_file_type ) . "\">";
+				$formidable_form_modal_anchor .= "Download the EduGuide";
+				$formidable_form_modal_anchor .= "<span class=\"file_size\">(&nbsp;";
+				$formidable_form_modal_anchor .= size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
+				$formidable_form_modal_anchor .= "&nbsp;)</span></a>";
+				echo do_shortcode( '[frmmodal-content size="large" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
+			?>
+			<script type="text/javascript">
+			  document.addEventListener('DOMContentLoaded', function () {
+			    // Find all elements with data-js-action="formidable-form-popup"
+			    var formidableFormPopups = document.querySelectorAll('[data-js-action="formidable-form-popup"]');
+
+			    // Add click event listener to each matching element
+			    formidableFormPopups.forEach(function (element) {
+			      element.addEventListener('click', function (event) {
+			        // Get the value of data-bs-target attribute
+			        var targetId = event.target.getAttribute('data-bs-target').replace(/#/g, '');
+
+			        // Find the div with the specified ID
+			        var targetDiv = document.getElementById(targetId);
+
+			        // Check if the div and the child input field exist
+			        if (targetDiv && targetDiv.querySelector('input#field_pdf_asset_redirect')) {
+			          // Get the original anchor's href
+			          var originalHref = event.target.href;
+
+			          // Set the value attribute of the input field to the original href
+			          targetDiv.querySelector('input#field_pdf_asset_redirect').value = originalHref;
+			        }
+			      });
+			    });
+			  });
+				</script>
 		<?php endif;?>
 	</header>
 	<main class="post_main">
