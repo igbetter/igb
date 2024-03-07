@@ -114,7 +114,8 @@ button {
 		}
 	}
 }
-#main .frm_forms {
+#main .frm_forms,
+.frm_forms {
 	fieldset {
 		max-width: 90%;
 		margin: 2em auto 5em auto;
@@ -159,4 +160,28 @@ button {
 		}
 	}
 
+}
+
+
+.wp-block-frm-modal-content  {
+
+	&.show {
+		 z-index: 99999;
+	}
+	.modal-header {
+		border-bottom: none;
+		padding-bottom: 0 !important;
+	}
+
+	.modal-content {
+		@include themify($themes) {
+			border: 1px solid rgba( themed('textColor'), 0.5 );
+			background: darken( themed('backgroundColor'), 3 );
+			background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
+			box-shadow: themed( 'subtleShadow');
+		}
+	}
+	.modal-body {
+		padding-top: 0;
+	}
 }
