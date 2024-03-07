@@ -114,7 +114,8 @@ button {
 		}
 	}
 }
-#main .frm_forms {
+#main .frm_forms,
+.frm_forms {
 	fieldset {
 		max-width: 90%;
 		margin: 2em auto 5em auto;
@@ -156,7 +157,120 @@ button {
 
 		.frm_form_field {
 			margin-bottom: 1.5em;
+
+
+			&.frm_two_col,
+			&.frm_three_col,
+			&.frm_four_col {
+				.frm_opt_container {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						grid-auto-rows: max-content;
+				}
+
+				.frm_radio,
+				.frm_checkbox {
+					grid-column-end: span 1;
+				}
+			}
 		}
 	}
+	.frm_display_format_buttons {
+		.frm_radio,
+		.frm_checkbox {
+			label {
+				display: block;
+				height: 100%;
+			}
 
+			input[type=radio],
+			input[type=checkbox] {
+				border: 0 !important;
+				clip: rect(1px, 1px, 1px, 1px);
+				-webkit-clip-path: inset(50%);
+				clip-path: inset(50%);
+				height: 1px;
+				margin: -1px !important;
+				overflow: hidden;
+				padding: 0;
+				position: absolute !important;
+				width: 1px !important;
+				word-wrap: normal !important;
+
+				&:checked {
+					+ .frm_label_button_container,
+					+ .frm_image_option_container {
+						@include themify($themes) {
+							border: 1px solid rgba( themed('textColor'), 0.5 );
+							background: themed('accentButtonBGColor');
+
+							box-shadow: themed( 'activeShadow');
+							color: themed('accentButtonTextColor');
+						}
+					}
+				}
+			}
+		}
+
+		.frm_label_button_container,
+		.frm_image_option_container {
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: darken( themed('backgroundColor'), 3 );
+				background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
+				box-shadow: themed( 'subtleShadow');
+				color: rgba( themed('textColor'), 0.46 );
+			}
+
+			border-radius: 2px;
+			padding: 0.5em 1.5em;
+			cursor: pointer;
+			align-items: center;
+			height: 100%;
+			display: flex;
+			box-sizing: border-box;
+			flex-wrap: nowrap !important;
+			gap: 16px;
+			overflow: hidden;
+			margin: 1em 0;
+			transition: all 250ms ease-in-out;
+
+			&:hover {
+				@include themify($themes) {
+					border: 1px solid rgba( themed('textColor'), 0.5 );
+					background: themed('accentButtonBGHoverColor');
+
+					box-shadow: themed( 'subtleShadow');
+					color: themed('accentButtonTextHoverColor');
+				}
+			}
+		}
+	}
 }
+
+
+
+.wp-block-frm-modal-content  {
+
+	&.show {
+		 z-index: 99999;
+	}
+	.modal-header {
+		border-bottom: none;
+		padding-bottom: 0 !important;
+	}
+
+	.modal-content {
+		@include themify($themes) {
+			border: 1px solid rgba( themed('textColor'), 0.5 );
+			background: darken( themed('backgroundColor'), 3 );
+			background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
+			box-shadow: themed( 'subtleShadow');
+		}
+	}
+	.modal-body {
+		padding-top: 0;
+	}
+}
+
