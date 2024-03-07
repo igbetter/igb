@@ -1008,15 +1008,19 @@ use {
 }
 
 .wp-block-embed,
-.contained_width {
+.contained_width,
+.wp-block-pullquote {
   width: 85vw;
   max-width: 90ch;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 @media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
   .wp-block-embed,
-  .contained_width {
+  .contained_width,
+  .wp-block-pullquote {
     padding-left: 1em;
     padding-right: 1em;
   }
@@ -1039,6 +1043,8 @@ use {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
 .flex-row {
@@ -1099,8 +1105,8 @@ main.post_main > h5,
 main.post_main > ol,
 main.post_main > ul {
   max-width: 90ch;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 @media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
   main.post_main > p,
@@ -1110,8 +1116,8 @@ main.post_main > ul {
   main.post_main > h5,
   main.post_main > ol,
   main.post_main > ul {
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-left: 4em;
+    padding-right: 4em;
   }
 }
 main.post_main > h4,
@@ -1131,8 +1137,8 @@ main.post_main > h3 {
   main.post_main > h1,
   main.post_main > h2,
   main.post_main > h3 {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 }
 
@@ -4956,6 +4962,47 @@ body .has-igb-pink-background-color,
 #content .has-igb-pink-background-color {
   font-weight: 300;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.is-style-small_width {
+  width: 40ch;
+  max-width: 80vw;
+}
+
+.is-style-staggered {
+  width: 40ch;
+  max-width: 75vw;
+  margin-left: 40% !important;
+  transform: translateX(-50%);
+  margin-right: auto !important;
+}
+.is-style-staggered:nth-of-type(2n) {
+  margin-left: auto !important;
+  margin-right: 40% !important;
+  transform: translateX(50%);
+}
+
+.theme-light .is-style-post-it {
+  border: 1px solid rgba(41, 41, 41, 0.5);
+  background: #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
+}
+.theme-dark .is-style-post-it {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #292929;
+  box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
+}
+.is-style-post-it.alignright {
+  float: right;
+  margin-right: 1em;
+  margin-left: 3em;
+  transform: rotate(1.5deg);
+}
+.is-style-post-it.alignleft {
+  float: left;
+  margin-left: 1em;
+  margin-right: 3em;
+  transform: rotate(-1.5deg);
 }
 
 .section_hero {

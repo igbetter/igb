@@ -24,3 +24,50 @@ body,
 			0 0 20px rgba( 0, 0, 0, 0.2 );
 	}
 }
+
+
+// custom style/variations
+
+
+.is-style-small_width {
+	width: 40ch;
+	max-width: 80vw;
+}
+
+.is-style-staggered {
+	width: 40ch;
+	max-width: 75vw;
+	margin-left: calc( 50% - 10% ) !important;
+	transform: translateX(-50%);
+	margin-right: auto !important;
+
+
+	&:nth-of-type( 2n ) {
+		margin-left: auto !important;
+		margin-right: calc( 50% - 10% )!important;
+		transform: translateX(50%);
+	}
+}
+
+.is-style-post-it {
+	@include themify($themes) {
+		border: 1px solid rgba( themed('textColor'), 0.5 );
+		background: themed('backgroundColor');
+		box-shadow: themed( 'subtleShadow');
+	}
+
+
+	&.alignright {
+		float: right;
+		margin-right: 1em;
+		margin-left: 3em;
+		transform: rotate( 1.5deg );
+	}
+
+	&.alignleft {
+		float: left;
+		margin-left: 1em;
+		margin-right: 3em;
+		transform: rotate( -1.5deg );
+	}
+}
