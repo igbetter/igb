@@ -9,11 +9,14 @@
 
 
 .wp-block-embed,
-.contained_width {
+.contained_width,
+.wp-block-pullquote {
 	width: 85vw;
 	max-width: $max_body_text_width;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 3em;
+	padding-right: 3em;
 
 	@include phone-landscape {
 		padding-left: 1em;
@@ -37,6 +40,8 @@
 	max-width: $max_wide_page_width;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 4em;
+	padding-right: 4em;
 }
 
 .flex-row {
@@ -98,12 +103,12 @@ main.post_main {
 	> ol,
 	> ul {
 		max-width: $max_body_text_width;
-		padding-left: 2em;
-		padding-right: 2em;
+		padding-left: 3em;
+		padding-right: 3em;
 
 		@include phone-landscape {
-			padding-left: 3em;
-			padding-right: 3em;
+			padding-left: 4em;
+			padding-right: 4em;
 		}
 	}
 
@@ -121,8 +126,8 @@ main.post_main {
 		margin-right: auto;
 
 		@include phone-landscape {
-			padding-left: 2em;
-			padding-right: 2em;
+			padding-left: 3em;
+			padding-right: 3em;
 		}
 	}
 }
