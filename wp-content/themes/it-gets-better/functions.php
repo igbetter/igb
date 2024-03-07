@@ -179,3 +179,9 @@ require get_template_directory() . '/_assets/functions/customizer.php';
  * Functions for acf blocks
  */
 require get_template_directory() . '/_assets/functions/acf.php';
+
+/**
+ * Functions for modifying core blocks
+ */
+require get_template_directory() . '/_assets/functions/block-mods.php';
+
