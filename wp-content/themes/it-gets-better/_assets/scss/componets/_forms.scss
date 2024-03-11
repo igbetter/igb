@@ -1,6 +1,6 @@
 
 input {
-	font-size: $font-size-md;
+	font-size: 16px;
 
 	&[type="text"],
 	&[type="tel"],
@@ -9,7 +9,7 @@ input {
 	&[type="url"],
 	&[type="email"],
 	&[type="search"] {
-		font-size: $font-size-md;
+		font-size: 16px;
 		padding: 0.5em 0.75em;
 		margin: 0.5em auto;
 		line-height: 1.1;
@@ -116,31 +116,65 @@ button {
 }
 #main .frm_forms,
 .frm_forms {
+
 	fieldset {
-		max-width: 90%;
-		margin: 2em auto 5em auto;
-		padding: 3em;
+		margin: 0 0 1em 0;
+		padding: 0;
+		width: 100%;
+		border: none;
 
-		@include themify($themes) {
-			border: 1px solid rgba( themed('textColor'), 0.5 );
-			background: darken( themed('backgroundColor'), 3 );
-			background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
-			box-shadow: themed( 'subtleShadow');
+		input {
+			max-width: calc( 100% - 1em );
 		}
+	}
 
-		legend {
-			padding: 0.5em 1em;
-			font-weight: 600;
-			font-size: $font-size-md;
-			border-radius: 10px;
+	.frm_combo_inputs_container {
+		display: flex;
+		> div {
+			margin-right: 2em;
+			flex: 1;
 
-			@include themify($themes) {
-				background: themed('backgroundColor');
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		@include phone-only {
+			display: block;
+
+			> div {
+				margin-right: 0;
 			}
 		}
 	}
 
+	.frm_description {
+		font-size: $font-size-sm;
+	}
 	.frm_form_fields {
+
+		> fieldset {
+			max-width: 90%;
+			margin: 2em auto 5em auto;
+			padding: 3em;
+
+			@include themify($themes) {
+				border: 1px solid rgba( themed('textColor'), 0.5 );
+				background: darken( themed('backgroundColor'), 3 );
+				background-image: linear-gradient( 178deg, themed('backgroundColor') 10%,  darken( themed('backgroundColor'), 2 ) 31%, darken( themed('backgroundColor'), 3 ) 70% );
+				box-shadow: themed( 'subtleShadow');
+			}
+
+			legend {
+				padding: 0.5em 1em;
+				font-weight: 600;
+				font-size: $font-size-md;
+				border-radius: 10px;
+
+				@include themify($themes) {
+					background: themed('backgroundColor');
+				}
+			}
+		}
 		input {
 			display: inline-block;
 
@@ -156,7 +190,8 @@ button {
 		}
 
 		.frm_form_field {
-			margin-bottom: 1.5em;
+			padding-bottom: 0.5em;
+			margin-bottom: 1em;
 
 
 			&.frm_two_col,
