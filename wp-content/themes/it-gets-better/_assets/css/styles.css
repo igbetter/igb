@@ -659,7 +659,7 @@ a.subtle_overlay_button:visited {
 }
 @media (max-width: 600px) {
   .safe-exit-button {
-    top: 70px;
+    top: 190px;
   }
 }
 @media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
@@ -2109,7 +2109,7 @@ a:visited article.single_term main p {
   width: 100%;
   height: 0;
   min-height: 90px;
-  z-index: 1111;
+  z-index: 9999;
   padding: 0.75rem 1.5em;
   transition: all 250ms ease-in-out;
 }
@@ -5155,6 +5155,10 @@ https://splidejs.com/
 
 .svg_divider.full_width {
   width: 100vw;
+}
+
+.wp-block-frm-modal-content.show {
+  z-index: 99999;
 }
 
 body .has-x-large-font-size,
