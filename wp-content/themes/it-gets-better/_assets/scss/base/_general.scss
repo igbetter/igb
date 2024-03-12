@@ -483,7 +483,7 @@ a.subtle_overlay_button:visited {
 	filter: drop-shadow(0 1px 1px rgba(50, 50, 0, 0.75));
 
 	@include phone-only {
-		top: 70px;
+		top: 190px;
 	}
 
 	@include phone-landscape {

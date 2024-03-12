@@ -181,6 +181,11 @@ require get_template_directory() . '/_assets/functions/customizer.php';
 require get_template_directory() . '/_assets/functions/acf.php';
 
 /**
+ * Functions for Woo
+ */
+require get_template_directory() . '/_assets/functions/woo.php';
+
+/**
  * Functions for modifying core blocks
  */
 require get_template_directory() . '/_assets/functions/block-mods.php';
