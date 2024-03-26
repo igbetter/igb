@@ -1,0 +1,57 @@
+#main {
+	#form_newsletter-signup {
+		background: $purple;
+		color: $white;
+
+		fieldset {
+			@include themify($themes) {
+				border: none;
+				background: none;
+			}
+
+			.frm_fields_container {
+
+				@include tablet-up {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: baseline;
+					justify-content: space-evenly;
+
+				> .frm6 {
+					flex: none;
+					width: 49%;
+					margin: 0 1% 0 -1em;
+
+					&:nth-of-type(2n) {
+						margin: 0 -1em 0 1%;
+					}
+				}
+				}
+
+			}
+
+
+			input[type="email"] {
+				width: 100%;
+			}
+			h2 {
+				margin: 0;
+				font-size: $font-size-xxxl;
+			}
+			p {
+				text-wrap: balance;
+			}
+			label {
+				color: $white;
+			}
+			.frm_forms .frm_form_fields .frm_form_field  {
+				margin-bottom: 0;
+			}
+
+			.frm_button_submit {
+				margin: 1em 0 0 auto;
+				width: 49%;
+			}
+		}
+	}
+}

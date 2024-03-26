@@ -182,39 +182,6 @@ if ( ! function_exists( 'it_gets_better_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'it_gets_better_post_thumbnail' ) ) :
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views
-	 */
-	function it_gets_better_post_thumbnail() {
-		if ( ! it_gets_better_can_show_post_thumbnail() ) {
-			return;
-		}
-
-		if ( is_singular() ) :
-			?>
-
-			<figure>
-				<?php the_post_thumbnail(); ?>
-			</figure><!-- .post-thumbnail -->
-
-			<?php
-		else :
-			?>
-
-			<figure>
-				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
-				</a>
-			</figure>
-
-			<?php
-		endif; // End is_singular().
-	}
-endif;
-
 if ( ! function_exists( 'it_gets_better_comment_avatar' ) ) :
 	/**
 	 * Returns the HTML markup to generate a user avatar.
