@@ -8,11 +8,14 @@ get_header();
 
 	<section id="primary">
 		<main id="main">
-			<?php
-			/* Start the Loop */
-				get_template_part( 'template-parts/loop/list' );
-      ?>
-
+			<section class="blog_posts_container list_container">
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/loop/list' );
+				endwhile;
+				?>
+			</section>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
