@@ -1183,16 +1183,12 @@ h1.wp-block-heading {
   padding: 1em 0.25em;
 }
 
-.singular_post .post_header,
-.singular_eduguide .post_header,
-.single_video_page .post_header {
+.post_header {
   text-align: center;
   width: 90vw;
   margin: 1em auto;
 }
-.singular_post .post_header h1,
-.singular_eduguide .post_header h1,
-.single_video_page .post_header h1 {
+.post_header h1 {
   font-size: clamp(3.39rem, 3.68vw + 1.55rem, 8.54rem);
   max-width: 30ch;
   margin: 1em auto 0.35em auto;
@@ -1200,49 +1196,36 @@ h1.wp-block-heading {
   line-height: 1.1;
   text-wrap: balance;
 }
-.singular_post .post_header .post_date,
-.singular_eduguide .post_header .post_date,
-.single_video_page .post_header .post_date {
+.post_header .post_date {
   margin-bottom: 1em;
 }
-.singular_post .post_header .featured_image,
-.singular_eduguide .post_header .featured_image,
-.single_video_page .post_header .featured_image {
+.post_header .featured_image {
   padding: 8px;
   height: 65vh;
   margin: 1em 0 5em 0;
 }
-.theme-light .singular_post .post_header .featured_image,
-.theme-light .singular_eduguide .post_header .featured_image,
-.theme-light .single_video_page .post_header .featured_image {
+.theme-light .post_header .featured_image {
   border: 1px solid rgba(41, 41, 41, 0.5);
   background: #ffffff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
-.theme-dark .singular_post .post_header .featured_image,
-.theme-dark .singular_eduguide .post_header .featured_image,
-.theme-dark .single_video_page .post_header .featured_image {
+.theme-dark .post_header .featured_image {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: #292929;
   box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 }
-.singular_post .post_header img,
-.singular_eduguide .post_header img,
-.single_video_page .post_header img {
+.post_header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.singular_post .post_header .related_terms,
-.singular_eduguide .post_header .related_terms,
-.single_video_page .post_header .related_terms {
+.post_header .related_terms {
   margin-top: -8em;
   margin-bottom: 8em;
   margin-right: 0.5em;
 }
-.singular_post .post_main > *,
-.singular_eduguide .post_main > *,
-.single_video_page .post_main > * {
+
+.post_main > * {
   margin-left: auto;
   margin-right: auto;
 }
@@ -1282,6 +1265,24 @@ h1.wp-block-heading {
 .related_playlist_container h6 {
   text-align: center;
   margin-top: 2em;
+}
+
+.genaric_title_area {
+  text-align: center;
+  padding: 3em 2em 1em 2em;
+}
+.genaric_title_area h1 span {
+  font-size: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
+}
+.genaric_title_area h1 span.pipe {
+  font-weight: 100;
+  font-size: clamp(2.14rem, 6.16vw - 0.94rem, 10.77rem);
+  opacity: 0.5;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+.genaric_title_area h1 span span {
+  font-weight: 200;
 }
 
 body.home #content {
