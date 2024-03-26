@@ -1,0 +1,27 @@
+// for general/fallback archive pages.
+
+.genaric_title_area {
+	text-align: center;
+	padding: 3em 2em 1em 2em;
+
+	h1 {
+		//font-size: $font-size-xxxl;
+
+
+		span {
+			font-size: $font-size-xl;
+
+			&.pipe {
+				font-weight: 100;
+				font-size: $font-size-xxxl;
+				opacity: 0.5;
+				display: inline-block;
+				margin: 0 10px 0 0;
+			}
+
+			span {
+				font-weight: 200;
+			}
+		}
+	}
+}
