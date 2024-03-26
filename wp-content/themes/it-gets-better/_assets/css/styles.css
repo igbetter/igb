@@ -5168,6 +5168,7 @@ https://splidejs.com/
 
 #main #form_newsletter-signup {
   background: #5e3a7e;
+  color: #ffffff;
 }
 .theme-light #main #form_newsletter-signup fieldset {
   border: none;
@@ -5202,6 +5203,9 @@ https://splidejs.com/
 }
 #main #form_newsletter-signup fieldset p {
   text-wrap: balance;
+}
+#main #form_newsletter-signup fieldset label {
+  color: #ffffff;
 }
 #main #form_newsletter-signup fieldset .frm_forms .frm_form_fields .frm_form_field {
   margin-bottom: 0;
