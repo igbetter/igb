@@ -1,6 +1,7 @@
 #main {
 	#form_newsletter-signup {
 		background: $purple;
+		color: $white;
 
 		fieldset {
 			@include themify($themes) {
@@ -12,9 +13,9 @@
 
 				@include tablet-up {
 					display: flex;
-				flex-wrap: wrap;
-				align-items: baseline;
-				justify-content: space-evenly;
+					flex-wrap: wrap;
+					align-items: baseline;
+					justify-content: space-evenly;
 
 				> .frm6 {
 					flex: none;
@@ -39,6 +40,9 @@
 			}
 			p {
 				text-wrap: balance;
+			}
+			label {
+				color: $white;
 			}
 			.frm_forms .frm_form_fields .frm_form_field  {
 				margin-bottom: 0;
