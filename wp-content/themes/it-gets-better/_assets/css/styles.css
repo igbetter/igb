@@ -5285,6 +5285,10 @@ body .has-igb-pink-background-color,
   transform: rotate(-1.5deg);
 }
 
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 2em 8%;
+}
+
 .section_hero {
   display: flex;
   width: 100%;
