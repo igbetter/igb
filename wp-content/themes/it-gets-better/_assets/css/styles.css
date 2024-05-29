@@ -3228,9 +3228,11 @@ body.hc-nav-open {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 }
 #site_utility_nav li {
   flex: 1;
+  margin: -0.5em 0;
 }
 #site_utility_nav li a,
 #site_utility_nav li a:visited {
@@ -3238,7 +3240,7 @@ body.hc-nav-open {
   text-decoration: none;
   text-align: center;
   font-weight: 400;
-  margin: 0 1em;
+  margin: 0em 0.25em;
 }
 .theme-light #site_utility_nav li a,
 .theme-light #site_utility_nav li a:visited {
@@ -3262,21 +3264,41 @@ body.hc-nav-open {
   color: #fbad41;
   background: rgba(33, 32, 35, 0.55);
 }
+#site_utility_nav li.donate-button {
+  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  align-self: center;
+  transform: skew(-18deg);
+  overflow: visible;
+}
+.theme-light #site_utility_nav li.donate-button {
+  background: #45acce;
+  color: #ffffff;
+}
+.theme-dark #site_utility_nav li.donate-button {
+  background: #45acce;
+  color: #ffffff;
+}
 #site_utility_nav li.donate-button a,
 #site_utility_nav li.donate-button a:visited {
-  margin: -0.5em 0;
-  padding: 0.5em;
+  transform: skew(18deg);
+  margin: -1.5em 0;
+  padding: 1.75em 0.5em;
   border-radius: 4px;
+  font-weight: 700;
 }
 .theme-light #site_utility_nav li.donate-button a,
 .theme-light #site_utility_nav li.donate-button a:visited {
-  background: #45acce;
   color: #ffffff;
 }
 .theme-dark #site_utility_nav li.donate-button a,
 .theme-dark #site_utility_nav li.donate-button a:visited {
-  background: #45acce;
   color: #ffffff;
+}
+#site_utility_nav li.donate-button a:hover, #site_utility_nav li.donate-button a:focus, #site_utility_nav li.donate-button a:target,
+#site_utility_nav li.donate-button a:visited:hover,
+#site_utility_nav li.donate-button a:visited:focus,
+#site_utility_nav li.donate-button a:visited:target {
+  transform: skew(-2deg);
 }
 .theme-light #site_utility_nav li.donate-button a:hover, .theme-light #site_utility_nav li.donate-button a:focus, .theme-light #site_utility_nav li.donate-button a:target,
 .theme-light #site_utility_nav li.donate-button a:visited:hover,
