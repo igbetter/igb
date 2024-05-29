@@ -9,7 +9,7 @@
 
 if ( ! defined( 'IT_GETS_BETTER_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'IT_GETS_BETTER_VERSION', '0.1.0' );
+	define( 'IT_GETS_BETTER_VERSION', '0.1.5' );
 }
 
 if ( ! function_exists( 'it_gets_better_setup' ) ) :
@@ -52,7 +52,10 @@ if ( ! function_exists( 'it_gets_better_setup' ) ) :
 		register_nav_menus(
 			array(
 				'utility-nav' => __( 'Utility Navigation', 'it-gets-better'),
-				'mega-nav-main' => __( 'Main Navigation', 'it-gets-better' ),
+				'nav-sections' => __( 'Navigation Section Toggle', 'it-gets-better' ),
+				'main-nav-find_support' => __( 'Main Nav: Find Support', 'it-gets-better' ),
+				'main-nav-get_involved' => __( 'Main Nav: Get Involved', 'it-gets-better' ),
+				'main-nav-about_us' => __( 'Main Nav: About Us', 'it-gets-better' ),
 				'footer-nav' => __( 'Footer Menu', 'it-gets-better' ),
 				'social-nav' => __( 'Social Links', 'it-gets-better' ),
 				'legal-nav' => __( 'Legal Nav (bottom)', 'it-gets-better')

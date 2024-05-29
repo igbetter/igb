@@ -20,6 +20,25 @@
 	z-index: 9999;
 	padding: 0.75rem 1.5em;
 	transition: all 250ms ease-in-out;
+	border-top: 6px solid transparent;
+
+
+	.find_support & {
+		@include themify($themes) {
+			border-top-color: themed('accentPurple');
+		}
+
+	}
+	.get_involved & {
+		@include themify($themes) {
+			border-top-color: themed('accentBlue');
+		}
+	}
+	.about_us & {
+		@include themify($themes) {
+			border-top-color: themed('accentYellow');
+		}
+	}
 
 	&.smaller {
 		@include themify($themes) {
@@ -53,12 +72,17 @@
 		align-items: stretch;
 	}
 
+	.header_center {
+		flex: 1;
+		display: flex;
+		align-self: center;
+	}
+
 	.header_right_side {
 		display: flex;
 		//flex: 1;
-		flex-direction: column;
-		align-items: flex-end;
-		justify-content: space-between;
+		align-items: center;
+		justify-content: flex-end;
 
 		@include phone-only {
 			flex-direction: row;
@@ -82,17 +106,16 @@
 
 // =============================================	2. IGB logo
 #IGB_MAIN_LOGO {
-	max-width: 20vw;
-	width: 200px;
+
 	padding: 1rem 0;
 	transition: all 200ms ease-in-out;
 	z-index: 99999;
+	position: absolute;
+	top: 2px;
+	width: 130px;
+	max-width: 18vw;
+	margin-bottom: -0.5em;
 
-	.smaller & {
-		width: 130px;
-		max-width: 20vw;
-		margin-bottom: -0.5em;
-	}
 
 	svg {
 		max-width: 100%;
@@ -273,8 +296,10 @@ label.dark-toggle {
 // =============================================	4. main nav toggle button
 
 // grouping search icon and menu button
-.header_button_group {
+#mobile_menu_toggle_container {
 	display: flex;
+	width: 100%;
+	justify-content: flex-end;
 }
 
 #menu_toggle_button {

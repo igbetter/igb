@@ -3,608 +3,233 @@
  *
 */
 
-@import '../../node_modules/hc-offcanvas-nav/src/scss/_core.scss';
-@import '../../node_modules/hc-offcanvas-nav/src/scss/toggle';
 
 
 // utility nav
 
-#site_utility_nav {
-	align-self: center;
-	flex: 1;
-	padding: 0.25em 1em 0.25em 0;
-	margin: -1.5em  3em 0 3em;
-	font-size: $font-size-sm;
-	transition: all 450ms ease-in-out;
-	transition-delay: .5s;
+#site_utility_bar {
+	align-items: flex-start;
 
-
-	@include themify($themes) {
-		background-image: linear-gradient( 118deg,
-		rgba( themed('utilityNavBGColor'), 0 ) 0,
-		rgba(themed('utilityNavBGColor'), 0) 2%,
-		rgba(themed('utilityNavBGColor'), 1) 2.1%,
-		rgba(themed('utilityNavBGColor'), 1) 65%,
-		rgba(themed('utilityNavBGColor'), 0) 98%,
-		);
+	a {
+		text-decoration: none;
 	}
 
-	&.hidden {
-		opacity: 0;
-		max-width: 0;
-		overflow: hidden;
-		max-height: 0;
-		padding: 0;
-		margin: 0;
-		transition: all 150ms linear;
-		transition-delay: 0s;
+	.utility_spacer {
+		max-width: 17vw;
+		width: 120px;
+		flex: none;
+		transition: all 350ms ease-in-out;
 
-		@include tablet-up {
-			opacity: 1;
-			max-width: none;
-			max-height: none;
-			padding: 0.25em 1em 0.25em 0;
-			margin: -1.5em  3em 0 3em;
-
-
-		}
-		.search_is_open & {
-			@include tablet-up {
-				opacity: 0.2;
-			}
-		}
 	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-	}
-
-	li {
+	nav#section_select_menu {
 		flex: 1;
+		margin-top: -0.5em;
 
-		a,
-		a:visited  {
-			display: block;
-			text-decoration: none;
-			text-align: center;
-			font-weight: 400;
-			margin: 0 1em;
+		ul, li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 
-			@include themify($themes) {
-				color: themed( 'utilityNavLinkColor' );
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			padding: 0 1em 0 2em;
 
+			li {
+				flex: 1;
 			}
 
-			&:hover,
-			&:focus,
-			&:target {
+		}
+
+		a {
+			display: block;
+			padding: 0.5em 1em;
+			line-height: 1;
+			height: 100%;
+			text-align: center;
+			border-radius: 0 0 6px 6px;
+			text-transform: uppercase;
+			font-weight: 600;
+
+			&#select-find_support {
 				@include themify($themes) {
-					color: themed( 'utilityNavLinkHoverColor' );
-					background: rgba(themed('utilityNavBGHoverColor'), 0.55);
+					color: themed('accentGrey');
+				}
+
+				.find_support & {
+					@include themify($themes) {
+						background: themed('accentPurple');
+						color: $white;
+					}
+				}
+			}
+
+			&#select-get_involved {
+				@include themify($themes) {
+					color: themed('accentGrey');
+				}
+
+				.get_involved & {
+					@include themify($themes) {
+						background: themed('accentBlue');
+						color: $white;
+					}
+				}
+			}
+
+			&#select-about_us {
+				@include themify($themes) {
+					color: themed('accentGrey');
+				}
+				.about_us & {
+					@include themify($themes) {
+						background: themed('accentYellow');
+						color: $white;
+					}
 				}
 			}
 		}
+	}
 
-		&.donate-button {
+	nav#utility_navigation {
+
+		font-size: $font-size-sm;
+
+		ul, li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+		}
+
+		a {
+			padding: 0.24em 1em;
+		}
+
+		.donate_button {
+			font-size: $font-size-base;
+			transform: scale(1.25);
+			margin-top: -5px;
+
 			a,
 			a:visited {
-				margin: -0.5em 0;
-				padding: 0.5em;
+				display: inline-block;
+				font-weight: 600;
 				border-radius: 4px;
-
+				margin: -8px 1em 0 1em;
 				@include themify($themes) {
-					background: themed( 'primaryButtonBGColor' );
-					color: themed('primaryButtonTextColor');
+					background: themed('accentPink');
+					color: $white;
 				}
 
 				&:hover,
 				&:focus,
 				&:target {
 					@include themify($themes) {
-						background: themed('primaryButtonBGHoverColor');
-						color: themed('primaryButtonTextHoverColor');
+						background: themed('accentPurple');
+						color: $white;
 					}
 				}
 			}
 		}
 	}
+}
 
-	@include tablet-down {
-		width: calc( 100% - 140px );
-		position: absolute;
-		top: 13vh;
-		left: -2.75em;
+header.site_main_header {
+	.header_center {
+		margin-left: 150px;
+	}
 
-		ul {
-			flex-wrap: wrap;
+	nav.section_main_nav {
+		text-align: center;
+		font-size: $font-size-md;
+		line-height: 1;
+		border-left: 8px solid transparent;
+		margin-left: 2em;
+		transform: skew(-18deg);
+
+		&#subnav_for-find_support {
+			@include themify($themes) {
+				border-left-color: themed('accentPurple');
+				background: rgba( themed('accentPurple'), 0.1 );
+			}
+			a,
+			a:visited {
+				@include themify($themes) {
+					color: themed('mainNavLinkColor');
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+							background: themed('accentPurple');
+							color: themed('mainNavLinkHoverColor');
+						}
+				}
+			}
+		}
+
+		ul, li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		> ul {
+			transform: skew(18deg);
+			padding-left: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+
+			> li {
+				margin: 0 1px;
+
+
+				> a {
+					padding: 0.5em 1em;
+					@include themify($themes) {
+						border-left: 1px solid themed('backgroundColor');
+					}
+				}
+			}
+		}
+
+		a,
+		a:visited {
+			font-weight: 400;
+			text-decoration: none;
+		}
+		.menu-item-has-children {
+			position: relative;
+			display: flex;
 			align-items: stretch;
-			line-height: 1;
+			justify-content: space-between;
 
-			a {
-				padding: 0.75em;
-				font-weight: 700;
-			}
-		}
-	}
-
-	@include phone-landscape {
-		width: 50vw;
-		left: 45%;
-		top: 25vh;
-	}
-}
-
-// main 'mega' nav using "hc offcanvas menu"
-// https: //github.com/somewebmedia/hc-offcanvas-nav
-
-.hc-offcanvas-nav {
-
-	line-height: 1;
-	font-weight: 300;
-	@include themify($themes) {
-		color: themed('mainNavLinkColor');
-	}
-
-	.search_is_open &,
-	.menu_is_open & {
-		z-index: 9999;
-		visibility: visible;
-
-		&:before,
-		&:after {
-			transition-delay: 0s;
-			transform: translateX(0%) translateY(0%);
-			border-radius: 0;
-		}
-
-		&:after {
-			transition-delay: .1s;
-		}
-
-		&:before {
-			transition-delay: 0s;
-		}
-	}
-
-
-
-	&:before,
-	&:after {
-		content: "";
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		backdrop-filter: blur(10px);
-		border-bottom-left-radius: 200%;
-		transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
-		transform: translateX(100%) translateY(-100%);
-		z-index: -1;
-
-		@include themify($themes) {
-			background: rgba(themed('mainNavBGColor'), 0.75);
-		}
-	}
-
-	&:after {
-		transition-delay: 0s;
-	}
-
-	&:before {
-		transition-delay: .2s;
-	}
-
-
-	a,
-	a:visited {
-		font-size: $font_size_lg;
-		font-weight: 400;
-		text-decoration: none;
-
-		@include themify($themes) {
-			color: themed('mainNavLinkColor');
-		}
-
-		&:hover,
-		&:focus {
-			@include themify($themes) {
-				color: themed('mainNavLinkHoverColor');
-			}
-		}
-	}
-
-
-	.larger {
-
-		img {
-			height: 15vh;
-			width: 15vh;
-			margin-left: 1.75rem;
-
-			@include phone-only {
-				height: 55px;
-				width: 55px;
-				margin-left: 1em;
-			}
-		}
-
-		> .nav-item-wrapper > a,
-		> .nav-item-wrapper > a:visited {
-			font-size: $font_size_xxl;
-			font-weight: 600;
-			padding-left: 2em;
-		}
-
-	}
-
-	.IGB_site_main_navigation_menu > li.nav-item {
-		&:nth-of-type(4n + 1) {
-			img {
-				background: $purple;
-			}
-		}
-		&:nth-of-type(4n + 2) {
-			img {
-				background: $pink;
-			}
-		}
-		&:nth-of-type(4n + 3) {
-			img {
-				background: $yellow;
-			}
-		}
-		&:nth-of-type(4n + 4) {
-			img {
-				background: $blue;
-			}
-		}
-	}
-
-	img {
-		height: 13vh;
-		width: 13vh;
-		background: $yellow;
-		border-radius: 50%;
-		object-fit: contain;
-		object-position: center bottom;
-		overflow: visible;
-		margin: 1px 1.5em -1px 1em;
-		align-self: flex-end;
-
-		@include tablet-up {
-			//max-width: 50%;
-		}
-		@include phone-only {
-			height: 55px;
-			width: 55px;
-			margin-top: -0.75em;
-		}
-	}
-
-	ul.IGB_site_main_navigation_menu {
-		margin-top: 130px;
-		height: calc( 100vh - 132px );
-		width: 50vw;
-		display: flex;
-		flex-direction: column;
-
-		@include phone-only {
-			width: 100%;
-			height: 60vh;
-			margin-top: 20vh;
-		}
-
-		@include phone-landscape {
-			margin-top: 18vh;
-			height: 80vh;
-		}
-		@include short-screen {
-			margin-top: 90px;
-		}
-
-		li {
-			border-top: 1px solid rgba(255, 255, 255, 0.1);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-			transition: all 200ms ease-in-out;
-			flex: 1;
-			display: flex;
-		}
-
-	}
-
-	li:not(.custom-content) a {
-		display: flex;
-	}
-
-	.nav-wrapper {
-		height: 100%;
-		width: 50vw;
-
-		@include themify($themes) {
-			background: rgba(themed('mainNavBGColor'), 0.85);
-		}
-
-		@include phone-only {
-			width: 100%;
-		}
-
-
-	}
-
-	&.nav-levels-overlap {
-		ul .nav-wrapper {
-			@include phone-only {
-				height: 80vh;
-			}
-		}
-	}
-
-	.nav-item-wrapper {
-		display: flex;
-		align-items: stretch;
-		flex: 1;
-
-		@include themify($themes) {
-			background-image: linear-gradient(90deg, darken(rgba(themed('mainNavItemBGColor'), 1), 10) 3%, rgba(themed('mainNavBGColor'), 0) 25%);
-		}
-
-		@include phone-landscape {
-			padding-left: 1em;
-		}
-
-		a,
-		a:visited {
-			&:hover,
-			&:target,
-			&:focus {
-				@include themify($themes) {
-					background: darken(rgba(themed('mainNavItemBGColor'), 0.9), 10);
-
-				}
-			}
-		}
-
-		a.nav-item-link {
-			flex: 1;
-			padding: 0.2em 1rem;
-
-			span {
-				align-self: center;
-			}
-		}
-
-		a.nav-next {
-			padding: 1em 2em;
-			display: block;
-			align-self: stretch;
-			border-left: 1px solid rgba(255, 255, 255, 0.2);
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-			span {
-				border: solid currentColor;
-				border-width: 0 5px 5px 0;
-				display: inline-block;
-				padding: 5px;
-				transform: rotate(-45deg);
-			}
-		}
-	}
-
-	.nav-content {
-		@include themify($themes) {
-			background: rgba(themed('mainNavBGColor'), 0.85);
-		}
-
-		.nav-content {
-			margin-top: 150px;
-			padding-bottom: 150px;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto 1fr;
-			grid-template-areas:
-				"title back"
-				"submenu submenu";
-
-			@include phone-landscape {
-				margin-top: 100px;
-				padding-bottom: 100px;
-			}
-
-			@include short-screen {
-				margin-top: 90px;
-				padding-bottom: 90px;
-			}
-
-			h2.level-title {
-				grid-area: title;
-				margin: 0;
-				padding: 0 2em;
-				font-size: $font-size-md;
-				font-weight: 200;
-				line-height: 2;
-			}
-			div.nav-back {
-				grid-area: back;
-			}
-			> ul {
-				grid-area: submenu;
+			a.dropdown_toggle {
+				border-left: 1px solid;
+				padding: 0 0.5em;
+				margin-left: 1px;
 				display: flex;
-				flex-direction: column;
-
-				li {
-					flex: 1;
-				}
+				align-items: center;
 			}
 		}
-	}
-	div.nav-back {
-		width: 100%;
 
-		a,
-		a:visited {
-			display: block;
-			width: 100%;
-			padding: 0.5em 1em;
-			text-align: right;
-
-			@include themify($themes) {
-				background: darken(rgba(themed('mainNavItemBGColor'), 0.9), 10);
-
-			}
+		.sub-menu {
+			position: absolute;
+			max-height: 0;
+			overflow: hidden;
 		}
 	}
 }
 
-// mega nav cont. program boxes
 
-nav#programs_nav {
-	width: 46vw;
-	height: 90vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	position: fixed;
-	right: 0;
-	top: 10%;
-	z-index: -1;
-	opacity: 0;
-	transition: opacity 50ms ease-in-out;
-	transition-delay: 0s;
-
-
-
-	.menu_is_open & {
-		z-index: 9999;
-		opacity: 1;
-		transition: opacity 550ms ease-in-out;
-		transition-delay: .2s;
-	}
-
-	//padding: 3em;
-
-	@include phone-only {
-		width: 100%;
-		position: fixed;
-		top: 80vh;
-		left: 0;
-		flex-direction: row;
-		height: auto;
-		max-height: 20vh;
-	}
-
-	@include phone-landscape {
-		height: 50vh;
-		top: 45vh;
-		padding-right: 1em;
-	}
-
-	.program_box {
-		padding: .5em 1.2em;
-		margin: 1em 2em;
-		clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
-		transition: all 150ms ease-in-out;
-
-
-		@include themify($themes) {
-			background: themed( 'subtleGreyBG' );
-		}
-
-		@include phone-only {
-			width: 48%;
-
-			p {
-				display: none;
-			}
-		}
-
-		@include phone-landscape {
-			margin: 0.25em 2em 0.25em 1em;
-
-			p {
-				display: none;
-			}
-		}
-
-		@include short-screen {
-			p {
-				display: none;
-			}
-		}
-
-		&.global {
-
-			&:hover {
-
-				* {
-					@include themify($themes) {
-						color: $white;
-					}
-				}
-				@include themify($themes) {
-					background: $pink;
-					color: $white;
-				}
-
-				span {
-					@include themify($themes) {
-						color: $black;
-					}
-				}
-			}
-		}
-		&.edu {
-
-			&:hover {
-				* {
-					@include themify($themes) {
-						color: $white;
-					}
-				}
-				@include themify($themes) {
-					background: $blue;
-					color: $white;
-				}
-
-				span {
-					@include themify($themes) {
-						color: $black;
-					}
-				}
-			}
-		}
-	}
-
-	a,
-	a:visited {
-		font-weight: 200;
-		display: block;
-		padding: 1em 2em;
-
-		@include themify($themes) {
-			text-decoration: none !important;
-			text-decoration-color: transparent;
-			color: themed( 'textColor' );
-		}
-
-		object {
-			display: block;
-		}
-
-		h3 {
-			span {
-				@include themify($themes) {
-					color: themed( 'secondaryButtonBGHoverColor' );
-				}
-			}
-		}
-	}
-}
 
 // breadcrumb nav
 
