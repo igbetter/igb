@@ -44,7 +44,7 @@ if( $eduguide_download ) {
   					$formidable_form_modal_anchor .= "<span class=\"file_size\">(&nbsp;";
   					$formidable_form_modal_anchor .= size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
   					$formidable_form_modal_anchor .= "&nbsp;)</span></a>";
-  					echo do_shortcode( '[frmmodal-content size="large" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
+  					echo do_shortcode( '[frmmodal-content modal_title="Sign Up for Educational Resources" size="large" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
           ?>
 				<?php endif;?>
 			</div>
