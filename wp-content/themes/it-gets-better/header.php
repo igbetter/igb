@@ -28,9 +28,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<?php get_template_part( 'template-parts/egg' ); ?>
 	<?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class('preload theme-light'); ?>>
+<body <?php body_class('preload'); ?>>
+
 
 <?php wp_body_open(); ?>
 
@@ -64,12 +66,36 @@
 				wp_nav_menu( $utilityNavProps );
 				?>
 			</nav>
-			<label class="dark-toggle">
-					<span> Light </span>
-					<input type="checkbox">
-					<div class="dark-toggle__switch" tabindex="0"></div>
-					<span> Dark </span>
-				</label>
+
+			<div id="site_search">
+				<?php get_template_part( 'template-parts/components/search-bar' ); ?>
+			</div>
+
+			<label class="darkmode_switch">
+				<input class="switch__input" type="checkbox" role="switch">
+				<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+					<g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+						<circle cx="6" cy="6" r="2" />
+						<g stroke-dasharray="1.5 1.5">
+							<polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+						</g>
+					</g>
+				</svg>
+				<svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+					<g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+						<path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
+					</g>
+				</svg>
+				<span class="switch__sr">Dark Mode</span>
+			</label>
+
 
 		</div>
 		<div class="flex-row">
@@ -151,10 +177,8 @@
 				</nav>
 			</div>
 			<div class="header_right_side">
-				<div id="site_search">
-					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
-				</div>
-				<button id="menu_toggle_button" class="menu">
+
+				<button id="menu_toggle_button" class="menu mobile_menu_only">
 					<svg
 						x="0" y="0" viewBox="0 0 40 40">
 						<path class="menu_line top_line"
