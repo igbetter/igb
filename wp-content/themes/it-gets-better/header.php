@@ -34,7 +34,7 @@
 
 <?php wp_body_open(); ?>
 
-<div id="page" class="sticky-container find_support">
+<div id="page" class="sticky-container ">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'it-gets-better' ); ?></a>
 
 	<header class="site_main_header">
@@ -111,6 +111,7 @@
 			</div>
 			<div class="header_center">
 				<nav id="subnav_for-find_support" class="section_main_nav">
+					<h3 class="mobile_menu_only">Find Support</h3>
 					<?php
 						$findSupportNavProps =  array(
 						'theme_location' => 'main-nav-find_support',
@@ -120,6 +121,32 @@
 						'walker'		 => new Aria_Walker_Nav_Menu
 					);
 					wp_nav_menu( $findSupportNavProps );
+					?>
+				</nav>
+				<nav id="subnav_for-get_involved" class="section_main_nav">
+					<h3 class="mobile_menu_only">Get Involved</h3>
+					<?php
+						$getInvolvedNavProps =  array(
+						'theme_location' => 'main-nav-get_involved',
+						'container'      => '',
+						'menu_class'     => 'main-nav-get_involved header',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'walker'		 => new Aria_Walker_Nav_Menu
+					);
+					wp_nav_menu( $getInvolvedNavProps );
+					?>
+				</nav>
+				<nav id="subnav_for-about_us" class="section_main_nav">
+					<h3 class="mobile_menu_only">About Us</h3>
+					<?php
+						$aboutUsNavProps =  array(
+						'theme_location' => 'main-nav-about_us',
+						'container'      => '',
+						'menu_class'     => 'main-nav-about_us header',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'walker'		 => new Aria_Walker_Nav_Menu
+					);
+					wp_nav_menu( $aboutUsNavProps );
 					?>
 				</nav>
 			</div>

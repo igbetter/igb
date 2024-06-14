@@ -3,7 +3,9 @@
  *
 */
 
-
+.mobile_menu_only {
+	display: none;
+}
 
 // utility nav
 
@@ -144,6 +146,7 @@
 header.site_main_header {
 	.header_center {
 		margin-left: 150px;
+		position: relative;
 	}
 
 	nav.section_main_nav {
@@ -153,8 +156,14 @@ header.site_main_header {
 		border-left: 8px solid transparent;
 		margin-left: 2em;
 		transform: skew(-18deg);
+		position: absolute;
+		top: -1em;
+		display: none;
 
 		&#subnav_for-find_support {
+			.find_support & {
+				display: block;
+			}
 			@include themify($themes) {
 				border-left-color: themed('accentPurple');
 				background: rgba( themed('accentPurple'), 0.1 );
@@ -171,6 +180,158 @@ header.site_main_header {
 							background: themed('accentPurple');
 							color: themed('mainNavLinkHoverColor');
 						}
+				}
+			}
+
+			.current-menu-item a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: themed('accentPurple');
+					color: themed('mainNavLinkHoverColor');
+				}
+			}
+
+			.current-menu-parent > a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: rgba( themed('accentPurple'), 0.2 );
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+							background: themed('accentPurple');
+							color: themed('mainNavLinkHoverColor');
+						}
+				}
+			}
+
+			li {
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+						background: rgba( themed('accentPurple'), 0.2 );
+					}
+				}
+			}
+			.sub-menu li {
+				@include themify($themes) {
+					background: rgba( themed('accentPurple'), 0.2 );
+				}
+			}
+		}
+
+		&#subnav_for-get_involved {
+			.get_involved & {
+				display: block;
+			}
+			@include themify($themes) {
+				border-left-color: themed('accentBlue');
+				background: rgba( themed('accentBlue'), 0.1 );
+			}
+			a,
+			a:visited {
+				@include themify($themes) {
+					color: themed('mainNavLinkColor');
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+						background: themed('accentBlue');
+						color: themed('mainNavLinkHoverColor');
+					}
+				}
+			}
+
+			.current-menu-item a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: themed('accentBlue');
+					color: themed('mainNavLinkHoverColor');
+				}
+			}
+
+			.current-menu-parent > a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: rgba( themed('accentBlue'), 0.2 );
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+							background: themed('accentBlue');
+							color: themed('mainNavLinkHoverColor');
+						}
+				}
+			}
+
+			li {
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+						background: rgba( themed('accentBlue'), 0.2 );
+					}
+				}
+			}
+			.sub-menu li {
+				@include themify($themes) {
+					background: rgba( themed('accentBlue'), 0.2 );
+				}
+			}
+		}
+
+		&#subnav_for-about_us {
+			.about_us & {
+				display: block;
+			}
+			@include themify($themes) {
+				border-left-color: themed('accentYellow');
+				background: rgba( themed('accentYellow'), 0.1 );
+			}
+			a,
+			a:visited {
+				@include themify($themes) {
+					color: themed('mainNavLinkColor');
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+							background: themed('accentYellow');
+							color: themed('mainNavLinkHoverColor');
+						}
+				}
+			}
+			.current-menu-item > a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: themed('accentYellow');
+					color: themed('mainNavLinkHoverColor');
+				}
+			}
+
+			.current-menu-parent > a:not(.dropdown_toggle) {
+				@include themify($themes) {
+					background: rgba( themed('accentYellow'), 0.2 );
+				}
+
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+							background: themed('accentYellow');
+							color: themed('mainNavLinkHoverColor');
+						}
+				}
+			}
+
+			li {
+				&:hover,
+				&:focus {
+					@include themify($themes) {
+						background: rgba( themed('accentYellow'), 0.2 );
+					}
+				}
+			}
+			.sub-menu li {
+				@include themify($themes) {
+					background: rgba( themed('accentYellow'), 0.2 );
 				}
 			}
 		}
@@ -195,7 +356,7 @@ header.site_main_header {
 				> a {
 					padding: 0.5em 1em;
 					@include themify($themes) {
-						border-left: 1px solid themed('backgroundColor');
+						border-left: 1px solid rgba(themed('mainNavLinkColor'), 0.15 );
 					}
 				}
 			}
@@ -205,6 +366,7 @@ header.site_main_header {
 		a:visited {
 			font-weight: 400;
 			text-decoration: none;
+
 		}
 		.menu-item-has-children {
 			position: relative;
@@ -213,18 +375,41 @@ header.site_main_header {
 			justify-content: space-between;
 
 			a.dropdown_toggle {
-				border-left: 1px solid;
+
 				padding: 0 0.5em;
 				margin-left: 1px;
 				display: flex;
 				align-items: center;
+				@include themify($themes) {
+					border-left: 1px solid rgba(themed('mainNavLinkColor'), 0.25 );
+					border-right: 1px solid rgba(themed('mainNavLinkColor'), 0.25 );
+				}
 			}
 		}
 
 		.sub-menu {
 			position: absolute;
-			max-height: 0;
+			top: 100%;
+			right: 0;
+			display: none;
 			overflow: hidden;
+			font-size: $font-size-base;
+			min-width: 200px;
+			width: 100%;
+			@include themify($themes) {
+				background: rgba(themed('backgroundColor'), 0.79);
+				box-shadow: themed('normalShadow');
+			}
+
+			li {
+				text-align: left;
+				width: 100%;
+
+				a {
+					display: block;
+					padding: 0.5em;
+				}
+			}
 		}
 	}
 }

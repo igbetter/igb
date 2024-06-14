@@ -1,51 +1,67 @@
 (function($) {
 	"use strict";
 
-	// jquery toggle whole attribute
-	$.fn.toggleAttr = function (attr, val) {
-		var test = $(this).attr(attr);
-		if (test) {
-			// if attrib exists with ANY value, still remove it
-			$(this).removeAttr(attr);
-		} else {
-			$(this).attr(attr, val);
-		}
-		return this;
-	};
+	// menu changer
+	$(document).ready(function() {
+	// Retrieve the stored class name from localStorage
+	var storedClass = localStorage.getItem('selectedMenu');
+	if (storedClass) {
+		// Apply the stored class to the page and menu
+		$('#page').addClass('sticky-container ' + storedClass);
+		$('#section_select_menu').addClass('selected_' + storedClass);
+	} else {
+		$('#page').addClass('sticky-container find_support');
+		$('#section_select_menu').addClass('selected_find_support');
+	}
 
-	// jquery toggle just the attribute value
-	$.fn.toggleAttrVal = function (attr, val1, val2) {
-		var test = $(this).attr(attr);
-		if (test === val1) {
-			$(this).attr(attr, val2);
-			return this;
-		}
-		if (test === val2) {
-			$(this).attr(attr, val1);
-			return this;
-		}
-		// default to val1 if neither
-		$(this).attr(attr, val1);
-		return this;
-	};
+	$('#section_select_menu a').click(function(e) {
+		e.preventDefault();
+		var id = $(this).attr('id'); // Get the ID of the clicked anchor link
+		var className = id.split('-')[1]; // Extract the class name from the ID
+		$('#page').removeClass().addClass('sticky-container ' + className); // Remove existing classes and add the new class
+		$('#section_select_menu').removeClass().addClass('selected_' + className);
 
-	$( '#menu_toggle_button' ).on( 'click', function(e) {
-		$(this).toggleClass('menu_open');
-		$('body').toggleClass('menu_is_open');
-		$('#site_utility_nav').toggleClass('hidden');
-		$( 'path.top_line' ).toggleAttrVal( 'd', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
-		$( 'path.bottom_line' ).toggleAttrVal( 'd', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
+		// Store the selected class name in localStorage
+		localStorage.setItem('selectedMenu', className);
+	});
 	});
 
+	//dropdown toggle
 
+	$(document).ready(function() {
+		$('.dropdown_toggle').on('click', function(e) {
+			e.preventDefault();
+
+			var $this = $(this);
+			var $parentLi = $this.closest('li');
+			var $subMenu = $parentLi.find('.sub-menu');
+
+			// Close all open menus except the current one
+			$('.dropdown_toggle').not($this).each(function() {
+				var $otherToggle = $(this);
+				var $otherParentLi = $otherToggle.closest('li');
+				var $otherSubMenu = $otherParentLi.find('.sub-menu');
+
+				$otherToggle.removeClass('open').addClass('closed').attr('aria-expanded', 'false');
+				$otherParentLi.removeClass('menu_is_open');
+				$otherSubMenu.slideUp();
+			});
+
+			if ($this.hasClass('closed')) {
+				// Open the dropdown
+				$this.removeClass('closed').addClass('open');
+				$this.attr('aria-expanded', 'true');
+				$parentLi.addClass('menu_is_open');
+				$subMenu.slideDown();
+			} else {
+				// Close the dropdown
+				$this.removeClass('open').addClass('closed');
+				$this.attr('aria-expanded', 'false');
+				$parentLi.removeClass('menu_is_open');
+				$subMenu.slideUp();
+			}
+		});
+	});
 
 })(jQuery);
 
-var body = document.querySelector('body');
-var utility_nav = document.getElementById("site_utility_nav");
-window.addEventListener('keydown', function (event) {
-	if ( event.key === 'Escape' && body.classList.contains( 'menu_is_open' )) {
-		body.classList.remove('menu_is_open');
-		utility_nav.classList.add('hidden');
-	}
-})
