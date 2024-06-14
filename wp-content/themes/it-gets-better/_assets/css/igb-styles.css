@@ -190,3 +190,37 @@ body {
   display: block;
   line-height: 1.1;
 }
+
+/* Styles for EDU Guide Popups */
+.modal-dialog.modal-lg {
+    width: 100%;
+}
+
+.theme-dark .modal .frm_forms .frm_form_fields > fieldset,
+.theme-light .modal .frm_forms .frm_form_fields > fieldset {
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+.theme-dark .with_frm_style .frm_primary_label, .theme-dark .with_frm_style label {
+    color: white;
+}
+
+div#page {
+    z-index: 1;
+}
+
+div.modal.show {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+h4.modal-title {
+    flex-grow: 1;
+}
