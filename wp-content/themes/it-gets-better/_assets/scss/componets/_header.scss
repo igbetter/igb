@@ -101,6 +101,10 @@
 			margin: auto;
 		}
 	}
+	.utility_right_side {
+		display: flex;
+
+	}
 }
 
 
@@ -207,7 +211,7 @@
 	--trans-timing-out: cubic-bezier(0.05,0.76,0.06,0.86);
 	//font-size: calc(40px + (80 - 40) * (100vw - 320px) / (2560 - 320));
 
-	margin: auto;
+	margin: 0;
 	position: relative;
 	line-height: 1.5;
 
@@ -348,35 +352,8 @@
 	position: relative;
 	top: auto !important;
 
-	@include tablet-up {
-
-		&:after {
-			content: 'Menu';
-			position: relative;
-			top: -9px;
-			left: -5px;
-			display: inline-block;
-			border-radius: 5px;
-			padding: 5px 10px;
-
-			@include themify($themes) {
-				background: rgba( themed('backgroundColor'), 0.7 );
-
-			}
-
-			.menu_is_open & {
-				opacity: 0;
-			}
-
-		}
-		&:hover {
-			&:after {
-				opacity: 0;
-			}
-
-		}
-
-
+	@include tablet-down {
+		display: block;
 	}
 
 

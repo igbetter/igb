@@ -66,36 +66,38 @@
 				wp_nav_menu( $utilityNavProps );
 				?>
 			</nav>
+			<div class="utility_right_side">
 
-			<div id="site_search">
-				<?php get_template_part( 'template-parts/components/search-bar' ); ?>
-			</div>
+				<div id="site_search">
+					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
+				</div>
 
-			<label class="darkmode_switch">
-				<input class="switch__input" type="checkbox" role="switch">
-				<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-					<g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-						<circle cx="6" cy="6" r="2" />
-						<g stroke-dasharray="1.5 1.5">
-							<polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-							<polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+				<label class="darkmode_switch">
+					<input class="switch__input" type="checkbox" role="switch">
+					<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+						<g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+							<circle cx="6" cy="6" r="2" />
+							<g stroke-dasharray="1.5 1.5">
+								<polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+							</g>
 						</g>
-					</g>
-				</svg>
-				<svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-					<g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-						<path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
-					</g>
-				</svg>
-				<span class="switch__sr">Dark Mode</span>
-			</label>
+					</svg>
+					<svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+						<g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+							<path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
+						</g>
+					</svg>
+					<span class="switch__sr">Dark Mode</span>
+				</label>
 
+			</div> <!--/utility_right_side (search and mode switch) -->
 
 		</div>
 		<div class="flex-row">
@@ -137,7 +139,7 @@
 			</div>
 			<div class="header_center">
 				<nav id="subnav_for-find_support" class="section_main_nav">
-					<h3 class="mobile_menu_only">Find Support</h3>
+					<h3 class="find_support">Find Support</h3>
 					<?php
 						$findSupportNavProps =  array(
 						'theme_location' => 'main-nav-find_support',
@@ -150,7 +152,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-get_involved" class="section_main_nav">
-					<h3 class="mobile_menu_only">Get Involved</h3>
+					<h3 class="get_involved">Get Involved</h3>
 					<?php
 						$getInvolvedNavProps =  array(
 						'theme_location' => 'main-nav-get_involved',
@@ -163,7 +165,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-about_us" class="section_main_nav">
-					<h3 class="mobile_menu_only">About Us</h3>
+					<h3 class="about_us">About Us</h3>
 					<?php
 						$aboutUsNavProps =  array(
 						'theme_location' => 'main-nav-about_us',
