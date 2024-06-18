@@ -12,11 +12,11 @@ var menubutton_bottomline = document.getElementsByClassName('bottom_line')[0];
 
 window.addEventListener('pageshow', function (event) {
 
-	body.classList.remove('menu_is_open');
+/* 	body.classList.remove('menu_is_open');
 	utility_nav.classList.add('hidden');
 	menutoggle.classList.remove('menu_open');
 	menubutton_topline.setAttribute('d', 'm 15 10 l 20 0');
-	menubutton_bottomline.setAttribute('d', 'm 5 30 l 30 0');
+	menubutton_bottomline.setAttribute('d', 'm 5 30 l 30 0'); */
 
 	if (window.scrollY >= 50) {
 		siteheader.classList.add('smaller');

@@ -158,6 +158,44 @@ header.site_main_header {
 		position: relative;
 	}
 
+	a.dropdown_toggle {
+
+		svg {
+			transform: scale(1.25);
+			transition: all 170ms ease-in-out;
+		}
+
+
+		&.open {
+
+			svg {
+				transform: scale(1.25) rotate(-90deg);
+			}
+
+		}
+	}
+
+	a,
+	a:visited {
+		&:hover,
+		&:focus,
+		&:target {
+			@include themify($themes) {
+				text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
+			}
+		}
+	}
+
+	.current-menu-item {
+		> a {
+			@include themify($themes) {
+				text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
+			}
+		}
+	}
+
+
+
 	// desktop (tablet up) styles of main nav
 	@include tablet-up {
 		nav.section_main_nav {
@@ -168,7 +206,7 @@ header.site_main_header {
 			margin-left: 2em;
 			transform: skew(-18deg);
 			position: absolute;
-		//	top: -1em;
+			top: -1em;
 			display: none;
 
 			h3 {
@@ -193,29 +231,31 @@ header.site_main_header {
 					&:focus {
 						@include themify($themes) {
 								background: themed('accentPurple');
-								color: themed('mainNavLinkHoverColor');
+								color: themed('accentTextColor');
 							}
 					}
 				}
 
-				.current-menu-item a:not(.dropdown_toggle) {
+				.current-menu-item > a:not(.dropdown_toggle) {
 					@include themify($themes) {
 						background: themed('accentPurple');
-						color: themed('mainNavLinkHoverColor');
+						color: themed('accentTextColor');
 					}
 				}
-
-				.current-menu-parent > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: rgba( themed('accentPurple'), 0.2 );
-					}
-
-					&:hover,
-					&:focus {
+				.current-menu-ancestor,
+				.current-menu-parent {
+					> a:not(.dropdown_toggle) {
 						@include themify($themes) {
-								background: themed('accentPurple');
-								color: themed('mainNavLinkHoverColor');
-							}
+							background: rgba( themed('accentPurple'), 0.2 );
+						}
+
+						&:hover,
+						&:focus {
+							@include themify($themes) {
+									background: themed('accentPurple');
+									color: themed('accentTextColor');
+								}
+						}
 					}
 				}
 
@@ -252,31 +292,34 @@ header.site_main_header {
 					&:focus {
 						@include themify($themes) {
 							background: themed('accentBlue');
-							color: themed('mainNavLinkHoverColor');
+							color: themed('accentTextColor');
 						}
 					}
 				}
 
-				.current-menu-item a:not(.dropdown_toggle) {
+				.current-menu-item > a:not(.dropdown_toggle) {
 					@include themify($themes) {
 						background: themed('accentBlue');
-						color: themed('mainNavLinkHoverColor');
+						color: themed('accentTextColor');
 					}
 				}
-
-				.current-menu-parent > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: rgba( themed('accentBlue'), 0.2 );
-					}
-
-					&:hover,
-					&:focus {
+				.current-menu-ancestor,
+				.current-menu-parent {
+					> a:not(.dropdown_toggle) {
 						@include themify($themes) {
-								background: themed('accentBlue');
-								color: themed('mainNavLinkHoverColor');
-							}
+							background: rgba( themed('accentBlue'), 0.2 );
+						}
+
+						&:hover,
+						&:focus {
+							@include themify($themes) {
+									background: themed('accentBlue');
+									color: themed('accentTextColor');
+								}
+						}
 					}
 				}
+
 
 				li {
 					&:hover,
@@ -311,30 +354,33 @@ header.site_main_header {
 					&:focus {
 						@include themify($themes) {
 								background: themed('accentYellow');
-								color: themed('mainNavLinkHoverColor');
+								color: themed('accentTextColor');
 							}
 					}
 				}
 				.current-menu-item > a:not(.dropdown_toggle) {
 					@include themify($themes) {
 						background: themed('accentYellow');
-						color: themed('mainNavLinkHoverColor');
+						color: themed('accentTextColor');
 					}
 				}
-
-				.current-menu-parent > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: rgba( themed('accentYellow'), 0.2 );
-					}
-
-					&:hover,
-					&:focus {
+				.current-menu-ancestor,
+				.current-menu-parent {
+					> a:not(.dropdown_toggle) {
 						@include themify($themes) {
-								background: themed('accentYellow');
-								color: themed('mainNavLinkHoverColor');
-							}
+							background: rgba( themed('accentYellow'), 0.2 );
+						}
+
+						&:hover,
+						&:focus {
+							@include themify($themes) {
+									background: themed('accentYellow');
+									color: themed('accentTextColor');
+								}
+						}
 					}
 				}
+
 
 				li {
 					&:hover,
@@ -386,11 +432,16 @@ header.site_main_header {
 			.menu-item-has-children {
 				position: relative;
 				display: flex;
+				flex-wrap: wrap;
 				align-items: stretch;
 				justify-content: space-between;
 
-				a.dropdown_toggle {
+				> a {
+					flex: 1;
+				}
 
+				a.dropdown_toggle {
+					flex: none;
 					padding: 0 0.5em;
 					margin-left: 1px;
 					display: flex;
@@ -425,6 +476,10 @@ header.site_main_header {
 						padding: 0.5em;
 					}
 				}
+
+				.sub-menu {
+					position: relative;
+				}
 			}
 		}
 	}
@@ -452,6 +507,8 @@ header.site_main_header {
 
 			.section_main_nav {
 				border-left: 3px solid;
+				border-top: 3px solid;
+				border-bottom: 3px solid;
 				flex: 1;
 				flex-grow: 1;
 				display: flex;
@@ -481,6 +538,9 @@ header.site_main_header {
 					display: none;
 					flex-direction: column;
 					flex: 1;
+					@include themify($themes) {
+						background: themed('backgroundColor');
+					}
 
 					> li {
 						flex: 1;
@@ -541,7 +601,7 @@ header.site_main_header {
 
 					&.menu_is_open {
 						.sub-menu {
-							
+
 						}
 					}
 				}
@@ -560,23 +620,30 @@ header.site_main_header {
 				.find_support &,
 				.get_involved &
 				.about_us & {
-					flex-shrink: 3;
+					flex-shrink: 4;
 				}
 
 
 				&#subnav_for-find_support {
 					@include themify($themes) {
 						border-left-color: themed('accentPurple');
-						background: rgba( themed('accentPurple'), 0.2 );
+						background: themed('accentPurple');
+						border-bottom-color: themed('accentPurple');
+						border-top-color: themed('accentPurple');
 					}
 
 					.find_support & {
 						flex: 1;
-						flex-grow: 3;
+						flex-grow: 4;
 						align-self: stretch;
+
+						@include themify($themes) {
+							background: rgba( themed('accentPurple'), 0.4 );
+						}
 
 						h3 {
 							flex: none;
+
 						}
 
 						> ul {
@@ -588,15 +655,20 @@ header.site_main_header {
 				&#subnav_for-get_involved {
 					@include themify($themes) {
 						border-left-color: themed('accentBlue');
-						background: rgba( themed('accentBlue'), 0.2 );
+						background: themed('accentBlue');
+						border-bottom-color: themed('accentBlue');
+						border-top-color: themed('accentBlue');
 					}
 
 					.get_involved & {
 						flex: 1;
-						flex-grow: 3;
-
+						flex-grow: 4;
+						@include themify($themes) {
+							background:  rgba( themed('accentBlue'), 0.2 );
+						}
 						h3 {
 							flex: none;
+
 						}
 						> ul {
 							display: flex;
@@ -607,14 +679,20 @@ header.site_main_header {
 				&#subnav_for-about_us {
 					@include themify($themes) {
 						border-left-color: themed('accentYellow');
-						background: rgba( themed('accentYellow'), 0.2 );
+						background: themed('accentYellow');
+						border-bottom-color: themed('accentYellow');
+						border-top-color: themed('accentYellow');
 					}
 					.about_us & {
 						flex: 1;
-						flex-grow: 3;
+						flex-grow: 4;
+						@include themify($themes) {
+							background: rgba( themed('accentYellow'), 0.2 );
+						}
 
 						h3 {
 							flex: none;
+
 						}
 						> ul {
 							display: flex;
