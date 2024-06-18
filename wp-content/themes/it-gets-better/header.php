@@ -69,7 +69,7 @@
 			<div class="utility_right_side">
 
 				<div id="site_search">
-					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
+					<?php // TODO: gotta fix this. get_template_part( 'template-parts/components/search-bar' ); ?>
 				</div>
 
 				<label class="darkmode_switch">
@@ -139,7 +139,7 @@
 			</div>
 			<div class="header_center">
 				<nav id="subnav_for-find_support" class="section_main_nav">
-					<h3 class="find_support">Find Support</h3>
+					<h3 class="find_support" tabindex="0" role="button" aria-expanded="false">Find Support</h3>
 					<?php
 						$findSupportNavProps =  array(
 						'theme_location' => 'main-nav-find_support',
@@ -152,7 +152,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-get_involved" class="section_main_nav">
-					<h3 class="get_involved">Get Involved</h3>
+					<h3 class="get_involved" tabindex="0" role="button" aria-expanded="false">Get Involved</h3>
 					<?php
 						$getInvolvedNavProps =  array(
 						'theme_location' => 'main-nav-get_involved',
@@ -165,7 +165,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-about_us" class="section_main_nav">
-					<h3 class="about_us">About Us</h3>
+					<h3 class="about_us" tabindex="0" role="button" aria-expanded="false">About Us</h3>
 					<?php
 						$aboutUsNavProps =  array(
 						'theme_location' => 'main-nav-about_us',

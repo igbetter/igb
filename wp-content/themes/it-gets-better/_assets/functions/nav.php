@@ -130,10 +130,8 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
-
-		$item_output .= '<span>';
 		$item_output .= $args->link_before . $title . $args->link_after;
-		$item_output .= '</span></a>';
+		$item_output .= '</a>';
 		if ($args->walker->has_children) {
 			$item_output .= '<a href="#" class="dropdown_toggle closed" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-label="' . $title . ' dropdown toggle"><i class="caret fa-duotone fa-caret-left"></i></a>';
 		}

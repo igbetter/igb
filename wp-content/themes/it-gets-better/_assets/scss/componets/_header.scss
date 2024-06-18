@@ -221,10 +221,10 @@
 	}
 	.switch__icon {
 		position: absolute;
-		top: 0.5em;
-		right: 0.375em;
-		width: 0.75em;
-		height: 0.75em;
+		top: 9px;
+		right: 5px;
+		width: 20px;
+		height: 10px;
 		transition:
 			opacity calc(var(--trans-dur) / 2),
 			transform calc(var(--trans-dur) / 2);
@@ -342,15 +342,16 @@
 	width: 55px;
 	height: 55px;
 	padding: 5px;
-	//margin: 2em 0;
+	margin: 2em 0;
 	border: 2px solid transparent;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: all 200ms ease-in-out;
-	z-index: 9999;
+	z-index: 999999;
 	background: transparent;
-	position: relative;
-	top: auto !important;
+	position: absolute;
+	top: 60px;
+	right: 10px;
 
 	@include tablet-down {
 		display: block;
@@ -385,12 +386,12 @@
 			stroke: themed('textColor');
 		}
 
-		.menu_is_open & {
+		.main_nav_open & {
 			stroke: $white;
 		}
 	}
 
-	&.menu_open {
+	&.main_nav_open {
 
 		.middle_line {
 			opacity: 0;
