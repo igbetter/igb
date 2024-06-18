@@ -4,13 +4,13 @@
 	display: flex;
 	width: 100%;
 	max-width: 100vw;
-	margin-top: -250px;
-	padding-top: 150px;
+	//margin-top: -200px;
+//	padding-top: 190px;
 	min-height: 800px;
 
 	@include tablet-down {
 		min-height: 500px;
-	}
+	}	
 
 	@include phone-only {
 		min-height: 270px;

@@ -28,16 +28,78 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<?php get_template_part( 'template-parts/egg' ); ?>
 	<?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class('preload theme-light'); ?>>
+<body <?php body_class('preload'); ?>>
+
 
 <?php wp_body_open(); ?>
 
-<div id="page" class="sticky-container">
+<div id="page" class="sticky-container ">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'it-gets-better' ); ?></a>
 
 	<header class="site_main_header">
+		<div id="site_utility_bar" class="flex-row">
+			<div class="utility_spacer"></div>
+			<nav id="section_select_menu" class="">
+				<ul>
+					<li>
+						<a href="#" id="select-find_support" class="find_support">Find Support</a>
+					</li>
+					<li>
+						<a href="#" id="select-get_involved" class="get_involved">Get Involved</a>
+					</li>
+					<li>
+						<a href="#" id="select-about_us" class="about_us">About Us</a>
+					</li>
+				</ul>
+			</nav>
+			<nav id="utility_navigation">
+				<?php
+					$utilityNavProps =  array(
+					'theme_location' => 'utility-nav',
+					'container'      => '',
+					'menu_class'     => 'utility_nav header',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				);
+				wp_nav_menu( $utilityNavProps );
+				?>
+			</nav>
+			<div class="utility_right_side">
+
+				<div id="site_search">
+					<?php // TODO: gotta fix this. get_template_part( 'template-parts/components/search-bar' ); ?>
+				</div>
+
+				<label class="darkmode_switch">
+					<input class="switch__input" type="checkbox" role="switch">
+					<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+						<g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+							<circle cx="6" cy="6" r="2" />
+							<g stroke-dasharray="1.5 1.5">
+								<polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+								<polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+							</g>
+						</g>
+					</svg>
+					<svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+						<g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+							<path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"/>
+						</g>
+					</svg>
+					<span class="switch__sr">Dark Mode</span>
+				</label>
+
+			</div> <!--/utility_right_side (search and mode switch) -->
+
+		</div>
 		<div class="flex-row">
 			<div id="IGB_MAIN_LOGO">
 				<a href="<?php echo home_url(); ?>">
@@ -75,52 +137,72 @@
 				</svg>
 			</a>
 			</div>
-			<nav id="site_utility_nav" class="hidden">
-				<?php
-					$utilityNavProps =  array(
-					'theme_location' => 'utility-nav',
-					'container'      => '',
-					'menu_class'     => 'utility_nav header',
-					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				);
-				wp_nav_menu( $utilityNavProps );
-			?>
-			</nav>
+			<div class="header_center">
+				<nav id="subnav_for-find_support" class="section_main_nav">
+					<h3 class="find_support" tabindex="0" role="button" aria-expanded="false">Find Support</h3>
+					<?php
+						$findSupportNavProps =  array(
+						'theme_location' => 'main-nav-find_support',
+						'container'      => '',
+						'menu_class'     => 'main-nav-find_support header',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'walker'		 => new Aria_Walker_Nav_Menu
+					);
+					wp_nav_menu( $findSupportNavProps );
+					?>
+				</nav>
+				<nav id="subnav_for-get_involved" class="section_main_nav">
+					<h3 class="get_involved" tabindex="0" role="button" aria-expanded="false">Get Involved</h3>
+					<?php
+						$getInvolvedNavProps =  array(
+						'theme_location' => 'main-nav-get_involved',
+						'container'      => '',
+						'menu_class'     => 'main-nav-get_involved header',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'walker'		 => new Aria_Walker_Nav_Menu
+					);
+					wp_nav_menu( $getInvolvedNavProps );
+					?>
+				</nav>
+				<nav id="subnav_for-about_us" class="section_main_nav">
+					<h3 class="about_us" tabindex="0" role="button" aria-expanded="false">About Us</h3>
+					<?php
+						$aboutUsNavProps =  array(
+						'theme_location' => 'main-nav-about_us',
+						'container'      => '',
+						'menu_class'     => 'main-nav-about_us header',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'walker'		 => new Aria_Walker_Nav_Menu
+					);
+					wp_nav_menu( $aboutUsNavProps );
+					?>
+				</nav>
+			</div>
 			<div class="header_right_side">
-				<label class="dark-toggle">
-					<span> Light </span>
-					<input type="checkbox">
-					<div class="dark-toggle__switch" tabindex="0"></div>
-					<span> Dark </span>
-				</label>
-				<div class="header_button_group">
-					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
-					<button id="menu_toggle_button" class="menu">
-						<svg
-							x="0" y="0" viewBox="0 0 40 40">
-							<path class="menu_line top_line"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="m 15 10
-									l 20 0"/>
-							<path class="menu_line middle_line"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="m 10 20
-									l 25 0"/>
-							<path class="menu_line bottom_line"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="m 5 30
-									l 30 0"/>
-						</svg>
-					</button>
-				</div>
+
+				<button id="menu_toggle_button" class="menu mobile_menu_only">
+					<svg
+						x="0" y="0" viewBox="0 0 40 40">
+						<path class="menu_line top_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 15 10
+								l 20 0"/>
+						<path class="menu_line middle_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 10 20
+								l 25 0"/>
+						<path class="menu_line bottom_line"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m 5 30
+								l 30 0"/>
+					</svg>
+				</button>
 			</div>
 
 		</div>
-
-
 
 		<?php if( get_theme_mod ('safe_exit_url') !== "" && get_theme_mod('safe_exit_url_text') !== "" ): ?>
 			<div id="safeExit" class="safe-exit-button">
@@ -135,40 +217,7 @@
 		<?php endif; ?>
 
 	</header>
-	<div class="main-container">
-		<nav id="site_main_navigation">
-			<?php
-			$megaNavMainProps =  array(
-				'theme_location' => 'mega-nav-main',
-				'container'      => 'span',
-				'menu_class'     => 'IGB_site_main_navigation_menu header main-navigation',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				'walker'		 => new Aria_Walker_Nav_Menu(),
-			);
 
-			wp_nav_menu( $megaNavMainProps );
-			?>
-		</nav>
-		<nav id="programs_nav">
-			<div class="program_box global">
-				<a href="/global/">
-					<object>
-						<h3>It Gets Better <span>Global</span></h3>
-						<p>It Gets Better is the world's largest storytelling effort to empower LGBTQ+ youth. Learn more about our global programs &amp; global affiliates here &raquo;</p>
-					</object>
-				</a>
-			</div>
-			<div class="program_box edu">
-				<a href="/education/">
-					<object>
-						<h3>It Gets Better <span>EDU</span></h3>
-						<p>It Gets Better EDU provides free educational resources for adults, educators, and student leaders. Explore our education resources &amp; programs here &raquo;</p>
-					</object>
-				</a>
-			</div>
-		</nav>
-
-	</div>
 	<?php if( !is_home() ) : ?>
 	<nav class="breadcrumb_navigation">
 		<?php // get_template_part( 'template-parts/components/page', 'breadcrumb'); ?>

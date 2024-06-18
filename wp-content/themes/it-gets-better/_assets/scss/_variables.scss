@@ -166,15 +166,15 @@ $themes: (
 
 		// main navigation
 		mainNavBGColor: $purple,
-		mainNavLinkColor: $white,
+		mainNavLinkColor: $dark,
 		mainNavItemBGColor: $purple,
-		mainNavLinkHoverColor: $yellow,
+		mainNavLinkHoverColor: $white,
 
 		// utility navigation
 		utilityNavBGColor: $subtle-purple-light,
 		utilityNavBGHoverColor: $yellow,
 		utilityNavLinkColor: $purple,
-		utilityNavLinkHoverColor: $dark,
+		utilityNavLinkHoverColor: $blue,
 
 		// accent colors
 		accentPurple: $purple,
@@ -183,6 +183,7 @@ $themes: (
 		accentYellow: $yellow,
 		accentGrey: $dark-grey,
 		accentTextColor: $white,
+		accentDarkTextColor: $darker,
 
 		// section background colors
 		subtlePurpleBG: $subtle-purple-light,
@@ -278,7 +279,7 @@ $themes: (
 		mainNavBGColor: $darker,
 		mainNavLinkColor: $white,
 		mainNavItemBGColor: $purple,
-		mainNavLinkHoverColor: $yellow,
+		mainNavLinkHoverColor: $white,
 
 		// utility navigation
 		utilityNavBGColor: $subtle-purple-dark,
@@ -293,6 +294,7 @@ $themes: (
 		accentYellow: $yellow,
 		accentGrey: $medium-grey,
 		accentTextColor: $white,
+		accentDarkTextColor: $darker,
 
 		// section background colors
 		subtlePurpleBG: $subtle-purple-dark,
