@@ -3089,6 +3089,12 @@ footer.site_footer nav.footer_legal_nav ul a {
   background: #f2566e;
   color: #ffffff;
 }
+#site_utility_bar nav#utility_navigation .donate_button a:hover, #site_utility_bar nav#utility_navigation .donate_button a:focus, #site_utility_bar nav#utility_navigation .donate_button a:target,
+#site_utility_bar nav#utility_navigation .donate_button a:visited:hover,
+#site_utility_bar nav#utility_navigation .donate_button a:visited:focus,
+#site_utility_bar nav#utility_navigation .donate_button a:visited:target {
+  transform: skew(-2deg);
+}
 .theme-light #site_utility_bar nav#utility_navigation .donate_button a:hover, .theme-light #site_utility_bar nav#utility_navigation .donate_button a:focus, .theme-light #site_utility_bar nav#utility_navigation .donate_button a:target,
 .theme-light #site_utility_bar nav#utility_navigation .donate_button a:visited:hover,
 .theme-light #site_utility_bar nav#utility_navigation .donate_button a:visited:focus,

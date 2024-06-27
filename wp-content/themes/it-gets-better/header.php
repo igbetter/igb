@@ -48,10 +48,10 @@
 						<a href="#" id="select-find_support" class="find_support">Find Support</a>
 					</li>
 					<li>
-						<a href="#" id="select-get_involved" class="get_involved">Get Involved</a>
+						<a href="#" id="select-get_involved" class="get_involved">Support Us</a>
 					</li>
 					<li>
-						<a href="#" id="select-about_us" class="about_us">About Us</a>
+						<a href="#" id="select-about_us" class="about_us">About It Gets Better</a>
 					</li>
 				</ul>
 			</nav>
