@@ -152,7 +152,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-get_involved" class="section_main_nav">
-					<h3 class="get_involved" tabindex="0" role="button" aria-expanded="false">Get Involved</h3>
+					<h3 class="get_involved" tabindex="0" role="button" aria-expanded="false">Support Us</h3>
 					<?php
 						$getInvolvedNavProps =  array(
 						'theme_location' => 'main-nav-get_involved',
@@ -165,7 +165,7 @@
 					?>
 				</nav>
 				<nav id="subnav_for-about_us" class="section_main_nav">
-					<h3 class="about_us" tabindex="0" role="button" aria-expanded="false">About Us</h3>
+					<h3 class="about_us" tabindex="0" role="button" aria-expanded="false">About It Gets Better</h3>
 					<?php
 						$aboutUsNavProps =  array(
 						'theme_location' => 'main-nav-about_us',
