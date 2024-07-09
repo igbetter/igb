@@ -32,6 +32,30 @@
             "stylised_button": 0,
             "file_count": 0,
             "min": ""
+        },
+        {
+            "key": "field_667dad334a03f",
+            "label": "EduGuide PDF(s)",
+            "name": "eduguide_pdfs",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 1,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add PDF",
+            "rows_per_page": 20,
+            "sub_fields": []
         }
     ],
     "location": [
@@ -59,5 +83,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701548557
+    "modified": 1719512553
 }
