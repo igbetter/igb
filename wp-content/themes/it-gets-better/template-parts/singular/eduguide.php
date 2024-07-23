@@ -7,11 +7,12 @@
  */
 $post_type = get_post_type( get_the_ID() );
 
-$eduguide_download = get_field( 'eduguide_pdf', get_the_ID() );
-if( $eduguide_download ) {
-	$eduguide_download_file_type = $eduguide_download['subtype'];
-	$eduguide_download_size = $eduguide_download['filesize'];
-	$eduguide_download_url = $eduguide_download['url'];
+$eduguide_downloads = get_field( 'eduguide_pdfs', get_the_ID() );
+if( $eduguide_downloads ) {
+
+	//$eduguide_download_file_type = $eduguide_download['subtype'];
+	//$eduguide_download_size = $eduguide_download['filesize'];
+	//$eduguide_download_url = $eduguide_download['url'];
 }
 
 
@@ -45,14 +46,56 @@ endif;
 		?>
 
 		<?php echo igb_display_related_glossary_term_tags( get_the_ID(), 'blog_post' ); ?>
-		<?php if( $eduguide_download ) : ?>
+		<?php if( $eduguide_downloads ) :
+			$other_langauges = []; ?>
+			<section class="eduguide_download_button_container">
+				<div class="flex-row">
+					<?php foreach ( $eduguide_downloads as $download ):
+						$language_select = $download['language'];
+						$pdf_array = $download['pdf'];
+
+
+					/* 	if( 'en' === $language_select ) : // english download button
+							$download_button_text = 'Download <span>(English)</span>';
+							$language = 'en';
+							echo $pdf_array['ID'];
+						endif;
+
+						if( 'es' === $language_select ) : // spanish download button
+							$download_button_text = 'Descargar <span>(Español)</span>';
+							$lang_class = 'lang-es';
+						endif; */
+
+						if( 'other' === $language_select ) : // "other" language links
+
+							$other_langauges[] = $download;
+
+						else :
+
+							$file_id = $pdf_array['ID'];
+
+							igb_display_eduguide_download_button( $language_select, $file_id );
+
+						endif;
+						?>
+
+					<?php endforeach; ?>
+				</div>
+
+				<?php if( count( $other_langauges ) > 0 ) : // there's other languages ?>
+					<div class="additional_languages">
+						Also available in
+					</div>
+				<?php endif; ?>
+			</section>
+
 			<?php
-				$formidable_form_modal_anchor = "<a data-js-action=\"formidable-form-popup\" href=\"" . esc_url( $eduguide_download_url ) . "\" class=\"primary_button main_eduguide_download_button filetype--" . esc_attr( $eduguide_download_file_type ) . "\">";
-				$formidable_form_modal_anchor .= "Download the EduGuide";
-				$formidable_form_modal_anchor .= "<span class=\"file_size\">(&nbsp;";
-				$formidable_form_modal_anchor .= size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
-				$formidable_form_modal_anchor .= "&nbsp;)</span></a>";
-				echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
+			//	$formidable_form_modal_anchor = "<a data-js-action=\"formidable-form-popup\" href=\"" . esc_url( $eduguide_download_url ) . "\" class=\"primary_button main_eduguide_download_button filetype--" . esc_attr( $eduguide_download_file_type ) . "\">";
+			//	$formidable_form_modal_anchor .= "Download the EduGuide";
+			//	$formidable_form_modal_anchor .= "<span class=\"file_size\">(&nbsp;";
+			//	$formidable_form_modal_anchor .= size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
+			//	$formidable_form_modal_anchor .= "&nbsp;)</span></a>";
+			//	echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
 			?>
 			<script type="text/javascript">
 			  document.addEventListener('DOMContentLoaded', function () {
