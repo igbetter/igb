@@ -96,3 +96,4 @@ Thumbs.db
 
 # but ignore the existing git submodules
 wp-content/themes/it-gets-better/.git*
+/wp-content/plugins
