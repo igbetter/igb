@@ -41,20 +41,8 @@
 
 	<header class="site_main_header">
 		<div id="site_utility_bar" class="flex-row">
-			<div class="utility_spacer"></div>
-			<nav id="section_select_menu" class="">
-				<ul>
-					<li>
-						<a href="#" id="select-find_support" class="find_support">Find Support</a>
-					</li>
-					<li>
-						<a href="#" id="select-get_involved" class="get_involved">Support Us</a>
-					</li>
-					<li>
-						<a href="#" id="select-about_us" class="about_us">About It Gets Better</a>
-					</li>
-				</ul>
-			</nav>
+
+
 			<nav id="utility_navigation">
 				<?php
 					$utilityNavProps =  array(
@@ -138,45 +126,19 @@
 			</a>
 			</div>
 			<div class="header_center">
-				<nav id="subnav_for-find_support" class="section_main_nav">
-					<h3 class="find_support" tabindex="0" role="button" aria-expanded="false">Find Support</h3>
+				<nav id="site_main_nav" class="main_nav_container">
 					<?php
-						$findSupportNavProps =  array(
-						'theme_location' => 'main-nav-find_support',
+						$navProps =  array(
+						'theme_location' => 'main-nav',
 						'container'      => '',
-						'menu_class'     => 'main-nav-find_support header',
+						'menu_class'     => 'main-nav header',
 						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 						'walker'		 => new Aria_Walker_Nav_Menu
 					);
-					wp_nav_menu( $findSupportNavProps );
+					wp_nav_menu( $navProps );
 					?>
 				</nav>
-				<nav id="subnav_for-get_involved" class="section_main_nav">
-					<h3 class="get_involved" tabindex="0" role="button" aria-expanded="false">Support Us</h3>
-					<?php
-						$getInvolvedNavProps =  array(
-						'theme_location' => 'main-nav-get_involved',
-						'container'      => '',
-						'menu_class'     => 'main-nav-get_involved header',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'walker'		 => new Aria_Walker_Nav_Menu
-					);
-					wp_nav_menu( $getInvolvedNavProps );
-					?>
-				</nav>
-				<nav id="subnav_for-about_us" class="section_main_nav">
-					<h3 class="about_us" tabindex="0" role="button" aria-expanded="false">About It Gets Better</h3>
-					<?php
-						$aboutUsNavProps =  array(
-						'theme_location' => 'main-nav-about_us',
-						'container'      => '',
-						'menu_class'     => 'main-nav-about_us header',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'walker'		 => new Aria_Walker_Nav_Menu
-					);
-					wp_nav_menu( $aboutUsNavProps );
-					?>
-				</nav>
+				
 			</div>
 			<div class="header_right_side">
 
