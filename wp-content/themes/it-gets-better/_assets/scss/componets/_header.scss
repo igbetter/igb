@@ -20,32 +20,15 @@
 	z-index: 9999;
 	padding: 0.75rem 1.5em;
 	transition: all 250ms ease-in-out;
-	border-top: 6px solid transparent;
 
-
-	.find_support & {
-		@include themify($themes) {
-			border-top-color: themed('accentPurple');
-		}
-
-	}
-	.get_involved & {
-		@include themify($themes) {
-			border-top-color: themed('accentBlue');
-		}
-	}
-	.about_us & {
-		@include themify($themes) {
-			border-top-color: themed('accentYellow');
-		}
-	}
 
 	&.smaller {
 		@include themify($themes) {
-			background: rgba(themed('backgroundColor'), 0.79);
+			background: rgba(themed('backgroundColor'), 0.83);
 			color: themed('textColor');
+			box-shadow: themed( 'activeShadow' );
 		}
-		box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
+	//	box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
 		backdrop-filter: blur(8px);
 		padding: 0.5rem 1.5em;
 

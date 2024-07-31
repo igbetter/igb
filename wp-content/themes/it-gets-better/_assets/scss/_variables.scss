@@ -93,6 +93,8 @@ rgba(0, 0, 0, 0.28) 0px 3px 8px,
 rgba(0, 0, 0, 0.19) 0px 7px 15px,
 rgba(0, 0, 0, 0.62) 0 1px 1px;
 
+$gradient-transparent_light: transparent 40%, rgba($pink, 0.2) 60%, rgba($yellow, 0.3) 70%, rgba($blue, 0.2) 79%, transparent 93%;
+$gradient-transparent_dark: transparent 40%,  rgba($yellow, 0.2) 60%, rgba($blue, 0.4) 70%,  rgba($purple, 0.7) 79%, transparent 93%;
 
 // Define animation speeds
 $transition_speed: 250ms;
@@ -167,11 +169,12 @@ $themes: (
 		// main navigation
 		mainNavBGColor: $purple,
 		mainNavLinkColor: $dark,
-		mainNavItemBGColor: $purple,
+		mainNavItemBGColor: transparent,
 		mainNavLinkHoverColor: $white,
+		mainNavItemBGHoverColor: $purple,
 
 		// utility navigation
-		utilityNavBGColor: $subtle-purple-light,
+		utilityNavBGColor: $gradient-transparent_light,
 		utilityNavBGHoverColor: $yellow,
 		utilityNavLinkColor: $purple,
 		utilityNavLinkHoverColor: $blue,
@@ -278,11 +281,12 @@ $themes: (
 		// main navigation
 		mainNavBGColor: $darker,
 		mainNavLinkColor: $white,
-		mainNavItemBGColor: $purple,
-		mainNavLinkHoverColor: $white,
+		mainNavItemBGColor: transparent,
+		mainNavLinkHoverColor: $dark,
+		mainNavItemBGHoverColor: $yellow,
 
 		// utility navigation
-		utilityNavBGColor: $subtle-purple-dark,
+		utilityNavBGColor: $gradient-transparent_dark,
 		utilityNavBGHoverColor: $darker,
 		utilityNavLinkColor: $white,
 		utilityNavLinkHoverColor: $yellow,
