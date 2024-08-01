@@ -56,10 +56,6 @@
 			</nav>
 			<div class="utility_right_side">
 
-				<div id="site_search">
-					<?php // TODO: gotta fix this. get_template_part( 'template-parts/components/search-bar' ); ?>
-				</div>
-
 				<label class="darkmode_switch">
 					<input class="switch__input" type="checkbox" role="switch">
 					<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
@@ -127,6 +123,9 @@
 			</div>
 			<div class="header_center">
 				<nav id="site_main_nav" class="main_nav_container">
+					<div class="mobile_search_container mobile_only">
+						<?php get_template_part( 'template-parts/components/mobile-search-bar' ); ?>
+					</div>
 					<?php
 						$navProps =  array(
 						'theme_location' => 'main-nav',
@@ -138,7 +137,7 @@
 					wp_nav_menu( $navProps );
 					?>
 				</nav>
-				
+
 			</div>
 			<div class="header_right_side">
 
@@ -162,6 +161,9 @@
 								l 30 0"/>
 					</svg>
 				</button>
+				<div id="site_search">
+					<?php get_template_part( 'template-parts/components/search-bar' ); ?>
+				</div>
 			</div>
 
 		</div>

@@ -17,7 +17,7 @@
 	width: 100%;
 	height: 0;
 	min-height: 90px;
-	z-index: 9999;
+	z-index: 999;
 	padding: 0.75rem 1.5em;
 	transition: all 250ms ease-in-out;
 
@@ -33,7 +33,7 @@
 		padding: 0.5rem 1.5em;
 
 		@include phone-only {
-			min-height: 67px;
+			min-height: 82px;
 		}
 		@include phone-landscape {
 			min-height: 64px;
@@ -59,6 +59,8 @@
 		flex: 1;
 		display: flex;
 		align-self: center;
+		justify-content: center;
+		padding-right: 4em;
 	}
 
 	.header_right_side {
@@ -96,7 +98,7 @@
 
 	padding: 1rem 0;
 	transition: all 200ms ease-in-out;
-	z-index: 99999;
+	z-index: 999;
 	position: absolute;
 	top: 2px;
 	width: 130px;
@@ -197,6 +199,10 @@
 	margin: 0;
 	position: relative;
 	line-height: 1.5;
+
+	@include phone-landscape {
+		margin-right: 30px;
+	}
 
 	.switch__icon,
 	.switch__input {
@@ -333,13 +339,16 @@
 	z-index: 999999;
 	background: transparent;
 	position: absolute;
-	top: 15px;
+	top: 18px;
 	right: 15px;
 
 	@include tablet-down {
 		display: block;
 	}
-
+	@include phone-landscape {
+		top: 0;
+		margin: 0;
+	}
 
 
 	@include themify($themes) {

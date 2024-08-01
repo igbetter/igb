@@ -17,6 +17,11 @@
 }
 html {
 	font-size: 62.5%;
+
+	@include tablet-down {
+		max-width: 100vw;
+	}
+
 }
 
 body {
@@ -27,6 +32,11 @@ body {
 	font-size: $font_size_base;
 	max-width: 100vw;
 	overflow-x: hidden;
+
+	@include tablet-down {
+		max-width: 100vw;
+		overflow-x: hidden;
+	}
 
 	&.preload {
 		// remove all animations while page is loading.
@@ -88,6 +98,12 @@ body {
 	overflow: hidden;
 	padding: 0;
 	display: none;
+}
+
+.mobile_only {
+	@include tablet-up {
+		display: none;
+	}
 }
 
 .sr-only {
@@ -490,7 +506,7 @@ a.subtle_overlay_button:visited {
 
 
 	@include phone-landscape {
-		top: 27vh;
+		top: 57vh;
 	}
 
 	a,
