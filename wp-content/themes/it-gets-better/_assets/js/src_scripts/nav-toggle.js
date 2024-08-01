@@ -1,41 +1,6 @@
 (function($) {
 	"use strict";
 
-	// menu changer
-	$(document).ready(function () {
-		// Retrieve the stored class name from localStorage
-		var storedClass = localStorage.getItem('selectedMenu');
-		if (storedClass) {
-			// Apply the stored class to the page and menu
-			$('#page').addClass('sticky-container ' + storedClass);
-			$('#section_select_menu').addClass('selected_' + storedClass);
-		} else {
-			$('#page').addClass('sticky-container find_support');
-			$('#section_select_menu').addClass('selected_find_support');
-		}
-
-		$('#section_select_menu a').click(function (e) {
-			e.preventDefault();
-			var id = $(this).attr('id'); // Get the ID of the clicked anchor link
-			var className = id.split('-')[1]; // Extract the class name from the ID
-			$('#page').removeClass().addClass('sticky-container ' + className); // Remove existing classes and add the new class
-			$('#section_select_menu').removeClass().addClass('selected_' + className);
-
-			// Store the selected class name in localStorage
-			localStorage.setItem('selectedMenu', className);
-		});
-
-		$('.section_main_nav h3').click(function (e) {
-			e.preventDefault();
-			var className = this.className // Get the class name
-			$('#page').removeClass().addClass('sticky-container ' + className); // Remove existing classes and add the new class
-			$('#section_select_menu').removeClass().addClass('selected_' + className);
-
-			// Store the selected class name in localStorage
-			localStorage.setItem('selectedMenu', className);
-		});
-	});
-
 	//dropdown toggle
 	$(document).ready(function() {
 		$('.dropdown_toggle').on('click', function(e) {
@@ -108,6 +73,7 @@
 		const $menuToggleButton = $('#menu_toggle_button');
 		const $headerCenter = $('.header_center');
 		const $body = $('body');
+		const $navSlideout = $('.header_center');
 		const $navItems = $headerCenter.find('a'); // Adjust the selector to match your nav items
 
 		const setTabIndex = (tabIndex) => {
@@ -122,6 +88,7 @@
 				// Close the menu
 				$body.removeClass('main_nav_is_open');
 				$menuToggleButton.removeClass('main_nav_open');
+				$navSlideout.hide( 'slide', { direction: 'right' }, 500);
 				$('path.top_line').toggleAttrVal('d', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
 				$('path.bottom_line').toggleAttrVal('d', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
 				setTabIndex('-1'); // Disable tabbing to nav items
@@ -132,6 +99,7 @@
 				// Open the menu
 				$body.addClass('main_nav_is_open');
 				$menuToggleButton.addClass('main_nav_open');
+				$navSlideout.show('slide', { direction: 'right' }, 500 );
 				$('path.top_line').toggleAttrVal('d', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
 				$('path.bottom_line').toggleAttrVal('d', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
 				setTabIndex('0'); // Enable tabbing to nav items

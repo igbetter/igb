@@ -17,40 +17,23 @@
 	width: 100%;
 	height: 0;
 	min-height: 90px;
-	z-index: 9999;
+	z-index: 999;
 	padding: 0.75rem 1.5em;
 	transition: all 250ms ease-in-out;
-	border-top: 6px solid transparent;
 
-
-	.find_support & {
-		@include themify($themes) {
-			border-top-color: themed('accentPurple');
-		}
-
-	}
-	.get_involved & {
-		@include themify($themes) {
-			border-top-color: themed('accentBlue');
-		}
-	}
-	.about_us & {
-		@include themify($themes) {
-			border-top-color: themed('accentYellow');
-		}
-	}
 
 	&.smaller {
 		@include themify($themes) {
-			background: rgba(themed('backgroundColor'), 0.79);
+			background: rgba(themed('backgroundColor'), 0.83);
 			color: themed('textColor');
+			box-shadow: themed( 'activeShadow' );
 		}
-		box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
+	//	box-shadow: 0 1px 15px rgba( 0, 0, 0, 0.35 );
 		backdrop-filter: blur(8px);
 		padding: 0.5rem 1.5em;
 
 		@include phone-only {
-			min-height: 67px;
+			min-height: 82px;
 		}
 		@include phone-landscape {
 			min-height: 64px;
@@ -76,6 +59,8 @@
 		flex: 1;
 		display: flex;
 		align-self: center;
+		justify-content: center;
+		padding-right: 4em;
 	}
 
 	.header_right_side {
@@ -113,7 +98,7 @@
 
 	padding: 1rem 0;
 	transition: all 200ms ease-in-out;
-	z-index: 99999;
+	z-index: 999;
 	position: absolute;
 	top: 2px;
 	width: 130px;
@@ -214,6 +199,10 @@
 	margin: 0;
 	position: relative;
 	line-height: 1.5;
+
+	@include phone-landscape {
+		margin-right: 30px;
+	}
 
 	.switch__icon,
 	.switch__input {
@@ -339,8 +328,8 @@
 }
 
 #menu_toggle_button {
-	width: 55px;
-	height: 55px;
+	width: 45px;
+	height: 45px;
 	padding: 5px;
 	margin: 2em 0;
 	border: 2px solid transparent;
@@ -350,13 +339,16 @@
 	z-index: 999999;
 	background: transparent;
 	position: absolute;
-	top: 60px;
-	right: 10px;
+	top: 18px;
+	right: 15px;
 
 	@include tablet-down {
 		display: block;
 	}
-
+	@include phone-landscape {
+		top: 0;
+		margin: 0;
+	}
 
 
 	@include themify($themes) {

@@ -1,14 +1,46 @@
 #site_search {
-	//position: absolute;
-	//margin-top: -1em;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	z-index: 9999;
+
+	@include tablet-down {
+		display: none;
+	//	right: 71px;
+	//	top: 3.1em;
+	}
+
+	@include phone-landscape {
+	//right: 10px;
+	//	top: 2.7em;
+	//	z-index: 99;
+	}
+}
+
+.mobile_search_container {
+	display: none;
+
+	@include tablet-down {
+		display: flex;
+		max-width: 100%;
+
+	}
+
+
+	.mobile_site_search_bar {
+		width: 100%;
+		padding: 2px;
+
+		input {
+			width: 100%;
+			font-size: 16px;
+		}
+	}
 }
 .site_search_bar {
 	display: flex;
 	align-items: center;
 
-	@include phone-only {
-		display: none;
-	}
 
 	form {
 	//	display: none;

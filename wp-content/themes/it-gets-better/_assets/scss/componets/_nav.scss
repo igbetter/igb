@@ -14,10 +14,14 @@
 // utility nav
 
 #site_utility_bar {
-	align-items: flex-start;
-	justify-content:  flex-end;
+	align-items: center;
+	justify-content: flex-end;
 	z-index: 9999;
 	position: relative;
+	//margin-top: -2px;
+	@include themify($themes) {
+		background: linear-gradient( 142deg, themed( 'utilityNavBGColor' ) );
+	}
 
 	a {
 		text-decoration: none;
@@ -34,90 +38,6 @@
 		}
 	}
 
-	.utility_spacer {
-		max-width: 17vw;
-		width: 120px;
-		flex: none;
-		transition: all 350ms ease-in-out;
-
-	}
-	nav#section_select_menu {
-		flex: 1;
-		margin-top: -0.5em;
-
-		@include tablet-down {
-			display: none;
-		}
-
-		ul, li {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		ul {
-			display: flex;
-			justify-content: center;
-			align-items: stretch;
-			padding: 0 1em 0 2em;
-
-			li {
-				flex: 1;
-			}
-
-
-		}
-
-		a {
-			display: block;
-			padding: 0.5em 1em;
-			line-height: 1;
-			height: 100%;
-			text-align: center;
-			border-radius: 0 0 6px 6px;
-			text-transform: uppercase;
-			font-weight: 600;
-
-
-			&#select-find_support {
-				@include themify($themes) {
-					color: themed('accentGrey');
-				}
-
-				.find_support & {
-					@include themify($themes) {
-						background: themed('accentPurple');
-						color: themed('accentTextColor');
-					}
-				}
-			}
-
-			&#select-get_involved {
-				@include themify($themes) {
-					color: themed('accentGrey');
-				}
-
-				.get_involved & {
-					@include themify($themes) {
-						background: themed('accentBlue');
-						color: themed('accentTextColor');
-					}
-				}
-			}
-
-			&#select-about_us {
-				@include themify($themes) {
-					color: themed('accentGrey');
-				}
-				.about_us & {
-					@include themify($themes) {
-						background: themed('accentYellow');
-						color: themed('accentDarkTextColor');
-					}
-				}
-			}
-		}
-	}
 
 	nav#utility_navigation {
 
@@ -141,7 +61,6 @@
 		.donate_button {
 			font-size: $font-size-base;
 			transform: scale(1.25);
-			margin-top: -5px;
 
 			a,
 			a:visited {
@@ -152,7 +71,6 @@
 				@include themify($themes) {
 					background: themed('accentPink');
 					color: $white;
-
 				}
 
 
@@ -172,16 +90,33 @@
 
 header.site_main_header {
 	.header_center {
-		margin-left: 150px;
 		position: relative;
 
 		a,
 		a:visited {
+			border-radius: 4px;
+			@include themify($themes) {
+				color: themed( 'mainNavLinkColor' );
+				background: themed( 'mainNavItemBGColor' );
+			}
+
 			&:hover,
 			&:focus,
 			&:target {
 				@include themify($themes) {
+					color: themed( 'mainNavLinkHoverColor' );
+					background: themed( 'mainNavItemBGHoverColor' );
 					text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
+				}
+			}
+		}
+
+		li.menu-item-has-children {
+			&:hover,
+			&:focus,
+			&:target {
+				@include themify($themes) {
+					background: rgba( themed( 'mainNavItemBGHoverColor' ), 0.15 );
 				}
 			}
 		}
@@ -191,7 +126,7 @@ header.site_main_header {
 	a.dropdown_toggle {
 
 		svg {
-			transform: scale(1.25);
+			transform: scale(1.15);
 			transition: all 170ms ease-in-out;
 		}
 
@@ -207,9 +142,21 @@ header.site_main_header {
 
 
 	.current-menu-item {
-		> a {
+		> a,
+		> a:visited {
 			@include themify($themes) {
 				text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
+				color: themed( 'mainNavLinkHoverColor' );
+				background: themed( 'mainNavItemBGHoverColor' );
+			}
+		}
+	}
+
+	.current-menu-ancestor {
+		> a,
+		> a:visited {
+			@include themify($themes) {
+				background: rgba( themed( 'mainNavItemBGHoverColor' ), 0.15 );
 			}
 		}
 	}
@@ -218,208 +165,15 @@ header.site_main_header {
 
 	// desktop (tablet up) styles of main nav
 	@include tablet-up {
-		nav.section_main_nav {
+		nav.main_nav_container {
 			text-align: center;
 			font-size: $font-size-md;
-			line-height: 1;
-			border-left: 8px solid transparent;
-			margin-left: 2em;
-			transform: skew(-18deg);
+			line-height: 1.1;
+			padding: 10px 29px 0 193px;
 			position: absolute;
-		//	top: -1em;
-			display: none;
+			width: 100%;
+			margin: 0 auto;
 
-			h3 {
-				display: none;
-			}
-
-			&#subnav_for-find_support {
-				.find_support & {
-					display: block;
-				}
-				@include themify($themes) {
-					border-left-color: themed('accentPurple');
-					background: rgba( themed('accentPurple'), 0.1 );
-				}
-				a,
-				a:visited {
-					@include themify($themes) {
-						color: themed('mainNavLinkColor');
-					}
-
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-								background: themed('accentPurple');
-								color: themed('accentTextColor');
-							}
-					}
-				}
-
-				.current-menu-item > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: themed('accentPurple');
-						color: themed('accentTextColor');
-					}
-				}
-				.current-menu-ancestor,
-				.current-menu-parent {
-					> a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: rgba( themed('accentPurple'), 0.2 );
-						}
-
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-									background: themed('accentPurple');
-									color: themed('accentTextColor');
-								}
-						}
-					}
-				}
-
-				li {
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-							background: rgba( themed('accentPurple'), 0.2 );
-						}
-					}
-				}
-				.sub-menu li {
-					@include themify($themes) {
-						background: rgba( themed('accentPurple'), 0.2 );
-					}
-				}
-			}
-
-			&#subnav_for-get_involved {
-				.get_involved & {
-					display: block;
-				}
-				@include themify($themes) {
-					border-left-color: themed('accentBlue');
-					background: rgba( themed('accentBlue'), 0.1 );
-				}
-				a,
-				a:visited {
-					@include themify($themes) {
-						color: themed('mainNavLinkColor');
-					}
-
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-							background: themed('accentBlue');
-							color: themed('accentTextColor');
-						}
-					}
-				}
-
-				.current-menu-item > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: themed('accentBlue');
-						color: themed('accentTextColor');
-					}
-				}
-				.current-menu-ancestor,
-				.current-menu-parent {
-					> a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: rgba( themed('accentBlue'), 0.2 );
-						}
-
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-									background: themed('accentBlue');
-									color: themed('accentTextColor');
-								}
-						}
-					}
-				}
-
-
-				li {
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-							background: rgba( themed('accentBlue'), 0.2 );
-						}
-					}
-				}
-				.sub-menu li {
-					@include themify($themes) {
-						background: rgba( themed('accentBlue'), 0.2 );
-					}
-				}
-			}
-
-			&#subnav_for-about_us {
-				.about_us & {
-					display: block;
-				}
-				@include themify($themes) {
-					border-left-color: themed('accentYellow');
-					background: rgba( themed('accentYellow'), 0.1 );
-
-				}
-				a,
-				a:visited {
-					@include themify($themes) {
-						color: themed('mainNavLinkColor');
-					}
-
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-								background: themed('accentYellow');
-								color: themed('accentDarkTextColor');
-								text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-							}
-					}
-				}
-				.current-menu-item > a:not(.dropdown_toggle) {
-					@include themify($themes) {
-						background: themed('accentYellow');
-						color: themed('accentDarkTextColor');
-						text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-					}
-				}
-				.current-menu-ancestor,
-				.current-menu-parent {
-					> a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: rgba( themed('accentYellow'), 0.2 );
-						}
-
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-								background: themed('accentYellow');
-								color: themed('accentDarkTextColor');
-								text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-							}
-						}
-					}
-				}
-
-
-				li {
-					&:hover,
-					&:focus {
-						@include themify($themes) {
-							background: rgba( themed('accentYellow'), 0.2 );
-						}
-					}
-				}
-				.sub-menu li {
-					@include themify($themes) {
-						background: rgba( themed('accentYellow'), 0.2 );
-					}
-				}
-			}
 
 			ul, li {
 				list-style: none;
@@ -428,22 +182,27 @@ header.site_main_header {
 			}
 
 			> ul {
-				transform: skew(18deg);
+
 				padding-left: 20px;
+				width: 100%;
 				display: flex;
 				align-items: center;
-				justify-content: space-evenly;
+				justify-content: center;
 
 				> li {
-					margin: 0 1px;
+					margin: 0 4px;
 					display: flex;
+					flex: auto;
+					border-radius: 4px;
+					@include themify($themes) {
+						border: 1px solid rgba( themed('backgroundColor'), 0.75 );
+						box-shadow: themed( 'subtleShadow' );
+					}
 
 
 					> a {
-						padding: 0.5em 1em;
-						@include themify($themes) {
-							border-left: 1px solid rgba(themed('mainNavLinkColor'), 0.15 );
-						}
+						padding: 0.25em;
+						flex: 1;
 					}
 				}
 			}
@@ -473,7 +232,7 @@ header.site_main_header {
 					align-items: center;
 					@include themify($themes) {
 						border-left: 1px solid rgba(themed('mainNavLinkColor'), 0.25 );
-						border-right: 1px solid rgba(themed('mainNavLinkColor'), 0.25 );
+						border-right: 1px solid rgba(themed('mainNavLinkColor'), 0.05 );
 					}
 				}
 			}
@@ -487,6 +246,9 @@ header.site_main_header {
 				font-size: $font-size-base;
 				min-width: 210px;
 				width: 100%;
+				backdrop-filter: blur(8px);
+				border-radius: 4px;
+
 				@include themify($themes) {
 					background: rgba(themed('backgroundColor'), 0.87);
 					box-shadow: themed('normalShadow');
@@ -515,33 +277,36 @@ header.site_main_header {
 			position: absolute;
 			top: 0;
 			right: 0;
-			height: calc( 100vh - 70px );
+			height: calc( 100vh - 90px );
 			width: 60vw;
 			min-width: min(390px, 95%);
-			z-index: 990;
+			z-index: 9999;
 			display: flex;
 			flex-direction: column;
-			margin: 70px 0 0 0;
-			padding: 0 90px 85px 0;
+			margin: 82px 0 0 0;
+			padding: 0 60px 85px 0;
 			overflow-y: auto;
-			transform: translateX( 150% );
+		//	transform: translateX( 150% );
 			transition: transform 300ms ease-in-out;
-
-			.main_nav_is_open & {
-				transform: translateX( 0% );
-			}
-
+			display: none;
 			@include themify($themes) {
 				background: themed('backgroundColor');
 				box-shadow: themed('activeShadow');
 			}
 
-			.section_main_nav {
-				border-left: 3px solid;
-				border-top: 3px solid;
-				border-bottom: 3px solid;
+			@include phone-landscape {
+				margin-top: 55px;
+				height: calc( 100vh - 55px );
+			}
+			.main_nav_is_open & {
+				transform: translateX( 0% );
+
+			}
+
+
+
+			nav {
 				flex: 1;
-				flex-grow: 1;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -554,19 +319,9 @@ header.site_main_header {
 					display: block;
 				}
 
-				h3 {
-					display: block;
-					padding: 1em 30px;
-					margin: 0;
-					line-height: 1;
-					cursor: pointer;
-					flex: 1;
-					display: flex;
-					align-items: center;
-				}
 
 				> ul {
-					display: none;
+
 					flex-direction: column;
 					flex: 1;
 					@include themify($themes) {
@@ -587,361 +342,83 @@ header.site_main_header {
 								justify-content: center;
 							}
 						}
-
-					}
-				}
-
-				a {
-					padding: 1em 30px;
-					text-decoration: none;
-					display: block;
-					line-height: 1.1;
-
-					@include themify($themes) {
-						border-top: 1px solid themed('backgroundColor');
-						border-bottom: 1px solid rgba( themed('textColor'), 0.14 );
-						color: themed('mainNavLinkColor');
 					}
 
-					&:not(.dropdown_toggle) {
-						padding-right: 4em;
+					a,
+					a:visited {
+						padding: 2em 1em;
+						text-decoration: none;
+						//display: block;
+						line-height: 1.1;
+
+						@include themify($themes) {
+							border-top: 1px solid themed('backgroundColor');
+							border-bottom: 1px solid rgba( themed('textColor'), 0.14 );
+							color: themed('mainNavLinkColor');
+						}
+
+						&:not(.dropdown_toggle) {
+							padding-right: 4em;
+						}
 					}
-				}
 
-				.menu-item-has-children {
-					display: flex;
-					width: 100%;
-					flex-wrap: wrap;
-
-					a {
-						flex: 1;
+					.menu-item-has-children {
 						display: flex;
-						flex-direction: column;
-						justify-content: space-around;
+						width: 100%;
+						flex-wrap: wrap;
 
-						@include themify($themes) {
-							border-right: 1px solid rgba( themed('textColor'), 0.24 );
-						}
-
-						&.dropdown_toggle {
-							flex: none;
-							padding: 1em 2em;
-
-							@include themify($themes) {
-								border-left: 1px solid themed('backgroundColor');
-								border-right: none;
-							}
-
-						}
-					}
-
-					&.menu_is_open {
-						@include themify($themes) {
-							background: darken( themed('backgroundColor'), 5 );
-						}
-
-						.sub-menu {
+						a {
+							flex: 1;
 							display: flex;
 							flex-direction: column;
+							justify-content: space-around;
 
-							li:not(.menu-item-has-children) {
-								flex: 1;
-								display: flex;
+							@include themify($themes) {
+								border-right: 1px solid rgba( themed('textColor'), 0.24 );
+							}
+
+							&.dropdown_toggle {
+								flex: none;
+								padding: 2em;
+
+								@include themify($themes) {
+									border-left: 1px solid themed('backgroundColor');
+									border-right: none;
+								}
+							}
+						}
+
+						&.menu_is_open {
+							@include themify($themes) {
+								background: darken( themed('backgroundColor'), 5 );
+							}
+
+							> .sub-menu {
 								flex-direction: column;
 
-								a {
+								li:not(.menu-item-has-children) {
 									flex: 1;
+									display: flex;
+									flex-direction: column;
+
+									a {
+										flex: 1;
+									}
 								}
 							}
 						}
 					}
-				}
 
-				.sub-menu {
-					display: none;
-					width: 100%;
-					max-width: 100%;
-
-					a:not(.dropdown_toggle) {
-						padding-right: 0;
-					}
-
-
-				}
-				.find_support &,
-				.get_involved &
-				.about_us & {
-					flex-shrink: 6;
-				}
-
-
-				&#subnav_for-find_support {
-					@include themify($themes) {
-						border-left-color: themed('accentPurple');
-						background: themed('accentPurple');
-						border-bottom-color: themed('accentPurple');
-						border-top-color: themed('accentPurple');
-						color: themed('accentTextColor');
-						text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-					}
 					.sub-menu {
-						@include themify($themes) {
-							border-left: 5px solid themed('accentPurple');
-							margin-left: 2px;
-							border-bottom: 1px solid rgba( themed('accentPurple'), 0.5 );
-						}
-					}
-					// link colors, hover/focus and current page highlight
-					a,
-					a:visited {
-						@include themify($themes) {
-							color: themed('mainNavLinkColor');
-						}
+						display: none;
+						width: 100%;
+						max-width: 100%;
 
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-									background: themed('accentPurple');
-									color: themed('accentTextColor');
-								}
-						}
-					}
-					.current-menu-item > a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: themed('accentPurple');
-							color: themed('accentTextColor');
-							text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-						}
-					}
-					.current-menu-ancestor,
-					.current-menu-parent {
-						> a:not(.dropdown_toggle) {
-							@include themify($themes) {
-								background: rgba( themed('accentPurple'), 0.2 );
-							}
-
-							&:hover,
-							&:focus {
-								@include themify($themes) {
-									background: themed('accentPurple');
-									color: themed('accentTextColor');
-									text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-								}
-							}
-						}
-					}
-
-					.find_support & {
-						flex: 1;
-						flex-grow: 6;
-						align-self: stretch;
-
-						@include themify($themes) {
-							background: rgba( themed('accentPurple'), 0.4 );
-							color: themed('mainNavLinkColor');
-						}
-
-						h3 {
-							flex: none;
-
-						}
-
-						> ul {
-							display: flex;
-						}
-					}
-
-					.menu_is_open {
-						@include themify($themes) {
-							background: rgba( themed('accentPurple'), 0.05 );
-						}
-
-						> .dropdown_toggle {
-							@include themify($themes) {
-								background: rgba( themed('accentPurple'), 0.4 );
-								color: themed('mainNavLinkColor');
-							}
+						a:not(.dropdown_toggle) {
+							padding-right: 0;
 						}
 					}
 				}
-
-				&#subnav_for-get_involved {
-					@include themify($themes) {
-						border-left-color: themed('accentBlue');
-						background: themed('accentBlue');
-						border-bottom-color: themed('accentBlue');
-						border-top-color: themed('accentBlue');
-						color: themed('accentTextColor');
-						text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-					}
-					.sub-menu {
-						@include themify($themes) {
-							border-left: 5px solid themed('accentBlue');
-							margin-left: 2px;
-							border-bottom: 1px solid rgba( themed('accentBlue'), 0.5 );
-						}
-					}
-
-					// link colors, hover/focus and current page highlight
-					a,
-					a:visited {
-						@include themify($themes) {
-							color: themed('mainNavLinkColor');
-						}
-
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-									background: themed('accentBlue');
-									color: themed('accentTextColor');
-								}
-						}
-					}
-					.current-menu-item > a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: themed('accentBlue');
-							color: themed('accentTextColor');
-							text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-						}
-					}
-					.current-menu-ancestor,
-					.current-menu-parent {
-						> a:not(.dropdown_toggle) {
-							@include themify($themes) {
-								background: rgba( themed('accentBlue'), 0.2 );
-							}
-
-							&:hover,
-							&:focus {
-								@include themify($themes) {
-									background: themed('accentBlue');
-									color: themed('accentTextColor');
-									text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
-								}
-							}
-						}
-					}
-
-					.get_involved & {
-						flex: 1;
-						flex-grow: 6;
-						@include themify($themes) {
-							background: rgba( themed('accentBlue'), 0.4 );
-							color: themed('mainNavLinkColor');
-						}
-						h3 {
-							flex: none;
-
-						}
-						> ul {
-							display: flex;
-						}
-					}
-
-					.menu_is_open {
-						@include themify($themes) {
-							background: rgba( themed('accentBlue'), 0.05 );
-						}
-
-						> .dropdown_toggle {
-							@include themify($themes) {
-								background: themed('accentBlue');
-								color: themed('accentTextColor');
-							}
-						}
-					}
-				}
-
-				&#subnav_for-about_us {
-					@include themify($themes) {
-						border-left-color: themed('accentYellow');
-						background: themed('accentYellow');
-						border-bottom-color: themed('accentYellow');
-						border-top-color: themed('accentYellow');
-						color: themed('accentDarkTextColor');
-						text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-					}
-					.sub-menu {
-						@include themify($themes) {
-							border-left: 5px solid themed('accentYellow');
-							margin-left: 2px;
-							border-bottom: 1px solid rgba( themed('accentYellow'), 0.5 );
-						}
-					}
-					// link colors, hover/focus and current page highlight
-					a,
-					a:visited {
-						@include themify($themes) {
-							color: themed('mainNavLinkColor');
-						}
-
-						&:hover,
-						&:focus {
-							@include themify($themes) {
-									background: themed('accentYellow');
-									color: themed('accentDarkTextColor');
-									text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-								}
-						}
-					}
-					.current-menu-item > a:not(.dropdown_toggle) {
-						@include themify($themes) {
-							background: themed('accentYellow');
-							color: themed('accentDarkTextColor');
-							text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-						}
-					}
-					.current-menu-ancestor,
-					.current-menu-parent {
-						> a:not(.dropdown_toggle) {
-							@include themify($themes) {
-								background: rgba( themed('accentYellow'), 0.2 );
-							}
-
-							&:hover,
-							&:focus {
-								@include themify($themes) {
-									background: themed('accentYellow');
-									color: themed('accentDarkTextColor');
-									text-shadow: 0 -1px 0 rgba( themed('textHighlightAbove'), 0.5 );
-								}
-							}
-						}
-					}
-					.about_us & {
-						flex: 1;
-						flex-grow: 6;
-
-						@include themify($themes) {
-							background: rgba( themed('accentYellow'), 0.2 );
-							color: themed('mainNavLinkColor');
-						}
-
-						h3 {
-							flex: none;
-
-						}
-						> ul {
-							display: flex;
-						}
-					}
-
-					.menu_is_open {
-						@include themify($themes) {
-							background: rgba( themed('accentYellow'), 0.05 );
-						}
-
-						> .dropdown_toggle {
-							@include themify($themes) {
-								background: themed('accentYellow');
-								color: themed('accentDarkTextColor');
-							}
-						}
-
-
-					}
-				}
-
 			}
 
 		}
