@@ -322,8 +322,8 @@
 }
 
 #menu_toggle_button {
-	width: 55px;
-	height: 55px;
+	width: 45px;
+	height: 45px;
 	padding: 5px;
 	margin: 2em 0;
 	border: 2px solid transparent;
@@ -333,8 +333,8 @@
 	z-index: 999999;
 	background: transparent;
 	position: absolute;
-	top: 60px;
-	right: 10px;
+	top: 15px;
+	right: 15px;
 
 	@include tablet-down {
 		display: block;
