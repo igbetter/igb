@@ -73,6 +73,7 @@
 		const $menuToggleButton = $('#menu_toggle_button');
 		const $headerCenter = $('.header_center');
 		const $body = $('body');
+		const $navSlideout = $('.header_center');
 		const $navItems = $headerCenter.find('a'); // Adjust the selector to match your nav items
 
 		const setTabIndex = (tabIndex) => {
@@ -87,6 +88,7 @@
 				// Close the menu
 				$body.removeClass('main_nav_is_open');
 				$menuToggleButton.removeClass('main_nav_open');
+				$navSlideout.hide( 'slide', { direction: 'right' }, 500);
 				$('path.top_line').toggleAttrVal('d', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
 				$('path.bottom_line').toggleAttrVal('d', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
 				setTabIndex('-1'); // Disable tabbing to nav items
@@ -97,6 +99,7 @@
 				// Open the menu
 				$body.addClass('main_nav_is_open');
 				$menuToggleButton.addClass('main_nav_open');
+				$navSlideout.show('slide', { direction: 'right' }, 500 );
 				$('path.top_line').toggleAttrVal('d', 'm 5 5 l 30 30', 'm 15 10 l 20 0');
 				$('path.bottom_line').toggleAttrVal('d', 'm 5 35 l 30 -30', 'm 5 30 l 30 0');
 				setTabIndex('0'); // Enable tabbing to nav items
