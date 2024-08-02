@@ -190,3 +190,8 @@ require get_template_directory() . '/_assets/functions/woo.php';
  */
 require get_template_directory() . '/_assets/functions/block-mods.php';
 
+/**
+ * Functions for SEO
+ */
+require get_template_directory() . '/_assets/functions/seo.php';
+
