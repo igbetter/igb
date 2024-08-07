@@ -10,9 +10,9 @@ $post_type = get_post_type( get_the_ID() );
 $eduguide_downloads = get_field( 'eduguide_pdfs', get_the_ID() );
 if( $eduguide_downloads ) {
 
-	//$eduguide_download_file_type = $eduguide_download['subtype'];
-	//$eduguide_download_size = $eduguide_download['filesize'];
-	//$eduguide_download_url = $eduguide_download['url'];
+//	$eduguide_download_file_type = $eduguide_download['subtype'];
+//	$eduguide_download_size = $eduguide_download['filesize'];
+//	$eduguide_download_url = $eduguide_download['url'];
 }
 
 
@@ -62,12 +62,11 @@ endif;
 						$language_select = $download['language'];
 						$pdf_array = $download['pdf'];
 
-
 						if( 'en' === $language_select ) : // english download button
 							$download_button_text = 'Download <span class="lang">(English)</span>';
 							$language = 'en';
-							printf(
-								'<a data-js-action="formidable-form-popup" href="%s" class="primary_button main_eduguide_download_button lang-%s">
+							$formidable_form_modal_anchor = sprintf(
+								'<a data-js-action="formidable-form-popup" href="%s" data-bs-target="frm-modal-0" class="primary_button main_eduguide_download_button lang-%s">
 									%s
 									<span class="file_size">%s</span>
 								</a>',
@@ -76,6 +75,8 @@ endif;
 								$download_button_text,
 								size_format( filesize( get_attached_file( $pdf_array['ID'] ) ) )
 							);
+							
+							echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="'.str_replace('"', '\'', $formidable_form_modal_anchor).'"]' . '[formidable id=6]' . '[/frmmodal-content]' );
 						endif;
 
 						if( 'es' === $language_select ) : // spanish download button
@@ -151,8 +152,11 @@ endif;
 			    // Add click event listener to each matching element
 			    formidableFormPopups.forEach(function (element) {
 			      element.addEventListener('click', function (event) {
+				  
 			        // Get the value of data-bs-target attribute
-			        var targetId = event.target.getAttribute('data-bs-target').replace(/#/g, '');
+					console.log(event);
+					var targetId = event.target.getAttribute('data-bs-target').replace(/#/g, '');
+
 
 			        // Find the div with the specified ID
 			        var targetDiv = document.getElementById(targetId);
