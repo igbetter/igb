@@ -75,7 +75,7 @@ endif;
 								$download_button_text,
 								size_format( filesize( get_attached_file( $pdf_array['ID'] ) ) )
 							);
-							
+							// the str_replace() here is ensuring that we are NOT using " in the html string. This is necessary for the shortcode to work properly.
 							echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="'.str_replace('"', '\'', $formidable_form_modal_anchor).'"]' . '[formidable id=6]' . '[/frmmodal-content]' );
 						endif;
 
