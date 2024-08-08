@@ -152,16 +152,15 @@ endif;
 			    // Add click event listener to each matching element
 			    formidableFormPopups.forEach(function (element) {
 			      element.addEventListener('click', function (event) {
-				  
-			        // Get the value of data-bs-target attribute
-					console.log(event);
-					var targetId = event.target.getAttribute('data-bs-target').replace(/#/g, '');
 
+					// Get the value of data-bs-target attribute
+					// This is the ID of the modal that will be opened
+					var targetPopupID = event.target.closest('a').getAttribute('data-bs-target').replace('#', '');
 
-			        // Find the div with the specified ID
-			        var targetDiv = document.getElementById(targetId);
+			        // Find the div/modal with the specified ID that we are looking for
+			        var targetDiv = document.getElementById(targetPopupID);
 
-			        // Check if the div and the child input field exist
+			        // Check if the div/modal has the hidden input field we are looking for, and if it does, set the value of the input field to the original href
 			        if (targetDiv && targetDiv.querySelector('input#field_pdf_asset_redirect')) {
 			          // Get the original anchor's href
 			          var originalHref = event.target.href;
@@ -172,7 +171,7 @@ endif;
 			      });
 			    });
 			  });
-				</script>
+			</script>
 		<?php endif;?>
 	</header>
 	<main class="post_main">
