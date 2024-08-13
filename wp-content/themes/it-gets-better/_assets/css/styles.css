@@ -3106,11 +3106,11 @@ header.site_main_header .header_center a:visited {
   background: rgba(251, 173, 65, 0.15);
 }
 header.site_main_header a.dropdown_toggle svg {
-  transform: scale(1.15);
+  transform: scale(1.15) rotate(-90deg);
   transition: all 170ms ease-in-out;
 }
 header.site_main_header a.dropdown_toggle.open svg {
-  transform: scale(1.25) rotate(-90deg);
+  transform: scale(1.25) rotate(90deg);
 }
 .theme-light header.site_main_header .current-menu-item > a,
 .theme-light header.site_main_header .current-menu-item > a:visited {
