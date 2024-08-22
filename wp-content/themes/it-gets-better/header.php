@@ -31,7 +31,7 @@
 
 </head>
 
-<body <?php body_class('preload'); ?>>
+<body <?php body_class('preload theme-light'); ?>>
 
 
 <?php wp_body_open(); ?>

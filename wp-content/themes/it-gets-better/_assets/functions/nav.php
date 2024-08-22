@@ -129,12 +129,18 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
-		$item_output .= $args->link_before . $title . $args->link_after;
-		$item_output .= '</a>';
 		if ($args->walker->has_children) {
-			$item_output .= '<a href="#" class="dropdown_toggle closed" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-label="' . $title . ' dropdown toggle"><i class="caret fa-duotone fa-caret-left"></i></a>';
+			$item_output .= '<a'. $attributes .' aria-haspopup="true" aria-expanded="false" aria-label="toggle ' . $title . ' dropdown menu">';
 		}
+		else {
+			$item_output .= '<a'. $attributes .'>';
+		}
+
+		$item_output .= $args->link_before . $title . $args->link_after;
+		if ($args->walker->has_children) {
+			$item_output .= '<span class="dropdown_icon"><i class="caret fa-duotone fa-caret-down"></i></span>';
+		}
+		$item_output .= '</a>';
 		$item_output .= $args->after;
 
 		/**
@@ -314,3 +320,4 @@ class Aria_Walker_Nav_Menu_with_images extends Walker_Nav_Menu {
 	}
 
 }
+
