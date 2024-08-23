@@ -863,3 +863,22 @@ function igb_display_glossary_term_category( $post_ID = NULL, $display_general_c
 
 	wp_reset_postdata();
 }
+
+function igb_display_eduguide_download_button( $language = 'en', $file_id = NULL ) {
+
+	if( $file_id ) :
+		$file_url = wp_get_attachment_url( esc_html( $file_id ) );
+		$filesize = size_format( filesize( get_attached_file( $file_id ) ) );
+		$download_button_text = ( 'en' === $language ) ? 'Download <span class="lang">(English)</span>' : 'Descargar <span class="lang">(Español)</span>';
+
+		$formidable_form_modal_anchor = sprintf(
+			'<a data-js-action="formidable-form-popup" href="%s" class="primary_button main_eduguide_download_button">
+				%s <span class="file_size">[%s]</span>
+			</a>',
+			esc_url( $file_url ),
+			$download_button_text,
+			esc_url( $filesize )
+		);
+		
+	endif;
+}

@@ -3,11 +3,11 @@
     "title": "Meta Data - EduGuide",
     "fields": [
         {
-            "key": "field_6464785e29b87",
-            "label": "EduGuide PDF",
-            "name": "eduguide_pdf",
+            "key": "field_667dad334a03f",
+            "label": "EduGuide PDF(s)",
+            "name": "eduguide_pdfs",
             "aria-label": "",
-            "type": "file",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,22 +16,110 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_save_meta": 1,
-            "uploader": "",
-            "return_format": "array",
-            "upload_folder": "eduguides\/{year}\/",
-            "multiple": 0,
-            "max": "",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "library": "all",
-            "preview_style": "default",
-            "placeholder": "Select",
-            "button_label": "Add File",
-            "stylised_button": 0,
-            "file_count": 0,
-            "min": ""
+            "acfe_repeater_stylised_button": 1,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add PDF",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_667dad864a040",
+                    "label": "Language",
+                    "name": "language",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "en": "English",
+                        "es": "Español",
+                        "other": "Other"
+                    },
+                    "default_value": "en",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "max": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "min": "",
+                    "parent_repeater": "field_667dad334a03f"
+                },
+                {
+                    "key": "field_6464785e29b87",
+                    "label": "EduGuide PDF",
+                    "name": "pdf",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "array",
+                    "upload_folder": "eduguides\/{year}\/",
+                    "multiple": 0,
+                    "max": "",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "library": "all",
+                    "preview_style": "default",
+                    "placeholder": "Select",
+                    "button_label": "Add File",
+                    "stylised_button": 0,
+                    "file_count": 0,
+                    "min": "",
+                    "parent_repeater": "field_667dad334a03f"
+                },
+                {
+                    "key": "field_667dadbc4a041",
+                    "label": "Language",
+                    "name": "other_langauge",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_667dad864a040",
+                                "operator": "==",
+                                "value": "other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "\"Also available in:",
+                    "append": "\"",
+                    "parent_repeater": "field_667dad334a03f"
+                }
+            ]
         }
     ],
     "location": [
@@ -59,5 +147,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701548557
+    "modified": 1721284981
 }
