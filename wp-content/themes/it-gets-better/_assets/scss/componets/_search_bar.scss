@@ -1,13 +1,46 @@
-
-.site_search_bar {
+#site_search {
 	position: absolute;
-	right: 87px;
+	top: 40px;
+	right: 10px;
+	z-index: 9999;
+
+	@include tablet-down {
+		display: none;
+	//	right: 71px;
+	//	top: 3.1em;
+	}
+
+	@include phone-landscape {
+	//right: 10px;
+	//	top: 2.7em;
+	//	z-index: 99;
+	}
+}
+
+.mobile_search_container {
+	display: none;
+
+	@include tablet-down {
+		display: flex;
+		max-width: 100%;
+
+	}
+
+
+	.mobile_site_search_bar {
+		width: 100%;
+		padding: 2px;
+
+		input {
+			width: 100%;
+			font-size: 16px;
+		}
+	}
+}
+.site_search_bar {
 	display: flex;
 	align-items: center;
 
-	@include phone-only {
-		display: none;
-	}
 
 	form {
 	//	display: none;
@@ -50,7 +83,7 @@
 		margin-left: -2.1em;
 		position: relative;
 		border: none;
-	    background-size: 20% 20%, 20% 20%;
+	    background-size: 10% 10%, 10% 10%;
 		background-repeat: no-repeat;
 		background-position: center 38.2%, center 63.1%;
 
@@ -90,8 +123,8 @@
 	}
 
 	.search_icon {
-		width: 15px;
-		height: 15px;
+		width: 9px;
+		height: 9px;
 		background: transparent;
 		display: block;
 		border-radius: 15px;
@@ -100,7 +133,7 @@
 		margin: 1em;
 
 		@include themify($themes) {
-			border: 2px solid themed('textColor');
+			border: 1px solid themed('textColor');
 		}
 
 		&:hover {
@@ -119,13 +152,13 @@
 		&:before,
 		&:after {
 			width: 2px;
-			height: 7px;
+			height: 5px;
 			border-radius: 5px;
 			display: block;
 			content: '';
 			position: absolute;
-			top: 10px;
-			right: -3px;
+			top: 5px;
+			right: -2px;
 			transform: rotate(-45deg);
 			transition: all .2s ease-in-out;
 
@@ -147,7 +180,7 @@
 		}
 
 		.search_icon {
-			transform: scale(2.3);
+			transform: scale(4);
 			transform-origin: top left;
 			margin-left:0.88em;
 			margin-top: 0.85em;
@@ -157,8 +190,8 @@
 
 
 			&:before {
-				top: 2px;
-				right: 5px;
+				top: 1px;
+				right: 3px;
 				width:1px;
 
 				@include themify($themes) {
@@ -167,8 +200,8 @@
 
 			}
 			&:after {
-				top: 2px;
-				left: 5px;
+				top: 1px;
+				left: 3px;
 				opacity: 1;
 				width: 1px;
 

@@ -17,6 +17,11 @@
 }
 html {
 	font-size: 62.5%;
+
+	@include tablet-down {
+		max-width: 100vw;
+	}
+
 }
 
 body {
@@ -27,6 +32,11 @@ body {
 	font-size: $font_size_base;
 	max-width: 100vw;
 	overflow-x: hidden;
+
+	@include tablet-down {
+		max-width: 100vw;
+		overflow-x: hidden;
+	}
 
 	&.preload {
 		// remove all animations while page is loading.
@@ -88,6 +98,12 @@ body {
 	overflow: hidden;
 	padding: 0;
 	display: none;
+}
+
+.mobile_only {
+	@include tablet-up {
+		display: none;
+	}
 }
 
 .sr-only {
@@ -476,25 +492,28 @@ a.subtle_overlay_button:visited {
 
 .safe-exit-button {
 	position: fixed;
-    top: 160px;
+    top: 30vh;
 	display: flex;
-    right: 0;
-    z-index: 999999999;
-	filter: drop-shadow(0 1px 1px rgba(50, 50, 0, 0.75));
+    right: -3.4em;
+	transform: rotate(90deg);
+    z-index: 999;
+	filter:
+	drop-shadow(1px -5px 15px rgba(50, 50, 0, 0.45))
+	drop-shadow(3px -2px 7px rgba(50, 50, 0, 0.35))
+	drop-shadow(1px 2px 2px rgba(50, 50, 0, 0.8))
+	;
 
-	@include phone-only {
-		top: 190px;
-	}
+
 
 	@include phone-landscape {
-		top: 33vh;
+		top: 57vh;
 	}
 
 	a,
 	a:visited {
 		display: inline-block;
-		clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
-		padding: 0.65em 1.1em 0.45em 2.15em;
+		clip-path: polygon(0 0, 88% 0%, 100% 100%, 12% 100%);
+		padding: 0.75em 2em 0.55em 2em;
 
 		@include themify($themes) {
 			background: themed('accentButtonBGColor');
