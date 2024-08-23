@@ -47,13 +47,6 @@ endif;
 
 		<?php echo igb_display_related_glossary_term_tags( get_the_ID(), 'blog_post' ); ?>
 
-		<!--
-
-		**** for a8c:
-			this is where the popup gateway is to be added. the code within the `if( $eduguide_downloads )` section is
-			only displaying the buttons from the ACF fields (a repeater), and not connected to the formidable forms popup
-			as it should.
-	-->
 		<?php if( $eduguide_downloads ) :
 			$other_langauges = []; ?>
 			<section class="eduguide_download_button_container">
@@ -82,7 +75,7 @@ endif;
 						if( 'es' === $language_select ) : // spanish download button
 							$download_button_text = 'Descargar <span class="lang">(Español)</span>';
 							$language = 'es';
-							printf(
+							$formidable_form_modal_anchor = sprintf(
 								'<a data-js-action="formidable-form-popup" href="%s" class="primary_button main_eduguide_download_button lang-%s">
 									%s
 									<span class="file_size">%s</span>
@@ -92,6 +85,8 @@ endif;
 								$download_button_text,
 								size_format( filesize( get_attached_file( $pdf_array['ID'] ) ) )
 							);
+							// the str_replace() here is ensuring that we are NOT using " in the html string. This is necessary for the shortcode to work properly.
+							echo do_shortcode( '[frmmodal-content size="large" modal_title="Regístrese para obtener recursos educativos" button_html="'.str_replace('"', '\'', $formidable_form_modal_anchor).'"]' . '[formidable id=6]' . '[/frmmodal-content]' );
 						endif;
 
 						if( 'other' === $language_select ) : // "other" language links (don't need gateway or popup. saving to array to print links out below)
@@ -134,16 +129,6 @@ endif;
 				<?php endif; ?>
 			</section>
 
-			<?php
-			//  *** CODE SAVED FROM CURRENT LIVE VERSION. REMOVE ONCE COMPLETE ***
-			//	$formidable_form_modal_anchor = "<a data-js-action=\"formidable-form-popup\" href=\"" . esc_url( $eduguide_download_url ) . "\" class=\"primary_button main_eduguide_download_button filetype--" . esc_attr( $eduguide_download_file_type ) . "\">";
-			//	$formidable_form_modal_anchor .= "Download the EduGuide";
-			//	$formidable_form_modal_anchor .= "<span class=\"file_size\">(&nbsp;";
-			//	$formidable_form_modal_anchor .= size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) );
-			//	$formidable_form_modal_anchor .= "&nbsp;)</span></a>";
-			//	echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="<a data-js-action=\'formidable-form-popup\' class=\'primary_button filetype-' . esc_attr( $eduguide_download_file_type ) . '\' href=\'' . esc_url( $eduguide_download_url ) . '\'>Download the EduGuide<span class=\'file_size\'>(&nbsp;' . size_format( filesize( get_attached_file( $eduguide_download['ID'] ) ) ) . '&nbsp;)</span></a>"]' . '[formidable id=6]' . '[/frmmodal-content]' );
-			//  *** END PREVIOUS CODE TO DELETE LATER ***
-			?>
 			<script type="text/javascript">
 			  document.addEventListener('DOMContentLoaded', function () {
 			    // Find all elements with data-js-action="formidable-form-popup"

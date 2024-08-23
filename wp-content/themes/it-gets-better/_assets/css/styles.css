@@ -1838,6 +1838,20 @@ a:visited article.single_term main p {
   display: none;
 }
 
+.eduguide_download_button_container {
+  margin: 1em auto;
+  padding: 2em;
+}
+.eduguide_download_button_container .flex-row {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.eduguide_download_button_container .flex-row a.primary_button,
+.eduguide_download_button_container .flex-row a.primary_button:visited {
+  margin: auto;
+}
+
 .facetwp-facet .facetwp-checkbox.checked .facetwp-display-value {
   font-weight: 500;
 }
