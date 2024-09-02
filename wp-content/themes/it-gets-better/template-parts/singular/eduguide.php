@@ -8,15 +8,8 @@
 $post_type = get_post_type( get_the_ID() );
 
 $eduguide_downloads = get_field( 'eduguide_pdfs', get_the_ID() );
-if( $eduguide_downloads ) {
+$post_class_list = 'singular_eduguide';
 
-//	$eduguide_download_file_type = $eduguide_download['subtype'];
-//	$eduguide_download_size = $eduguide_download['filesize'];
-//	$eduguide_download_url = $eduguide_download['url'];
-}
-
-
- $post_class_list = 'singular_eduguide';
 if( has_post_thumbnail() ) :
 	$post_class_list .= ' has_featured_image';
 else :
@@ -51,51 +44,18 @@ endif;
 			$other_langauges = []; ?>
 			<section class="eduguide_download_button_container">
 				<div class="flex-row">
+
 					<?php foreach ( $eduguide_downloads as $download ):
 						$language_select = $download['language'];
 						$pdf_array = $download['pdf'];
+						$file_id = $pdf_array['ID'];
 
-						if( 'en' === $language_select ) : // english download button
-							$download_button_text = 'Download <span class="lang">(English)</span>';
-							$language = 'en';
-							$formidable_form_modal_anchor = sprintf(
-								'<a data-js-action="formidable-form-popup" href="%s" data-bs-target="frm-modal-0" class="primary_button main_eduguide_download_button lang-%s">
-									%s
-									<span class="file_size">%s</span>
-								</a>',
-								esc_url( $pdf_array['url'] ),
-								$language,
-								$download_button_text,
-								size_format( filesize( get_attached_file( $pdf_array['ID'] ) ) )
-							);
-							// the str_replace() here is ensuring that we are NOT using " in the html string. This is necessary for the shortcode to work properly.
-							echo do_shortcode( '[frmmodal-content size="large" modal_title="Sign Up for Educational Resources" button_html="'.str_replace('"', '\'', $formidable_form_modal_anchor).'"]' . '[formidable id=6]' . '[/frmmodal-content]' );
-						endif;
-
-						if( 'es' === $language_select ) : // spanish download button
-							$download_button_text = 'Descargar <span class="lang">(Español)</span>';
-							$language = 'es';
-							$formidable_form_modal_anchor = sprintf(
-								'<a data-js-action="formidable-form-popup" href="%s" class="primary_button main_eduguide_download_button lang-%s">
-									%s
-									<span class="file_size">%s</span>
-								</a>',
-								esc_url( $pdf_array['url'] ),
-								$language,
-								$download_button_text,
-								size_format( filesize( get_attached_file( $pdf_array['ID'] ) ) )
-							);
-							// the str_replace() here is ensuring that we are NOT using " in the html string. This is necessary for the shortcode to work properly.
-							echo do_shortcode( '[frmmodal-content size="large" modal_title="Regístrese para obtener recursos educativos" button_html="'.str_replace('"', '\'', $formidable_form_modal_anchor).'"]' . '[formidable id=6]' . '[/frmmodal-content]' );
-						endif;
 
 						if( 'other' === $language_select ) : // "other" language links (don't need gateway or popup. saving to array to print links out below)
 
 							$other_langauges[] = $download;
 
 						else :
-
-							$file_id = $pdf_array['ID'];
 
 							igb_display_eduguide_download_button( $language_select, $file_id );
 

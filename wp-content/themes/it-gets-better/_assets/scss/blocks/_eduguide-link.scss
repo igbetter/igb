@@ -1,0 +1,61 @@
+.eduguide_link-container {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	transition: all 300ms ease-in-out;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+
+	&:hover,
+	&:target,
+	&:focus {
+		@include themify($themes) {
+			border-top: 1px solid rgba( themed( 'textColor' ), 0.23 );
+			border-bottom: 1px solid rgba( themed( 'textColor' ), 0.23 );
+			box-shadow: themed( 'largeShadow');
+		}
+	}
+	.eduguide_link-image_container {
+		width: 40%;
+		padding-bottom: 4em;
+	}
+	.eduguide_link_thumbnail {
+		margin: 2em;
+		min-height: 99%;
+		object-fit: cover;
+
+		@include themify($themes) {
+			background: rgba(darken( themed('backgroundColor'), 10 ), 0.25);
+			//box-shadow: themed( 'subtleShadow' );
+			box-shadow: 2px 2px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+			3px 3px 1px rgba( themed( 'textColor' ), 0.4 ),
+			4px 4px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+			7px 7px 1px rgba( themed( 'textColor' ), 0.3 ),
+			8px 8px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+			11px 11px 1px rgba( themed( 'textColor' ), 0.2 ),
+			12px 12px 0 rgba( themed( 'backgroundColor' ), 0.98 ),
+			15px 15px 1px rgba( themed( 'textColor' ), 0.1 );
+		}
+	}
+
+	.eduguide_link-text_container {
+		//flex: 1;
+		padding: 0.7em 2em;
+		margin: 5em 3em 5em -4em;
+
+		border-radius: 6px;
+		@include themify($themes) {
+			background: rgba( themed('backgroundColor'), 0.85 );
+			box-shadow: themed('subtleShadow');
+		}
+
+		.eduguide_download_button_container {
+			margin: 0;
+			padding: 0;
+
+			.subtle_overlay_button {
+				margin-right: 1em;
+			}
+		}
+	}
+}
