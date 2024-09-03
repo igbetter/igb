@@ -320,9 +320,9 @@ The responsive options available are:
 <!-- ROADMAP -->
 ## Roadmap
 - [x] Update README
-- [ ] New main nav
-- [ ] Mutilingual EduGuide Buttons
-    - [ ] Custom Block for EduGuide card
+- [x] New main nav
+- [x] Mutilingual EduGuide Buttons
+    - [x] Custom Block for EduGuide card
 - [ ] New hero
 
 See the [open issues](https://github.com/igbetter/igb/issues) for a full list of proposed features (and known issues).
