@@ -39,7 +39,7 @@
 	}
 
 	.eduguide_link-text_container {
-		//flex: 1;
+		flex: 1;
 		padding: 0.7em 2em;
 		margin: 5em 3em 5em -4em;
 
@@ -54,7 +54,28 @@
 			padding: 0;
 
 			.subtle_overlay_button {
-				margin-right: 1em;
+				margin: auto;
+			}
+		}
+	}
+}
+
+section.eduguide_header {
+	section.eduguide_link_section {
+		&:nth-of-type(2n+1) {
+			.eduguide_link-container {
+				flex-direction: row-reverse;
+
+				.eduguide_link-text_container {
+					position: relative;
+					margin-right: -8em;
+					margin-left: 3em;
+					z-index: 9;
+				}
+				.eduguide_link-image_container {
+					margin-right: 6em;
+				}
+
 			}
 		}
 	}

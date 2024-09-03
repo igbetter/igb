@@ -5592,6 +5592,7 @@ ul.term_list a:visited span {
   box-shadow: 2px 2px 0 rgba(41, 41, 41, 0.98), 3px 3px 1px rgba(255, 255, 255, 0.4), 4px 4px 0 rgba(41, 41, 41, 0.98), 7px 7px 1px rgba(255, 255, 255, 0.3), 8px 8px 0 rgba(41, 41, 41, 0.98), 11px 11px 1px rgba(255, 255, 255, 0.2), 12px 12px 0 rgba(41, 41, 41, 0.98), 15px 15px 1px rgba(255, 255, 255, 0.1);
 }
 .eduguide_link-container .eduguide_link-text_container {
+  flex: 1;
   padding: 0.7em 2em;
   margin: 5em 3em 5em -4em;
   border-radius: 6px;
@@ -5609,5 +5610,18 @@ ul.term_list a:visited span {
   padding: 0;
 }
 .eduguide_link-container .eduguide_link-text_container .eduguide_download_button_container .subtle_overlay_button {
-  margin-right: 1em;
+  margin: auto;
+}
+
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container {
+  flex-direction: row-reverse;
+}
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container .eduguide_link-text_container {
+  position: relative;
+  margin-right: -8em;
+  margin-left: 3em;
+  z-index: 9;
+}
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container .eduguide_link-image_container {
+  margin-right: 6em;
 }
