@@ -23,7 +23,8 @@
 		background: linear-gradient( 142deg, themed( 'utilityNavBGColor' ) );
 	}
 
-	a {
+	a,
+	a:visited {
 		text-decoration: none;
 		@include themify($themes) {
 			color: themed( 'utilityNavLinkColor' );
@@ -56,6 +57,15 @@
 
 		a {
 			padding: 0.24em 1em;
+		}
+
+		.current-menu-item {
+			a,
+			a:visited {
+				@include themify($themes) {
+					color: themed( 'mainNavLinkHoverColor' );
+				}
+			}
 		}
 
 		.donate_button {
@@ -122,7 +132,14 @@ header.site_main_header {
 		}
 
 	}
-
+	.current-menu-ancestor {
+		> a,
+		> a:visited {
+			@include themify($themes) {
+				background: rgba( themed( 'mainNavItemBGHoverColor' ), 0.15 );
+			}
+		}
+	}
 	.current-menu-item {
 		> a,
 		> a:visited {
@@ -130,15 +147,6 @@ header.site_main_header {
 				text-shadow: 0 1px 0 rgba( themed('textShadowBelow'), 0.75 );
 				color: themed( 'mainNavLinkHoverColor' );
 				background: themed( 'mainNavItemBGHoverColor' );
-			}
-		}
-	}
-
-	.current-menu-ancestor {
-		> a,
-		> a:visited {
-			@include themify($themes) {
-				background: rgba( themed( 'mainNavItemBGHoverColor' ), 0.15 );
 			}
 		}
 	}
