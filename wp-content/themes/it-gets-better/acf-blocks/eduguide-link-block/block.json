@@ -1,0 +1,16 @@
+{
+	"name": "igb/eduguide-link",
+	"title": "EduGuide Link",
+	"description": "For linking directly to an EduGuide, with (gated) download buttons included",
+	"style": [ "file:./eduguide-link.css" ],
+	"category": "igb",
+	"keywords": ["eduguide", "link", "media", "text", "link box", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "eduguide-link.php"
+	},
+	"supports": {
+		"anchor": true,
+		"align_content": "matrix"
+	}
+}

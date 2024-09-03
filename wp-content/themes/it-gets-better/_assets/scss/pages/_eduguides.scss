@@ -22,3 +22,19 @@
 		display: none;
 	}
 }
+
+.eduguide_download_button_container {
+	margin: 1em auto;
+	padding: 2em;
+
+	.flex-row {
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 2em;
+
+		a.primary_button,
+		a.primary_button:visited {
+			margin: auto;
+		}
+	}
+}

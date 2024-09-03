@@ -1838,6 +1838,20 @@ a:visited article.single_term main p {
   display: none;
 }
 
+.eduguide_download_button_container {
+  margin: 1em auto;
+  padding: 2em;
+}
+.eduguide_download_button_container .flex-row {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.eduguide_download_button_container .flex-row a.primary_button,
+.eduguide_download_button_container .flex-row a.primary_button:visited {
+  margin: auto;
+}
+
 .facetwp-facet .facetwp-checkbox.checked .facetwp-display-value {
   font-weight: 500;
 }
@@ -5540,4 +5554,74 @@ ul.term_list a:visited span {
 }
 .more_content_section .more_content_footer {
   text-align: right;
+}
+
+.eduguide_link-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  transition: all 300ms ease-in-out;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.theme-light .eduguide_link-container:hover, .theme-light .eduguide_link-container:target, .theme-light .eduguide_link-container:focus {
+  border-top: 1px solid rgba(41, 41, 41, 0.23);
+  border-bottom: 1px solid rgba(41, 41, 41, 0.23);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.theme-dark .eduguide_link-container:hover, .theme-dark .eduguide_link-container:target, .theme-dark .eduguide_link-container:focus {
+  border-top: 1px solid rgba(255, 255, 255, 0.23);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.eduguide_link-container .eduguide_link-image_container {
+  width: 40%;
+  padding-bottom: 4em;
+}
+.eduguide_link-container .eduguide_link_thumbnail {
+  margin: 2em;
+  min-height: 99%;
+  object-fit: cover;
+}
+.theme-light .eduguide_link-container .eduguide_link_thumbnail {
+  background: rgba(230, 230, 230, 0.25);
+  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.98), 3px 3px 1px rgba(41, 41, 41, 0.4), 4px 4px 0 rgba(255, 255, 255, 0.98), 7px 7px 1px rgba(41, 41, 41, 0.3), 8px 8px 0 rgba(255, 255, 255, 0.98), 11px 11px 1px rgba(41, 41, 41, 0.2), 12px 12px 0 rgba(255, 255, 255, 0.98), 15px 15px 1px rgba(41, 41, 41, 0.1);
+}
+.theme-dark .eduguide_link-container .eduguide_link_thumbnail {
+  background: rgba(16, 16, 16, 0.25);
+  box-shadow: 2px 2px 0 rgba(41, 41, 41, 0.98), 3px 3px 1px rgba(255, 255, 255, 0.4), 4px 4px 0 rgba(41, 41, 41, 0.98), 7px 7px 1px rgba(255, 255, 255, 0.3), 8px 8px 0 rgba(41, 41, 41, 0.98), 11px 11px 1px rgba(255, 255, 255, 0.2), 12px 12px 0 rgba(41, 41, 41, 0.98), 15px 15px 1px rgba(255, 255, 255, 0.1);
+}
+.eduguide_link-container .eduguide_link-text_container {
+  flex: 1;
+  padding: 0.7em 2em;
+  margin: 5em 3em 5em -4em;
+  border-radius: 6px;
+}
+.theme-light .eduguide_link-container .eduguide_link-text_container {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
+}
+.theme-dark .eduguide_link-container .eduguide_link-text_container {
+  background: rgba(41, 41, 41, 0.85);
+  box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
+}
+.eduguide_link-container .eduguide_link-text_container .eduguide_download_button_container {
+  margin: 0;
+  padding: 0;
+}
+.eduguide_link-container .eduguide_link-text_container .eduguide_download_button_container .subtle_overlay_button {
+  margin: auto;
+}
+
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container {
+  flex-direction: row-reverse;
+}
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container .eduguide_link-text_container {
+  position: relative;
+  margin-right: -8em;
+  margin-left: 3em;
+  z-index: 9;
+}
+section.eduguide_header section.eduguide_link_section:nth-of-type(2n+1) .eduguide_link-container .eduguide_link-image_container {
+  margin-right: 6em;
 }

@@ -171,6 +171,23 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
+	acf_register_block_type(array(
+		'name' 				=> 'eduguide-link-block',
+		'title' 			=> __('EduGuide Link'),
+		'description'		=> __('For linking directly to an EduGuide, with (gated) download buttons included'),
+		'render_template'  	=> get_template_directory() . '/acf-blocks/eduguide-link-block/eduguide-link.php',
+		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-page-link.svg' ),
+		'category' 			=> 'igb',
+		'example'  			=> array(
+			'attributes' 	=> array(
+				'mode' 		=> 'preview',
+				'data' 		=> array(
+					'is_preview'    => true
+				)
+			)
+		)
+	));
+
 /* 	acf_register_block_type(array(
 		'name' 				=> 'related-content-block',
 		'title' 			=> __('Related Content'),
