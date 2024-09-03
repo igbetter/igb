@@ -65,7 +65,7 @@ if ( $featured_image_override === true ) {
 			<?php endif; ?>
 			<section class="eduguide_download_button_container">
 				<div class="flex-row">
-					<a href="" class="subtle_overlay_button">View the EduGuide &raquo;</a>
+					<a href="<?php echo esc_url( get_the_permalink( $link_id ) ); ?>" class="subtle_overlay_button">View the EduGuide &raquo;</a>
 					<?php
 					$eduguide_downloads = get_field( 'eduguide_pdfs', $link_id );
 
