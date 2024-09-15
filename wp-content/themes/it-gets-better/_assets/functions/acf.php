@@ -51,7 +51,44 @@ function igb_initialize_acf_blocks() {
   // Check function exists.
 
   if( function_exists('acf_register_block_type') ) {
-	// Register a Guid block block.
+
+	acf_register_block_type(array(
+		'name' 				 => 'hero-framed',
+		'title' 			 => 'Framed Hero',
+		'active' 			 => true,
+		'description' 		 => 'Hero block (new) with main column, and secondary column options',
+		'category' 			 => 'igb',
+		'icon' 				 => file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-framed-hero.svg' ),
+		'keywords' 			 => array(
+				'hero, igb,',
+			),
+		'post_types' 		 => array(
+				'post',
+				'page',
+				'glossary',
+			),
+		'align' 			 => 'full',
+		'align_text' 		 => '',
+		'align_content' 	 => 'top',
+		'render_template' 	 => 'acf-blocks/framed-hero-block/framed-hero.php',
+		'render_callback' 	 => '',
+		'enqueue_style' 	 => '',
+		'enqueue_script' 	 => '',
+		'enqueue_assets' 	 => '',
+		'supports' 			 => array(
+			'anchor' 			 => true,
+			'align' 			 => ['full'],
+			'align_text' 		 => false,
+			'align_content' 	  => false,
+			'full_height'  		 => true,
+			'mode' 				 => true,
+			'multiple' 			 => true,
+			'example' 			 => array(),
+			'jsx' 				 => false,
+		),
+	));
+
+	// (old) hero block
 	acf_register_block_type(array(
 		'name' 				=> 'hero-block',
 		'title' 			=> __('Page Hero'),
@@ -59,16 +96,9 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/hero-block/hero.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-svg-frame.svg' ),
 		'category' 			=> 'igb',
-		'example'  			=> array(
-			'attributes' 	=> array(
-				'mode' 		=> 'preview',
-				'data' 		=> array(
-					'is_preview'    => true
-				)
-			)
-		)
 	));
 
+	// featured content block
 	acf_register_block_type(array(
 		'name' 				=> 'featured-content-block',
 		'title' 			=> __('Featured Content'),
@@ -86,6 +116,7 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
+	// term list block
 	acf_register_block_type(array(
 		'name' 				=> 'term-list-block',
 		'title' 			=> __('Glossary Term List'),
@@ -120,6 +151,7 @@ function igb_initialize_acf_blocks() {
 		)
 	)); */
 
+	// display more content block
 	acf_register_block_type(array(
 		'name' 				=> 'more-content-block',
 		'title' 			=> __('More Content'),
@@ -137,6 +169,7 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
+	// page link block
 	acf_register_block_type(array(
 		'name' 				=> 'page-link-block',
 		'title' 			=> __('Page Link'),
@@ -144,6 +177,8 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/page-link-block/page-link.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-page-link.svg' ),
 		'category' 			=> 'igb',
+		'mode' 				 => 'auto',
+		'align' 			 => 'full',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',
@@ -154,6 +189,7 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
+	// link tree block
 	acf_register_block_type(array(
 		'name' 				=> 'link-tree-block',
 		'title' 			=> __('Link Tree'),
@@ -171,6 +207,7 @@ function igb_initialize_acf_blocks() {
 		)
 	));
 
+	// eduguide link block
 	acf_register_block_type(array(
 		'name' 				=> 'eduguide-link-block',
 		'title' 			=> __('EduGuide Link'),
@@ -178,6 +215,8 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/eduguide-link-block/eduguide-link.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-page-link.svg' ),
 		'category' 			=> 'igb',
+		'mode' 				 => 'auto',
+		'align' 			 => 'full',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',

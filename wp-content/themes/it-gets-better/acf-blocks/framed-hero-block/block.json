@@ -1,0 +1,26 @@
+{
+	"name": "igb/framed-hero",
+	"title": "Framed Hero",
+	"description": "Hero block (new) with main column, and secondary column options",
+	"style": [ "file:./framed-hero.css" ],
+	"category": "igb",
+	"keywords": ["hero", "header", "igb"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "framed-hero.php"
+	},
+	"align": "full",
+    "align_text": "",
+    "align_content": "top",
+	"supports": {
+        "anchor": true,
+        "align": false,
+        "align_text": false,
+        "align_content": false,
+        "full_height": true,
+        "mode": true,
+        "multiple": true,
+        "example": [],
+        "jsx": false
+    }
+}
