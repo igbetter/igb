@@ -418,6 +418,7 @@ a.primary_button:visited {
 		top: 0;
 		bottom: 0;
 		transform: skew(-18deg);
+		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		border-radius: 3px;
 		z-index: -1;
