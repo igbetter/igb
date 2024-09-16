@@ -9,6 +9,16 @@
 
 $secondary_column_content = get_field( 'secondary_column_content' );
 
+
+if( $secondary_column_content === '1' ) {
+	$box1_array = get_field( 'box_1_content' );
+}
+
+if( $secondary_column_content === '2' ) {
+	$box1_array = get_field( 'box_1_content' );
+	$box2_array = get_field( 'box_2_content' );
+}
+
 // get design options (group)
 $design_options = get_field( 'design_options' );
 $background_options = $design_options[ 'background_options' ];
@@ -83,4 +93,128 @@ if ( ! empty( $block['align'] ) ) {
 		</div>
 		<div class="background_decoration <?php echo esc_attr( $background_decoration ); ?>"></div>
 	</div>
+	<?php if( $secondary_column_content >= 1 ) {
+		echo '<div class="hero_secondary secondary_column">';
+
+		if( isset( $box1_array ) ) {
+			$background_option = $box1_array[ 'background_options' ];
+				$background_class = '';
+				$background_style = '';
+				$background_class = 'no_background';
+				if( $background_option === 'dynamic' ) {
+					$background_class = 'background-' . $box1_array[ 'dynamic_color' ];
+				}
+				if( $background_option === 'solid' ) {
+					$background_class = 'background-' . $box1_array[ 'solid_color' ];
+				}
+				if( $background_option === 'gradient' ) {
+					$background_class = 'background-' . $box1_array[ 'gradient' ];
+				}
+				if( $background_option === 'custom' ) {
+					//$background_style = $box1_array[ 'custom_color' ];
+
+					$custom_color_array = $box1_array[ 'custom_color' ];
+					$background_color = $custom_color_array[ 'custom_background_color' ];
+					$text_color = $custom_color_array[ 'custom_text_color' ];
+
+					$background_style = 'style="background-color: ' . esc_attr( $background_color ) . '; color: ' . esc_attr( $text_color ) . '; a, a:visited, a:hover, a:hover:visited : ' . esc_attr( $text_color ) . ';"';
+				}
+			$content = $box1_array[ 'main_text' ];
+			$link_option = $box1_array[ 'link_to' ];
+				$link_start = '';
+				$link_end = '';
+				if ($link_option != 'none' ) {
+					$url = '';
+					if( $link_option === 'internal' ) {
+						$url = $box1_array[ 'internal_link' ];
+					}
+					if( $link_option === 'external' ) {
+						$url = $box1_array[ 'external_link' ];
+					}
+
+					$link_start = '<a href="' . esc_url( $url ) . '">';
+					$link_end = '</a>';
+				}
+
+
+			printf(
+				'
+				%s
+					<div class="secondary_box %s" %s>
+						<div class="box_content">
+							%s
+						</div>
+					</div>
+				%s
+				',
+				$link_start,
+				esc_attr( $background_class ),
+				$background_style,
+				wp_kses_post( $content ),
+				$link_end
+			);
+
+		}
+
+		if( isset( $box2_array ) ) {
+			$background_option = $box2_array[ 'background_options' ];
+				$background_class = '';
+				$background_style = '';
+				$background_class = 'no_background';
+				if( $background_option === 'dynamic' ) {
+					$background_class = 'background-' . $box2_array[ 'dynamic_color' ];
+				}
+				if( $background_option === 'solid' ) {
+					$background_class = 'background-' . $box2_array[ 'solid_color' ];
+				}
+				if( $background_option === 'gradient' ) {
+					$background_class = 'background-' . $box2_array[ 'gradient' ];
+				}
+				if( $background_option === 'custom' ) {
+					//$background_style = $box1_array[ 'custom_color' ];
+
+					$custom_color_array = $box2_array[ 'custom_color' ];
+					$background_color = $custom_color_array[ 'custom_background_color' ];
+					$text_color = $custom_color_array[ 'custom_text_color' ];
+
+					$background_style = 'style="background-color: ' . esc_attr( $background_color ) . '; color: ' . esc_attr( $text_color ) . '; a, a:visited, a:hover, a:hover:visited : ' . esc_attr( $text_color ) . ';"';
+				}
+			$content = $box2_array[ 'main_text' ];
+			$link_option = $box2_array[ 'link_to' ];
+				$link_start = '';
+				$link_end = '';
+				if ($link_option != 'none' ) {
+					$url = '';
+					if( $link_option === 'internal' ) {
+						$url = $box2_array[ 'internal_link' ];
+					}
+					if( $link_option === 'external' ) {
+						$url = $box2_array[ 'external_link' ];
+					}
+
+					$link_start = '<a href="' . esc_url( $url ) . '">';
+					$link_end = '</a>';
+				}
+
+
+			printf(
+				'
+				%s
+					<div class="secondary_box %s" %s>
+						<div class="box_content">
+							%s
+						</div>
+					</div>
+				%s
+				',
+				$link_start,
+				esc_attr( $background_class ),
+				$background_style,
+				wp_kses_post( $content ),
+				$link_end
+			);
+		}
+
+		echo '</div>';
+	} ?>
 </section>

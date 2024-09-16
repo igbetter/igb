@@ -113,6 +113,14 @@ body {
 	opacity: 0;
 }
 
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
 .background-IGB_Purple,
 .background-static_purple {
 	@include themify($themes) {
@@ -149,7 +157,21 @@ body {
 			0 1px 0 rgba( 0, 0, 0, 0.65 ),
 			1px 1px 0 rgba( 0, 0, 0, 0.35 ),
 			0 0 20px rgba( 0, 0, 0, 0.12 );
+
 	}
+	/* a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: themed('accentTextColor');
+			text-shadow:
+				0 1px 0 rgba( 0, 0, 0, 0.65 ),
+				1px 1px 0 rgba( 0, 0, 0, 0.35 ),
+				0 0 20px rgba( 0, 0, 0, 0.12 );
+
+		}
+	} */
 }
 
 .overlay-IGB_Pink {
@@ -177,6 +199,18 @@ body {
 			0 0 20px rgba( 0, 0, 0, 0.12 );
 	}
 
+/* 	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: themed('accentTextColor');
+			text-shadow:
+				0 1px 0 rgba( 0, 0, 0, 0.65 ),
+				1px 1px 0 rgba( 0, 0, 0, 0.35 ),
+				0 0 20px rgba( 0, 0, 0, 0.12 );
+		}
+	} */
 }
 
 .overlay-IGB_Blue {
@@ -248,20 +282,52 @@ body {
 	@include themify($themes) {
 		background-color: themed('purpleBG');
 	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
+	}
 }
 .background-dynamic_pink {
 	@include themify($themes) {
 		background-color: themed('pinkBG');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
 	}
 }
 .background-dynamic_blue {
 	@include themify($themes) {
 		background-color: themed('blueBG');
 	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
+	}
 }
 .background-dynamic_yellow {
 	@include themify($themes) {
 		background-color: themed('yellowBG');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
 	}
 }
 
@@ -274,20 +340,52 @@ body {
 	@include themify($themes) {
 		background: themed('gradientPurpleBG');
 	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
+	}
 }
 .background-gradient_pink {
 	@include themify($themes) {
 		background: themed('gradientPinkBG');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
 	}
 }
 .background-gradient_blue {
 	@include themify($themes) {
 		background: themed('gradientBlueBG');
 	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
+	}
 }
 .background-gradient_yellow {
 	@include themify($themes) {
 		background: themed('gradientYellowBG');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+		}
 	}
 }
 

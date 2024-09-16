@@ -5,7 +5,15 @@ $border_radius: 14px;
 	margin: 2em auto;
 	width: 90vw;
 	max-width: 1600px;
+	display: flex;
+	align-content: stretch;
 
+	@include phone-only {
+		flex-direction: column;
+	}
+
+
+	// main column hero
 
 	.hero_main {
 		border-radius: $border_radius;
@@ -16,6 +24,8 @@ $border_radius: 14px;
 			grid-area: 1 / 1;
 		}
 	}
+
+
 
 	.content_container {
 		position: relative;
@@ -41,7 +51,7 @@ $border_radius: 14px;
 
 
 		img {
-			border-radius: 0 $border_radius 0 0;
+			border-radius: 0 0 $border_radius 0;
 			width: 50%;
 			max-width: 50% !important;
 			margin: 0 0 0 auto;
@@ -51,7 +61,7 @@ $border_radius: 14px;
 	.background_decoration {
 		position: relative;
 		z-index: 1;
-		border-radius: 0 $border_radius 0 0;
+		border-radius: $border_radius;
 		overflow: hidden;
 
 
@@ -83,4 +93,101 @@ $border_radius: 14px;
 		}
 
 	}
+
+	// secondary / boxes
+
+	.secondary_column {
+		min-width: 29%;
+		max-width: 29%;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+
+		@include phone-only {
+			min-width: none;
+			max-width: none;
+			margin: 10px 0 0 0;
+			flex-direction: row;
+		}
+
+
+		> * {
+			flex: 1;
+
+			&:first-child {
+				margin-bottom: 10px;
+
+				@include phone-only {
+					margin-bottom: 0;
+					margin-right: 10px;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+
+				@include phone-only {
+					margin-right: 0;
+				}
+			}
+		}
+		.secondary_box {
+			width: 100%;
+			height: 100%;
+			border-radius: $border_radius;
+			border: 3px solid transparent;
+			transition: all 310ms ease-in-out;
+
+			@include themify($themes) {
+				box-shadow: themed( 'normalShadow' );
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin-top: 0;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+
+				&.alignleft,
+				&.alignright {
+					max-width: 50% !important;
+				}
+			}
+
+			&:first-of-type {
+				margin-bottom: 10px;
+			}
+
+			.box_content {
+				padding: 10px;
+			}
+		}
+
+		a {
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:target {
+				outline: none;
+
+				.secondary_box {
+					@include themify($themes) {
+						border-color: themed( 'linkHoverColor' );
+						box-shadow: themed( 'largeShadow' );
+					}
+				}
+
+
+			}
+		}
+	}
+
+
 }
