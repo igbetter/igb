@@ -7,16 +7,38 @@
 
  // acf values
 
-$heading_text = get_field( 'hero_heading_text' );
-$subheading_text = get_field( 'hero_subheading_text' );
-$paragraph_text = get_field( 'hero_paragraph_text' );
-$button_text = get_field( 'hero_cta_button_text' );
-$button_url = get_field( 'cta_button_link' );
-$search_label = !empty(get_field( 'hero_search_label' )) ? get_field( 'hero_search_label' ) : 'Search for...';
-$tabs = get_field( 'tabs' );
+$secondary_column_content = get_field( 'secondary_column_content' );
 
-$svg_frame = get_field( 'frame_option' );
-$image = get_field( 'hero_image' );
+// get design options (group)
+$design_options = get_field( 'design_options' );
+$background_options = $design_options[ 'background_options' ];
+
+$background_class = 'no_background';
+if( $background_options === 'dynamic' ) {
+	$background_class = 'background-' . $design_options[ 'dynamic_color' ];
+}
+if( $background_options === 'solid' ) {
+	$background_class = 'background-' . $design_options[ 'solid_color' ];
+}
+if( $background_options === 'gradient' ) {
+	$background_class = 'background-' . $design_options[ 'gradient' ];
+}
+
+$background_decoration = $design_options[ 'background_decoration' ];
+
+$hero_image_array = $design_options[ 'hero_image' ];
+
+
+ // get content (group)
+$hero_content = get_field( 'hero_content' );
+
+$subheading_text = $hero_content[ 'subheading_text' ];
+$heading_text = $hero_content[ 'hero_text' ];
+$paragraph_text = $hero_content[ 'paragraph_text' ];
+$cta_button_array = $hero_content[ 'cta_button' ];
+
+
+
 
 // Support custom "anchor" values.
 $anchor = '';
@@ -35,60 +57,30 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 
-<section <?php echo esc_attr( $anchor ); ?>class="<?php echo esc_attr( $class_name ); ?> section_hero image_right">
-	<div class="hero_text-container">
-		<?php if ( $subheading_text ) {
-			echo '<h6 class="subhead">' . esc_html( $subheading_text ) . '</h6>';
+<section <?php echo esc_attr( $anchor ); ?>class="<?php echo esc_attr( $class_name ); ?> section_framed_hero framed_hero-container ">
+	<div class="hero_main main_column <?php echo esc_attr( $background_class ); ?>">
+		<div class="content_container">
+			<?php if ( $subheading_text ) {
+				echo '<h6 class="subhead">' . esc_html( $subheading_text ) . '</h6>';
 			} ?>
-		<h1><?php echo wp_kses_post( $heading_text ); ?></h1>
-		<?php if ( $paragraph_text ) {
-			echo '<p>' . wp_kses_post( $paragraph_text ) . '</p>';
+			<h1><?php echo wp_kses_post( $heading_text ); ?></h1>
+			<?php if ( $paragraph_text ) {
+				echo '<div class="hero_paragraph_text">' . wp_kses_post( $paragraph_text ) . '</div>';
 			} ?>
-		<?php if ( $button_text && $button_url ) {
-			echo '<a href="' . esc_url( $button_url ) . '" class="button primary_button">' . esc_html( $button_text) . '</a>';
+			<?php if ( $cta_button_array != '' ) {
+				$url = $cta_button_array[ 'button_url' ];
+				$label = $cta_button_array[ 'button_label' ];
+				echo '<a href="' .  esc_url( $url ) . '" class="button primary_button">' . esc_html( $label ) . '</a>';
 			} ?>
-		<?php if ( $tabs ) {
-			echo '<div class="accordion_tabs_container half_width">';
-			$i=1;
-			foreach( $tabs as $tab ) :
-				if($i==1) {
-					printf(
-						'<div class="tab expanded">
-							<div class="tab_inner">
-								<h5 class="tab_title" role="tab">%s</h5>
-								<div class="tab_content" role="tabpanel">%s</div>
-							</div>
-						</div>',
-						esc_html( $tab['tab_title'] ),
-						wp_kses_post( $tab['tab_content'] )
-					);
-				} else {
-					$color = 'IGB_Purple';
-					if( isset( $tab['background_color']) ) :
-						$color = esc_attr( $tab['background_color'] );
-					endif;
-					printf(
-						'<div class="tab collapsed background-%s">
-							<div class="tab_inner">
-								<h5 class="tab_title" role="tab">%s</h5>
-								<div class="tab_content" role="tabpanel">%s</div>
-							</div>
-						</div>',
-						$color,
-						esc_html( $tab['tab_title'] ),
-						wp_kses_post( $tab['tab_content'] )
-					);
-				}
-				$i++;
-			endforeach;
-			echo '</div>';
-		} ?>
-	</div>
-	<div class="hero_image-container">
-		<svg class="feature_frame" preserveAspectRatio="xMaxYMid meet" viewBox="0 0 100 115">
-			<use xlink:href="#igb_<?php echo esc_html( $svg_frame ) ?>"></use>
-		</svg>
-		<img src="<?php echo esc_url( $image ) ?>" />
+		</div>
+		<div class="image_container">
+			<?php if ( $hero_image_array ) {
 
+				$image_url = $hero_image_array[ 'url' ];
+				$alt = $hero_image_array[ 'alt' ];
+				echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_html( $alt ). '" class="hero_image">';
+			} ?>
+		</div>
+		<div class="background_decoration <?php echo esc_attr( $background_decoration ); ?>"></div>
 	</div>
 </section>

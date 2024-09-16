@@ -7,17 +7,19 @@
 
 // Define colors
 $purple: #5e3a7e;
-$purple-alt-lighter: #a662e2;
+$purple-alt-lighter: #AC81CF;
 
 $pink: #f2566e;
-$pink-alt-lighter: #fb657b;
+$pink-alt-lighter: #FF6687;
+$pink-alt-darker: #83353F;
 
 $blue: #45acce;
-$blue-alt-lighter: #3dcaf9;
+$blue-alt-lighter: #80C7E2;
 $blue-alt-darker: #148db5;
 
 $yellow: #fbad41;
-$yellow-alt-lighter: #ffc069;
+$yellow-alt-lighter: #FCB44F;
+$yellow-alt-darker: #7B623D;
 
 $white: #ffffff;
 $offwhite: #f1f1f1;
@@ -95,6 +97,18 @@ rgba(0, 0, 0, 0.62) 0 1px 1px;
 
 $gradient-transparent_light: transparent 40%, rgba($pink, 0.2) 60%, rgba($yellow, 0.3) 70%, rgba($blue, 0.2) 79%, transparent 93%;
 $gradient-transparent_dark: transparent 40%,  rgba($yellow, 0.2) 60%, rgba($blue, 0.4) 70%,  rgba($purple, 0.7) 79%, transparent 93%;
+
+$gradient-purple-light: linear-gradient(138deg, rgba(172,129,207,1) 0%, rgba(206,186,222,1) 100%);
+$gradient-purple-dark: linear-gradient(138deg, rgba(83,54,110,1) 0%, rgba(38,29,46,1) 100%);
+
+$gradient-blue-light: linear-gradient(138deg, rgba(128,199,226,1) 0%, rgba(192,223,235,1) 100%);
+$gradient-blue-dark: linear-gradient(138deg, rgba(83,172,205,1) 0%, rgba(42,86,103,1) 100%);
+
+$gradient-pink-light: linear-gradient(138deg, rgba(255,102,134,1) 0%, rgba(255,191,205,1) 100%);
+$gradient-pink-dark: linear-gradient(138deg, rgba(131,53,63,1) 0%, rgba(45,18,22,1) 100%);
+
+$gradient-yellow-light: linear-gradient(138deg, rgba(252,180,79,1) 0%, rgba(255,220,171,1) 100%);
+$gradient-yellow-dark: linear-gradient(138deg, rgba(123,98,61,1) 0%, rgba(74,64,49,1) 100%);
 
 // Define animation speeds
 $transition_speed: 250ms;
@@ -195,6 +209,18 @@ $themes: (
 		subtleYellowBG: $subtle-yellow-light,
 		subtleGreyBG: $light-grey,
 
+		// dynamic background colors
+		purpleBG: $purple-alt-lighter,
+		pinkBG: $pink-alt-lighter,
+		blueBG: $blue-alt-lighter,
+		yellowBG: $yellow-alt-lighter,
+
+		// dynamic gradients
+		gradientPurpleBG: $gradient-purple-light,
+		gradientPinkBG: $gradient-pink-light,
+		gradientBlueBG: $gradient-blue-light,
+		gradientYellowBG: $gradient-yellow-light,
+
 		// box shadow options
 		subtleShadow: $subtle_shadow_light,
 		normalShadow: 1px 1px 4px rgba(0, 0, 0, 0.35),
@@ -292,7 +318,7 @@ $themes: (
 		utilityNavLinkHoverColor: $yellow,
 
 		// accent colors
-		accentPurple: $purple-alt-lighter,
+		accentPurple: $purple,
 		accentPink: $pink,
 		accentBlue: $blue,
 		accentYellow: $yellow,
@@ -306,6 +332,18 @@ $themes: (
 		subtleBlueBG: $subtle-blue-dark,
 		subtleYellowBG: $subtle-yellow-dark,
 		subtleGreyBG: $dark-grey,
+
+		// dynamic background colors
+		purpleBG: $purple,
+		pinkBG: $pink-alt-darker,
+		blueBG: $blue,
+		yellowBG: $yellow-alt-darker,
+
+		// dynamic gradients
+		gradientPurpleBG: $gradient-purple-dark,
+		gradientPinkBG: $gradient-pink-dark,
+		gradientBlueBG: $gradient-blue-dark,
+		gradientYellowBG: $gradient-yellow-dark,
 
 		// box shadow options
 		subtleShadow: $subtle_shadow_dark,

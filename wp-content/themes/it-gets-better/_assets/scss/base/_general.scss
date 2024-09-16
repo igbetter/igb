@@ -113,13 +113,15 @@ body {
 	opacity: 0;
 }
 
-.background-IGB_Purple {
+.background-IGB_Purple,
+.background-static_purple {
 	@include themify($themes) {
 		background-color: themed('accentPurple');
-		color: themed( 'accentTextColor' );
+		color: themed('accentTextColor');
 		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+			0 1px 0 rgba( 0, 0, 0, 0.85 ),
+			1px 1px 0 rgba( 0, 0, 0, 0.5 ),
+			0 0 20px rgba( 0, 0, 0, 0.12 );
 	}
 
 }
@@ -138,13 +140,15 @@ body {
 	}
 }
 
-.background-IGB_Pink {
+.background-IGB_Pink,
+.background-static_pink {
 	@include themify($themes) {
 		background-color: themed('accentPink');
 		color: themed('accentTextColor');
 		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+			0 1px 0 rgba( 0, 0, 0, 0.65 ),
+			1px 1px 0 rgba( 0, 0, 0, 0.35 ),
+			0 0 20px rgba( 0, 0, 0, 0.12 );
 	}
 }
 
@@ -162,13 +166,15 @@ body {
 	}
 }
 
-.background-IGB_Blue {
+.background-IGB_Blue,
+.background-static_blue {
 	@include themify($themes) {
 		background-color: themed('accentBlue');
 		color: themed('accentTextColor');
 		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+			0 1px 0 rgba( 0, 0, 0, 0.65 ),
+			1px 1px 0 rgba( 0, 0, 0, 0.35 ),
+			0 0 20px rgba( 0, 0, 0, 0.12 );
 	}
 
 }
@@ -187,12 +193,15 @@ body {
 	}
 }
 
-.background-IGB_Yellow {
+.background-IGB_Yellow,
+.background-static_yellow {
 	@include themify($themes) {
 		background: themed('accentYellow');
-		color: $black;
+		color: themed('accentDarkTextColor');
 		text-shadow:
-			0 -1px 0 rgba( 255, 255, 255, 0.35 );
+			0 1px 0 rgba( 255, 255, 255, 0.5 ),
+			1px 0 0 rgba( 255, 255, 255, 0.15 ),
+			0 0 20px rgba( 255, 255, 2550, 0.2 );
 	}
 
 }
@@ -233,6 +242,58 @@ body {
 	}
 }
 
+/* ---------------------------------------------------------------- dynamic color backgrounds --- */
+
+.background-dynamic_purple {
+	@include themify($themes) {
+		background-color: themed('purpleBG');
+	}
+}
+.background-dynamic_pink {
+	@include themify($themes) {
+		background-color: themed('pinkBG');
+	}
+}
+.background-dynamic_blue {
+	@include themify($themes) {
+		background-color: themed('blueBG');
+	}
+}
+.background-dynamic_yellow {
+	@include themify($themes) {
+		background-color: themed('yellowBG');
+	}
+}
+
+
+/* ---------------------------------------------------------------- dynamic gradient backgrounds --- */
+
+
+
+.background-gradient_purple {
+	@include themify($themes) {
+		background: themed('gradientPurpleBG');
+	}
+}
+.background-gradient_pink {
+	@include themify($themes) {
+		background: themed('gradientPinkBG');
+	}
+}
+.background-gradient_blue {
+	@include themify($themes) {
+		background: themed('gradientBlueBG');
+	}
+}
+.background-gradient_yellow {
+	@include themify($themes) {
+		background: themed('gradientYellowBG');
+	}
+}
+
+
+/* ---------------------------------------------------------------- dynamic subtle backgrounds --- */
+
 .background-subtle_grey {
 	@include themify($themes) {
 		background-color: themed('subtleGreyBG');
@@ -262,6 +323,8 @@ body {
 		background-color: themed('subtleYellowBG');
 	}
 }
+
+/* ---------------------------------------------------------------- color underlines/border --- */
 
 .underline-,
 .underline-IGB_Purple {
@@ -499,9 +562,9 @@ a.subtle_overlay_button:visited {
 	transform: rotate(90deg);
     z-index: 999;
 	filter:
-	drop-shadow(1px -5px 15px rgba(50, 50, 0, 0.45))
-	drop-shadow(3px -2px 7px rgba(50, 50, 0, 0.35))
-	drop-shadow(1px 2px 2px rgba(50, 50, 0, 0.8))
+	drop-shadow(1px -5px 15px rgba(50, 50, 50, 0.45))
+	drop-shadow(3px -2px 7px rgba(50, 50, 50, 0.35))
+	drop-shadow(1px 2px 2px rgba(50, 50, 50, 0.8))
 	;
 
 

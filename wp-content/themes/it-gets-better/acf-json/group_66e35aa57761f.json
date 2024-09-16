@@ -368,6 +368,24 @@
             "acfe_group_modal": 0,
             "sub_fields": [
                 {
+                    "key": "field_66e78dd6e8734",
+                    "label": "Background",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 1,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_66e361fbcad54",
                     "label": "Background Options",
                     "name": "background_options",
@@ -519,6 +537,111 @@
                     "min": ""
                 },
                 {
+                    "key": "field_66e78da102277",
+                    "label": "end background",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 1
+                },
+                {
+                    "key": "field_66e78d6402275",
+                    "label": "Decoration",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_66e77d5348e72",
+                    "label": "Background Decoration \/ Texture",
+                    "name": "background_decoration",
+                    "aria-label": "",
+                    "type": "acfe_image_selector",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none": "None",
+                        "brush_strokes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/brush-strokes.png",
+                        "dashes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/dashes.png",
+                        "halftone": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/halftone.png"
+                    },
+                    "default_value": false,
+                    "image_size": "thumbnail",
+                    "width": "",
+                    "height": "",
+                    "border": 4,
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "layout": "horizontal",
+                    "allow_in_bindings": 0,
+                    "min": ""
+                },
+                {
+                    "key": "field_66e78e1c0ea89",
+                    "label": "end decoration",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 1
+                },
+                {
+                    "key": "field_66e78d8f02276",
+                    "label": "Image",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 1,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_66e728822464a",
                     "label": "Hero Image",
                     "name": "hero_image",
@@ -546,6 +669,24 @@
                     "allow_in_bindings": 0,
                     "preview_size": "medium",
                     "library": "all"
+                },
+                {
+                    "key": "field_66e78e2f0ea8a",
+                    "label": "end image",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 1
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -743,5 +884,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1726427944
+    "modified": 1726451322
 }
