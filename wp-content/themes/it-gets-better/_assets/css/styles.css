@@ -2305,9 +2305,10 @@ a:visited article.single_term main p {
 * header styles
 *
 *	1. core site header styles
-*	2. IGB logo
-*	3. light/dark toggle switch
-*	4. main nav toggle button
+*	2. announcement bar
+*	3. IGB logo
+*	4. light/dark toggle switch
+*	5. main nav toggle button
 *
 */
 .site_main_header {
@@ -2385,6 +2386,38 @@ a:visited article.single_term main p {
 }
 .site_main_header .utility_right_side {
   display: flex;
+}
+
+#top_announcment_bar {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+}
+.theme-light #top_announcment_bar {
+  background: #5e3a7e;
+  color: #ffffff;
+}
+.theme-dark #top_announcment_bar {
+  background: #fbad41;
+  color: #292929;
+}
+#top_announcment_bar a,
+#top_announcment_bar a:visited {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.theme-light #top_announcment_bar a,
+.theme-light #top_announcment_bar a:visited {
+  color: #ffffff;
+}
+.theme-dark #top_announcment_bar a,
+.theme-dark #top_announcment_bar a:visited {
+  color: #292929;
+}
+#top_announcment_bar span {
+  display: block;
+  padding: 5px 2em;
+  text-align: center;
 }
 
 #IGB_MAIN_LOGO {

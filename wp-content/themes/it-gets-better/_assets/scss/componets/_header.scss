@@ -2,9 +2,10 @@
 * header styles
 *
 *	1. core site header styles
-*	2. IGB logo
-*	3. light/dark toggle switch
-*	4. main nav toggle button
+*	2. announcement bar
+*	3. IGB logo
+*	4. light/dark toggle switch
+*	5. main nav toggle button
 *
 */
 
@@ -92,8 +93,37 @@
 	}
 }
 
+// =============================================	2. announcement bar
 
-// =============================================	2. IGB logo
+#top_announcment_bar {
+	margin-bottom: 10px;
+	font-weight: 400;
+	font-size: $font-size-sm;
+
+	@include themify($themes) {
+		background: themed( 'announcementBarBG' );
+		color: themed( 'announcementBarTextColor' );
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+		font-weight: bold;
+
+		@include themify($themes) {
+			color: themed( 'announcementBarTextColor' );
+		}
+	}
+
+	span {
+		display: block;
+		padding: 5px 2em;
+		text-align: center;
+	}
+}
+
+
+// =============================================	3. IGB logo
 #IGB_MAIN_LOGO {
 
 	padding: 1rem 0;
@@ -182,7 +212,7 @@
 }
 
 
-// =============================================	3. light/dark toggle switch
+// =============================================	4. light/dark toggle switch
 
 
 .darkmode_switch {
@@ -318,7 +348,7 @@
 }
 
 
-// =============================================	4. main nav toggle button
+// =============================================	5. main nav toggle button
 
 // grouping search icon and menu button
 #mobile_menu_toggle_container {
