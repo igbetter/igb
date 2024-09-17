@@ -45,8 +45,14 @@ $hero_content = get_field( 'hero_content' );
 $subheading_text = $hero_content[ 'subheading_text' ];
 $heading_text = $hero_content[ 'hero_text' ];
 $paragraph_text = $hero_content[ 'paragraph_text' ];
-$cta_button_array = $hero_content[ 'cta_button' ];
 
+$display_options = $hero_content[ 'display_options' ];
+
+// because ACF makes a blank array even when an option isn't selected, we'll only populate this variable if "cta_button" is in the "display options" array
+$cta_button_array = '';
+if( in_array( 'cta_button', $display_options ) ) {
+	$cta_button_array = $hero_content[ 'cta_button' ];
+}
 
 
 
@@ -56,6 +62,8 @@ if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
 
+
+
 // Create class attribute allowing for custom "className" and "align" values.
 $class_name = 'hero';
 if ( ! empty( $block['className'] ) ) {
@@ -63,6 +71,11 @@ if ( ! empty( $block['className'] ) ) {
 }
 if ( ! empty( $block['align'] ) ) {
     $class_name .= ' align' . $block['align'];
+}
+
+// Support "full height"
+if ( ! empty( $block['fullHeight'] ) ) {
+	$class_name .= ' is-full-height';
 }
 ?>
 
