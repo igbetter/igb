@@ -67,6 +67,7 @@ function igb_initialize_acf_blocks() {
 				'page',
 				'glossary',
 			),
+		'mode'				 => 'auto',
 		'align' 			 => 'full',
 		'align_text' 		 => '',
 		'align_content' 	 => 'top',
@@ -79,7 +80,7 @@ function igb_initialize_acf_blocks() {
 			'anchor' 			 => true,
 			'align' 			 => ['full'],
 			'align_text' 		 => false,
-			'align_content' 	  => false,
+			'align_content' 	 => false,
 			'full_height'  		 => true,
 			'mode' 				 => true,
 			'multiple' 			 => true,
@@ -96,6 +97,7 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/hero-block/hero.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-svg-frame.svg' ),
 		'category' 			=> 'igb',
+		'mode'				=> 'auto',
 	));
 
 	// featured content block
@@ -106,6 +108,7 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/featured-content-block/featured-content.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-featured-content.svg' ),
 		'category' 			=> 'igb',
+		'mode'				=> 'auto',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',
@@ -124,6 +127,7 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/term-list-block/term-list.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-popular-terms.svg' ),
 		'category' 			=> 'igb',
+		'mode'				=> 'auto',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',
@@ -159,6 +163,7 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/more-content-block/more-content.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-more-content.svg' ),
 		'category' 			=> 'igb',
+		'mode'				=> 'auto',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',
@@ -197,6 +202,7 @@ function igb_initialize_acf_blocks() {
 		'render_template'  	=> get_template_directory() . '/acf-blocks/link-tree-block/link-tree.php',
 		'icon'				=> file_get_contents( get_template_directory() . '/acf-blocks/_block-assets/icon-popular-terms.svg' ),
 		'category' 			=> 'igb',
+		'mode'				=> 'auto',
 		'example'  			=> array(
 			'attributes' 	=> array(
 				'mode' 		=> 'preview',

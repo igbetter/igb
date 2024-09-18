@@ -590,8 +590,10 @@
                     },
                     "choices": {
                         "none": "None",
+                        "animated_rainbow": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/animated-rainbow-overlay.png",
                         "brush_strokes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/brush-strokes.png",
                         "dashes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/dashes.png",
+                        "prism_overlay": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/prism-overlay.png",
                         "halftone": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/halftone.png"
                     },
                     "default_value": false,
@@ -1244,7 +1246,7 @@
                             {
                                 "field": "field_66e8439549930",
                                 "operator": "==",
-                                "value": "External link"
+                                "value": "external"
                             }
                         ]
                     ],
@@ -1402,8 +1404,7 @@
                         "static_purple": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/static-purple.svg",
                         "static_blue": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/static-blue.svg",
                         "static_pink": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/static-pink.svg",
-                        "static_yellow": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/static-yellow.svg",
-                        "color_picker": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/custom-color.png"
+                        "static_yellow": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/static-yellow.svg"
                     },
                     "default_value": false,
                     "image_size": "thumbnail",
@@ -1838,5 +1839,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1726503833
+    "modified": 1726602754
 }

@@ -59,7 +59,7 @@ $font-size-md: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
 $font-size-lg: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
 $font-size-xl: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
 $font-size-xxl: clamp(1.46rem, 2.79vw + 0.07rem, 5.37rem);
-$font-size-xxxl:  clamp(2.14rem, 6.16vw + -0.94rem, 10.77rem);
+$font-size-xxxl: clamp(2.14rem, 6.16vw + -0.94rem, 10.77rem);
 
 $font-size-blog-title: clamp(3.39rem, 3.68vw + 1.55rem, 8.54rem);
 
@@ -94,6 +94,15 @@ rgba(0, 0, 0, 0.18) 0 -2px 6px,
 rgba(0, 0, 0, 0.28) 0px 3px 8px,
 rgba(0, 0, 0, 0.19) 0px 7px 15px,
 rgba(0, 0, 0, 0.62) 0 1px 1px;
+
+
+$text_shadow_dark: 0 1px 0 rgba( 0, 0, 0, 0.85 ),
+			1px 1px 0 rgba( 0, 0, 0, 0.5 ),
+			0 0 20px rgba( 0, 0, 0, 0.12 );
+
+$text_shadow_light: 0 1px 0 rgba( 255, 255, 255, 0.65 ),
+			1px 0 0 rgba( 255, 255, 255, 0.25 ),
+			0 0 20px rgba( 255, 255, 2550, 0.42 );
 
 $gradient-transparent_light: transparent 40%, rgba($pink, 0.2) 60%, rgba($yellow, 0.3) 70%, rgba($blue, 0.2) 79%, transparent 93%;
 $gradient-transparent_dark: transparent 40%,  rgba($yellow, 0.2) 60%, rgba($blue, 0.4) 70%,  rgba($purple, 0.7) 79%, transparent 93%;
@@ -232,6 +241,7 @@ $themes: (
 		insetShadow: $subtle_inset_light,
 
 		// text shadow options
+		textShadow: $text_shadow_light,
 		textBackgroundBlurShadow: $white,
 		textShadowBelow: $black,
 		textHighlightAbove: $white,
@@ -359,6 +369,7 @@ $themes: (
 		insetShadow: $subtle_inset_dark,
 
 		// text shadow options
+		textShadow: $text_shadow_dark,
 		textBackgroundBlurShadow: $black,
 		textShadowBelow: $black,
 		textHighlightAbove: $white,
