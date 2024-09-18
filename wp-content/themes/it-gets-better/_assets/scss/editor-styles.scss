@@ -848,7 +848,7 @@ footer.glossary_term_bottom_border {
 .section_framed_hero {
   margin: 2em auto;
   width: 90%;
-  max-width: 1600px;
+  max-width: 1950px;
   display: flex;
   align-content: stretch;
   font-weight: 500;
@@ -941,6 +941,7 @@ footer.glossary_term_bottom_border {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  line-height: 1.1;
 }
 
 .section_framed_hero .secondary_column > * {

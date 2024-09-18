@@ -734,7 +734,7 @@ body .section_hero .hero_image-container img {
 body .section_framed_hero {
   margin: 2em auto;
   width: 90%;
-  max-width: 1600px;
+  max-width: 1950px;
   display: flex;
   align-content: stretch;
   font-weight: 500;
@@ -827,6 +827,7 @@ body .section_framed_hero .secondary_column {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  line-height: 1.1;
 }
 body .section_framed_hero .secondary_column > * {
   flex: 1;
