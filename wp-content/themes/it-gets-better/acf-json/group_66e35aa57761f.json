@@ -777,7 +777,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "open": 1,
+                    "open": 0,
                     "multi_expand": 1,
                     "endpoint": 0
                 },
@@ -1177,6 +1177,24 @@
                     "endpoint": 1
                 },
                 {
+                    "key": "field_66eafd5e703ac",
+                    "label": "Link",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_66e8439549930",
                     "label": "Link to",
                     "name": "link_to",
@@ -1258,6 +1276,24 @@
                     "default_value": "",
                     "allow_in_bindings": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_66eafd78703ad",
+                    "label": "end link",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 1
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -1304,7 +1340,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "open": 1,
+                    "open": 0,
                     "multi_expand": 1,
                     "endpoint": 0
                 },
@@ -1704,6 +1740,24 @@
                     "endpoint": 1
                 },
                 {
+                    "key": "field_66eafdb7703ae",
+                    "label": "Link",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 1,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_66e8455e71587",
                     "label": "Link to",
                     "name": "link_to",
@@ -1753,12 +1807,14 @@
                         "id": ""
                     },
                     "post_type": "",
-                    "post_status": "",
+                    "post_status": [
+                        "publish"
+                    ],
                     "taxonomy": "",
                     "allow_archives": 1,
                     "multiple": 0,
                     "allow_null": 0,
-                    "allow_in_bindings": 0
+                    "allow_in_bindings": 1
                 },
                 {
                     "key": "field_66e8455f71589",
@@ -1785,6 +1841,24 @@
                     "default_value": "",
                     "allow_in_bindings": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_66eafdc8703af",
+                    "label": "end link",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 1
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -1839,5 +1913,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1726602754
+    "modified": 1726676905
 }
