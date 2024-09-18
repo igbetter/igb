@@ -1286,7 +1286,7 @@ section.featured_content.term .related_content img {
 }
 
 // make any imbedded video not clickable in the editor :)
-.acf-block-component iframe {
+.acf-block-component .acf-block-preview iframe {
 	pointer-events: none;
 }
 
