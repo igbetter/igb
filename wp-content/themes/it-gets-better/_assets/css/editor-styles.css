@@ -1146,7 +1146,7 @@ body section.featured_content.term .related_content img {
   background: #ffffff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
-body .acf-block-component iframe {
+body .acf-block-component .acf-block-preview iframe {
   pointer-events: none;
 }
 body .page_link_section {
