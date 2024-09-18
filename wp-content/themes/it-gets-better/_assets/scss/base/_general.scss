@@ -131,9 +131,19 @@ body {
 .background-IGB_Purple,
 .background-static_purple {
 	@include themify($themes) {
-		background-color: themed('accentPurple');
-		color: themed('accentTextColor');
+		background-color: $purple;
+		color: $white;
 		text-shadow: $text_shadow_dark;
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $white;
+			text-shadow: $text_shadow_dark;
+		}
 	}
 
 }
@@ -155,24 +165,20 @@ body {
 .background-IGB_Pink,
 .background-static_pink {
 	@include themify($themes) {
-		background-color: themed('accentPink');
-		color: themed('accentTextColor');
+		background-color: $pink;
+		color: $white;
 		text-shadow: $text_shadow_dark;
 
 	}
-	/* a,
+	a,
 	a:visited,
 	a:hover,
 	a:visited:hover {
 		@include themify($themes) {
-			color: themed('accentTextColor');
-			text-shadow:
-				0 1px 0 rgba( 0, 0, 0, 0.65 ),
-				1px 1px 0 rgba( 0, 0, 0, 0.35 ),
-				0 0 20px rgba( 0, 0, 0, 0.12 );
-
+			color: $white;
+			text-shadow: $text_shadow_dark;
 		}
-	} */
+	}
 }
 
 .overlay-IGB_Pink {
@@ -192,23 +198,20 @@ body {
 .background-IGB_Blue,
 .background-static_blue {
 	@include themify($themes) {
-		background-color: themed('accentBlue');
-		color: themed('accentTextColor');
+		background-color: $blue;
+		color: $white;
 		text-shadow: $text_shadow_dark;
 	}
 
-/* 	a,
+	a,
 	a:visited,
 	a:hover,
 	a:visited:hover {
 		@include themify($themes) {
-			color: themed('accentTextColor');
-			text-shadow:
-				0 1px 0 rgba( 0, 0, 0, 0.65 ),
-				1px 1px 0 rgba( 0, 0, 0, 0.35 ),
-				0 0 20px rgba( 0, 0, 0, 0.12 );
+			color: $white;
+			text-shadow: $text_shadow_dark;
 		}
-	} */
+	}
 }
 
 .overlay-IGB_Blue {
@@ -228,9 +231,19 @@ body {
 .background-IGB_Yellow,
 .background-static_yellow {
 	@include themify($themes) {
-		background: themed('accentYellow');
-		color: themed('accentDarkTextColor');
+		background: $yellow;
+		color: $darker;
 		text-shadow: $text_shadow_light;
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $darker;
+			text-shadow: $text_shadow_light;
+		}
 	}
 
 }
