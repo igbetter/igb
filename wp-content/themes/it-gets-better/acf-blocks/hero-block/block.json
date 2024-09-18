@@ -9,6 +9,9 @@
 		"mode": "edit",
 		"renderTemplate": "hero.php"
 	},
+	"align": "full",
+    "align_text": "",
+    "align_content": "top",
 	"supports": {
 		"anchor": true,
 		"multiple": false,
