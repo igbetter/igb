@@ -4,7 +4,7 @@ $border_radius: 14px;
 
 	margin: 2em auto;
 	width: 90vw;
-	max-width: 1600px;
+	max-width: 1950px;
 	display: flex;
 	align-content: stretch;
 	font-weight: 500;
@@ -42,9 +42,19 @@ $border_radius: 14px;
 	.content_container {
 		position: relative;
 		z-index: 99;
-		max-width: 70%;
+		max-width: 65%;
 		text-wrap: balance;
 		padding: 3em 3em 6em 3em;
+
+		@include tablet-down {
+			max-width: 90%;
+			padding: 2em 2em 6em 2em;
+		}
+
+		@include phone-only {
+			max-width: 86%;
+			padding: 2em 4em 6em 2em;
+		}
 
 		h1 {
 			line-height: 1.05;
@@ -66,7 +76,7 @@ $border_radius: 14px;
 
 		img {
 			border-radius: 0 0 $border_radius 0;
-			width: 58%;
+			width: 55%;
 			max-width: 58% !important;
 			margin: 0 0 0 auto;
 		}
@@ -160,6 +170,7 @@ $border_radius: 14px;
 			border-radius: $border_radius;
 			border: 3px solid transparent;
 			transition: all 310ms ease-in-out;
+			line-height: 1.2;
 
 
 			@include themify($themes) {
