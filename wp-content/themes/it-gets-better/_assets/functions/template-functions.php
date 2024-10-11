@@ -863,35 +863,3 @@ function igb_display_glossary_term_category( $post_ID = NULL, $display_general_c
 
 	wp_reset_postdata();
 }
-
-function igb_display_eduguide_download_button( $language = 'en', $file_id = NULL ) {
-
-	if( $file_id = '' ) :
-		return;
-	else :
-		$file_url = wp_get_attachment_url( esc_html( $file_id ) );
-	//	$filesize = size_format( filesize( get_attached_file( $file_id ) ) );
-		$download_button_text = ( 'en' === $language ) ? 'Download <span class="lang">(English)</span>' : 'Descargar <span class="lang">(Español)</span>';
-		$modal_intro_text = ( 'en' === $language ) ? 'Sign Up for Educational Resources' : 'Regístrese para obtener recursos educativos';
-
-
-		$formidable_form_modal_anchor = sprintf(
-			'<a data-js-action="formidable-form-popup" href="%s" class="primary_button main_eduguide_download_button">
-				%s
-			</a>',
-			esc_url( $file_url ),
-			$download_button_text,
-		//	$filesize
-		);
-
-	endif;
-	$button_html_text = str_replace( '"', '\'', $formidable_form_modal_anchor );
-
-	// the str_replace() here is ensuring that we are NOT using " in the html string. This is necessary for the shortcode to work properly.
-	echo do_shortcode( '[frmmodal-content size="large" modal_title="' . $modal_intro_text . '" button_html="' . $button_html_text . '"]' . '[formidable id=6]' . '[/frmmodal-content]' );
-
-}
-
-function igb_display_eduguide_download_buttons() {
-
-}
