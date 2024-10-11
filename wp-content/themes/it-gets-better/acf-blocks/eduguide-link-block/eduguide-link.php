@@ -74,11 +74,17 @@ if ( $featured_image_override === true ) {
 						foreach( $eduguide_downloads as $download ) :
 							$language_select = $download['language'];
 							$pdf_array = $download['pdf'];
-							$file_id = $pdf_array['ID'];
+							$download_id = $pdf_array['ID'];
 
 							if( 'other' === $language_select ) : // we're not displaying other languages here. ignore them.
 							else :
-								igb_display_eduguide_download_button( $language_select, $file_id );
+								get_template_part( 'template-parts/loop/eduguide-download-button', null,
+									array(
+										'download_id'	=> $download_id,
+										'language'		=> $language_select
+									)
+								 );
+
 							endif;
 						endforeach;
 					endif; ?>
@@ -86,6 +92,5 @@ if ( $featured_image_override === true ) {
 			</section>
 		</div>
 	</div>
-
 
 </section>
