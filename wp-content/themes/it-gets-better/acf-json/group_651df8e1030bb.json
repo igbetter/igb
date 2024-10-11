@@ -19,7 +19,8 @@
             "acfe_save_meta": 1,
             "placement": "top",
             "endpoint": 1,
-            "no_preference": 0
+            "no_preference": 0,
+            "selected": 0
         },
         {
             "key": "field_653c3feedfec6",
@@ -63,6 +64,55 @@
             "placeholder": ""
         },
         {
+            "key": "field_66e0b9e45b31d",
+            "label": "Show Announcement Bar",
+            "name": "show_announcement_bar",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "style": "small_rounded",
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide",
+            "ui": 1
+        },
+        {
+            "key": "field_66e0babd5b31e",
+            "label": "Announcement Bar text",
+            "name": "announcement_bar_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66e0b9e45b31d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_653c44c9208b7",
             "label": "Site footer text",
             "name": "site_footer_text",
@@ -101,7 +151,8 @@
             "acfe_save_meta": 1,
             "placement": "top",
             "endpoint": 0,
-            "no_preference": 0
+            "no_preference": 0,
+            "selected": 0
         },
         {
             "key": "field_653c45cc6f331",
@@ -215,5 +266,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1701548558
+    "modified": 1726017126
 }

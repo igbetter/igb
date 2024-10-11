@@ -38,8 +38,22 @@
 
 <div id="page" class="sticky-container ">
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'it-gets-better' ); ?></a>
+	<?php
+	$show_announcement_bar = get_field( 'show_announcement_bar', 'options' );
+	if( $show_announcement_bar === true ) {
+		$announcement_text = get_field( 'announcement_bar_text', 'options' );
+		printf(
+			'
+			<div id="top_announcment_bar">
+				<span>%s</span>
+			</div>
+			',
+			wp_kses_post( $announcement_text )
+		);
+	} ?>
 
 	<header class="site_main_header">
+
 		<div id="site_utility_bar" class="flex-row">
 
 

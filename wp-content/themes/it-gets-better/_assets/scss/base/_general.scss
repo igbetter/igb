@@ -113,13 +113,37 @@ body {
 	opacity: 0;
 }
 
-.background-IGB_Purple {
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	align-self: center;
+}
+.background-IGB_Purple,
+.background-static_purple {
 	@include themify($themes) {
-		background-color: themed('accentPurple');
-		color: themed( 'accentTextColor' );
-		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+		background-color: $purple;
+		color: $white;
+		text-shadow: $text_shadow_dark;
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $white;
+			text-shadow: $text_shadow_dark;
+		}
 	}
 
 }
@@ -138,13 +162,22 @@ body {
 	}
 }
 
-.background-IGB_Pink {
+.background-IGB_Pink,
+.background-static_pink {
 	@include themify($themes) {
-		background-color: themed('accentPink');
-		color: themed('accentTextColor');
-		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+		background-color: $pink;
+		color: $white;
+		text-shadow: $text_shadow_dark;
+
+	}
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $white;
+			text-shadow: $text_shadow_dark;
+		}
 	}
 }
 
@@ -162,15 +195,23 @@ body {
 	}
 }
 
-.background-IGB_Blue {
+.background-IGB_Blue,
+.background-static_blue {
 	@include themify($themes) {
-		background-color: themed('accentBlue');
-		color: themed('accentTextColor');
-		text-shadow:
-			0 1px 0 rgba( 0, 0, 0, 0.45 ),
-			0 0 20px rgba( 0, 0, 0, 0.2 );
+		background-color: $blue;
+		color: $white;
+		text-shadow: $text_shadow_dark;
 	}
 
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $white;
+			text-shadow: $text_shadow_dark;
+		}
+	}
 }
 
 .overlay-IGB_Blue {
@@ -187,12 +228,22 @@ body {
 	}
 }
 
-.background-IGB_Yellow {
+.background-IGB_Yellow,
+.background-static_yellow {
 	@include themify($themes) {
-		background: themed('accentYellow');
-		color: $black;
-		text-shadow:
-			0 -1px 0 rgba( 255, 255, 255, 0.35 );
+		background: $yellow;
+		color: $darker;
+		text-shadow: $text_shadow_light;
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
+		@include themify($themes) {
+			color: $darker;
+			text-shadow: $text_shadow_light;
+		}
 	}
 
 }
@@ -233,6 +284,138 @@ body {
 	}
 }
 
+/* ---------------------------------------------------------------- dynamic color backgrounds --- */
+
+.background-dynamic_purple {
+	@include themify($themes) {
+		background-color: themed('purpleBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-dynamic_pink {
+	@include themify($themes) {
+		background-color: themed('pinkBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-dynamic_blue {
+	@include themify($themes) {
+		background-color: themed('blueBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-dynamic_yellow {
+	@include themify($themes) {
+		background-color: themed('yellowBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+
+
+/* ---------------------------------------------------------------- dynamic gradient backgrounds --- */
+
+
+
+.background-gradient_purple {
+	@include themify($themes) {
+		background: themed('gradientPurpleBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-gradient_pink {
+	@include themify($themes) {
+		background: themed('gradientPinkBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-gradient_blue {
+	@include themify($themes) {
+		background: themed('gradientBlueBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+.background-gradient_yellow {
+	@include themify($themes) {
+		background: themed('gradientYellowBG');
+		text-shadow: themed('textShadow');
+	}
+	a,
+	a:visited,
+	a &,
+	a:visited & {
+		@include themify($themes) {
+			color: themed('textColor');
+
+		}
+	}
+}
+
+
+/* ---------------------------------------------------------------- dynamic subtle backgrounds --- */
+
 .background-subtle_grey {
 	@include themify($themes) {
 		background-color: themed('subtleGreyBG');
@@ -262,6 +445,8 @@ body {
 		background-color: themed('subtleYellowBG');
 	}
 }
+
+/* ---------------------------------------------------------------- color underlines/border --- */
 
 .underline-,
 .underline-IGB_Purple {
@@ -404,6 +589,7 @@ a.primary_button:visited {
 	margin-left: .5em;
 	z-index: 9;
 	text-decoration: none;
+	text-shadow: $text_shadow_dark;
 
 	@include themify($themes) {
 		color: themed('primaryButtonTextColor');
@@ -418,6 +604,7 @@ a.primary_button:visited {
 		top: 0;
 		bottom: 0;
 		transform: skew(-18deg);
+		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		border-radius: 3px;
 		z-index: -1;
@@ -498,9 +685,9 @@ a.subtle_overlay_button:visited {
 	transform: rotate(90deg);
     z-index: 999;
 	filter:
-	drop-shadow(1px -5px 15px rgba(50, 50, 0, 0.45))
-	drop-shadow(3px -2px 7px rgba(50, 50, 0, 0.35))
-	drop-shadow(1px 2px 2px rgba(50, 50, 0, 0.8))
+	drop-shadow(1px -5px 15px rgba(50, 50, 50, 0.45))
+	drop-shadow(3px -2px 7px rgba(50, 50, 50, 0.35))
+	drop-shadow(1px 2px 2px rgba(50, 50, 50, 0.8))
 	;
 
 
