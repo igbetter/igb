@@ -2485,8 +2485,8 @@ a:visited article.single_term main p {
   color: #ffffff;
 }
 .theme-dark #top_announcment_bar {
-  background: #fbad41;
-  color: #292929;
+  background: #45acce;
+  color: #ffffff;
 }
 #top_announcment_bar a,
 #top_announcment_bar a:visited {
@@ -2499,7 +2499,7 @@ a:visited article.single_term main p {
 }
 .theme-dark #top_announcment_bar a,
 .theme-dark #top_announcment_bar a:visited {
-  color: #292929;
+  color: #ffffff;
 }
 #top_announcment_bar span {
   display: block;
