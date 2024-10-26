@@ -53,6 +53,48 @@
 	} ?>
 
 	<header class="site_main_header">
+		<?php
+		$show_donate_bar = get_field( 'show_donate_bar', 'options' );
+		if( $show_donate_bar === true ) {
+			$donate_bar_content = get_field( 'donate_bar_content', 'options' );
+			$donate_button = ($donate_bar_content['donate_link'] != '' ) ? '<a href="' . esc_url( $donate_bar_content['donate_link'] ) . '" class="primary_button">' . esc_html( $donate_bar_content['donate_button_text'] ) .'</a>' : '';
+			$donate_bar_text = $donate_bar_content['donate_bar_text'];
+			printf(
+				'
+				<div id="donate_banner" class="donate-banner hidden">
+					<div class="donate-content">
+						%s
+						<span class="centered_button">%s</span>
+					</div>
+					<button id="close_banner">
+						<svg class="icon-close-dims">
+							<use xlink:href="#close"></use>
+						</svg>
+						<div id="dismiss_options" class="dismiss-options hidden">
+							<label>
+
+								<input type="radio" name="dismiss" value="remind-later" checked />
+								<span class="checkmark"></span> Remind me later
+							</label>
+							<label>
+
+								<input type="radio" name="dismiss" value="already-donated" />
+								<span class="checkmark"></span> I already donated
+							</label>
+							<label>
+								<input type="radio" name="dismiss" value="never-show-again" />
+								<span class="checkmark"></span> Never show again
+							</label>
+						</div>
+					</button>
+				</div>
+				',
+				wp_kses_post( $donate_bar_text ),
+				$donate_button
+
+			);
+		} // end if show donate bar is true
+		?>
 
 		<div id="site_utility_bar" class="flex-row">
 
