@@ -73,7 +73,7 @@ body {
   padding: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
-  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -990,7 +990,7 @@ p, blockquote {
 }
 
 h1 {
-  font-size: clamp(2.14rem, 6.16vw - 0.94rem, 10.77rem);
+  font-size: clamp(4.324rem, 3.656vi + 2.862rem, 10.175rem);
   line-height: 1.08;
   font-weight: 600;
   margin-top: 0;
@@ -1004,35 +1004,35 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.46rem, 2.79vw + 0.07rem, 5.37rem);
+  font-size: clamp(3.545rem, 2.282vi + 2.632rem, 7.196rem);
   line-height: 1;
   font-weight: 700;
   margin-top: 0.5em;
 }
 
 h3 {
-  font-size: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
+  font-size: clamp(2.905rem, 1.365vi + 2.359rem, 5.089rem);
   line-height: 1;
   font-weight: 700;
   margin-top: 0.5em;
 }
 
 h4 {
-  font-size: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
+  font-size: clamp(2.381rem, 0.761vi + 2.077rem, 3.599rem);
   line-height: 1;
   font-weight: 500;
   margin-top: 0.5em;
 }
 
 h5 {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   line-height: 1;
   font-weight: 300;
   margin-top: 0.5em;
 }
 
 h6 {
-  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   line-height: 1;
   font-weight: 600;
   text-transform: uppercase;
@@ -1546,11 +1546,11 @@ h1.wp-block-heading {
   padding: 3em 2em 1em 2em;
 }
 .genaric_title_area h1 span {
-  font-size: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
+  font-size: clamp(2.905rem, 1.365vi + 2.359rem, 5.089rem);
 }
 .genaric_title_area h1 span.pipe {
   font-weight: 100;
-  font-size: clamp(2.14rem, 6.16vw - 0.94rem, 10.77rem);
+  font-size: clamp(4.324rem, 3.656vi + 2.862rem, 10.175rem);
   opacity: 0.5;
   display: inline-block;
   margin: 0 10px 0 0;
@@ -1653,7 +1653,7 @@ article.single_playlist .single_playlist_header h3 {
 }
 article.single_playlist .single_playlist_header h3 a span.subhead {
   display: block;
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   font-weight: 200;
 }
 .theme-light article.single_playlist .single_playlist_header h3 a span.subhead {
@@ -1735,7 +1735,7 @@ article.single_playlist .playlist_description {
 }
 .playlist_details_row .playlist_description {
   display: inline-block;
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   padding: 1em 2em;
   margin: -1em 2em 0 0;
   width: 60vw;
@@ -1825,7 +1825,7 @@ section.glossary_header > p {
 }
 
 sub.term_category {
-  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   font-weight: 500;
 }
 .theme-light sub.term_category {
@@ -2043,11 +2043,11 @@ a:visited article.single_term main p {
   display: block;
 }
 .glossary_term_header .definition {
-  font-size: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
+  font-size: clamp(2.381rem, 0.761vi + 2.077rem, 3.599rem);
 }
 .glossary_term_header .definition .pronunciation {
   font-family: monospace;
-  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   font-weight: 200;
   letter-spacing: 2px;
 }
@@ -2063,7 +2063,7 @@ a:visited article.single_term main p {
 }
 .glossary_term_header ul.term_category_list {
   list-style: none;
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   margin: 0;
   padding: 0;
 }
@@ -2231,7 +2231,7 @@ a:visited article.single_term main p {
   margin: 0;
 }
 #main.browse_content_page .facetwp-type-sort select {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   padding: 0.5em 0.75em;
   margin: 0.5em auto;
   line-height: 1.1;
@@ -2478,7 +2478,7 @@ a:visited article.single_term main p {
 #top_announcment_bar {
   margin-bottom: 10px;
   font-weight: 400;
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
 }
 .theme-light #top_announcment_bar {
   background: #5e3a7e;
@@ -3325,7 +3325,7 @@ footer.site_footer nav.footer_legal_nav ul a {
   color: #fbad41;
 }
 #site_utility_bar nav#utility_navigation {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
 }
 #site_utility_bar nav#utility_navigation ul, #site_utility_bar nav#utility_navigation li {
   list-style: none;
@@ -3348,7 +3348,7 @@ footer.site_footer nav.footer_legal_nav ul a {
   color: #292929;
 }
 #site_utility_bar nav#utility_navigation .donate_button {
-  font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+  font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   transform: scale(1.25);
 }
 #site_utility_bar nav#utility_navigation .donate_button a,
@@ -3451,7 +3451,7 @@ header.site_main_header .header_center a:visited {
 @media (min-width: 900px) {
   header.site_main_header nav.main_nav_container {
     text-align: center;
-    font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+    font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
     line-height: 1.1;
     padding: 10px 29px 0 193px;
     position: absolute;
@@ -3528,7 +3528,7 @@ header.site_main_header .header_center a:visited {
     right: 0;
     display: none;
     overflow: hidden;
-    font-size: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
+    font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
     min-width: 34ch;
     width: 100%;
     backdrop-filter: blur(8px);
@@ -3677,7 +3677,7 @@ header.site_main_header .header_center a:visited {
 }
 
 nav.breadcrumb_navigation {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   margin-bottom: 3em;
 }
 body.page nav.breadcrumb_navigation, body.page-homepage nav.breadcrumb_navigation, body.page-browse-content nav.breadcrumb_navigation, body.single-glossary nav.breadcrumb_navigation {
@@ -3737,7 +3737,7 @@ nav.breadcrumb_navigation ul li span {
   margin: 1px;
   font-weight: 200;
   text-align: center;
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   padding: 0.5em 3em;
   text-transform: uppercase;
   text-decoration: none;
@@ -3975,7 +3975,7 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
 }
 
 select {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   padding: 0.5em 0.75em;
   margin: 0.5em auto;
   line-height: 1.1;
@@ -3998,7 +3998,7 @@ select {
 }
 
 textarea {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   padding: 0.5em 0.75em;
   margin: 0.5em auto;
   line-height: 1.1;
@@ -4104,7 +4104,7 @@ button {
 }
 #main .frm_forms .frm_description,
 .frm_forms .frm_description {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
 }
 #main .frm_forms .frm_form_fields > fieldset,
 .frm_forms .frm_form_fields > fieldset {
@@ -4130,7 +4130,7 @@ button {
 .frm_forms .frm_form_fields > fieldset legend {
   padding: 0.5em 1em;
   font-weight: 600;
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   border-radius: 10px;
 }
 .theme-light #main .frm_forms .frm_form_fields > fieldset legend,
@@ -4333,7 +4333,7 @@ button {
  *
  */
 h3.item_title {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   font-weight: 300;
   display: inline-block;
   text-wrap: balance;
@@ -4531,7 +4531,7 @@ h3.item_title {
   padding: 1em;
   text-align: center;
   border-radius: 5px;
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   text-wrap: balance;
 }
 .theme-light .eduguide_card .content_container h3.eduguide_title {
@@ -4567,7 +4567,7 @@ h3.item_title {
 }
 
 .file_size {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   font-weight: 200;
   white-space: nowrap;
   line-height: 1;
@@ -4646,7 +4646,7 @@ h3.item_title {
   margin-bottom: 5px;
 }
 .list_container .list_item.type-post .post_date {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   display: block;
   opacity: 0.6;
   font-weight: 600;
@@ -4714,7 +4714,7 @@ aside.related_terms.smaller a,
 aside.related_terms.smaller a:visited,
 aside.related_terms.smaller a.secondary_button,
 aside.related_terms.smaller a.secondary_button:visited {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   padding: 0.1em 0.5em;
   border-radius: 2px;
 }
@@ -4781,7 +4781,7 @@ aside.related_terms ul.more_terms_dropdown > li a:visited {
 }
 
 div.list_of_all_tags {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   font-weight: 200;
   display: flex;
   flex-wrap: wrap;
@@ -5029,7 +5029,7 @@ https://splidejs.com/
   padding: 0;
   left: 0rem;
   bottom: 2rem;
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   white-space: nowrap;
   line-height: 1em;
   text-align: left;
@@ -5127,7 +5127,7 @@ https://splidejs.com/
 }
 #main #form_newsletter-signup fieldset h2 {
   margin: 0;
-  font-size: clamp(2.14rem, 6.16vw - 0.94rem, 10.77rem);
+  font-size: clamp(4.324rem, 3.656vi + 2.862rem, 10.175rem);
 }
 #main #form_newsletter-signup fieldset p {
   text-wrap: balance;
@@ -5145,19 +5145,19 @@ https://splidejs.com/
 
 body .has-x-large-font-size,
 #content .has-x-large-font-size {
-  font-size: clamp(1.39rem, 2vw + 0.39rem, 4.19rem) !important;
+  font-size: clamp(2.905rem, 1.365vi + 2.359rem, 5.089rem) !important;
 }
 body .has-large-font-size,
 #content .has-large-font-size {
-  font-size: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem) !important;
+  font-size: clamp(2.381rem, 0.761vi + 2.077rem, 3.599rem) !important;
 }
 body .has-medium-font-size,
 #content .has-medium-font-size {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem) !important;
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem) !important;
 }
 body .has-small-font-size,
 #content .has-small-font-size {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem) !important;
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem) !important;
 }
 body .has-igb-purple-background-color,
 body .has-igb-blue-background-color,
@@ -5272,7 +5272,7 @@ body .has-igb-pink-background-color,
   margin-bottom: 2rem;
 }
 .section_framed_hero .content_container .hero_paragraph_text {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
 }
 .section_framed_hero .image_container {
   display: grid;
@@ -5624,7 +5624,7 @@ section.featured_content.video .section_content .related_videos .related_video {
 }
 section.featured_content.video .section_content .related_videos .related_video a {
   display: block;
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -5789,7 +5789,7 @@ section.featured_content.blog .featured_blog_container .blog_overlay {
   }
 }
 section.featured_content.blog .featured_blog_container .blog_overlay .excerpt {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
 }
 section.featured_content.term {
   margin: 5em 0 7em 0;
@@ -5812,7 +5812,7 @@ section.featured_content.term .two_column .column_right {
   margin: -3em 0;
 }
 section.featured_content.term .excerpt {
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   margin: 0 auto;
 }
 section.featured_content.term video,
@@ -5920,7 +5920,7 @@ h3.link_title span {
   font-weight: 200;
 }
 h3.link_title span.subheading {
-  font-size: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
+  font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   display: block;
   margin-bottom: 0.25em;
   line-height: 1.1;
@@ -5946,7 +5946,7 @@ h3.link_title span.subheading {
 .page_link-text_container a .link_description,
 .page_link-text_container a:visited .link_description {
   font-weight: 200;
-  font-size: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
   max-width: 45ch;
   margin: 0 auto;
 }
