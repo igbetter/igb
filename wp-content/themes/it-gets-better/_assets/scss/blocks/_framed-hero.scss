@@ -27,6 +27,9 @@ $border_radius: 40px;
 		position: relative;
 		display: grid;
 		flex: 1;
+		@include themify($themes) {
+			box-shadow: themed( 'subtleShadow' );
+		}
 
 		> * {
 			grid-area: 1 / 1;
@@ -235,15 +238,14 @@ $border_radius: 40px;
 		}
 		.secondary_box {
 			width: 100%;
-			height: 100%;
+			//height: 100%;
 			border-radius: $border_radius;
-			border: 3px solid transparent;
 			transition: all 310ms ease-in-out;
 			line-height: 1.2;
 
 
 			@include themify($themes) {
-				box-shadow: themed( 'normalShadow' );
+				box-shadow: themed( 'subtleShadow' );
 			}
 
 			h1,
@@ -270,28 +272,49 @@ $border_radius: 40px;
 				}
 			}
 
-			.box_content {
-				padding: 18px;
+			&.type-link {
+				.box_content  {
+					height: 100%;
+					> a {
+						display: flex;
+						flex-direction: column;
+						height: 100%;
+						border: 2px solid transparent;
+						border-radius: $border_radius;
+						font-weight: 600;
+
+						&:hover,
+						&:target {
+							color: currentColor;
+							border: 2px solid currentColor;
+							box-shadow: $heavy_shadow;
+						}
+					}
+				}
+
+				span.link_title {
+					padding: 0.6em 1em 0.3em 1em;
+					font-size: $font-size-md;
+					line-height: 1;
+				}
+				.link_image {
+					flex: 1;
+					object-fit: cover;
+					border-radius: 0 0 $border_radius $border_radius;
+				}
 			}
+
+			&.type-text {
+				.box_content {
+					padding: 18px;
+				}
+			}
+
 		}
 
 		a {
 			text-decoration: none;
 
-			&:hover,
-			&:focus,
-			&:target {
-				outline: none;
-
-				.secondary_box {
-					@include themify($themes) {
-						border-color: themed( 'linkHoverColor' );
-						box-shadow: themed( 'largeShadow' );
-					}
-				}
-
-
-			}
 
 			b,
 			strong {

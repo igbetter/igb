@@ -5238,6 +5238,12 @@ body .has-igb-pink-background-color,
   display: grid;
   flex: 1;
 }
+.theme-light .section_framed_hero .hero_main {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
+}
+.theme-dark .section_framed_hero .hero_main {
+  box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
+}
 .section_framed_hero .hero_main > * {
   grid-area: 1/1;
 }
@@ -5417,17 +5423,15 @@ body .has-igb-pink-background-color,
 }
 .section_framed_hero .secondary_column .secondary_box {
   width: 100%;
-  height: 100%;
   border-radius: 40px;
-  border: 3px solid transparent;
   transition: all 310ms ease-in-out;
   line-height: 1.2;
 }
 .theme-light .section_framed_hero .secondary_column .secondary_box {
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark .section_framed_hero .secondary_column .secondary_box {
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+  box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
 }
 .section_framed_hero .secondary_column .secondary_box h1,
 .section_framed_hero .secondary_column .secondary_box h2,
@@ -5448,22 +5452,37 @@ body .has-igb-pink-background-color,
 .section_framed_hero .secondary_column .secondary_box img.alignleft, .section_framed_hero .secondary_column .secondary_box img.alignright {
   max-width: 50% !important;
 }
-.section_framed_hero .secondary_column .secondary_box .box_content {
+.section_framed_hero .secondary_column .secondary_box.type-link .box_content {
+  height: 100%;
+}
+.section_framed_hero .secondary_column .secondary_box.type-link .box_content > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  font-weight: 600;
+}
+.section_framed_hero .secondary_column .secondary_box.type-link .box_content > a:hover, .section_framed_hero .secondary_column .secondary_box.type-link .box_content > a:target {
+  color: currentColor;
+  border: 2px solid currentColor;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.section_framed_hero .secondary_column .secondary_box.type-link span.link_title {
+  padding: 0.6em 1em 0.3em 1em;
+  font-size: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
+  line-height: 1;
+}
+.section_framed_hero .secondary_column .secondary_box.type-link .link_image {
+  flex: 1;
+  object-fit: cover;
+  border-radius: 0 0 40px 40px;
+}
+.section_framed_hero .secondary_column .secondary_box.type-text .box_content {
   padding: 18px;
 }
 .section_framed_hero .secondary_column a {
   text-decoration: none;
-}
-.section_framed_hero .secondary_column a:hover, .section_framed_hero .secondary_column a:focus, .section_framed_hero .secondary_column a:target {
-  outline: none;
-}
-.theme-light .section_framed_hero .secondary_column a:hover .secondary_box, .theme-light .section_framed_hero .secondary_column a:focus .secondary_box, .theme-light .section_framed_hero .secondary_column a:target .secondary_box {
-  border-color: #5e3a7e;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.theme-dark .section_framed_hero .secondary_column a:hover .secondary_box, .theme-dark .section_framed_hero .secondary_column a:focus .secondary_box, .theme-dark .section_framed_hero .secondary_column a:target .secondary_box {
-  border-color: #FF6687;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .section_framed_hero .secondary_column a b,
 .section_framed_hero .secondary_column a strong {

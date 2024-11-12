@@ -1053,11 +1053,11 @@
                     "endpoint": 1
                 },
                 {
-                    "key": "field_66e83f5b94780",
-                    "label": "Content",
-                    "name": "",
+                    "key": "field_6732711739636",
+                    "label": "Box Content Type",
+                    "name": "box_content_type",
                     "aria-label": "",
-                    "type": "accordion",
+                    "type": "radio",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1066,9 +1066,49 @@
                         "class": "",
                         "id": ""
                     },
+                    "choices": {
+                        "link": "Link to content",
+                        "text": "Text box"
+                    },
+                    "default_value": "link",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_66e83f5b94780",
+                    "label": "Text Box Content",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6732711739636",
+                                "operator": "==",
+                                "value": "text"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_field": "",
+                    "hide_label": "",
+                    "hide_instructions": "",
+                    "hide_required": "",
                     "open": 0,
                     "multi_expand": 1,
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "instruction_placement": "",
+                    "acfe_permissions": ""
                 },
                 {
                     "key": "field_66e35df698d76",
@@ -1190,7 +1230,15 @@
                     "type": "accordion",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6732711739636",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -1201,11 +1249,11 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_66e8439549930",
-                    "label": "Link to",
-                    "name": "link_to",
+                    "key": "field_66e843ec49931",
+                    "label": "Link to page",
+                    "name": "internal_link",
                     "aria-label": "",
-                    "type": "radio",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1214,43 +1262,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "none": "No link",
-                        "internal": "Page\/content on this site",
-                        "external": "External link"
-                    },
-                    "default_value": "No link",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "allow_in_bindings": 0,
-                    "layout": "vertical",
-                    "save_other_choice": 0
-                },
-                {
-                    "key": "field_66e843ec49931",
-                    "label": "Link to page",
-                    "name": "internal_link",
-                    "aria-label": "",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_66e8439549930",
-                                "operator": "==",
-                                "value": "internal"
-                            }
-                        ]
+                    "post_type": [
+                        "post",
+                        "page",
+                        "video",
+                        "eduguide"
                     ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "post_status": "",
+                    "post_status": [
+                        "publish"
+                    ],
                     "taxonomy": "",
                     "allow_archives": 1,
                     "multiple": 0,
@@ -1258,19 +1278,41 @@
                     "allow_in_bindings": 0
                 },
                 {
-                    "key": "field_66e8445949932",
-                    "label": "External link",
-                    "name": "external_link",
+                    "key": "field_6732738839637",
+                    "label": "Override Title?",
+                    "name": "override_title",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Override",
+                    "ui_off_text": "Use existing",
+                    "ui": 1,
+                    "style": ""
+                },
+                {
+                    "key": "field_6732742f39638",
+                    "label": "Link Title",
+                    "name": "link_title",
+                    "aria-label": "",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_66e8439549930",
+                                "field": "field_6732738839637",
                                 "operator": "==",
-                                "value": "external"
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1280,8 +1322,70 @@
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6732745239639",
+                    "label": "Override Image?",
+                    "name": "override_image",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Override",
+                    "ui_off_text": "Use existing",
+                    "ui": 1,
+                    "style": ""
+                },
+                {
+                    "key": "field_6732746b3963a",
+                    "label": "Featured Image",
+                    "name": "featured_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6732745239639",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "wp",
+                    "return_format": "url",
+                    "library": "all",
+                    "upload_folder": "",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
                 },
                 {
                     "key": "field_66eafd78703ad",
@@ -1616,11 +1720,11 @@
                     "endpoint": 1
                 },
                 {
-                    "key": "field_66e8455e71584",
-                    "label": "Content",
-                    "name": "",
+                    "key": "field_673276a1f6717",
+                    "label": "Box Content Type",
+                    "name": "box_content_type",
                     "aria-label": "",
-                    "type": "accordion",
+                    "type": "radio",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1629,9 +1733,49 @@
                         "class": "",
                         "id": ""
                     },
+                    "choices": {
+                        "link": "Link to content",
+                        "text": "Text box"
+                    },
+                    "default_value": "link",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_66e8455e71584",
+                    "label": "Text Box Content",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_673276a1f6717",
+                                "operator": "==",
+                                "value": "text"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_field": "",
+                    "hide_label": "",
+                    "hide_instructions": "",
+                    "hide_required": "",
                     "open": 0,
                     "multi_expand": 1,
-                    "endpoint": 0
+                    "endpoint": 0,
+                    "instruction_placement": "",
+                    "acfe_permissions": ""
                 },
                 {
                     "key": "field_66e8455e71585",
@@ -1753,7 +1897,15 @@
                     "type": "accordion",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_673276a1f6717",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -1764,11 +1916,11 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_66e8455e71587",
-                    "label": "Link to",
-                    "name": "link_to",
+                    "key": "field_66e8455f71588",
+                    "label": "Link to page",
+                    "name": "internal_link",
                     "aria-label": "",
-                    "type": "radio",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1777,42 +1929,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "none": "No link",
-                        "internal": "Page\/content on this site",
-                        "external": "External link"
-                    },
-                    "default_value": "No link",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "allow_in_bindings": 0,
-                    "layout": "vertical",
-                    "save_other_choice": 0
-                },
-                {
-                    "key": "field_66e8455f71588",
-                    "label": "Link to page",
-                    "name": "internal_link",
-                    "aria-label": "",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_66e8455e71587",
-                                "operator": "==",
-                                "value": "internal"
-                            }
-                        ]
+                    "post_type": [
+                        "post",
+                        "page",
+                        "eduguide",
+                        "video"
                     ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
                     "post_status": [
                         "publish"
                     ],
@@ -1823,19 +1945,41 @@
                     "allow_in_bindings": 1
                 },
                 {
-                    "key": "field_66e8455f71589",
-                    "label": "External link",
-                    "name": "external_link",
+                    "key": "field_6732774ff6718",
+                    "label": "Override Title?",
+                    "name": "override_title",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Override",
+                    "ui_off_text": "Use existing",
+                    "ui": 1,
+                    "style": ""
+                },
+                {
+                    "key": "field_67327784f671a",
+                    "label": "Link Title",
+                    "name": "link_title",
+                    "aria-label": "",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_66e8455e71587",
+                                "field": "field_6732774ff6718",
                                 "operator": "==",
-                                "value": "external"
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1845,8 +1989,70 @@
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6732777bf6719",
+                    "label": "Override Image?",
+                    "name": "override_image",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Override",
+                    "ui_off_text": "Use existing",
+                    "ui": 1,
+                    "style": ""
+                },
+                {
+                    "key": "field_673277a4f671b",
+                    "label": "Featured Image",
+                    "name": "featured_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6732777bf6719",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "wp",
+                    "return_format": "url",
+                    "library": "all",
+                    "upload_folder": "",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
                 },
                 {
                     "key": "field_66eafdc8703af",
@@ -1917,7 +2123,8 @@
     ],
     "acfe_form": 0,
     "acfe_display_title": "",
+    "acfe_permissions": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1731358180
+    "modified": 1731375709
 }
