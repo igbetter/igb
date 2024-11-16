@@ -24,9 +24,9 @@ $yellow-alt-darker: #7B623D;
 $white: #ffffff;
 $offwhite: #f1f1f1;
 
-$light-grey: #F5F3F7;
-$medium-grey: #d6d6d6;
-$dark-grey: #393939;
+$light-grey: #EBE5F8;
+$medium-grey: #E0DAF5;
+$dark-grey: #3E3645;
 
 $dark: #292929;
 $darker: #212023;
@@ -47,19 +47,20 @@ $max_body_text_width: 90ch;
 $max_body_text_width_half: 45ch;
 $max_heading_text_width: 30ch;
 $max_wide_page_width: 1600px;
-$basefont_size: 16px;
+$basefont_size: 13px;
 
 // Define fonts
 $poppins: "Poppins", sans-serif;
 
 // Define font size options
-$font-size-sm: clamp(1.14rem, 0.3vw + 0.99rem, 1.56rem);
-$font-size-base: clamp(1.2rem, 0.57vw + 0.91rem, 2rem);
-$font-size-md: clamp(1.26rem, 0.93vw + 0.8rem, 2.56rem);
-$font-size-lg: clamp(1.33rem, 1.39vw + 0.63rem, 3.28rem);
-$font-size-xl: clamp(1.39rem, 2vw + 0.39rem, 4.19rem);
-$font-size-xxl: clamp(1.46rem, 2.79vw + 0.07rem, 5.37rem);
-$font-size-xxxl: clamp(2.14rem, 6.16vw + -0.94rem, 10.77rem);
+$font-size-xs: clamp(1.075rem, -0.109vi + 1.119rem, 0.9rem);
+$font-size-sm: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
+$font-size-base: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
+$font-size-md: clamp(1.952rem, 0.371vi + 1.804rem, 2.545rem);
+$font-size-lg: clamp(2.381rem, 0.761vi + 2.077rem, 3.599rem);
+$font-size-xl: clamp(2.905rem, 1.365vi + 2.359rem, 5.089rem);
+$font-size-xxl: clamp(3.545rem, 2.282vi + 2.632rem, 7.196rem);
+$font-size-xxxl: clamp(4.324rem, 3.656vi + 2.862rem, 10.175rem);
 
 $font-size-blog-title: clamp(3.39rem, 3.68vw + 1.55rem, 8.54rem);
 
@@ -310,8 +311,8 @@ $themes: (
 		accentButtonTextHoverColor: $white,
 		accentButtonBorder: 2px solid transparent,
 
-		announcementBarBG: $yellow,
-		announcementBarTextColor: $dark,
+		announcementBarBG: $blue,
+		announcementBarTextColor: $white,
 
 		// forms
 		inputBGColor: $dark,
