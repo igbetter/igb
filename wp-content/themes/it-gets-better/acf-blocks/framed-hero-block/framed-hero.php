@@ -132,39 +132,46 @@ if ( ! empty( $block['fullHeight'] ) ) {
 
 					$background_style = 'style="background-color: ' . esc_attr( $background_color ) . '; color: ' . esc_attr( $text_color ) . '; a, a:visited, a:hover, a:hover:visited : ' . esc_attr( $text_color ) . ';"';
 				}
-			$content = $box1_array[ 'main_text' ];
-			$link_option = $box1_array[ 'link_to' ];
-				$link_start = '';
-				$link_end = '';
-				if ($link_option != 'none' ) {
-					$url = '';
-					if( $link_option === 'internal' ) {
-						$url = $box1_array[ 'internal_link' ];
-					}
-					if( $link_option === 'external' ) {
-						$url = $box1_array[ 'external_link' ];
-					}
 
-					$link_start = '<a href="' . esc_url( $url ) . '">';
-					$link_end = '</a>';
-				}
+			$content_type1 = $box1_array[ 'box_content_type' ];
 
+			if( $content_type1 === 'link' ) {
+				// content is a link to content on the site
+				$url = $box1_array[ 'internal_link' ];
+				$link_id = url_to_postid( $url );
+
+				$link_title = ( true === $box1_array[ 'override_title'] ) ? $box1_array[ 'link_title' ] : get_the_title( $link_id );
+				$link_image_url = ( true === $box1_array[ 'override_image'] ) ? $box1_array[ 'featured_image' ] : wp_get_attachment_url( get_post_thumbnail_id( $link_id ) );
+
+				$content = sprintf(
+					'
+					<a href="%s" class="box_link_container">
+						<span class="link_title"> %s </span>
+						<img src="%s" class="link_image" />
+					</a>
+					',
+					$url,
+					$link_title,
+					$link_image_url
+				);
+
+			} else {
+				// content is freeform text box
+				$content = $box1_array[ 'main_text' ];
+			}
 
 			printf(
 				'
-				%s
-					<div class="secondary_box %s" %s>
-						<div class="box_content">
-							%s
-						</div>
+				<div class="secondary_box %s type-%s" %s>
+					<div class="box_content">
+						%s
 					</div>
-				%s
+				</div>
 				',
-				$link_start,
 				esc_attr( $background_class ),
+				esc_html( $content_type1 ),
 				$background_style,
-				wp_kses_post( $content ),
-				$link_end
+				wp_kses_post( $content )
 			);
 
 		}
@@ -192,39 +199,45 @@ if ( ! empty( $block['fullHeight'] ) ) {
 
 					$background_style = 'style="background-color: ' . esc_attr( $background_color ) . '; color: ' . esc_attr( $text_color ) . '; a, a:visited, a:hover, a:hover:visited : ' . esc_attr( $text_color ) . ';"';
 				}
-			$content = $box2_array[ 'main_text' ];
-			$link_option = $box2_array[ 'link_to' ];
-				$link_start = '';
-				$link_end = '';
-				if ($link_option != 'none' ) {
-					$url = '';
-					if( $link_option === 'internal' ) {
-						$url = $box2_array[ 'internal_link' ];
-					}
-					if( $link_option === 'external' ) {
-						$url = $box2_array[ 'external_link' ];
-					}
+			$content_type2 = $box2_array[ 'box_content_type' ];
 
-					$link_start = '<a href="' . esc_url( $url ) . '">';
-					$link_end = '</a>';
-				}
+			if( $content_type2 === 'link' ) {
+				// content is a link to content on the site
+				$url = $box2_array[ 'internal_link' ];
+				$link_id = url_to_postid( $url );
 
+				$link_title = ( true === $box2_array[ 'override_title'] ) ? $box2_array[ 'link_title' ] : get_the_title( $link_id );
+				$link_image_url = ( true === $box2_array[ 'override_image'] ) ? $box2_array[ 'featured_image' ] : wp_get_attachment_url( get_post_thumbnail_id( $link_id ) );
+
+				$content = sprintf(
+					'
+					<a href="%s" class="box_link_container">
+						<span class="link_title"> %s </span>
+						<img src="%s" class="link_image" />
+					</a>
+					',
+					$url,
+					$link_title,
+					$link_image_url
+				);
+
+			} else {
+				// content is freeform text box
+				$content = $box2_array[ 'main_text' ];
+			}
 
 			printf(
 				'
-				%s
-					<div class="secondary_box %s" %s>
-						<div class="box_content">
-							%s
-						</div>
+				<div class="secondary_box %s type-%s" %s>
+					<div class="box_content">
+						%s
 					</div>
-				%s
+				</div>
 				',
-				$link_start,
 				esc_attr( $background_class ),
+				esc_html( $content_type2 ),
 				$background_style,
-				wp_kses_post( $content ),
-				$link_end
+				wp_kses_post( $content )
 			);
 		}
 
