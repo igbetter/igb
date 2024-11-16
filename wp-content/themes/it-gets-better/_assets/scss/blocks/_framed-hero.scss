@@ -48,18 +48,19 @@ $border_radius: 40px;
 	.content_container {
 		position: relative;
 		z-index: 99;
-		max-width: 65%;
+		max-width: 64%;
 		text-wrap: balance;
 		padding: 3em 3em 6em 3em;
 
 		@include tablet-down {
-			max-width: 90%;
+			max-width: 80%;
 			padding: 2em 2em 6em 2em;
 		}
 
 		@include phone-only {
-			max-width: 86%;
+			max-width: 76%;
 			padding: 2em 4em 6em 2em;
+			font-size: 80%;
 		}
 
 		h1 {
@@ -70,6 +71,7 @@ $border_radius: 40px;
 
 		.hero_paragraph_text {
 			font-size: $font-size-md;
+			padding-right: 3em;
 		}
 	}
 
@@ -81,9 +83,9 @@ $border_radius: 40px;
 
 
 		img {
-			border-radius: 0 0 $border_radius 0;
-			width: 55%;
-			max-width: 58% !important;
+			border-radius: 0 $border_radius $border_radius 0;
+			width: 51%;
+			//max-width: 58% !important;
 			margin: 0 0 0 auto;
 		}
 	}
@@ -171,7 +173,7 @@ $border_radius: 40px;
 
 		&.hand_drawn_01 {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpath stroke='%23FFF' stroke-width='25' stroke-opacity='0.19' stroke-miterlimit='10' fill='none' d='M800-160.5c211.5,194.5,242.4,270.4,114.4,503.4-124.8,227.2-421.7,145.8-528.7,221.8-145,109-369.9-73.3-473.2-85.1-36.4,23.6,31.1,155.3,67.3,142.6,53.2-18.7,421,161.3,580.2,27.7,110.9-93.1,328.7-114.8,409.9-285.1,62.6-131.3,251.5-194,223.7-380.2-23.9-160.3-142.3-86.9-71.3-126.7,62.4-35,234.7-.3,180.7,40.2-48.6,36.4,96,179,78.7,237-52.1,150.9-200.7,89.5-337.7,231.5-28.9,30-18.8,148.7-68.3,261.6s-253.9-18.1-409.9,112.9S-4.3,762.7-51.8,697.4l-46.1,112.9c207.8,90.2,1110.5,114,1195.5-187,96-308,152.2-188.4,171.3-284.3,14-70.2-64.7-232.4-13.9-283.2,57.6-57.6,272.3-127.3,314.8-142.6'/%3E%3C/svg%3E");
-			background-size: auto 100%;
+			background-size: 100% 100%;
 			background-repeat: no-repeat;
 			background-position: 50% 0%;
 			mix-blend-mode: overlay;
@@ -203,8 +205,8 @@ $border_radius: 40px;
 	// secondary / boxes
 
 	.secondary_column {
-		min-width: 29%;
-		max-width: 29%;
+		min-width: 31%;
+		max-width: 31%;
 		margin-left: 10px;
 		display: flex;
 		flex-direction: column;
