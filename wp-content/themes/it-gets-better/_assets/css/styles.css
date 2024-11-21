@@ -705,7 +705,7 @@ input[type=submit],
 a.primary_button,
 a.primary_button:visited {
   display: inline-block;
-  border-radius: 3px;
+  border-radius: 30px;
   position: relative;
   padding: 0.8em 2em;
   background-color: transparent;
@@ -722,6 +722,9 @@ a.primary_button:visited {
 .theme-light a.primary_button,
 .theme-light a.primary_button:visited {
   color: #ffffff;
+  background-color: #45acce;
+  border: 2px solid transparent;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
 }
 .theme-dark input[type=submit],
 .theme-dark .wp-element-button,
@@ -731,45 +734,6 @@ a.primary_button:visited {
 .theme-dark a.primary_button,
 .theme-dark a.primary_button:visited {
   color: #ffffff;
-}
-input[type=submit]:after,
-.wp-element-button:after,
-.wp-element-button:visited:after,
-.wp-block-button__link:after,
-.wp-block-button__link:visited:after,
-a.primary_button:after,
-a.primary_button:visited:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transform: skew(-18deg);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 3px;
-  z-index: -1;
-}
-.theme-light input[type=submit]:after,
-.theme-light .wp-element-button:after,
-.theme-light .wp-element-button:visited:after,
-.theme-light .wp-block-button__link:after,
-.theme-light .wp-block-button__link:visited:after,
-.theme-light a.primary_button:after,
-.theme-light a.primary_button:visited:after {
-  background-color: #45acce;
-  border: 2px solid transparent;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.12) 0px 50px 100px -20px, rgba(0, 0, 0, 0.23) 0px 30px 60px -30px;
-}
-.theme-dark input[type=submit]:after,
-.theme-dark .wp-element-button:after,
-.theme-dark .wp-element-button:visited:after,
-.theme-dark .wp-block-button__link:after,
-.theme-dark .wp-block-button__link:visited:after,
-.theme-dark a.primary_button:after,
-.theme-dark a.primary_button:visited:after {
   background-color: #45acce;
   border: 2px solid transparent;
   box-shadow: rgba(26, 26, 50, 0.36) 0px 50px 100px -20px, rgba(0, 0, 0, 0.414) 0px 30px 60px -30px;
@@ -788,6 +752,9 @@ a.primary_button:visited:after {
 .theme-light a.primary_button:visited:hover,
 .theme-light a.primary_button:visited:focus {
   color: #ffffff;
+  background-color: #f2566e;
+  border: 2px solid #ffffff;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
 }
 .theme-dark input[type=submit]:hover, .theme-dark input[type=submit]:focus,
 .theme-dark .wp-element-button:hover,
@@ -803,37 +770,6 @@ a.primary_button:visited:after {
 .theme-dark a.primary_button:visited:hover,
 .theme-dark a.primary_button:visited:focus {
   color: #ffffff;
-}
-.theme-light input[type=submit]:hover:after, .theme-light input[type=submit]:focus:after,
-.theme-light .wp-element-button:hover:after,
-.theme-light .wp-element-button:focus:after,
-.theme-light .wp-element-button:visited:hover:after,
-.theme-light .wp-element-button:visited:focus:after,
-.theme-light .wp-block-button__link:hover:after,
-.theme-light .wp-block-button__link:focus:after,
-.theme-light .wp-block-button__link:visited:hover:after,
-.theme-light .wp-block-button__link:visited:focus:after,
-.theme-light a.primary_button:hover:after,
-.theme-light a.primary_button:focus:after,
-.theme-light a.primary_button:visited:hover:after,
-.theme-light a.primary_button:visited:focus:after {
-  background-color: #f2566e;
-  border: 2px solid #ffffff;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
-}
-.theme-dark input[type=submit]:hover:after, .theme-dark input[type=submit]:focus:after,
-.theme-dark .wp-element-button:hover:after,
-.theme-dark .wp-element-button:focus:after,
-.theme-dark .wp-element-button:visited:hover:after,
-.theme-dark .wp-element-button:visited:focus:after,
-.theme-dark .wp-block-button__link:hover:after,
-.theme-dark .wp-block-button__link:focus:after,
-.theme-dark .wp-block-button__link:visited:hover:after,
-.theme-dark .wp-block-button__link:visited:focus:after,
-.theme-dark a.primary_button:hover:after,
-.theme-dark a.primary_button:focus:after,
-.theme-dark a.primary_button:visited:hover:after,
-.theme-dark a.primary_button:visited:focus:after {
   background-color: #f2566e;
   border: 2px solid #E0DAF5;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
@@ -844,6 +780,7 @@ a.secondary_button,
 a.secondary_button:visited,
 .fake_secondary_button {
   padding: 0.5em 1.5em;
+  border-radius: 30px;
 }
 .theme-light .secondary_button,
 .theme-light a.secondary_button,
@@ -5170,6 +5107,7 @@ https://splidejs.com/
   top: -180px;
   opacity: 0;
   height: 0;
+  overflow: hidden;
 }
 .theme-light #donate_banner {
   background: #EBE5F8;
