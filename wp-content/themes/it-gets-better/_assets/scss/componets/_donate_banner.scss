@@ -13,6 +13,7 @@
 	&.hidden {
 		top: -180px;
 		opacity: 0;
+		height: 0;
 	}
 
 	@include themify($themes) {
