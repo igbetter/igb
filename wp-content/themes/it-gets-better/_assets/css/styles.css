@@ -3299,6 +3299,11 @@ footer.site_footer nav.footer_legal_nav ul a {
   font-size: clamp(1.6rem, 0.125vi + 1.55rem, 1.8rem);
   transform: scale(1.25);
 }
+@media (max-width: 600px) {
+  #site_utility_bar nav#utility_navigation .donate_button {
+    transform: scale(0.9);
+  }
+}
 #site_utility_bar nav#utility_navigation .donate_button a,
 #site_utility_bar nav#utility_navigation .donate_button a:visited {
   display: inline-block;
@@ -3315,6 +3320,12 @@ footer.site_footer nav.footer_legal_nav ul a {
 .theme-dark #site_utility_bar nav#utility_navigation .donate_button a:visited {
   background: #f2566e;
   color: #ffffff;
+}
+@media (max-width: 600px) {
+  #site_utility_bar nav#utility_navigation .donate_button a,
+  #site_utility_bar nav#utility_navigation .donate_button a:visited {
+    margin: 0 2px;
+  }
 }
 #site_utility_bar nav#utility_navigation .donate_button a:hover, #site_utility_bar nav#utility_navigation .donate_button a:focus, #site_utility_bar nav#utility_navigation .donate_button a:target,
 #site_utility_bar nav#utility_navigation .donate_button a:visited:hover,

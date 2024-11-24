@@ -72,6 +72,10 @@
 			font-size: $font-size-base;
 			transform: scale(1.25);
 
+			@include phone-only {
+				transform: scale( 0.9 );
+			}
+
 			a,
 			a:visited {
 				display: inline-block;
@@ -81,6 +85,10 @@
 				@include themify($themes) {
 					background: themed('accentPink');
 					color: $white;
+				}
+
+				@include phone-only {
+					margin: 0 2px;
 				}
 
 
