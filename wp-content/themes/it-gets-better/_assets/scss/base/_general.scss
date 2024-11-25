@@ -585,7 +585,7 @@ input[type="submit"],
 a.primary_button,
 a.primary_button:visited {
 	display: inline-block;
-	border-radius: 3px;
+	border-radius: 30px;
 	position: relative;
 	padding: 0.8em 2em;
 	background-color: transparent;
@@ -596,41 +596,19 @@ a.primary_button:visited {
 
 	@include themify($themes) {
 		color: themed('primaryButtonTextColor');
+		background-color: themed('primaryButtonBGColor');
+		border: themed('primaryButtonBorder');
+		box-shadow: themed( 'subtleShadow' );
 	}
 
-	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		transform: skew(-18deg);
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
-		border-radius: 3px;
-		z-index: -1;
-
-		@include themify($themes) {
-			background-color: themed('primaryButtonBGColor');
-			border: themed('primaryButtonBorder');
-			box-shadow: themed( 'subtleShadow' );
-		}
-	}
 
 	&:hover,
 	&:focus {
 		@include themify($themes) {
 			color: themed('primaryButtonTextHoverColor');
-		}
-		&:after {
-			@include themify($themes) {
-				background-color: themed('primaryButtonBGHoverColor');
-				border: themed('primaryButtonHoverBorder');
-				box-shadow: themed( 'normalShadow' );
-
-			}
+			background-color: themed('primaryButtonBGHoverColor');
+			border: themed('primaryButtonHoverBorder');
+			box-shadow: themed( 'normalShadow' );
 		}
 	}
 }
@@ -641,6 +619,7 @@ a.secondary_button:visited,
 .fake_secondary_button {
 
 	padding: 0.5em 1.5em;
+	border-radius: 30px;
 
 	@include themify($themes) {
 		background-color: themed('secondaryButtonBGColor');

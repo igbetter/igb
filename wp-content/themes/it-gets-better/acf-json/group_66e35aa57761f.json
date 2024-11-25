@@ -590,6 +590,10 @@
                     },
                     "choices": {
                         "none": "None",
+                        "igb_lines_opt1": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/igb_lines_opt1.png",
+                        "igb_lines_opt1-greyscale": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/igb_lines_opt1-greyscale.png",
+                        "igb_lines_opt2": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/igb_lines_opt2.png",
+                        "igb_lines_opt2-greyscale": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/igb_lines_opt2-greyscale.png",
                         "animated_rainbow": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/animated_rainbow-light.png",
                         "dashes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/dashes-light.png",
                         "pin_stripes": "\/wp-content\/themes\/it-gets-better\/acf-blocks\/_block-assets\/pin_stripes-light.png",
@@ -2123,8 +2127,7 @@
     ],
     "acfe_form": 0,
     "acfe_display_title": "",
-    "acfe_permissions": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1731375709
+    "modified": 1732199586
 }
