@@ -97,29 +97,29 @@ endif;
 			<script type="text/javascript">
 			  document.addEventListener('DOMContentLoaded', function () {
 			    // Find all elements with data-js-action="formidable-form-popup"
-			    var formidableFormPopups = document.querySelectorAll('[data-js-action="formidable-form-popup"]');
+				var formidableFormPopups = document.querySelectorAll('[data-js-action="formidable-form-popup"]');
 
-			    // Add click event listener to each matching element
-			    formidableFormPopups.forEach(function (element) {
-			      element.addEventListener('click', function (event) {
+				// Add click event listener to each matching element
+				formidableFormPopups.forEach(function (element) {
+				  element.addEventListener('click', function (event) {
 
 					// Get the value of data-bs-target attribute
 					// This is the ID of the modal that will be opened
 					var targetPopupID = event.target.closest('a').getAttribute('data-bs-target').replace('#', '');
 
-			        // Find the div/modal with the specified ID that we are looking for
-			        var targetDiv = document.getElementById(targetPopupID);
+					// Find the div/modal with the specified ID that we are looking for
+					var targetDiv = document.getElementById(targetPopupID);
 
-			        // Check if the div/modal has the hidden input field we are looking for, and if it does, set the value of the input field to the original href
-			        if (targetDiv && targetDiv.querySelector('input#field_pdf_asset_redirect')) {
-			          // Get the original anchor's href
-			          var originalHref = event.target.href;
-
-			          // Set the value attribute of the input field to the original href
-			          targetDiv.querySelector('input#field_pdf_asset_redirect').value = originalHref;
-			        }
-			      });
-			    });
+					// Check if the div/modal has the hidden input field we are looking for, and if it does, set the value of the input field to the original href
+					if (targetDiv && targetDiv.querySelector('input#field_pdf_asset_redirect')) {
+					  // Get the original anchor's href
+					  var anchorElement = event.target.closest('a');
+					  var originalHref = anchorElement.href;
+					  // Set the value attribute of the input field to the original href
+					  targetDiv.querySelector('input#field_pdf_asset_redirect').value = originalHref;
+					}
+				  });
+				});
 			  });
 			</script>
 		<?php endif;?>
