@@ -3,3 +3,35 @@
 		z-index: 99999;
 	}
 }
+
+.bod-block-popup-wrap.active {
+	.bod-block-popup {
+		overflow: visible;
+
+
+
+		.bod-modal-title {
+			display: none;
+		}
+		.bod-modal-content {
+			@include themify($themes) {
+				background-color: themed( 'backgroundColor');
+				box-shadow: themed( 'activeShadow' );
+			}
+			line-height: 1.1;
+			border-radius: 30px;
+			overflow: hidden;
+
+			> .is-layout-flex {
+				> * {
+					flex: 1;
+					min-width: 50%;
+				}
+			}
+
+			.wp-block-group.padding {
+				padding: 0.5em 1.5em;
+			}
+		}
+	}
+}
