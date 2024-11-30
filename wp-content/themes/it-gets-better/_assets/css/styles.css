@@ -5079,6 +5079,7 @@ https://splidejs.com/
 }
 .bod-block-popup-wrap.active .bod-block-popup .bod-modal-content > .is-layout-flex > * {
   flex: 1;
+  min-width: 50%;
 }
 .bod-block-popup-wrap.active .bod-block-popup .bod-modal-content .wp-block-group.padding {
   padding: 0.5em 1.5em;

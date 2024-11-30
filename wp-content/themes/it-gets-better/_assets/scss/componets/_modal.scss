@@ -25,6 +25,7 @@
 			> .is-layout-flex {
 				> * {
 					flex: 1;
+					min-width: 50%;
 				}
 			}
 
