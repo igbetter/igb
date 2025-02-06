@@ -1,12 +1,20 @@
 ( function( blocks ) {
     const { registerBlockVariation } = blocks;
     
+    // Helper function to format the counter text
+    const formatCounterText = (value, preserveFormatting = false, existingText = '') => {
+        if (preserveFormatting && existingText.includes('\u003cstrong\u003e')) {
+            return `\u003cstrong\u003e${value}\u003c/strong\u003e`;
+        }
+        return value;
+    };
+    
     registerBlockVariation('coblocks/counter', {
         name: 'pledge-counter',
         title: 'Pledge Counter',
         description: 'Display the current pledge count',
         attributes: {
-            counterText: igbBlockData.pledgeCount,
+            counterText: `\u003cstrong\u003e${igbBlockData.pledgeCount}\u003c/strong\u003e`,
             isPledgeCounter: true
         },
         isActive: attributes => attributes.isPledgeCounter === true,
@@ -17,7 +25,7 @@
                 transform: attributes => {
                     return blocks.createBlock('coblocks/counter', {
                         ...attributes,
-                        counterText: igbBlockData.pledgeCount,
+                        counterText: `\u003cstrong\u003e${igbBlockData.pledgeCount}\u003c/strong\u003e`,
                         isPledgeCounter: true
                     });
                 }
