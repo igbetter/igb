@@ -94,7 +94,7 @@ function igb_get_landing_page_curation( $landing_page, $keys )
 }
 
 /**
- * Display the grand total of pledgers
+ * Get the grand total of pledgers
  * (active subscribers + subsribers no longer active + arbitrary number in the Curation settings)
  *
  * @return mixed|string
