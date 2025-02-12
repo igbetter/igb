@@ -1,10 +1,14 @@
 <?php
 
+/**
+ * Campaign Monitor functions for the Take the Pledge campaign
+ */
+
 if (! defined('ABSPATH') ) {
     exit;
 }
 
-// TODO: Put the static pledgers and API key into a settings page.
+require_once get_template_directory() . '/vendor/campaignmonitor/createsend-php/csrest_lists.php';
 
 /**
  * Make a REST Request to get the first ten subscribers in the `It Gets Better All Contacts` list
@@ -93,36 +97,34 @@ function igb_get_landing_page_curation( $landing_page, $keys )
  * Display the grand total of pledgers
  * (active subscribers + subsribers no longer active + arbitrary number in the Curation settings)
  *
- * @param $id
- *
  * @return mixed|string
  */
-function igb_get_pledgers( $id )
+function igb_get_pledgers()
 {
-    $transient_name     = 'pledgers_total';
+    $transient_name     = 'igb_pledgers_total';
     $pledgers_transient = get_transient($transient_name);
 
-    if (false === $pledgers_transient ) {
+    if (false === $pledgers_transient || empty($pledgers_transient) ) {
         try {
             $total_subscribers   = igb_get_cm_subscribers()->TotalNumberOfRecords;
             $total_unsubscribers = igb_get_cm_unsubscribers()->TotalNumberOfRecords;
         } catch ( \Exception $e ) {
 
             // in case the CM REST API fails, show a backup number
-            return get_post_meta($id, 'total_pledgers', true);
+            return get_option('igb_total_pledgers', 0);
         }
 
         // Get the pledgers number from the admin
-        $static_pledgers = igb_get_landing_page_curation('site', array( 'statistics', 'statistics', 'pledgers' ));
+        $static_pledgers = get_option('igb_static_pledgers', 0);
 
         // Add the subscribed with the unsubscribed with the number in the admin
-        $total_pledgers = number_format($total_subscribers + $total_unsubscribers + intval(str_replace(',', '', $static_pledgers)), 0, '', ',');
+        $total_pledgers = $total_subscribers + $total_unsubscribers + $static_pledgers;
 
         // Record the number as a transient
         set_transient($transient_name, $total_pledgers, 60 * 60 * 24);
 
         // Set a backup value
-        update_post_meta($id, 'total_pledgers', $total_pledgers);
+        update_option('igb_total_pledgers', $total_pledgers);
 
         return $total_pledgers;
     } else {
@@ -132,6 +134,8 @@ function igb_get_pledgers( $id )
 
 /**
  * Add Campaign Monitor/Take the Pledge settings page to WordPress admin
+ * 
+ * @return void
  */
 function igb_add_take_the_pledge_settings_page()
 {
@@ -147,6 +151,8 @@ add_action('admin_menu', 'igb_add_take_the_pledge_settings_page');
 
 /**
  * Register Campaign Monitor settings
+ * 
+ * @return void
  */
 function igb_register_take_the_pledge_settings()
 {
@@ -209,6 +215,8 @@ add_action('admin_init', 'igb_register_take_the_pledge_settings');
 
 /**
  * Render the Campaign Monitor settings page
+ * 
+ * @return void
  */
 function igb_render_take_the_pledge_settings()
 {
@@ -231,6 +239,8 @@ function igb_render_take_the_pledge_settings()
 
 /**
  * Callback for API key field
+ * 
+ * @return void
  */
 function igb_cm_api_key_callback()
 {
@@ -246,6 +256,8 @@ function igb_cm_api_key_callback()
 
 /**
  * Callback for static pledgers field
+ * 
+ * @return void
  */
 function igb_static_pledgers_callback()
 {
@@ -263,6 +275,8 @@ function igb_static_pledgers_callback()
 
 /**
  * Callback for list ID field
+ * 
+ * @return void
  */
 function igb_cm_list_id_callback()
 {
