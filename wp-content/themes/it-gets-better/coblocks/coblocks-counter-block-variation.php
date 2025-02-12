@@ -20,7 +20,7 @@ function igb_register_block_variations()
         'igb-block-variations',
         'igbBlockData',
         array(
-        'pledgeCount' => get_option('igb_pledge_count', '0')
+        'pledgeCount' => get_option('igb_total_pledgers', '0')
         )
     );
 }
