@@ -202,3 +202,8 @@ require get_template_directory() . '/_assets/functions/seo.php';
  * Functions for CoBlocks extensions
  */
 require get_template_directory() . '/coblocks/coblocks.php';
+
+/**
+ * Functions for Campaign Monitor
+ */
+require get_template_directory() . '/_assets/functions/campaign-monitor.php';
