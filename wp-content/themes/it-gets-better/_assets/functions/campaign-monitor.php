@@ -125,3 +125,149 @@ function igb_get_pledgers( $id ) {
 		return $pledgers_transient;
 	}
 }
+
+/**
+ * Add Campaign Monitor/Take the Pledge settings page to WordPress admin
+ */
+function igb_add_take_the_pledge_settings_page()
+{
+    add_options_page(
+        __('Take the Pledge Settings', 'it-gets-better'),
+        __('Take the Pledge', 'it-gets-better'), 
+        'manage_options',
+        'take-the-pledge-settings',
+        'igb_render_take_the_pledge_settings'
+    );
+}
+add_action('admin_menu', 'igb_add_take_the_pledge_settings_page');
+
+/**
+ * Register Campaign Monitor settings
+ */
+function igb_register_take_the_pledge_settings()
+{
+    register_setting(
+        'take_the_pledge_settings', 'igb_cm_api_key', array(
+        'type' => 'string',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => ''
+        )
+    );
+
+    register_setting(
+        'take_the_pledge_settings', 'igb_static_pledgers', array(
+        'type' => 'number',
+        'sanitize_callback' => 'absint',
+        'default' => 0
+        )
+    );
+
+    register_setting(
+        'take_the_pledge_settings', 'igb_cm_list_id', array(
+        'type' => 'string',
+        'sanitize_callback' => 'sanitize_text_field',
+        'default' => ''
+        )
+    );
+
+    add_settings_section(
+        'igb_take_the_pledge_main_section',
+        __('Main Settings', 'it-gets-better'),
+        null,
+        'take-the-pledge-settings'
+    );
+
+    add_settings_field(
+        'igb_cm_api_key',
+        __('Campaign Monitor API Key', 'it-gets-better'),
+        'igb_cm_api_key_callback',
+        'take-the-pledge-settings',
+        'igb_take_the_pledge_main_section'
+    );
+
+    add_settings_field(
+        'igb_cm_list_id',
+        __('Campaign Monitor List ID', 'it-gets-better'),
+        'igb_cm_list_id_callback',
+        'take-the-pledge-settings',
+        'igb_take_the_pledge_main_section'
+    );
+
+    add_settings_field(
+        'igb_static_pledgers',
+        __('Base Pledgers Count', 'it-gets-better'),
+        'igb_static_pledgers_callback',
+        'take-the-pledge-settings',
+        'igb_take_the_pledge_main_section'
+    );
+}
+add_action('admin_init', 'igb_register_take_the_pledge_settings');
+
+/**
+ * Render the Campaign Monitor settings page
+ */
+function igb_render_take_the_pledge_settings()
+{
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('take_the_pledge_settings');
+            do_settings_sections('take-the-pledge-settings');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+/**
+ * Callback for API key field
+ */
+function igb_cm_api_key_callback()
+{
+    $api_key = get_option('igb_cm_api_key');
+    ?>
+    <input type="text" 
+           name="igb_cm_api_key" 
+           value="<?php echo esc_attr($api_key); ?>" 
+           class="regular-text"
+    />
+    <?php
+}
+
+/**
+ * Callback for static pledgers field
+ */
+function igb_static_pledgers_callback()
+{
+    $static_pledgers = get_option('igb_static_pledgers', 0);
+    ?>
+    <input type="number" 
+           name="igb_static_pledgers" 
+           value="<?php echo esc_attr($static_pledgers); ?>" 
+           class="regular-text"
+           min="0"
+           step="1"
+    />
+    <?php
+}
+
+/**
+ * Callback for list ID field
+ */
+function igb_cm_list_id_callback()
+{
+    $list_id = get_option('igb_cm_list_id');
+    ?>
+    <input type="text" 
+           name="igb_cm_list_id" 
+           value="<?php echo esc_attr($list_id); ?>" 
+           class="regular-text"
+    />
+    <?php
+}
