@@ -323,7 +323,9 @@ The responsive options available are:
 - [x] New main nav
 - [x] Mutilingual EduGuide Buttons
     - [x] Custom Block for EduGuide card
-- [ ] New hero
+- [x] New hero
+- [x] Custom "Take the pledge" setup
+- [ ] General ongoing updates and bug fixes. huzzah
 
 See the [open issues](https://github.com/igbetter/igb/issues) for a full list of proposed features (and known issues).
 
