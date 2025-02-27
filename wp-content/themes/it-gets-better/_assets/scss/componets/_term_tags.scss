@@ -27,7 +27,7 @@ aside.related_terms {
 		a.secondary_button:visited {
 			font-size: $font-size-sm;
 			padding: 0.1em 0.5em;
-			border-radius: 2px;
+			border-radius: 8px;
 		}
 
 	}
@@ -43,6 +43,7 @@ aside.related_terms {
 		> li { // only the first level
 			margin-left: -1px;
 			transform: skewX(-26deg);
+			border-radius: 30px;
 
 			@include themify( $themes ) {
 				background: themed( 'backgroundColor' );

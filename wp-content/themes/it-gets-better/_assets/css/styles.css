@@ -4680,7 +4680,7 @@ aside.related_terms.smaller a.secondary_button,
 aside.related_terms.smaller a.secondary_button:visited {
   font-size: clamp(1.311rem, -0.024vi + 1.321rem, 1.273rem);
   padding: 0.1em 0.5em;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 aside.related_terms > ul {
   margin: 0 2em 0 0;
@@ -4693,6 +4693,7 @@ aside.related_terms > ul {
 aside.related_terms > ul > li {
   margin-left: -1px;
   transform: skewX(-26deg);
+  border-radius: 30px;
 }
 .theme-light aside.related_terms > ul > li {
   background: #ffffff;
