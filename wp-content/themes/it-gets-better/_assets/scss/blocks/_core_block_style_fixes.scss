@@ -41,11 +41,22 @@ body,
 	transform: translateX(-50%);
 	margin-right: auto !important;
 
+	@include phone-only {
+		padding: 1.25em;
+		max-width: 70vw;
+		margin-left: 34% !important;
+	}
+
 
 	&:nth-of-type( 2n ) {
 		margin-left: auto !important;
 		margin-right: calc( 50% - 10% )!important;
 		transform: translateX(50%);
+
+		@include phone-only {
+			margin-right: 0 !important;
+			transform: translateX(0);
+		}
 	}
 }
 
