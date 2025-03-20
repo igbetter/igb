@@ -5272,10 +5272,23 @@ body .has-igb-pink-background-color,
   transform: translateX(-50%);
   margin-right: auto !important;
 }
+@media (max-width: 600px) {
+  .is-style-staggered {
+    padding: 1.25em;
+    max-width: 70vw;
+    margin-left: 34% !important;
+  }
+}
 .is-style-staggered:nth-of-type(2n) {
   margin-left: auto !important;
   margin-right: 40% !important;
   transform: translateX(50%);
+}
+@media (max-width: 600px) {
+  .is-style-staggered:nth-of-type(2n) {
+    margin-right: 0 !important;
+    transform: translateX(0);
+  }
 }
 
 .theme-light .is-style-post-it {
