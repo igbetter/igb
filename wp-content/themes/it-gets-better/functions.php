@@ -32,6 +32,9 @@ if ( ! function_exists( 'it_gets_better_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+		// Register the block filter early
+		add_filter('render_block', 'igb_filter_counter_block_content', 10, 2);
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -195,3 +198,12 @@ require get_template_directory() . '/_assets/functions/block-mods.php';
  */
 require get_template_directory() . '/_assets/functions/seo.php';
 
+/**
+ * Functions for CoBlocks extensions
+ */
+require get_template_directory() . '/coblocks/coblocks.php';
+
+/**
+ * Functions for Campaign Monitor
+ */
+require get_template_directory() . '/_assets/functions/campaign-monitor.php';
